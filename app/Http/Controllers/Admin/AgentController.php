@@ -250,7 +250,7 @@ class AgentController extends Controller
             }
 
             $name = $agent->name;
-            $email = $newUserName.'-dissingth.com';
+            $email = $newUserName.'-hbmobile.com';
             $username = $newUserName;
             $pass = $newPassword;
 

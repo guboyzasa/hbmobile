@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title') Dashboard | Admin - DissingThailand @endsection
+@section('title') Dashboard | Admin - HBMOBILE @endsection
 
 @section('content')
 
@@ -18,7 +18,7 @@
                         <div class="col-7">
                             <div class="text-primary p-3">
                                 <h5 class="text-primary">Welcome Back !</h5>
-                                <p>Dissing Thailand Dashboard</p>
+                                <p>HB Mobile Dashboard</p>
 
                                 <ul class="ps-3 mb-0">
                                  

@@ -1,6 +1,6 @@
 @extends('layouts-agent.master')
 
-@section('title') จัดการลูกค้า | Agent - DissingThailand @endsection
+@section('title') จัดการลูกค้า | Agent - HB MOBILE @endsection
 
 @section('css')
 

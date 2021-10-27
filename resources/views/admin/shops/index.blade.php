@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title') จัดการแบรนด์สินค้า | Admin - DissingThailand  @endsection
+@section('title') จัดการแบรนด์สินค้า | Admin - DHB MOBILE  @endsection
 
 @section('css')
 

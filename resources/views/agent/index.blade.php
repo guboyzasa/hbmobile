@@ -1,6 +1,6 @@
 @extends('layouts-agent.master')
 
-@section('title') Dashboard | Agent - DissingThailand @endsection
+@section('title') Dashboard | Agent - HB MOBILE @endsection
 
 @section('content')
 

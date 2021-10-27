@@ -22,7 +22,7 @@
                             <li><img src="{{ URL::asset('/assets/dist/images/line.png') }}" alt=""> : <a
                                     href="{{ @$company->line_link }}" class="effect">{{ @$company->line }}</a></li>
                             <li>
-                                <i class='bx bxs-help-circle bx-sm'></i> : <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=577mctct" class="effect">ต้องการความช่วยเหลือ</a>
+                                <i class='bx bxs-help-circle bx-sm'></i> : <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=188yanuk" class="effect">ต้องการความช่วยเหลือ</a>
                             </li>
                         </ul>
                     </div>
@@ -34,10 +34,10 @@
         <p>
             © Copyright 2021. All Rights Reserved.
             <br>
-            Created by Dissing Thailand
-            {{-- <a href="https://www.facebook.com/NutNinlaong/" class="effect">
-                Mr'Nut
-            </a> --}}
+            Created by 
+             <a href="https://www.facebook.com/guboyphoto/" class="effect">
+                BOY BBQ
+            </a> 
         </p>
     </div>
 </footer><!-- /.footer -->

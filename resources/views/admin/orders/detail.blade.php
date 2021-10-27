@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title') รายละเอียดออเดอร์ | Admin - DissingThailand @endsection
+@section('title') รายละเอียดออเดอร์ | Admin - HB MOBILE @endsection
 
 @section('css')
 

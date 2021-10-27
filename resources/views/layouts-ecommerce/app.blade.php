@@ -16,7 +16,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DissingThailand - จำหน่ายแบตเตอรี่มือถือ</title>
+    <title>HB Mobile - ซ่อมโทรศัพท์ โน๊ตบุ๊ค แม็คบุ๊ค</title>
 
     <link rel="apple-touch-icon" sizes="180x180"
         href="{{ URL::asset('/assets/dist/images/favicon/icon.png') }}">

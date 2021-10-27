@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title') จัดการลูกค้า | Admin - DissingThailand @endsection
+@section('title') จัดการลูกค้า | Admin - HB MOBILE @endsection
 
 @section('css')
 

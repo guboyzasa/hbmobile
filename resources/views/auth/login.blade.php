@@ -2,7 +2,7 @@
 
 @section('title')
     {{-- @lang('translation.Login') --}}
-    Login | Dissing Thailand
+    Login | HB Mobile KHON KAEN
 @endsection
 
 @section('body')
@@ -21,7 +21,7 @@
                                     <div class="col-7">
                                         <div class="text-primary p-4">
                                             <h5 class="text-primary">Welcome Back !</h5>
-                                            <p>Sign in to continue to Dissing Thailand.</p>
+                                            <p>Sign in to continue to HB Mobile.</p>
                                         </div>
                                     </div>
                                     <div class="col-5 align-self-end">
@@ -136,7 +136,7 @@
                                             Signup now </a> </p> -->
                             <script>
                                 document.write(new Date().getFullYear())
-                            </script> Dissing Thailand
+                            </script> HB Mobile
                             </p>
                         </div>
                     </div>
