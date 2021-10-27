@@ -14,7 +14,7 @@
             @foreach($banner_imgs as $banner_img)
             <div class="swiper-slide">
                 <div class="d-flex align-items-center">
-                    <img src='{{ URL::asset("get-content/$banner_img->img") }}' class="img-fluid" alt="" style="width:100%;">
+                    <img src="{{$banner_img->img}}" class="img-fluid" alt="" style="width:100%;">
                 </div>
             </div>
             @endforeach
@@ -98,7 +98,7 @@
         <div class="row">
             <div class="col-sm-12 section-title text-center">
                 <h3><i class="line"></i>สินค้าของเรา<i class="line"></i></h3>
-                <p>สินค้าที่เพิ่มเข้ามาล่าสุด</p>
+                <p>สินค้าใหม่และแนะนำ</p>
             </div>
             <div class="col-sm-12">
                 <div class="masonry row">
