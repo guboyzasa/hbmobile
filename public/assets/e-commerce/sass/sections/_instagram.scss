@@ -1,0 +1,48 @@
+.instagram {
+  position: relative;
+
+  h2 {
+    margin: 0;
+    position: absolute;
+    top: 42%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 200%;
+    font-weight: 600;
+    z-index: 1;
+  }
+
+  ul {
+    li {
+      float: left;
+      display: inline-block;
+      list-style: none;
+      width: 10%;
+      opacity: .3;
+      transition: all 350ms ease;
+
+      span {
+        height: 120px;
+        max-width: 100%;
+        width: 120px;
+        display: block;
+        background-size: cover;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+      }
+
+      &:hover, &.active {
+        opacity: 1;
+      }
+
+      @media screen and (max-width: 767px) {
+        width: 20%;
+
+        span {
+          height: 80px;
+        }
+      }
+    }
+  }
+}

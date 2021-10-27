@@ -1,0 +1,141 @@
+@import 'utilities/variables';
+@import 'utilities/mixins';
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import 'vendors/bootstrap-rtl';
+@import 'vendors/jquery-ui-slider-rtl';
+
+@font-face {
+  font-family: 'Dubai';
+  font-weight: 400;
+  src: url('https://www.fontstatic.com/fonts/dubai/dubai.eot?#iefix');
+  src: local('دبي'), local('dubai'),
+  url('https://www.fontstatic.com/fonts/dubai/dubai.woff') format('woff');
+}
+
+@font-face {
+  font-weight: 500;
+  font-family: 'Dubai';
+  src: url('https://www.fontstatic.com/fonts/dubai-medium/dubai-medium.eot?#iefix');
+  src: local('دبي متوسط'), local('dubai-medium'), url('https://www.fontstatic.com/fonts/dubai-medium/dubai-medium.woff') format('woff');
+}
+
+@font-face {
+  font-weight: 600;
+  font-family: 'Dubai';
+  src: url('https://www.fontstatic.com/fonts/dubai-bold/dubai-bold.eot?#iefix');
+  src: local('دبي ثقيل'), local('dubai-bold'), url('https://www.fontstatic.com/fonts/dubai-bold/dubai-bold.woff') format('woff');
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: $rtl-headings-font-family;
+  font-weight: 600;
+}
+
+body {
+  font-family: $rtl-font-family-base;
+}
+
+.tooltip-inner {
+  font-family: $rtl-font-family-base;
+}
+
+.btn, p,
+.caption > span:first-child,
+.products-filter li a,
+.footer p {
+  letter-spacing: 0;
+}
+
+.sub-navbar {
+  font-weight: normal;
+}
+
+.navbar {
+  .navbar-nav {
+    li:not(.shopping-cart) {
+      .dropdown-menu {
+        a:before {
+          left: initial;
+          right: 0;
+        }
+      }
+    }
+  }
+}
+
+.inner-product .onsale {
+  left: 10px;
+  right: initial;
+}
+
+.widgets .widget {
+  &.widget-categories li .count {
+    float: left;
+  }
+
+  &.widget-price-filter form .btn {
+    float: left;
+  }
+}
+
+.product-details .product-title hr {
+  float: right;
+}
+
+.related-products .owl-nav .owl-next {
+  left: 0;
+  right: initial;
+}
+
+.second-style .product .product-title {
+  margin-top: 12px;
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+
+.star-rating {
+  &:before {
+    float: right;
+    right: 0;
+    left: initial;
+  }
+
+  span {
+    float: right;
+    right: 0;
+    left: initial;
+
+    &:before {
+      right: 0;
+      left: initial;
+    }
+  }
+}
+
+.footer {
+  .widgets {
+    .widget-title {
+      font-weight: 600;
+    }
+
+    .widget-about {
+      p {
+        font-size: 16px;
+      }
+    }
+
+    .widget-newsletter {
+      form {
+        .form-group {
+          .btn {
+            right: inherit;
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+}

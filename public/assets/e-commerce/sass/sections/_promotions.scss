@@ -1,0 +1,78 @@
+.promotions {
+  .promotion {
+    border: 1px solid $gray-200;
+    padding: 35px 20px 20px;
+
+    h3 {
+      margin-top: 0;
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+
+    p {
+      color: $gray-600;
+      font-weight: 500;
+      margin-bottom: 0;
+    }
+
+    .icon {
+      font-size: 36px;
+      display: inline-block;
+      position: relative;
+      line-height: 0;
+      color: $gray-400;
+
+      &:before, &:after {
+        content: '';
+        @include transition(all .1s ease);
+        display: table;
+        padding: 5px;
+        width: 15px;
+        height: 15px;
+        position: absolute;
+      }
+
+      &:before {
+        border-top: 2px solid;
+        border-right: 2px solid;
+        right: -10px;
+        top: -10px;
+      }
+
+      &:after {
+        border-bottom: 2px solid;
+        border-left: 2px solid;
+        left: -10px;
+        bottom: -10px;
+      }
+    }
+
+    &:hover {
+      .icon {
+        &:before {
+          right: -15px;
+        }
+
+        &:after {
+          left: -15px;
+        }
+      }
+    }
+
+    &.media {
+      padding: 30px 20px;
+
+      i {
+        font-size: 36px;
+      }
+
+      .media-left {
+        padding-inline-end: 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      margin-bottom: 30px;
+    }
+  }
+}

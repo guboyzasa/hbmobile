@@ -1,0 +1,16 @@
+.related-products {
+  .owl-nav {
+    .owl-prev, .owl-next {
+      position: absolute;
+      top: 40%;
+      background: #F7F7F7;
+      color: #323237;
+      padding: 10px;
+      font-size: 25px;
+    }
+
+    .owl-next {
+      right: 0px;
+    }
+  }
+}

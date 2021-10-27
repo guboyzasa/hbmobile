@@ -1,0 +1,240 @@
+.sub-navbar {
+  border-bottom: 1px solid $gray-200;
+  font-weight: bold;
+  height: $sub-navbar-height;
+
+  ul {
+    margin-bottom: 0;
+    text-transform: uppercase;
+
+    li {
+      border-inline-end: 1px solid $gray-200;
+    }
+
+    a {
+      padding: 5px;
+      display: block;
+    }
+  }
+
+  .list-select {
+    border-inline-end: 1px solid $gray-200;
+  }
+}
+
+.sticky {
+  box-shadow: 0 0 3px 0 rgba(#000, 0.20);
+}
+
+.navbar {
+  border: none;
+  margin: 0;
+  position: relative;
+  z-index: 999;
+  //padding-left: 0;
+  //padding-right: 0;
+  min-height: $navbar-height;
+  height: auto;
+  border-radius: 0;
+  transition: all .3s ease;
+
+  .navbar-nav {
+    > .show {
+      & > a, > a:focus, > a:hover {
+        background-color: transparent;
+      }
+    }
+
+    li {
+      position: relative;
+
+      + li {
+        margin-left: .5rem;
+      }
+
+      &.active {
+        > a {
+          color: $primary;
+          background: transparent;
+
+          &:hover, &:focus {
+            background: transparent;
+            color: $primary;
+            opacity: .8;
+          }
+        }
+      }
+
+      a {
+        font-size: 16px;
+        color: $headings-color;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 0;
+      }
+
+      &:not(.shopping-cart) {
+        .dropdown-menu {
+          margin-top: 15px;
+          width: 210px;
+          padding: 10px 0;
+          border: none;
+          box-shadow: $dropdown-box-shadow;
+
+          a {
+            &:before {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              background-color: rgba($primary, .85);
+              width: 2px;
+              height: 0;
+              @include transition(0.3s);
+            }
+          }
+
+          a:hover, a:focus, .active a {
+            background-color: $gray-100 !important;
+            color: $headings-color;
+          }
+
+          a:hover:before, .active > a:before {
+            height: 100%;
+            top: 0;
+          }
+        }
+
+        li {
+          padding: 0;
+          display: block;
+          position: relative;
+          margin: 0;
+
+          a {
+            padding: 10px 20px;
+            margin-top: 0 !important;
+            display: block;
+            position: relative;
+            line-height: 1;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  .navbar-brand {
+    color: $headings-color;
+
+    > img {
+      max-height: $navbar-height - 25;
+      height: 100%;
+    }
+  }
+
+  .navbar-toggle {
+    border: none;
+    background-color: transparent !important;
+    padding: 0;
+    margin-top: 12px;
+
+    .icon-bar {
+      border-radius: 0;
+      margin: 4px auto;
+      background-color: $primary;
+    }
+  }
+
+  .navbar-left {
+    margin-left: 35px;
+  }
+
+  .badge {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    line-height: 19px;
+    padding: 0;
+  }
+}
+
+.navbar .navbar-nav .li-icon, .li-icon {
+  background-color: $primary;
+  color: $white;
+  font-size: 16px;
+  padding: 0;
+  text-align: center;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  line-height: 42px;
+  display: inline-block;
+
+  &:hover, &:active, &:focus {
+    background: rgba($primary, .9) !important;
+    color: $white !important;
+  }
+}
+
+@media (max-width: $grid-float-breakpoint) {
+  .nav-container .container {
+    position: relative;
+  }
+  .navbar {
+    .navbar-brand {
+      margin-left: 15px !important;
+    }
+
+    .navbar-left {
+      border-color: $gray-200;
+      margin: 0;
+    }
+
+    .navbar-collapse {
+      background: $white;
+      padding: 0;
+    }
+
+    .navbar-nav {
+      &:not(.navbar-icons) {
+        > li {
+          margin: 0;
+          padding: 0;
+          transition: background-color .3s ease;
+
+          &:hover, &.active {
+            background-color: $white;
+          }
+
+          > a {
+            margin: 0;
+            padding: 10px 15px;
+          }
+        }
+      }
+
+      li:not(.shopping-cart) {
+        .dropdown-menu {
+          width: 100%;
+          margin: 0;
+          background: transparent;
+          box-shadow: none;
+          padding-top: 0;
+        }
+
+        &.open {
+          .dropdown-menu {
+            display: table;
+          }
+        }
+      }
+    }
+  }
+}
+
+.dropdown-toggle::after {
+  @extend .bx, .border-0;
+  vertical-align: inherit;
+  content: "\ece8";
+}
