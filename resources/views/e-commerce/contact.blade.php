@@ -41,8 +41,8 @@
 						<p><strong>Phone:</strong> <a href="#!" class="">{{ @$company->tel1 }} , {{ @$company->tel2 }} , {{ @$company->tel3 }}</a></p>
 						<p><strong>Email:</strong> <a href="#!" class="">{{ @$company->email }}</a></p>
 						<p><strong>Address:</strong> {{ @$company->address }}</p>
-						<p><strong>Facebook:</strong> <a href="{{ $company->facebook_link }}" class="" target="_black">{{ @$company->facebook }}</a></p>
-						<p><strong>Line:</strong> <a href="{{ $company->line_link }}" class="">{{ @$company->line }}</a></p>
+						<p><strong>Facebook:</strong> <a href="{{ $company->facebook_link }}" class="" target="_blank">{{ @$company->facebook }}</a></p>
+						<p><strong>Line:</strong> <a href="{{ $company->line_link }}" class="" target="_blank">{{ @$company->line }}</a></p>
 						<!-- <p><strong>มีปัญหาการใช้งานเว็บไซต์:</strong> <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=188yanuk" target="_blank">Click Here!!</a></p> -->
 					</div>
 				</div>

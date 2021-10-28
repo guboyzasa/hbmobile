@@ -27,9 +27,7 @@
                 <div class="col-md-8 mx-auto lead text-center">
                     <h1 class="title">กระบวนการผลิตและการรับรอง</h1>
                     <p>
-                        บริษัท ดีสซิ่ง (ไทยแลนด์) จำกัด เลขทะเบียนนิติบุคคล : 0105561047824 เป็นผู้ได้รับใบอนุญาตให้ผลิต
-                        นำเข้า และจำหน่ายแบตเตอรี่มือถือ มาตรฐานมอก. หลากหลายรุ่น เช่น iPhone, iPad, Macbook, Samsung ,
-                        Oppo , Vivo และ Huawei ตามใบอนุญาตเลขที่ <span class="text-primary">น19343-1684/2217</span>
+                        ครบเครื่องเรื่องไอที มือถือ โน๊ตบุ๊ค แม็คบุ๊ค iPad iPhone Samsung Huawei Oppo Vivo กล้องวงจรปิด <br><span class="text-primary">093-528-7744 ช่างบอย</span>
                     </p>
                 </div><!-- /.block -->
             </div><!-- /.row -->

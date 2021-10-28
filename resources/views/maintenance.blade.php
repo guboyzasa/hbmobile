@@ -1,7 +1,7 @@
 @extends('layouts.master-without-nav')
 
 @section('title')
-    Maintenance | Dissing Thailand
+    Maintenance | HB MOBILE SERVICES
 @endsection
 
 @section('body')

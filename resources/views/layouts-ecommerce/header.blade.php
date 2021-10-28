@@ -98,7 +98,7 @@
                             เพิ่มเติม
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="nav-link" href="{{ route('agent') }}">ตัวแทนจำหน่ายและจุดบริการ</a>
+                            <li><a class="nav-link" href="{{ route('agent') }}">จุดบริการ</a>
                             </li>
                             <li><a class="nav-link" href="{{ route('option') }}">เงื่อนไขและข้อแนะนำผลิตภัณฑ์</a></li>
                             <li><a class="nav-link" href="{{ route('produce') }}">กระบวนการผลิตและการรับรอง</a>

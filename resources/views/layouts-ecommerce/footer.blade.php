@@ -18,11 +18,11 @@
                             <li><i class='bx bx-envelope bx-sm'></i> : <a href="#!"
                                     class="effect">{{ @$company->email }}</a></li>
                             <li><i class='bx bxl-facebook-circle bx-sm'></i> : <a href="{{ @$company->facebook_link }}"
-                                    class="effect">{{ @$company->facebook }}</a></li>
+                                    class="effect" target="_blank">{{ @$company->facebook }}</a></li>
                             <li><img src="{{ URL::asset('/assets/dist/images/line.png') }}" alt=""> : <a
-                                    href="{{ @$company->line_link }}" class="effect">{{ @$company->line }}</a></li>
+                                    href="{{ @$company->line_link }}" class="effect" target="_blank">{{ @$company->line }}</a></li>
                             <li>
-                                <i class='bx bxs-help-circle bx-sm'></i> : <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=188yanuk" class="effect">ต้องการความช่วยเหลือ</a>
+                                <i class='bx bxs-help-circle bx-sm'></i> : <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=188yanuk" target="_blank" class="effect">ต้องการความช่วยเหลือ</a>
                             </li>
                         </ul>
                     </div>
@@ -35,7 +35,7 @@
             © Copyright 2021. All Rights Reserved.
             <br>
             Created by 
-            <a href="https://www.facebook.com/guboyphoto/" class="effect">
+            <a href="https://www.facebook.com/guboyphoto/" target="_blank" class="effect">
                 BOY BBQ
             </a> 
         </p>
