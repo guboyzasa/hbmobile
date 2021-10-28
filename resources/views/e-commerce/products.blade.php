@@ -24,9 +24,9 @@
         <div class="row">
             <div class="col-sm-12">
                 <ul class="products-filter list-unstyled">
-                    <li class="{{ !isset($product_filter_category) && !isset($product_filter_brand) ? 'active' : '' }}">
+                   <!-- <li class="{{ !isset($product_filter_category) && !isset($product_filter_brand) ? 'active' : '' }}">
                         <a href="#!" onclick="hideBtnBrandFilter()" data-filter="*">ทั้งหมด</a>
-                    </li>
+                    </li> -->
                     @foreach($product_categorys as $product_category)
                     <li class="{{$product_category['id'] == $product_filter_category ? 'active' : '' }}" >
                         <a href="#!" onclick="showBtnBrandFilter({{$product_category['id']}})" data-filter=".category-{{$product_category['id']}}">{{$product_category['name']}}</a>

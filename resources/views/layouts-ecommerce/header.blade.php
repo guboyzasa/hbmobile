@@ -79,7 +79,7 @@
                             สินค้าของเรา
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="nav-link" href="{{ route('products') }}">สินค้าทั้งหมด</a></li>
+                           <!-- <li><a class="nav-link" href="{{ route('products') }}">สินค้าทั้งหมด</a></li> -->
                             <li><a class="nav-link" href="/products?product_filter_category=1">แบตเตอรี่เพิ่มความจุ</a>
                             </li>
                             <li><a class="nav-link" href="/products?product_filter_category=2">แบตเตอรี่มือถือ</a></li>
