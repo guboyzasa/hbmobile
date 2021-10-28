@@ -632,4 +632,9 @@ class EcommerceController extends Controller
         $company = CompanyContract::first();
         return view('e-commerce.change-password',compact('company'));
     }
+    public function verifyUsername()
+    {
+        $company = CompanyContract::first();
+        return view('e-commerce.verify-username',compact('company'));
+    }
 }

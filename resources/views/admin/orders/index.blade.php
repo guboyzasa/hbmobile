@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title') จัดการออเดอร์ | Admin - HB MOBILE  @endsection
+@section('title') จัดการออเดอร์ | Admin - HB Mobile Services  @endsection
 
 @section('css')
 

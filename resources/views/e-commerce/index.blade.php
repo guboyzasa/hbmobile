@@ -14,7 +14,7 @@
             @foreach($banner_imgs as $banner_img)
             <div class="swiper-slide">
                 <div class="d-flex align-items-center">
-                    <img src="{{$banner_img->img}}" class="img-fluid" alt="" style="width:100%;">
+                    <img src='https://drive.google.com/uc?id={{$banner_img->img}}&export=download' class="img-fluid" alt="" style="width:100%;">
                 </div>
             </div>
             @endforeach
@@ -41,13 +41,19 @@
                 </a> -->
                 <h3 class="text-primary"><span class="autotype"></span></h3>
                 <p>
-                    ข้อความ 1
+                    บริษัท ดีสซิ่ง (ไทยแลนด์) จำกัด เลขทะเบียนนิติบุคคล 0105561047824 เป็นผู้ได้รับใบอนุญาตให้ผลิต
+                    นำเข้า และจำหน่ายแบตเตอรี่มือถือ มาตรฐานมอก. หลากหลายรุ่น เช่น iPhone, iPad, Macbook, Samsung , Oppo
+                    , Vivo และ Huawei
                 </p>
                 <p>
-                    ข้อความ 2
+                    แบตเตอรี่มอก. ผ่านการรับรองจากมอก. (มาตรฐานผลิตภัณฑ์อุตสาหกรรม)
+                    เป็นแบตเตอรี่ตรงรุ่น โดยเฉพาะ มีระบบป้องกันแบตเตอรี่ระเบิด
+                    แบตเตอรี่รับประกันนานถึง 1 ปี สำหรับแบตเตอรี่iPhone
                 </p>
                 <p>
-                    ข้อความ 3
+                    ทางร้านมีอยู่ 2 แบบ แบบที่ 1 แบตเตอรี่ความจุปกติ แบบที่ 2 แบตเตอรี่เพิ่มความจุพิเศษ (
+                    เพิ่มขึ้นจากของเดิมประมาณ 30% ) ทั้ง 2 แบบสามารถเช็คสุขภาพแบตได้ ขึ้น 100%
+                    สำหรับลูกค้าที่สนใจแบตเตอรี่ของทางบริษัท สามารถติดต่อโดยตรงกับบริษัท หรือ ตัวแทนจำหน่ายได้เลยนะครับ
                 </p>
             </div><!-- /.collection -->
             <div class="col-md-12 col-lg-6 collection">
@@ -124,7 +130,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h4 class="product-title text-too-long"><a href="#!">{{ $product->name }}</a></h4>
+                        <h4 class="product-title text-too-long"><a href="products/detail/{{ $product->id }}">{{ $product->name }}</a></h4>
                         <!-- <div class="star-rating">
                             <span style="width:90%"></span>
                         </div> -->
@@ -184,7 +190,7 @@
                         <img src="{{ URL::asset('/assets/dist/images/option/03.png') }}" class="w-126 shadow bx-border-circle" alt="">
                     </div>
                     <h3 class="mt-4 text-primary">ประกันอุบัติเหตุ</h3>
-                    <p>มีประกันอุบัติเหตุสูงสุด 1 ล้านบาท</p>
+                    <p>มีประกันอุบัติเหตุสูงสุด 3 ล้านบาท</p>
                 </div>
                 </a>
             </div>

@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title') สร้างตัวแทนจำหน่าย | Admin - HB MOBILE @endsection
+@section('title') สร้างตัวแทนจำหน่าย | Admin - HB Mobile Services @endsection
 
 @section('css')
 <style>

@@ -14,7 +14,7 @@
                     <a href="{{ route('index') }}">หน้าแรก</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="{{ route('products') }}">สินค้า</a>
+                    <a href="/products?product_filter_category=1">สินค้า</a>
                 </li>
                 <li class="breadcrumb-item active">{{ $product->name }}</li>
             </ol>

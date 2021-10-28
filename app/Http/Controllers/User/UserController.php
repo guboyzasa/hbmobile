@@ -147,13 +147,13 @@ class UserController extends Controller
 
     }
 
-    public function getOtp($otp_token, $name, $phone, $email, $password, $checkPassword)
+    public function getOtp($token, $name, $phone, $email, $password, $checkPassword)
     {
-        $token = $otp_token;
         return view('e-commerce.otp', compact('token', 'name', 'phone', 'email', 'password', 'checkPassword'));
     }
 
-    public function verifyOTP(Request $req){
+    public function verifyOTP(Request $req)
+    {
 
         $pin = $req->first.$req->second.$req->third.$req->fourth.$req->fifth;
         $client = new Client();
@@ -234,11 +234,107 @@ class UserController extends Controller
             DB::commit();
             return redirect()->route('login-register')->with('success','สมัครสมาชิกสำเร็จ');
 
-            return response()->json([
-                'isSuccess' => true,
-                'status'=>200,
-                'message'=> 'Verify success.',
+            // return response()->json([
+            //     'isSuccess' => true,
+            //     'status'=>200,
+            //     'message'=> 'Verify success.',
+            // ]);
+
+        }else{
+            return redirect()->back()->with('error','OTP ไม่ถูกต้อง');
+            // return response()->json([
+            //     'isSuccess' => false,
+            //     'status'=>500,
+            //     'errors'=> 'Somethings worng.'
+            // ]);
+
+       }
+    }
+
+    public function verifyUsername(Request $req)
+    {
+        $user = User::where('username', $req->username)->first();
+        if(isset($user)){
+            return view('e-commerce.verify-change-password', compact('user'));
+        }else{
+            return redirect()->back()->with('error','ไม่พบหมายเลขโทรศัพท์มือหรือ username นี้');
+        }
+    }
+
+    public function changePassword(Request $req)
+    {
+        if ($req->password !== $req->checkPassword) {
+            return redirect()->back()->with('error','ยืนยันรหัสผ่านไม่ถูกต้อง');
+        }
+        // return $req->all();
+        $user = User::find($req->userId);
+        $app_otp = env('APP_OTP','');
+        if ($app_otp == 1) {
+            $otp = $this->generateOTP($user->username);
+            $obj = json_decode($otp->getContent());
+            if ($obj->status == 200) {
+
+                return $this->getOtpChange($obj->otp_token, $user->id, $req->password, $req->checkPassword, $user->username);
+                
+            }elseif ($obj->status == 500) {
+                return redirect()->back()->with('error','SMS Service error please try again.');
+                
+            }else{
+                return redirect()->back()->with('error','ไม่พบหมายเลขโทรศัพท์มือถือนี้');
+            }
+        }else{
+            
+            DB::beginTransaction();
+
+            $user->password = Hash::make($req->password);
+            $user->save();
+
+            DB::commit();
+            return redirect()->route('login-register')->with('success','เปลี่ยนรหัสผ่านสำเร็จ');
+        }
+    }
+
+    public function getOtpChange($token, $userId, $password, $checkPassword ,$phone)
+    {
+        return view('e-commerce.otp-change', compact('token', 'userId', 'password', 'checkPassword', 'phone'));
+    }
+
+    public function verifyOTPChange(Request $req)
+    {
+        $pin = $req->first.$req->second.$req->third.$req->fourth.$req->fifth;
+        $client = new Client();
+
+        try {
+            $res = $client -> request('POST', 'https://otp.thaibulksms.com/v1/otp/verify', [
+                'form_params' => [
+                    'key' => '1710579641611965',
+                    'secret' => '539ba7bba183c84528d1a3a8ead97c10',
+                    'token' => $req->token,
+                    'pin' => $pin,
+                ],
             ]);
+        } catch (\Throwable $e) {
+            return redirect()->back()->with('error','ผิดพลาด');
+        }
+
+        $resBody = json_decode($res->getBody());
+
+        if($resBody->data->status == 'success' && $resBody->data->message == 'Code is correct.'){
+
+            DB::beginTransaction();
+
+            $user = User::find($req->userId);
+            $user->password = Hash::make($req->password);
+            $user->save();
+
+            DB::commit();
+            return redirect()->route('login-register')->with('success','เปลี่ยนรหัสผ่านสำเร็จ');
+
+            // return response()->json([
+            //     'isSuccess' => true,
+            //     'status'=>200,
+            //     'message'=> 'Verify success.',
+            // ]);
 
         }else{
             return redirect()->back()->with('error','OTP ไม่ถูกต้อง');

@@ -571,7 +571,7 @@ function calSummary() {
 if ($autoType.length) { //อักษรเปลี่ยนไปเรื่อยๆ 
     $autoType.typed({
       // strings: ['Hello', 'Merhaba', 'Ħello', 'Salü', 'Hallo', 'Halito', 'مرحبا', 'Hallå'],
-      strings: ['HB MOBILE', 'เฮียบอยโมบาย', 'ซ่อมโทรศัพท์'],
+      strings: ['DISSING THAILAND', 'บริษัท ดีสซิ่ง (ไทยแลนด์) จำกัด', 'จำหน่ายแบตเตอรี่มือถือ'],
       typeSpeed: 50,
       loop: true
     });

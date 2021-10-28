@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title') ลงทะเบียนรับประกันสินค้า | Admin - HB MOBILE  @endsection
+@section('title') ลงทะเบียนรับประกันสินค้า | Admin - HB Mobile Services  @endsection
 
 @section('css')
 <link href="{{ URL::asset('/assets/libs/select2/select2.min.css') }}" rel="stylesheet" type="text/css" />

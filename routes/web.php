@@ -25,6 +25,9 @@ Route::middleware(['checkEcommerceMaintenance'])->group(function () {
         Route::post('/register/create', [App\Http\Controllers\User\UserController::class, 'create'])->name('register.create');
         Route::post('/otp', [App\Http\Controllers\User\UserController::class, 'getOtp'])->name('otp');
         Route::post('/otp/verify', [App\Http\Controllers\User\UserController::class, 'verifyOTP'])->name('otp.verify');
+        Route::post('/change-password/verify-username', [App\Http\Controllers\User\UserController::class, 'verifyUsername'])->name('change-password.verify-username');
+        Route::post('/change-password/change', [App\Http\Controllers\User\UserController::class, 'changePassword'])->name('change-password.change');
+        Route::post('/otp/verify-change', [App\Http\Controllers\User\UserController::class, 'verifyOTPChange'])->name('otp.verify-change');
         ## NORMAL 
         Route::get('/', [App\Http\Controllers\EcommerceController::class, 'index'])->name('index');
         Route::get('/product', [App\Http\Controllers\EcommerceController::class, 'product'])->name('product');
@@ -50,6 +53,7 @@ Route::middleware(['checkEcommerceMaintenance'])->group(function () {
         Route::post('/profile-account/store', [App\Http\Controllers\EcommerceController::class, 'profileAccountStore'])->name('profile-account.store');
         Route::post('/profile-account-bill/store', [App\Http\Controllers\EcommerceController::class, 'profileAccountBillStore'])->name('profile-account-bill.store');
         Route::get('/manual', [App\Http\Controllers\EcommerceController::class, 'manual'])->name('manual');
+        Route::get('/verify-username', [App\Http\Controllers\EcommerceController::class, 'verifyUsername'])->name('verify-username');
         Route::get('/ecom/change-password', [App\Http\Controllers\EcommerceController::class, 'changePasswordPage'])->name('ecom.change-password');
         // Route::post('/page/order-received', [App\Http\Controllers\EcommerceController::class, 'orderReceivedPage'])->name('order-received-page');
 

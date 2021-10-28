@@ -25,16 +25,17 @@
 		<div class="container">
 			<div class="row align-items-center mb-5">
 				<div class="col-lg-4">
-					<h2 class="title">HB MOBILE KHON KAEN <br> เฮียบอยโมบาย ซ่อมโทรศัพท์ โน๊ตบุ๊ค แม็คบุ๊ค</h2>
+					<h2 class="title">Dissing Thailand <br> ดีสซิ่ง ไทยแลนด์ ศูนย์บริการด้านสมาร์ทโฟนครบวงจร</h2>
 					<p class="subtitle description">
-						<i class='bx bxs-circle' ></i> test7
+						<i class='bx bxs-circle' ></i> จำหน่ายแบตเตอรี่มือถือหลากหลายรุ่น สายชาร์จ อุปกรณ์ อะไหล่มือถือสมาร์ทโฟน
+					</p>
 					<p class="subtitle description">
-						<i class='bx bxs-circle' ></i> test8
+						<i class='bx bxs-circle' ></i> สินค้าเราได้มาตราฐาน ม.อ.ก อย่างถูกต้อง พร้อมทีมช่างเทคนิคดูแลให้คำปรึกษาอย่างไกล้ชิด
 					</p>
 				</div>
 				<div class="col-lg-8">
 					<div class="image">
-						<img src='https://drive.google.com/uc?id=10jZVoy-hs9Nwpq7PEhahcxKpe1o_4oHX&export=download' class="img-fluid" alt="" width="50%">
+						<img src='{{ URL::asset("get-content/images/about/1.jpg") }}' class="img-fluid" alt="" width="30%">
 						<!-- <div class="caption">
 							<span>Our</span>
 							<span>Office</span>
