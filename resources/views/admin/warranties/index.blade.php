@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title') ลงทะเบียนรับประกันสินค้า | Admin - HB Mobile Services  @endsection
+@section('title') ลงทะเบียนงานซ่อม| Admin - HB Mobile Services  @endsection
 
 @section('css')
 <link href="{{ URL::asset('/assets/libs/select2/select2.min.css') }}" rel="stylesheet" type="text/css" />
@@ -17,7 +17,7 @@
 
     @component('components.breadcrumb')
         @slot('li_1') Dashboard @endslot
-        @slot('title') ลงทะเบียนรับประกันสินค้า @endslot
+        @slot('title') ลงทะเบียนงานซ่อม @endslot
     @endcomponent
 
     <div class="row">
@@ -27,7 +27,7 @@
                      <button type="button" style="float: right; margin: 2px;" class="btn btn-success customer_btn btn-sm" ><i class="bx bx-plus"></i> เพิ่มลูกค้า </button>
                     <button type="button" style="float: right; margin: 2px;" class="btn btn-primary warranty_btn btn-sm" ><i class="bx bx-plus"></i> ลงทะเบียน </button>
                 
-                    <h4 class="card-title">ลงทะเบียนรับประกันสินค้า</h4>
+                    <h4 class="card-title">ลงทะเบียนงานซ่อม</h4>
                     <br>
 
                     <br>
@@ -519,7 +519,7 @@
 
         $(".create_btn").click(function () {
 
-            $('#modal_title').text('ลงทะเบียนรับประกันสินค้า');
+            $('#modal_title').text('ลงทะเบียนงานซ่อม');
             $('.formInput').val('');
             $('#simpleModal').modal("show");
         });
@@ -770,7 +770,7 @@
         });
 
         $(".warranty_btn").click(function () {
-            $('#warranty_title').text('ลงทะเบียนการรับประกัน');
+            $('#warranty_title').text('ลงทะเบียนงานซ่อม');
             $('.formInputWarranty').val('');
             $('#warrantyModal').modal("show");
         });

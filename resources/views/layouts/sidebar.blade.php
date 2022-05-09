@@ -49,7 +49,7 @@
                 <li>
                     <a href="{{ route('admin.warranty.index') }}" class="waves-effect">
                         <i class="bx bx-task"></i>
-                        <span key="t-warranty"> ลงทะเบียนการรับประกัน </span>
+                        <span key="t-warranty"> ลงทะเบียนงานซ่อม </span>
                     </a>
                 </li>
 

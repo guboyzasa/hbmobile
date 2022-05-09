@@ -1119,7 +1119,7 @@
         });
 
         $(".warranty_btn").click(function () {
-            $('#warranty_title').text('ลงทะเบียนการรับประกัน');
+            $('#warranty_title').text('ลงทะเบียนงานซ่อม');
             $('.formInputWarranty').val('');
             $('#warrantyModal').modal("show");
         });
