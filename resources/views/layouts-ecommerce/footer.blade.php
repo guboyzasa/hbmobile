@@ -32,7 +32,7 @@
     </div><!-- /.container -->
     <div class="copyright text-center">
         <p>
-            © Copyright 2021. All Rights Reserved.
+            © Copyright 2022. All Rights Reserved.
             <br>
             Created by 
             <a href="https://www.facebook.com/guboyphoto/" target="_blank" class="effect">
