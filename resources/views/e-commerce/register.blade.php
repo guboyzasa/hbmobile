@@ -58,7 +58,7 @@
                                 <div class="form-group">
                                     <div class="required">
                                         <input type="tel" class="form-control"
-                                            placeholder="เบอร์โทรศัพท์  เช่น : 0866666666" pattern="^[+]?[0-9]{9,12}$"
+                                            placeholder="เบอร์โทรศัพท์  เช่น : 0935287744" pattern="^[+]?[0-9]{9,12}$"
                                             name="phone" required>
                                         @error('phone')
                                             <span class="invalid-feedback" role="alert">
@@ -115,6 +115,7 @@
 
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </section>
