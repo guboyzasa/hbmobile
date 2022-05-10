@@ -5,7 +5,7 @@
 @section('content')
 
 <h3>Welcome to admin !</h3>
-
+<h3>สิ่งที่ admin ทำได้</h3>
 @endsection
 @section('script')
     <!-- apexcharts -->

@@ -26,6 +26,12 @@
                 <li>
                     <a href="{{ route('agent-member.warranty.index') }}" class="waves-effect">
                         <i class="bx bx-task"></i>
+                        <span key="t-warranty"> ลงทะเบียนรับประกัน </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="waves-effect">
+                        <i class="bx bx-wrench"></i>
                         <span key="t-warranty"> ลงทะเบียนงานซ่อม </span>
                     </a>
                 </li>
