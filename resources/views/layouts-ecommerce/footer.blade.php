@@ -13,12 +13,9 @@
                     <h4 class="widget-title">ติดต่อเรา</h4>
                     <div class="row">
                         <ul class="list-unstyled col-12 col-lg-12 align-middle">
-                            <li><i class='bx bxs-phone bx-sm'></i> : <a href="#!" class="effect">{{ @$company->tel1 }} ,
-                                    {{ @$company->tel2 }} , {{ @$company->tel3 }}</a></li>
-                            <li><i class='bx bx-envelope bx-sm'></i> : <a href="#!"
-                                    class="effect">{{ @$company->email }}</a></li>
-                            <li><i class='bx bxl-facebook-circle bx-sm'></i> : <a href="{{ @$company->facebook_link }}"
-                                    class="effect" target="_blank">{{ @$company->facebook }}</a></li>
+                            <li><i class='bx bxs-phone bx-sm'></i> : <a href="tel:0935287744" class="effect">{{ @$company->tel1 }}</a> ช่างบอย</li>
+                            <li><i class='bx bx-envelope bx-sm'></i> : <a href="mailto:rachata147@gmail.com" class="effect">{{ @$company->email }}</a></li>
+                            <li><i class='bx bxl-facebook-circle bx-sm'></i> : <a href="{{ @$company->facebook_link }}" class="effect" target="_blank">{{ @$company->facebook }}</a></li>
                             <li><img src="{{ URL::asset('/assets/dist/images/line.png') }}" alt=""> : <a
                                     href="{{ @$company->line_link }}" class="effect" target="_blank">{{ @$company->line }}</a></li>
                             <li>

@@ -13,9 +13,9 @@
             <!-- Slides -->
             @foreach($banner_imgs as $banner_img)
             <div class="swiper-slide">
-                <div class="d-flex align-items-center">
+                {{-- <div class="d-flex align-items-center">
                     <img src='https://drive.google.com/uc?id={{$banner_img->img}}&export=download' class="img-fluid" alt="" style="width:100%;">
-                </div>
+                </div> --}}
             </div>
             @endforeach
         </div>
@@ -71,7 +71,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12 section-title text-center">
-                <h3><i class="line"></i>เลือกยี่ห้อแบตเตอรี่ของคุณ<i class="line"></i></h3>
+                <h3><i class="line"></i>เลือกรายการ<i class="line"></i></h3>
                 <!-- <p>สินค้าที่เพิ่มเข้ามาล่าสุด</p> -->
             </div>
             @foreach($product_brands as $product_brand)
@@ -89,7 +89,7 @@
     </div><!-- /.container -->
 </section><!-- /.promotions -->
 
-<section class="section products second-style" id="home-products">
+{{-- <section class="section products second-style" id="home-products">
     <div class="container">
         <div class="row">
             <div class="col-sm-12 section-title text-center">
@@ -148,14 +148,14 @@
             </div>
         </div><!-- /.row -->
     </div><!-- /.container -->
-</section><!-- /.products -->
+</section><!-- /.products --> --}}
 
 <section class="section brands pt-0 pb-4">
     <div class="container">
         <div class="row">
 
            
-            <div class="col-md-6 col-lg-3">
+            {{-- <div class="col-md-6 col-lg-3">
                 <a href="{{ route('produce') }}">
                 <div class="promotion text-center">
                     <div class="icon">
@@ -165,7 +165,7 @@
                     <p>ได้รับการตรวจสอบและรับรองมาตรญานโดย ม.อ.ก.</p>
                 </div>
                  </a>
-            </div>
+            </div> --}}
            
             <div class="col-md-6 col-lg-3">
                 <a href="{{ route('option') }}">
@@ -179,7 +179,7 @@
                 </a>
             </div>
 
-            <div class="col-md-6 col-lg-3">
+            {{-- <div class="col-md-6 col-lg-3">
                 <a href="{{ route('produce') }}">
                 <div class="promotion text-center">
                     <div class="icon">
@@ -189,9 +189,9 @@
                     <p>มีประกันอุบัติเหตุสูงสุด 1 ล้านบาท</p>
                 </div>
                 </a>
-            </div>
+            </div> --}}
 
-            <div class="col-md-6 col-lg-3">
+            {{-- <div class="col-md-6 col-lg-3">
                 <a href="{{ route('produce') }}">
                 <div class="promotion text-center">
                     <div class="icon">
@@ -201,7 +201,7 @@
                     <p>สินค้าทุกชิ้นผ่านการตรวจสอบอย่างดี</p>
                 </div>
                 </a>
-            </div>
+            </div> --}}
         </div>
     </div>
 </section><!-- /.brands -->
