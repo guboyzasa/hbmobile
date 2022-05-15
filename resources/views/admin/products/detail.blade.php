@@ -139,6 +139,7 @@
                                     </a>
                                     <input type="file" onchange="validateSize(this)" class="form-control formInput" accept="image/*" name="imageFile" id="imageFile" placeholder="กรุณาเลือกรูปภาพ"  >
                                 </div>
+                                
                                 <div class="mb-4"></div>
                              </div>
      
@@ -281,6 +282,7 @@
                                                 <div class="d-flex flex-wrap gap-2" style="float: right;">
                                                     <button type="submit" class="btn btn-primary waves-effect waves-light"> อัพโหลรูปภาพ </button>
                                                 </div>
+                                                
                                                 @csrf
                                                 <input type="hidden" name="id" value="{{ $product->id }}">
                                                 <div class="form-group image row" id="image-area">

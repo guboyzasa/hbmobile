@@ -75,4 +75,5 @@ class Controller extends BaseController
     {
         return view('maintenance');
     }
+    
 }

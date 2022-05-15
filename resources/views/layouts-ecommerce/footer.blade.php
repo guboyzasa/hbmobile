@@ -5,7 +5,7 @@
                 <div class="col-lg-6 col-md-6 widget widget-about">
                     <h4 class="widget-title">{{ @$company->name }}</h4>
                     <p>
-                        {{ @$company->address }}
+                        {{ @$company->address1 }}
                     </p>
                 </div><!-- ./widget -->
 
