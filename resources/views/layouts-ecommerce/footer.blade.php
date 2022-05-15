@@ -32,7 +32,7 @@
             © Copyright 2022. All Rights Reserved.
             <br>
             Created by 
-            <a href="https://www.facebook.com/guboyphoto/" target="_blank" class="effect">
+            <a href="https://www.facebook.com/boybbqs/" target="_blank" class="effect">
                 BOY BBQ
             </a> 
         </p>
