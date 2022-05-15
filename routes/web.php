@@ -56,7 +56,6 @@ Route::middleware(['checkEcommerceMaintenance'])->group(function () {
         Route::get('/verify-username', [App\Http\Controllers\EcommerceController::class, 'verifyUsername'])->name('verify-username');
         Route::get('/ecom/change-password', [App\Http\Controllers\EcommerceController::class, 'changePasswordPage'])->name('ecom.change-password');
         // Route::post('/page/order-received', [App\Http\Controllers\EcommerceController::class, 'orderReceivedPage'])->name('order-received-page');
-        //Route::post('/upload-image', 'Controller@uploadImage')->name('upload-image');
 
         Route::middleware(['auth', 'user', 'preventBackHistory'])->group(function () {
                 Route::post('/checkout', [App\Http\Controllers\EcommerceController::class, 'checkout'])->name('checkout');
