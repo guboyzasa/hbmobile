@@ -218,13 +218,19 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link text-success" href="#tab-repair" aria-controls="tab-information"
+                                data-toggle="tab"><i class='bx bx-wrench'></i>
+                                สถานะงานส่งซ่อม
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link text-primary" href="#tab-profile" aria-controls="tab-profile"
                                 data-toggle="tab">
                                 <i class='bx bxs-user-circle'></i> แก้ไขข้อมูลส่วนตัว
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-primary" href="#tab-customer-bill" aria-controls="tab-customer-bill"
+                            <a class="nav-link text-info" href="#tab-customer-bill" aria-controls="tab-customer-bill"
                                 data-toggle="tab">
                                 <i class='bx bx-receipt'></i> แก้ไขที่อยู่ออกบิล
                             </a>
@@ -383,7 +389,6 @@
                                         <th>วันที่เริ่มประกัน</th>
                                         <th>วันสิ้นสุดประกัน</th>
                                         <th>ผู้ลงทะเบียนรับประกัน</th>
-                                        {{-- <th>ผู้ลงทะเบียนงานซ่อม</th> --}}
                                         <th>สถานะ</th>
                                     </tr>
                                 </thead>
@@ -418,6 +423,50 @@
                                 </tbody>
                             </table>
                         </div><!-- ./tab-orders -->
+
+                        <div class="tab-pane" id="tab-repair">
+                            <table class="table shop_attributes" id="warranty_table">
+                                <thead>
+                                    <tr>
+                                        <th>ชื่อลูกค้า</th>
+                                        <th>เบอร์โทร</th>
+                                        <th>วันรับเครื่อง</th>
+                                        <th>รายละเอียด</th>
+                                        <th>ราคา</th>
+                                        <th>สถานะ</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if($warrantys)
+                                    @foreach($warrantys as $warranty)
+                                    <tr>
+                                        <td>{{ $warranty->serial_no }}</td>
+                                        <td>{{ $warranty->product->sku }}</td>
+                                        <td>{{ $warranty->warranty_start_date }}</td>
+                                        <td>{{ $warranty->warranty_end_date }}</td>
+                                        <td>
+                                            @if($warranty->agent)
+                                            {{ $warranty->agent->name }}
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @php
+                                            $dateNow = date_create(strval(date('Y-m-d')));
+                                            $dateEnd = date_create($warranty->warranty_end_date);
+                                            $diff = date_diff($dateNow, $dateEnd);
+                                            @endphp
+                                            @if((int)$diff->format('%R%a') >= 0)
+                                            <span class="badge badge-success"> กำลังดำเนินการ </span>
+                                            @else
+                                            <span class="badge badge-danger"> ซ่อมเสร็จแล้ว </span>
+                                            @endif
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                    @endif
+                                </tbody>
+                            </table>
+                        </div><!-- ./tab-repair -->
 
                         <div class="tab-pane" id="tab-profile">
                             <form action="#!" class="form-horizontal row" method="POST" id="form-customer">
