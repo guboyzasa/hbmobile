@@ -93,10 +93,10 @@
                         </a>
                     </li>
                     <li class="nav-item dropdown">
-                        {{-- <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             เพิ่มเติม
-                        </a> --}}
+                        </a>
                         <ul class="dropdown-menu">
                             <li><a class="nav-link" href="{{ route('agent') }}">จุดบริการ</a>
                             </li>
