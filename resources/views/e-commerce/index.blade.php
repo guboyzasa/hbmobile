@@ -57,7 +57,7 @@
                     @foreach($product_categorys as $product_category)
                     <div class="col-6 col-md-6 collection">
                         <a href="products?product_filter_category={{$product_category->id}}">
-                            <img src='{{ URL::asset("get-content/$product_category->logo_img") }}' class="img-fluid" alt="">
+                            <img src='{{$product_category->logo_img}}' class="img-fluid" alt="">
                         </a>
                     </div><!-- /.collection -->
                     @endforeach
@@ -79,7 +79,7 @@
                 <a href="products?product_filter_brand={{$product_brand->id}}">
                     <div class="promotion media">
                         <div class="media-body">
-                            <img src='{{ URL::asset("get-content/$product_brand->logo_img") }}' class="img-option" alt="">
+                            <img src='{{$product_brand->logo_img}}' class="img-option" alt="">
                         </div>
                     </div>
                 </a>
@@ -155,7 +155,7 @@
         <div class="row">
 
            
-            {{-- <div class="col-md-6 col-lg-3">
+            <div class="col-md-6 col-lg-3">
                 <a href="{{ route('produce') }}">
                 <div class="promotion text-center">
                     <div class="icon">
@@ -165,7 +165,7 @@
                     <p>ได้รับการตรวจสอบและรับรองมาตรญานโดย ม.อ.ก.</p>
                 </div>
                  </a>
-            </div> --}}
+            </div>
            
             <div class="col-md-6 col-lg-3">
                 <a href="{{ route('option') }}">
@@ -179,7 +179,7 @@
                 </a>
             </div>
 
-            {{-- <div class="col-md-6 col-lg-3">
+            <div class="col-md-6 col-lg-3">
                 <a href="{{ route('produce') }}">
                 <div class="promotion text-center">
                     <div class="icon">
@@ -189,9 +189,9 @@
                     <p>มีประกันอุบัติเหตุสูงสุด 1 ล้านบาท</p>
                 </div>
                 </a>
-            </div> --}}
+            </div>
 
-            {{-- <div class="col-md-6 col-lg-3">
+            <div class="col-md-6 col-lg-3">
                 <a href="{{ route('produce') }}">
                 <div class="promotion text-center">
                     <div class="icon">
@@ -201,7 +201,7 @@
                     <p>สินค้าทุกชิ้นผ่านการตรวจสอบอย่างดี</p>
                 </div>
                 </a>
-            </div> --}}
+            </div>
         </div>
     </div>
 </section><!-- /.brands -->
