@@ -269,7 +269,7 @@ class UserController extends Controller
         // return $req->all();
         $user = User::find($req->userId);
         $app_otp = env('APP_OTP','');
-        if ($app_otp == 0) {
+        if ($app_otp == 1) {
             $otp = $this->generateOTP($user->username);
             $obj = json_decode($otp->getContent());
             if ($obj->status == 200) {
