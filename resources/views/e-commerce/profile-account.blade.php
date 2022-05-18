@@ -422,8 +422,8 @@
                                                 <tr>
                                                     <td>{{ $warranty->serial_no }}</td>
                                                     <td>{{ $warranty->product->sku }}</td>
-                                                    <td>{{ $warranty->warranty_start_date }}</td>
-                                                    <td>{{ $warranty->warranty_end_date }}</td>
+                                                    <td>{{ date_format(date_create($warranty->warranty_start_date), "d-m-Y") }}</td>
+                                                    <td>{{ date_format(date_create($warranty->warranty_end_date), "d-m-Y") }}</td>
                                                     <td>
                                                         @if ($warranty->agent)
                                                             {{ $warranty->agent->name }}
@@ -468,17 +468,19 @@
                                                 <tr>
                                                     <td>
                                                         
-                                                        {{ $repair->repair_start_date }}
+                                                        {{ date_format(date_create($repair->repair_start_date), "d-m-Y") }}
                                                     
                                                     </td>
                                                     <!--วันที่รับเครื่อง -->
-                                                    <td>{{ $repair->model_id }}</td>
+                                                    <td>{{ $repair->model }}</td>
                                                     <!--รุ่น:model -->
                                                     <td>{{ $repair->detail }}</td>
                                                     <!--รายการซ่อม -->
-                                                    <td>{{ $repair->price_id }}</td>
+                                                    <td>{{ $repair->price }}</td>
                                                     <!--ราคา -->
-                                                    <td>{{ $repair->repair_end_date }}</td>
+                                                    <td>
+                                                        {{ date_format(date_create($repair->repair_end_date), "d-m-Y") }}
+                                                    </td>
                                                     <!--วันสิ้นสุดประกัน -->
                                                     <td>
                                                         @php
@@ -495,7 +497,7 @@
                                                     </td>
                                                     <td>
                                                         <?php
-                                                        $status = $repair->status_id;
+                                                        $status = $repair->status;
                                                         if($status == 1):
                                                           echo '<span class="badge badge-danger"> กำลังดำเนินการ </span>';
                                                           elseif ($status == 2):

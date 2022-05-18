@@ -22,6 +22,7 @@ class DashboardController extends Controller
         $countCustomer = Customer::count();
         $countUserCustomer = Customer::where('user_id', '!=', null)->count();
         $countAgent = Agent::count();
+        // $sumRepair = RepairRegistration::whereIn('price','==',4)->sum('price');
 
         return view('admin.dashboard-saas', compact('countOrder', 'sumOrder', 'countRegisterWarranty','countRegisterRepair', 'countCustomer', 'countUserCustomer', 'countAgent'));
     }

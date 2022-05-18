@@ -93,12 +93,12 @@ class ProductController extends Controller
             $product_id = $product->id;
             $product = Product::find($product_id);
 
-            $path = 'images/products/' . $product->id . '/';
+            $path = 'hbImages/products/' . $product->id . '/';
             if ($req->hasFile('imageFile')) {
                 $imageName = time() . '.' . $req->imageFile->extension();
                 Storage::disk('spaces')->putFileAs($path, $req->imageFile, $imageName);
-                // $req->imageFile->move(public_path('assets/images/product-brand/'), $imageName);
-                $path = 'images/products/' . $product->id . '/' . $imageName;
+                // $req->imageFile->move(public_path('assets/hbImages/product-brand/'), $imageName);
+                $path = 'hbImages/products/' . $product->id . '/' . $imageName;
                 $product->img = $path;
             }
             $product->name = $name;
@@ -111,13 +111,13 @@ class ProductController extends Controller
             DB::commit();
         }else{
 
-            $path = 'images/products/' . $product->id . '/';
+            $path = 'hbImages/products/' . $product->id . '/';
             if ($req->hasFile('imageFile')) {
 
                 $imageName = time() . '.' . $req->imageFile->extension();
                 Storage::disk('spaces')->putFileAs($path, $req->imageFile, $imageName);
-                // $req->imageFile->move(public_path('assets/images/product-brand/'), $imageName);
-                $path = 'images/products/' . $product->id . '/' . $imageName;
+                // $req->imageFile->move(public_path('assets/hbImages/product-brand/'), $imageName);
+                $path = 'hbImages/products/' . $product->id . '/' . $imageName;
                 $product->img = $path;
             }
 
@@ -186,7 +186,7 @@ class ProductController extends Controller
                     if ($key == 3) {
                         break;
                     }
-                    $path = 'images/products/' . $id . '/';
+                    $path = 'hbImages/products/' . $id . '/';
                     if ($base64_image != null && preg_match('/^data:image\/(\w+);base64,/', $base64_image)) {
                         
                         $data = substr($base64_image, strpos($base64_image, ',') + 1);
@@ -198,7 +198,7 @@ class ProductController extends Controller
                     } else {
                         dd('Base64 not match');
                     }
-                    $fullPath = 'images/products/'.$id. '/' . $filename;
+                    $fullPath = 'hbImages/products/'.$id. '/' . $filename;
                     $productImg = new ProductImage;
                     $productImg->product_id = $id;
                     $productImg->img = $fullPath;

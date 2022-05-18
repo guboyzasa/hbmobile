@@ -69,7 +69,7 @@ class AgentController extends Controller
             $agent->is_active = 1;
         }
 
-        $path = 'images/agents/';
+        $path = 'hbImages/agents/';
 
         if ($base64_image != null && preg_match('/^data:image\/(\w+);base64,/', $base64_image)) {
             $data = substr($base64_image, strpos($base64_image, ',') + 1);
@@ -78,7 +78,7 @@ class AgentController extends Controller
             $filename = strtotime(Carbon::now()) . rand(1, 100) . '.' . $extension;
             // Storage::put('public' . $path . $filename, $base64_decode);
             Storage::disk('spaces')->put($path . $filename, $base64_decode);
-            $fullPath = 'images/agents/' . $filename;
+            $fullPath = 'hbImages/agents/' . $filename;
             $agent->img = $fullPath;
         } else {
             // $data = [

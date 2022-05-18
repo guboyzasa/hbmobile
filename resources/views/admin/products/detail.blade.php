@@ -535,18 +535,18 @@ $('#inputImage').click(function(){
                 });
         }
 
-        function validateSize(input) {
+        // function validateSize(input) {
 
-            const fileSize = input.files[0].size / 1024 / 1024; // in MiB
-            if (fileSize > 1) {
-                // alert('File size exceeds 2 MiB');
-                Swal.fire('แจ้งเตือน!', 'ขนาดไฟล์ต้องน้อยกว่าหรือเท่ากับ 1 MB', 'warning');
-                document.getElementById("imageFile").value = "";
-                // $(file).val(''); //for clearing with Jquery
-            } else {
-                // Proceed further
-            }
-        }
+        //     const fileSize = input.files[0].size / 1024 / 1024; // in MiB
+        //     if (fileSize > 1) {
+        //         // alert('File size exceeds 2 MiB');
+        //         Swal.fire('แจ้งเตือน!', 'ขนาดไฟล์ต้องน้อยกว่าหรือเท่ากับ 1 MB', 'warning');
+        //         document.getElementById("imageFile").value = "";
+        //         // $(file).val(''); //for clearing with Jquery
+        //     } else {
+        //         // Proceed further
+        //     }
+        // }
 
 
 

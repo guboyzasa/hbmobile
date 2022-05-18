@@ -54,12 +54,12 @@ class ProductBrandController extends Controller
 
         DB::beginTransaction();
 
-        $path = 'images/product-brands/';
+        $path = 'hbImages/product-brands/';
         if ($req->hasFile('imageFile')) {
             $imageName = time() . '.' . $req->imageFile->extension();
             Storage::disk('spaces')->putFileAs($path, $req->imageFile , $imageName);
-            // $req->imageFile->move(public_path('assets/images/product-brand/'), $imageName);
-            $path = 'images/product-brands/' . $imageName;
+            // $req->imageFile->move(public_path('assets/hbImages/product-brand/'), $imageName);
+            $path = 'hbImages/product-brands/' . $imageName;
             $productBrand->logo_img = $path;
         }
         $productBrand->name = $name;

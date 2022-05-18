@@ -456,7 +456,7 @@ class EcommerceController extends Controller
         $date = $req->date;
         $payment_at = $date.' '.$time;
         $imgbase64 = $req->imgbase64;
-        $path = 'images/slip/'.$order_id.'/';
+        $path = 'hbImages/slip/'.$order_id.'/';
 
         if($order_id){
             

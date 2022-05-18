@@ -256,7 +256,27 @@
                                 <h5 class="font-size-14 mb-0">ลงทะเบียนงานซ่อม</h5>
                             </div>
                             <div class="text-muted mt-4">
-                                <h4>{{ number_format($countAgent)  }} คน<i class="mdi mdi-chevron-up ms-1 text-success"></i></h4>
+                                <h4>{{ number_format($countRegisterRepair)  }} คน<i class="mdi mdi-chevron-up ms-1 text-success"></i></h4>
+                         
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    <a href="#"> <!--{{ route('admin.agent.index') }} -->
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="avatar-xs me-3">
+                                    <span class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-18">
+                                        <i class="bx bx-run"></i>
+                                    </span>
+                                </div>
+                                <h5 class="font-size-14 mb-0">ยอดซ่อม</h5>
+                            </div>
+                            <div class="text-muted mt-4">
+                                <h4>{{ number_format($sumOrder)  }} บาท<i class="mdi mdi-chevron-up ms-1 text-success"></i></h4>
                          
                             </div>
                         </div>

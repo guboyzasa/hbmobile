@@ -71,7 +71,7 @@ class RegisterController extends Controller
     //     if (request()->has('avatar')) {
     //         $avatar = request()->file('avatar');
     //         $avatarName = time() . '.' . $avatar->getClientOriginalExtension();
-    //         $avatarPath = public_path('/images/');
+    //         $avatarPath = public_path('/hbImages/');
     //         $avatar->move($avatarPath, $avatarName);
     //     }
 
@@ -80,7 +80,7 @@ class RegisterController extends Controller
     //         'email' => $data['email'],
     //         'password' => Hash::make($data['password']),
     //         'dob' => date('Y-m-d', strtotime($data['dob'])),
-    //         'avatar' => "/images/" . $avatarName,
+    //         'avatar' => "/hbImages/" . $avatarName,
     //     ]);
     // }
 
@@ -95,7 +95,7 @@ class RegisterController extends Controller
 
         /** Make avata */
 
-        $path = 'users/images/';
+        $path = 'users/hbImages/';
         $fontPath = public_path('fonts/Oliciy.ttf');
         $char = strtoupper($request->name[0]);
         $newAvatarName = rand(12,34353).time().'_avatar.png';

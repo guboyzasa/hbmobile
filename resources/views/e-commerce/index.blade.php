@@ -31,6 +31,7 @@
     </div>
 </div><!-- /.swiper-slider -->
 
+
 <section class="section collections pb-0 " id="home-collections">
     <div class="container">
         <div class="row">
@@ -57,7 +58,7 @@
                     @foreach($product_categorys as $product_category)
                     <div class="col-6 col-md-6 collection">
                         <a href="products?product_filter_category={{$product_category->id}}">
-                            <img src='{{$product_category->logo_img}}' class="img-fluid" alt="">
+                            <img src='{{ URL::asset("get-content/$product_category->logo_img") }}' class="img-fluid" alt="">
                         </a>
                     </div><!-- /.collection -->
                     @endforeach
@@ -79,7 +80,7 @@
                 <a href="products?product_filter_brand={{$product_brand->id}}">
                     <div class="promotion media">
                         <div class="media-body">
-                            <img src='{{$product_brand->logo_img}}' class="img-option" alt="">
+                            <img src='{{ URL::asset("get-content/$product_brand->logo_img") }}' class="img-option" alt="">
                         </div>
                     </div>
                 </a>
@@ -89,7 +90,7 @@
     </div><!-- /.container -->
 </section><!-- /.promotions -->
 
-{{-- <section class="section products second-style" id="home-products">
+<section class="section products second-style" id="home-products">
     <div class="container">
         <div class="row">
             <div class="col-sm-12 section-title text-center">
@@ -148,7 +149,7 @@
             </div>
         </div><!-- /.row -->
     </div><!-- /.container -->
-</section><!-- /.products --> --}}
+</section><!-- /.products -->
 
 <section class="section brands pt-0 pb-4">
     <div class="container">

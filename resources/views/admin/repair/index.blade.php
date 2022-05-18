@@ -155,7 +155,7 @@
                                         <input type="text" id="endDate" class="form-control form-inputs"
                                             placeholder="วัน-เดือน-ปี" data-date-format="dd-mm-yyyy"
                                             data-date-container='#datepicker2' data-date-end-date=""
-                                            value="{{ date('d-m-Y', strtotime(date('Y-m-d') . '+12 months')) }}"
+                                            value="{{ date('d-m-Y', strtotime(date('Y-m-d') . '+1 day')) }}"
                                             data-provide="datepicker" name="endDate" autocomplete="off" required>
                                         <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
 
@@ -168,19 +168,19 @@
                         <div class="mb-3">
                             <div class="row">
                                 <div class="col-6">
-                                    <label for="product" class="form-label">รุ่น:model</label>
-                                    <input type="text" class="form-control formInput formInputWarranty" id="product"
-                                        name="products[]" placeholder="เพิ่มรุ่น:model" aria-describedby="add"
-                                        aria-label="product">
+                                    <label for="model" class="form-label">รุ่น:model</label>
+                                    <input type="text" class="form-control formInput formInputWarranty" id="model"
+                                        name="model" placeholder="เพิ่มรุ่น:model" aria-describedby="add"
+                                        aria-label="model">
 
                                 </div>
 
                                 <div class="col-6">
                                     <label for="" class="form-label">ราคา </label>
                                     <div class="input-group" id="datepicker2">
-                                        <input type="text" class="form-control formInput formInputWarranty" id="shop"
+                                        <input type="text" class="form-control formInput formInputWarranty" id="price"
                                         oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
-                                        name="shops[]" placeholder="ราคา" aria-describedby="add" aria-label="shop">
+                                        name="price" placeholder="ราคา" aria-describedby="add" aria-label="shop">
                                         <span class="input-group-text">บาท</span>
                                     </div>
                                 </div>
@@ -194,7 +194,7 @@
                                 <div class="col-6">
 
                                     <label for="" class="form-label">สถานะซ่อม</label>
-                                    <select name="" id="" class="form-control formInput formInputWarranty" required>
+                                    <select name="status" id="" class="form-control formInput formInputWarranty" required>
                                         <option value=""> -- เลือกสถานะซ่อม -- </option>
                                         @foreach ($statusRe as $status)
                                             <option value="{{ $status->id }}">{{ $status->name }}</option>
@@ -209,12 +209,12 @@
                                 <div class="input-group" style="margin-bottom: 5px;">
                                     <button class="btn btn-light" type="button"> <i class="bx bx-wrench text-primary"></i>
                                     </button>
-                                    <input type="text" class="form-control details formInputWarranty" id="detail"
-                                        name="details[]" placeholder="เพิ่มรายการซ่อม" aria-describedby="add"
+                                    <input type="text" class="form-control detail formInputWarranty" id="detail"
+                                        name="detail" placeholder="เพิ่มรายการซ่อม" aria-describedby="add"
                                         aria-label="detail">
                                     {{-- <button class="btn btn-primary check_button" type="button" id="check"><i class="bx bx-check-double"></i> </button> --}}
-                                    <button class="btn btn-success add_button" type="button" id="add"> <i
-                                            class="bx bxs-add-to-queue"></i> </button>
+                                    {{-- <button class="btn btn-success add_button" type="button" id="add"> <i
+                                            class="bx bxs-add-to-queue"></i> </button> --}}
                                 </div>
                             </div>
                         </div>
@@ -277,7 +277,7 @@
                                         <input type="text" id="endDateEdit" class="form-control form-inputs"
                                             placeholder="วัน-เดือน-ปี" data-date-format="dd-mm-yyyy"
                                             data-date-container='#datepicker4' data-date-end-date=""
-                                            value="{{ date('d-m-Y', strtotime(date('Y-m-d') . '+12 months')) }}"
+                                            value="{{ date('d-m-Y', strtotime(date('Y-m-d') . '+1 day')) }}"
                                             data-provide="datepicker" name="endDate" autocomplete="off" required>
                                         <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
 
@@ -291,20 +291,20 @@
 
                                 <div class="col-6">
 
-                                    <label for="product" class="form-label">รุ่น:model</label>
+                                    <label for="model" class="form-label">รุ่น:model</label>
                                     {{-- <select name="product" id="" class="form-control formInput"
                                         style="width: 100% " required> --}}
-                                    <input type="text" class="form-control products" id="productEdit" name="products[]"
-                                        placeholder="เพิ่มรุ่น:model" aria-describedby="add" aria-label="product">
+                                    <input type="text" class="form-control models" id="modelEdit" name="model"
+                                        placeholder="เพิ่มรุ่น:model" aria-describedby="add" aria-label="model">
 
 
                                 </div>
 
                                 <div class="col-6">
-                                    <label for="shop" class="form-label">ราคา</label>
+                                    <label for="price" class="form-label">ราคา</label>
                                     <div class="input-group" id="datepicker2">
-                                        {{-- <select name="shop" id="shopEdit" class="form-control formInput" required> --}}
-                                        <input type="text" class="form-control serials" id="shopEdit" name="serials[]"
+                                        {{-- <select name="shop" id="priceEdit" class="form-control formInput" required> --}}
+                                        <input type="text" class="form-control price" id="priceEdit" name="price"
                                         oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
                                             placeholder="ราคา" aria-describedby="add" aria-label="serial">
                                         <span class="input-group-text">บาท</span>
@@ -318,8 +318,8 @@
 
                                 <div class="col-6">
 
-                                    <label for="" class="form-label">สถานะซ่อม</label>
-                                    <select name="" id="" class="form-control formInput formInputWarranty" required>
+                                    <label for="status" class="form-label">สถานะซ่อม</label>
+                                    <select name="status" id="statusEdit" class="form-control ">
                                         <option value=""> -- เลือกสถานะซ่อม -- </option>
                                         @foreach ($statusRe as $status)
                                             <option value="{{ $status->id }}">{{ $status->name }}</option>
@@ -335,7 +335,7 @@
                                 <div class="input-group" style="margin-bottom: 5px;">
                                     <button class="btn btn-light" type="button"> <i
                                             class="bx bx-wrench text-primary"></i> </button>
-                                    <input type="text" class="form-control details" id="detailEdit" name="details[]"
+                                    <input type="text" class="form-control detail" id="detailEdit" name="detail"
                                         placeholder="เพิ่มรายการซ่อม" aria-describedby="add" aria-label="detail">
                                     {{-- <button class="btn btn-primary check_button" type="button" id="check"><i class="bx bx-check-double"></i> </button> --}}
 
@@ -363,7 +363,7 @@
         $(document).ready(function() {
             var simple = '';
             $('.select2').select2();
-            var repair = '';
+            var warranty = '';
             var order = '';
             var customerId = $('#customer_id').val();
             var i = 0;
@@ -380,8 +380,8 @@
         $("#startDate").change(function() {
             var d = $(this).val();
             // var newDate = moment(d).add(1, 'years');
-            var newDate = moment(d, "DD-MM-YYYY").add(1, 'years').format('L');
-            var endDate = moment(newDate).format('DD-MM-YYYY');
+            // var newDate = moment(d, "DD-MM-YYYY").format('L');
+            var endDate = moment().format('DD-MM-YYYY');
             console.log(newDate)
             console.log(endDate)
             $("#endDate").val(endDate);
@@ -391,13 +391,8 @@
         $('#warranty-form').submit(function(e) {
             e.preventDefault();
             let formData = new FormData(this);
-            var serial = $('#serial').val();
             var customer = $('#customer').val();
-            var product = $('#product').val();
-            if (serial == '' || serial == null || customer == '' || customer == null || product == '' || product ==
-                null) {
-                Swal.fire('ผิดพลาด!', 'กรุณากรอกข้อมูลให้ครบถ้วน', 'warning');
-            } else {
+       
                 openLoading();
 
                 $.ajax({
@@ -415,7 +410,7 @@
                         closeLoading();
                     }
                 });
-            }
+            
 
         });
 
@@ -423,11 +418,11 @@
             $('#modal_title').text('รายละเอียดการซ่อม');
             $('#id').val(obj.id);
             $("#customer").val(obj.customer_id).trigger('change'); //ลูกค้า
-            $("#product").val(obj.product_id).trigger('change'); //รุ่น
-            $('#shop').val(obj.shop_id); //ราคา
-            $('#serial').val(obj.serial_no); //สถานะ
-            $('#startDate').val(moment(obj.warranty_start_date).format('DD-MM-YYYY'));
-            $('#endDate').val(moment(obj.warranty_end_date).format('DD-MM-YYYY'));
+            $("#model").val(obj.model).trigger('change'); //รุ่น
+            $('#price').val(obj.price); //ราคา
+            $('#status').val(obj.status); //สถานะ
+            $('#startDate').val(moment(obj.repair_start_date).format('DD-MM-YYYY'));
+            $('#endDate').val(moment(obj.repair_end_date).format('DD-MM-YYYY'));
             $('#detail').val(obj.detail); //รายการซ่อม
             $('#simpleModal').modal("show");
 
@@ -520,7 +515,7 @@
 
         $('#warranty_table').ready(function() {
 
-            repair = $('#warranty_table').DataTable({
+            warranty = $('#warranty_table').DataTable({
                 "processing": false,
                 "serverSide": false,
                 "info": false,
@@ -550,7 +545,7 @@
                     },
 
                     {
-                        "data": "model_id",
+                        "data": "model",
                     },
 
                     {
@@ -558,7 +553,7 @@
                     },
 
                     {
-                        "data": "price_id",
+                        "data": "price",
                     },
 
                     {
@@ -593,7 +588,7 @@
                     // },
                     
                       {
-                        "data": "status_id",
+                        "data": "status",
                         "render": function(data, type, full) {
                             var text = data;
                             if(text==1){
@@ -659,14 +654,14 @@
         $('.warranty-form').submit(function(e) {
             e.preventDefault();
             let formData = new FormData(this);
-            var serials = $('#serials').val();
+            // var serials = $('#serials').val();
             var customer = $('#customer').val();
             var id = $('#warranty_id').val();
-            var product = $('#product').val();
+            // var product = $('#product').val();
             console.log('customer : ' + customer)
-            console.log('product : ' + product)
+            // console.log('product : ' + product)
             console.log('id : ' + id)
-            if (customer == null && customer == '' && product == '' && product == null) {
+            if (customer == null && customer == '' ) {
                 Swal.fire('ผิดพลาด!', 'กรุณากรอกข้อมูลให้ครบถ้วน', 'warning');
             } else {
                 openLoading();
@@ -713,9 +708,9 @@
             $('#warranty_id').val(obj.id);
             // $("#customerEdit").val(obj.customer_id);
             $("#customerEdit").val(obj.customer_id).trigger('change');
-            $("#productEdit").val(obj.product_id).trigger('change');
-            $('#shopEdit').val(obj.shop_id).trigger('change');
-            $('#serialEdit').val(obj.serial_no);
+            $("#modelEdit").val(obj.model).trigger('change');
+            $('#priceEdit').val(obj.price).trigger('change');
+            $('#statusEdit').val(obj.status).trigger('change');
             $('#startDateEdit').val(moment(obj.repair_start_date).format('DD-MM-YYYY'));
             $('#endDateEdit').val(moment(obj.repair_end_date).format('DD-MM-YYYY'));
             $('#detailEdit').val(obj.detail).trigger('change');

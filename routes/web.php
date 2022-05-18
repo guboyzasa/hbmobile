@@ -204,13 +204,13 @@ Route::post('/change-password', [App\Http\Controllers\Controller::class, 'change
 ##Profile account
 Route::get('/profile-account', [App\Http\Controllers\EcommerceController::class, 'profileAccount'])->name('profile-account');
 
-// Route::get('/get-content/{file}', function ($file) {
-//         $url = Storage::disk('spaces')->temporaryUrl($file, now()->addMinutes(5));
-//         if ($url) {
-//                 return Redirect::to($url);
-//         }
-//         return abort(404);
-// })->where('file', '.+');
+Route::get('/get-content/{file}', function ($file) {
+        $url = Storage::disk('spaces')->temporaryUrl($file, now()->addMinutes(5));
+        if ($url) {
+                return Redirect::to($url);
+        }
+        return abort(404);
+})->where('file', '.+');
 
 
 

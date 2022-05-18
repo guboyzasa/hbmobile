@@ -56,18 +56,18 @@ class ProductCategoryController extends Controller
         DB::beginTransaction();
 
         // // $path = '';
-        // $path = 'images/categories/';
+        // $path = 'hbImages/categories/';
         // if ($req->hasFile('imageFile')) {
         //     $imageName = time() . '.' . $req->imageFile->extension();
-        //     $req->imageFile->move(public_path('assets/images/category/'), $imageName);
-        //     $path = 'assets/images/category/' . $imageName;
+        //     $req->imageFile->move(public_path('assets/hbImages/category/'), $imageName);
+        //     $path = 'assets/hbImages/category/' . $imageName;
         // }
-        $path = 'images/product-categories/';
+        $path = 'hbImages/product-categories/';
         if ($req->hasFile('imageFile')) {
             $imageName = time() . '.' . $req->imageFile->extension();
             Storage::disk('spaces')->putFileAs($path, $req->imageFile, $imageName);
-            // $req->imageFile->move(public_path('assets/images/product-brand/'), $imageName);
-            $path = 'images/product-categories/' . $imageName;
+            // $req->imageFile->move(public_path('assets/hbImages/product-brand/'), $imageName);
+            $path = 'hbImages/product-categories/' . $imageName;
             $productCat->logo_img = $path;
         }
 

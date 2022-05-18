@@ -19,7 +19,7 @@ class AgentController extends Controller
 {
     public function index()
     {
-        // $img = Storage::disk('spaces')->get('images/agents/163215661669.jpeg');
+        // $img = Storage::disk('spaces')->get('hbImages/agents/163215661669.jpeg');
 
        
         $thaiRegions = ThaiRegion::all();
@@ -67,7 +67,7 @@ class AgentController extends Controller
             $agent->is_active = 1;
         }
 
-        $path = 'images/agents/';
+        $path = 'hbImages/agents/';
 
         if ($base64_image != null && preg_match('/^data:image\/(\w+);base64,/', $base64_image)) {
             $data = substr($base64_image, strpos($base64_image, ',') + 1);
@@ -76,7 +76,7 @@ class AgentController extends Controller
             $filename = strtotime(Carbon::now()) . rand(1, 100) . '.' . $extension;
             // Storage::put('public' . $path . $filename, $base64_decode);
             Storage::disk('spaces')->put($path . $filename, $base64_decode);
-            $fullPath = 'images/agents/' . $filename;
+            $fullPath = 'hbImages/agents/' . $filename;
             $agent->img = $fullPath;
         } else {
             $data = [
@@ -89,8 +89,8 @@ class AgentController extends Controller
         }
         // if ($req->hasFile('imageFile')) {
         //     $imageName = time() . '.' . $req->imageFile->extension();
-        //     $req->imageFile->move(public_path('assets/images/category/'), $imageName);
-        //     $path = 'assets/images/category/' . $imageName;
+        //     $req->imageFile->move(public_path('assets/hbImages/category/'), $imageName);
+        //     $path = 'assets/hbImages/category/' . $imageName;
         // }
 
         $agent->name = $name;
