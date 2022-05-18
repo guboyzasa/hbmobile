@@ -53,9 +53,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="waves-effect">
+                    <a href="{{ route('admin.repair.index') }}" class="waves-effect">
                         <i class="bx bx-wrench"></i>
-                        <span key="t-warranty"> ลงทะเบียนงานซ่อม </span>
+                        <span key="t-repair"> ลงทะเบียนงานซ่อม </span>
                     </a>
                 </li>
 

@@ -1,6 +1,6 @@
-@extends('layouts.master')
+@extends('layouts-agent.master')
 
-@section('title') ลงทะเบียนรับประกัน | Admin - HB Mobile Services  @endsection
+@section('title') ลงทะเบียนงานซ่อม | Agent - HB Mobile Services @endsection
 
 @section('css')
 <link href="{{ URL::asset('/assets/libs/select2/select2.min.css') }}" rel="stylesheet" type="text/css" />
@@ -17,7 +17,7 @@
 
     @component('components.breadcrumb')
         @slot('li_1') Dashboard @endslot
-        @slot('title') ลงทะเบียนรับประกัน @endslot
+        @slot('title') ลงทะเบียนงานซ่อม @endslot
     @endcomponent
 
     <div class="row">
@@ -27,7 +27,7 @@
                      <button type="button" style="float: right; margin: 2px;" class="btn btn-success customer_btn btn-sm" ><i class="bx bx-plus"></i> เพิ่มลูกค้า </button>
                     <button type="button" style="float: right; margin: 2px;" class="btn btn-primary warranty_btn btn-sm" ><i class="bx bx-plus"></i> ลงทะเบียน </button>
                 
-                    <h4 class="card-title">ลงทะเบียนรับประกัน</h4>
+                    <h4 class="card-title">ลงทะเบียนงานซ่อม</h4>
                     <br>
 
                     <br>
@@ -40,7 +40,7 @@
                                 <th>ประกัน(เดือน)</th>
                                 {{-- <th>วันเริ่มประกัน</th> --}}
                                 <th>วันสิ้นสุดประกัน</th>
-                                <th>ลงทะเบียนจาก</th>
+                                {{-- <th>ลงทะเบียนจาก</th> --}}
                                 <th>สถานะ</th>
                                 <th></th>
                             </tr>
@@ -56,7 +56,97 @@
         </div> <!-- end col -->
     </div> <!-- end row -->
 
-   
+    {{-- <div class="modal fade update-profile" id="simpleModal" role="dialog"
+        aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="myLargeModalLabel"><span id="modal_title"></span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+
+                </div>
+                <div class="modal-body">
+
+                    <form class="form-horizontal" action="#" id="warranty-form">
+                        @csrf
+                        <input type="hidden" class="formInput" name="id" value="" id="id">
+                        <div class="mb-3">
+                            <label for="customer" class="form-label ">ลูกค้า</label>
+                            <select name="customer" id="customer" class="form-control select2 formInput" style="width: 100% " required>
+                                <option value=""> -- เลือกลูกค้า -- </option>
+                                @foreach ($customers as $customer)
+                                     <option value="{{ $customer->id }}">{{ $customer->phone }} {{ $customer->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="product" class="form-label">สินค้า</label>
+                            <select name="product" id="product" class="form-control select2 formInput"  style="width: 100% " required>
+                                <option value=""> -- เลือกสินค้า -- </option>
+                                @foreach ($products as $product)
+                                    <option value="{{ $product->id }}">{{ $product->sku }} {{ $product->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="shop" class="form-label">ซื้อจาก</label>
+                            <select name="shop" id="shop" class="form-control formInput" required>
+                                <option value=""> -- เลือกซื้อจาก -- </option>
+                                @foreach ($shops as $shop)
+                                     <option value="{{ $shop->id }}">{{ $shop->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="serial" class="form-label">Serial No </label>
+                            <input type="text" class="formInput form-control" id="serial" value="" name="serial"
+                                placeholder="Serial No" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="row">
+                                <div class="col-6">
+                                    <label for="datepicker1">วันที่เริ่มรับประกัน</label>
+                                    <div class="input-group" id="datepicker1">
+                                        <input type="text" id="startDate" class="form-control" placeholder="วัน-เดือน-ปี" data-date-format="dd-mm-yyyy"
+                                            data-date-container='#datepicker1' data-date-end-date="" value="{{ date('d-m-Y')}}"
+                                            data-provide="datepicker" name="startDate" autocomplete="off" required>
+                                        <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                       <label for="datepicker2">วันสิ้นสุดการรับประกัน</label>
+                                        <div class="input-group" id="datepicker2">
+                                            <input type="text" id="endDate" class="form-control form-inputs" placeholder="วัน-เดือน-ปี" data-date-format="dd-mm-yyyy" 
+                                                data-date-container='#datepicker2' data-date-end-date="" value="{{ date('d-m-Y', strtotime(date('Y-m-d'). "+12 months")) }}"
+                                                data-provide="datepicker" name="endDate" autocomplete="off" required>
+                                            <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="detail" class="form-label">รายละเอียกเพิ่มเติม</label>
+                            <input type="text" class="formInput form-control" id="detail" value="" name="detail"
+                                placeholder="รายละเอียกเพิ่มเติม" >
+                        </div>                 
+
+                        <div class="mt-3 d-grid">
+                            <br>
+                            <button class="btn btn-primary waves-effect waves-light" type="submit"> บันทึก </button>
+                        </div>
+                    </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal --> --}}
 
     <div class="modal fade update-profile" id="customerModal" tabindex="-1" role="dialog"
         aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -167,9 +257,8 @@
                                 <div class="col-6">
                                     <label for="shop" class="form-label">ซื้อจาก</label>
                                     <select name="shop" id="shop" class="form-control formInput formInputWarranty" required>
-                                        <option value=""> -- เลือกซื้อจาก -- </option>
                                         @foreach ($shops as $shop)
-                                            <option value="{{ $shop->id }}">{{ $shop->name }}</option>
+                                            <option value="{{ $shop->id }}" selected="selected">{{ $shop->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -274,9 +363,9 @@
                                 <div class="col-6">
                                     <label for="shop" class="form-label">ซื้อจาก</label>
                                     <select name="shop" id="shopEdit" class="form-control formInput" required>
-                                        <option value=""> -- เลือกซื้อจาก -- </option>
+                                        {{-- <option value=""> -- เลือกซื้อจาก -- </option> --}}
                                         @foreach ($shops as $shop)
-                                            <option value="{{ $shop->id }}">{{ $shop->name }}</option>
+                                            <option value="{{ $shop->id }}" selected="selected">{{ $shop->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -329,7 +418,8 @@
             var i = 0;
         });
 
-        
+    
+
         $(".create_btn").click(function () {
 
             $('#modal_title').text('ลงทะเบียนรับประกัน');
@@ -362,7 +452,7 @@
                 $.ajax({
                     type: "method",
                     method: "POST",
-                    url: "{{ route('admin.warranty.store') }}",
+                    url: "{{ route('agent-member.repair.store') }}",
                     processData: false,
                     contentType: false,
                     data: formData,
@@ -406,7 +496,7 @@
                 }).then((result) => {
                     if (result.isConfirmed) {
                             openLoading();
-                            $.post("{{  route('admin.warranty.destroy')  }}", data = {
+                            $.post("{{  route('agent-member.repair.destroy')  }}", data = {
                                     _token: '{{ csrf_token() }}',
                                     id: id,
                                 },
@@ -434,7 +524,7 @@
             }else{
        
                 openLoading();
-                 $.post("{{  route('admin.customer.store')  }}", data = {
+                 $.post("{{  route('agent-member.customer.store')  }}", data = {
                          _token: '{{ csrf_token() }}',
                          name: name,
                          phone: phone,
@@ -460,7 +550,7 @@
         $("#phone").keyup(function(){
             // console.log('OK');
             if($(this).val().length == 10){
-                            $.post("{{  route('admin.customer.check-phone')  }}", data = {
+                            $.post("{{  route('agent-member.customer.check-phone')  }}", data = {
                                     _token: '{{ csrf_token() }}',
                                     text:   $(this).val(),
                                 },
@@ -491,7 +581,7 @@
                     [0, "desc"]
                 ],
                 "ajax": {
-                    "url": `{{ route('admin.warranty.show') }}`,
+                    "url": `{{ route('agent-member.repair.show') }}`,
                     "method": "POST",
                     "data": {
                         "_token": "{{ csrf_token()}}",
@@ -499,7 +589,7 @@
                 },
                 'columnDefs': [
                     {
-                        "targets": [0,1,2,3,4,5,6,7],
+                        "targets": [0,1,2,3,4,5],
                         "className": "text-center",
                     },
                 ],
@@ -540,13 +630,7 @@
                             return moment(data).format('DD-MM-YYYY');
                         }
                     },
-                    {
-                        "data": "agent_id",
-                         "render": function (data, type, full) {
-                            var text = full.agent ? full.agent.name : 'Admin';
-                            return text;
-                        }
-                    },
+       
 
                     {
                         "data": "warranty_end_date",
@@ -628,7 +712,7 @@
                     $.ajax({
                         type: "method",
                         method: "POST",
-                        url: "{{ route('admin.warranty.update') }}",
+                        url: "{{ route('agent-member.repair.update') }}",
                         processData: false,
                         contentType: false,
                         data: formData,
@@ -644,7 +728,7 @@
                     $.ajax({
                         type: "method",
                         method: "POST",
-                        url: "{{ route('admin.warranty.store') }}",
+                        url: "{{ route('agent-member.repair.store') }}",
                         processData: false,
                         contentType: false,
                         data: formData,
@@ -691,7 +775,7 @@
                 }).then((result) => {
                     if (result.isConfirmed) {
                             openLoading();
-                            $.post("{{  route('admin.warranty.destroy')  }}", data = {
+                            $.post("{{  route('agent-member.repair.destroy')  }}", data = {
                                     _token: '{{ csrf_token() }}',
                                     id: id,
                                 },

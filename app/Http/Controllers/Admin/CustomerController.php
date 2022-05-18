@@ -10,6 +10,7 @@ use App\Models\District;
 use App\Models\Province;
 use App\Models\SubDistrict;
 use App\Models\WarrantyRegistration;
+use App\Models\RepairRegistration;
 use App\Models\Product;
 use App\Models\Shop;
 use App\Models\Zipcode;
@@ -55,13 +56,14 @@ class CustomerController extends Controller
         $products = Product::orderBy('id', 'desc')->get();
         $shops = Shop::all();
         $countWarranty = WarrantyRegistration::where('customer_id', 'id')->count('id');
+        $countRepair = RepairRegistration::where('customer_id', 'id')->count('id');
 
         if($customer == null){
             return abort(404);
         }
 
         // return $provinceId;
-        return view('admin.customers.profile', compact('customer', 'provinces', 'customerAddress', 'customerBillAddress', 'addressDistricts', 'addressSubDistricts', 'billDistricts', 'billSubDistricts', 'countWarranty', 'products', 'shops'));
+        return view('admin.customers.profile', compact('customer', 'provinces', 'customerAddress', 'customerBillAddress', 'addressDistricts', 'addressSubDistricts', 'billDistricts', 'billSubDistricts', 'countWarranty','countRepair', 'products', 'shops'));
     }
 
     public function getDistrict(Request $req)

@@ -21,6 +21,7 @@ use App\Models\OrderPayment;
 use App\Models\Customer;
 use App\Models\Zipcode;
 use App\Models\WarrantyRegistration;
+use App\Models\RepairRegistration;
 use App\Models\User;
 use App\Models\Province;
 use App\Models\District;
@@ -429,9 +430,10 @@ class EcommerceController extends Controller
 
         $company = CompanyContract::first();
         $warrantys = WarrantyRegistration::with('customer', 'product','agent')->where('customer_id', $customer->id)->orderBy('id', 'asc')->get();
+        $repairs = RepairRegistration::with('customer', 'product','agent')->where('customer_id', $customer->id)->orderBy('id', 'asc')->get();
         $provinces = Province::all();
   
-        return view('e-commerce.profile-account',compact('company','order','orders','customer','warrantys','provinces','user'));
+        return view('e-commerce.profile-account',compact('company','order','orders','customer','warrantys','repairs','provinces','user'));
     }
 
     public function formUploadSlip($id)

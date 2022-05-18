@@ -805,11 +805,7 @@
                         "data": "id",
                         "render": function (data, type, full) {
                             var obj = JSON.stringify(full);
-                            // var button = `
-                            // <a  href="/agent-member/customer/profile/${data}" class="btn btn-sm btn-info" ><i class="bx bx-pencil"></i> ดูรายละเอียด </button>
-                            //  <button type="button" class="btn btn-sm btn-danger" onclick='destroy(${data})'><i class="bx bx-trash"></i> ลบ </button>
-                            // `;
-
+             
                             var button = `
                                     <a  href="/agent-member/customer/profile/${data}" class="btn btn-sm btn-info" ><i class="bx bx-search-alt-2"></i>  </a>`;
                             if(agentId == full.agent_id){

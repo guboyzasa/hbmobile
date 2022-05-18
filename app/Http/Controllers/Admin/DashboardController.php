@@ -8,6 +8,7 @@ use App\Models\Agent;
 use App\Models\Customer;
 use App\Models\Order;
 use App\Models\WarrantyRegistration;
+use App\Models\RepairRegistration;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -17,11 +18,12 @@ class DashboardController extends Controller
         $countOrder = Order::where('status', '!=', 6)->count();
         $sumOrder = Order::whereIn('status', [2,3,4,5])->sum('total_amount');
         $countRegisterWarranty = WarrantyRegistration::count();
+        $countRegisterRepair = RepairRegistration::count();
         $countCustomer = Customer::count();
         $countUserCustomer = Customer::where('user_id', '!=', null)->count();
         $countAgent = Agent::count();
 
-        return view('admin.dashboard-saas', compact('countOrder', 'sumOrder', 'countRegisterWarranty', 'countCustomer', 'countUserCustomer', 'countAgent'));
+        return view('admin.dashboard-saas', compact('countOrder', 'sumOrder', 'countRegisterWarranty','countRegisterRepair', 'countCustomer', 'countUserCustomer', 'countAgent'));
     }
 
 }

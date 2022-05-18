@@ -8,6 +8,7 @@ use App\Models\Agent;
 use App\Models\Customer;
 use App\Models\Order;
 use App\Models\WarrantyRegistration;
+use App\Models\RepairRegistration;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -27,10 +28,11 @@ class DashboardController extends Controller
         $agentId = $agent->id;
 
         $countRegisterWarranty = WarrantyRegistration::where('agent_id', $agentId)->count();
+        $countRegisterRepair = RepairRegistration::where('agent_id', $agentId)->count();
         $countCustomer = Customer::where('agent_id', $agentId)->count();
         $countUserCustomer = Customer::where('agent_id', $agentId)->where('user_id', '!=', null)->count();
 
-        return view('agent.dashboard-saas', compact('countRegisterWarranty', 'countCustomer', 'countUserCustomer'));
+        return view('agent.dashboard-saas', compact('countRegisterWarranty','countRegisterRepair', 'countCustomer', 'countUserCustomer'));
     }
 
 }

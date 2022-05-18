@@ -138,13 +138,22 @@ Route::middleware(['checkAdminMaintenance'])->group(function () {
                 Route::post('/warranty/destroy', [App\Http\Controllers\Admin\WarrantyController::class, 'destroy'])->name('warranty.destroy');
                 Route::post('/warranty/check-code', [App\Http\Controllers\Admin\WarrantyController::class, 'checkCode'])->name('warranty.check-code');
                 Route::post('/warranty/warranty-customer/{id}', [App\Http\Controllers\Admin\WarrantyController::class, 'warrantyCustomer'])->name('warranty.warranty-customer');
+                
+                ##Repair
+                Route::get('/repair', [App\Http\Controllers\Admin\RepairController::class, 'index'])->name('repair.index');
+                Route::post('/repair/show', [App\Http\Controllers\Admin\RepairController::class, 'show'])->name('repair.show');
+                Route::post('/repair/store', [App\Http\Controllers\Admin\RepairController::class, 'store'])->name('repair.store');
+                Route::post('/repair/update', [App\Http\Controllers\Admin\RepairController::class, 'update'])->name('repair.update');
+                Route::post('/repair/destroy', [App\Http\Controllers\Admin\RepairController::class, 'destroy'])->name('repair.destroy');
+                Route::post('/repair/check-code', [App\Http\Controllers\Admin\RepairController::class, 'checkCode'])->name('repair.check-code');
+                Route::post('/repair/repair-customer/{id}', [App\Http\Controllers\Admin\RepairController::class, 'repairCustomer'])->name('repair.repair-customer');
 
 
         });
 });
 
 Route::middleware(['checkAgentMaintenance'])->group(function () {
-
+        ##AGENT
         Route::prefix('agent-member')->name('agent-member.')->middleware(['agent', 'auth', 'preventBackHistory'])->group(function () {
         
                 // Route::get('/', [App\Http\Controllers\Agent\HomeController::class, 'root'])->name('root');
@@ -176,6 +185,16 @@ Route::middleware(['checkAgentMaintenance'])->group(function () {
                 Route::post('/warranty/destroy', [App\Http\Controllers\Agent\WarrantyController::class, 'destroy'])->name('warranty.destroy');
                 Route::post('/warranty/check-code', [App\Http\Controllers\Agent\WarrantyController::class, 'checkCode'])->name('warranty.check-code');
                 Route::post('/warranty/warranty-customer/{id}', [App\Http\Controllers\Agent\WarrantyController::class, 'warrantyCustomer'])->name('warranty.warranty-customer');
+                
+                ##Repair
+                Route::get('/repair', [App\Http\Controllers\Agent\RepairController::class, 'index'])->name('repair.index');
+                Route::post('/repair/show', [App\Http\Controllers\Agent\RepairController::class, 'show'])->name('repair.show');
+                Route::post('/repair/store', [App\Http\Controllers\Agent\RepairController::class, 'store'])->name('repair.store');
+                Route::post('/repair/update', [App\Http\Controllers\Agent\RepairController::class, 'update'])->name('repair.update');
+                Route::post('/repair/destroy', [App\Http\Controllers\Agent\RepairController::class, 'destroy'])->name('repair.destroy');
+                Route::post('/repair/check-code', [App\Http\Controllers\Agent\RepairController::class, 'checkCode'])->name('repair.check-code');
+                Route::post('/repair/repair-customer/{id}', [App\Http\Controllers\Agent\RepairController::class, 'repairCustomer'])->name('repair.repair-customer');
+
         });
 });
 
@@ -185,13 +204,13 @@ Route::post('/change-password', [App\Http\Controllers\Controller::class, 'change
 ##Profile account
 Route::get('/profile-account', [App\Http\Controllers\EcommerceController::class, 'profileAccount'])->name('profile-account');
 
-Route::get('/get-content/{file}', function ($file) {
-        $url = Storage::disk('spaces')->temporaryUrl($file, now()->addMinutes(5));
-        if ($url) {
-                return Redirect::to($url);
-        }
-        return abort(404);
-})->where('file', '.+');
+// Route::get('/get-content/{file}', function ($file) {
+//         $url = Storage::disk('spaces')->temporaryUrl($file, now()->addMinutes(5));
+//         if ($url) {
+//                 return Redirect::to($url);
+//         }
+//         return abort(404);
+// })->where('file', '.+');
 
 
 
