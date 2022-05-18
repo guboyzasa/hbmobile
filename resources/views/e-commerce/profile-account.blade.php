@@ -459,19 +459,24 @@
                                             <th>วันสิ้นสุดประกัน</th>
                                             <th>สถานะประกัน</th>
                                             <th>สถานะซ่อม</th>
+                                            <th>ออกบิล</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @if ($repairs)
                                             @foreach ($repairs as $repair)
                                                 <tr>
-                                                    <td>{{ $repair->repair_start_date }}</td>
+                                                    <td>
+                                                        
+                                                        {{ $repair->repair_start_date }}
+                                                    
+                                                    </td>
                                                     <!--วันที่รับเครื่อง -->
-                                                    <td>{{ $repair->product_id }}</td>
+                                                    <td>{{ $repair->model_id }}</td>
                                                     <!--รุ่น:model -->
                                                     <td>{{ $repair->detail }}</td>
                                                     <!--รายการซ่อม -->
-                                                    <td>{{ $repair->shop_id }}</td>
+                                                    <td>{{ $repair->price_id }}</td>
                                                     <!--ราคา -->
                                                     <td>{{ $repair->repair_end_date }}</td>
                                                     <!--วันสิ้นสุดประกัน -->
@@ -489,18 +494,20 @@
                                                         <!--สะถานะประกัน -->
                                                     </td>
                                                     <td>
-                                                        @php
-                                                            $dateNow = date_create(strval(date('Y-m-d')));
-                                                            $dateEnd = date_create($repair->repair_start_date);
-                                                            $diff = date_diff($dateNow, $dateEnd);
-                                                        @endphp
-                                                        @if ((int) $diff->format('%R%a') >= 0)
-                                                            <span class="badge badge-danger"> กำลังดำเนินการ </span>
-                                                        @else
-                                                            <span class="badge badge-success"> ซ่อมเสร็จแล้ว </span>
-                                                        @endif
-                                                        <!--สะถานะซ่อม -->
+                                                        <?php
+                                                        $status = $repair->status_id;
+                                                        if($status == 1):
+                                                          echo '<span class="badge badge-danger"> กำลังดำเนินการ </span>';
+                                                          elseif ($status == 2):
+                                                          echo '<span class="badge badge-success"> ซ่อมเสร็จแล้ว </span>';
+                                                          elseif ($status == 3):
+                                                          echo '<span class="badge badge-warning"> ซ่อมไม่ได้ </span>';
+                                                        endif;
+                                                        ?>
+
                                                     </td>
+                                                    <td> <button type="button" class="btn btn-sm btn-info" onclick=''><i
+                                                                class="bx bx-printer"></i> </button></td>
                                                 </tr>
                                             @endforeach
                                         @endif

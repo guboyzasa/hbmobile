@@ -167,21 +167,20 @@
 
                         <div class="mb-3">
                             <div class="row">
-
                                 <div class="col-6">
-
                                     <label for="product" class="form-label">รุ่น:model</label>
                                     <input type="text" class="form-control formInput formInputWarranty" id="product"
-                                        name="products[]" placeholder="กรอก รุ่น:model" aria-describedby="add"
+                                        name="products[]" placeholder="เพิ่มรุ่น:model" aria-describedby="add"
                                         aria-label="product">
 
                                 </div>
 
                                 <div class="col-6">
-                                    <label for="shop" class="form-label">ราคา </label>
+                                    <label for="" class="form-label">ราคา </label>
                                     <div class="input-group" id="datepicker2">
                                         <input type="text" class="form-control formInput formInputWarranty" id="shop"
-                                            name="shops[]" placeholder="กรอก ราคา" aria-describedby="add" aria-label="shop">
+                                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                                        name="shops[]" placeholder="ราคา" aria-describedby="add" aria-label="shop">
                                         <span class="input-group-text">บาท</span>
                                     </div>
                                 </div>
@@ -194,13 +193,11 @@
 
                                 <div class="col-6">
 
-                                    <label for="serial" class="form-label">สถานะซ่อม</label>
-                                    <select name="serial" id="serial" class="form-control formInput formInputWarranty"
-                                        style="width: 100% " required>
+                                    <label for="" class="form-label">สถานะซ่อม</label>
+                                    <select name="" id="" class="form-control formInput formInputWarranty" required>
                                         <option value=""> -- เลือกสถานะซ่อม -- </option>
                                         @foreach ($statusRe as $status)
-                                            <option value="">{{ $status->id }}
-                                                {{ $status->name }}</option>
+                                            <option value="{{ $status->id }}">{{ $status->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -298,7 +295,7 @@
                                     {{-- <select name="product" id="" class="form-control formInput"
                                         style="width: 100% " required> --}}
                                     <input type="text" class="form-control products" id="productEdit" name="products[]"
-                                        placeholder="กรอก รุ่น:model" aria-describedby="add" aria-label="product">
+                                        placeholder="เพิ่มรุ่น:model" aria-describedby="add" aria-label="product">
 
 
                                 </div>
@@ -308,7 +305,8 @@
                                     <div class="input-group" id="datepicker2">
                                         {{-- <select name="shop" id="shopEdit" class="form-control formInput" required> --}}
                                         <input type="text" class="form-control serials" id="shopEdit" name="serials[]"
-                                            placeholder="กรอก รุ่น:model" aria-describedby="add" aria-label="serial">
+                                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                                            placeholder="ราคา" aria-describedby="add" aria-label="serial">
                                         <span class="input-group-text">บาท</span>
                                     </div>
                                 </div>
@@ -320,13 +318,11 @@
 
                                 <div class="col-6">
 
-                                    <label for="serial" class="form-label">สถานะซ่อม</label>
-                                    <select name="serial" id="serial" class="form-control formInput formInputWarranty"
-                                        style="width: 100% " required>
+                                    <label for="" class="form-label">สถานะซ่อม</label>
+                                    <select name="" id="" class="form-control formInput formInputWarranty" required>
                                         <option value=""> -- เลือกสถานะซ่อม -- </option>
                                         @foreach ($statusRe as $status)
-                                            <option value="">{{ $status->id }}
-                                                {{ $status->name }}</option>
+                                            <option value="{{ $status->id }}">{{ $status->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -554,7 +550,7 @@
                     },
 
                     {
-                        "data": "product_id",
+                        "data": "model_id",
                     },
 
                     {
@@ -562,7 +558,7 @@
                     },
 
                     {
-                        "data": "shop_id",
+                        "data": "price_id",
                     },
 
                     {
@@ -595,10 +591,24 @@
                     //         return text;
                     //     }
                     // },
-                    {
-                        "data": "serial_no",
+                    
+                      {
+                        "data": "status_id",
+                        "render": function(data, type, full) {
+                            var text = data;
+                            if(text==1){
+                                text =
+                                    `<span class="badge badge-pill badge-soft-danger font-size-11"> กำลังดำเนินการ </span>`;
+                            }else if(text==2){
+                                text =
+                                    `<span class="badge badge-pill badge-soft-success font-size-11"> ซ่อมเสร็จแล้ว </span>`;
+                            }else if(text==3){
+                                text =
+                                    `<span class="badge badge-pill badge-soft-warning font-size-11"> ซ่อมไม่ได้ </span>`;
+                            }
+                            return text;
+                        }
                     },
-
 
                     {
                         "data": "id",
