@@ -431,6 +431,7 @@ class EcommerceController extends Controller
         $company = CompanyContract::first();
         $warrantys = WarrantyRegistration::with('customer', 'product','agent')->where('customer_id', $customer->id)->orderBy('id', 'asc')->get();
         $repairs = RepairRegistration::with('customer', 'product','agent')->where('customer_id', $customer->id)->orderBy('id', 'asc')->get();
+
         $provinces = Province::all();
   
         return view('e-commerce.profile-account',compact('company','order','orders','customer','warrantys','repairs','provinces','user'));

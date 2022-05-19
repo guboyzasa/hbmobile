@@ -26,6 +26,8 @@
                         </div>
                     @endif
                 </div>
+
+                {{-- avatar --}}
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="promotion text-center pt-5 pb-5">
                         <div class="icon">
@@ -36,6 +38,7 @@
                         <p>Email: {{ @$customer->email }}</p>
                     </div>
                 </div>
+                {{-- order --}}
                 @if ($order)
                     <div class="col-lg-9 ">
                         <div class="col-sm-12 section-title text-center pt-5">
@@ -56,32 +59,32 @@
                             @break
 
                             @case(2)
-                                <div class="alert alert-primary">
-                                    <i class="bx bx-loader"></i> ยืนยันการชำระเงิน
+                                <div class="alert alert-warning ">
+                                    <i class="bx bx-save"></i> ยืนยันการชำระเงิน
                                 </div>
                             @break
 
                             @case(3)
-                                <div class="alert alert-info">
-                                    <i class="bx bx-loader"></i> กำลังเตรียมจัดส่ง
+                                <div class="alert alert-dark">
+                                    <i class="bx bx-paper-plane"></i> กำลังเตรียมจัดส่ง
                                 </div>
                             @break
 
                             @case(4)
                                 <div class="alert alert-success">
-                                    <i class="bx bx-loader"></i> จัดส่งแล้ว
+                                    <i class="bx bx-check-double"></i> จัดส่งแล้ว
                                 </div>
                             @break
 
                             @case(5)
                                 <div class="alert alert-danger">
-                                    <i class="bx bx-loader"></i> จัดส่งไม่สำเร็จ
+                                    <i class="bx bx-error"></i> จัดส่งไม่สำเร็จ
                                 </div>
                             @break
 
                             @case(6)
                                 <div class="alert alert-danger">
-                                    <i class="bx bx-loader"></i> ยกเลิกรายการ
+                                    <i class="bx bx-x-circle"></i> ยกเลิกรายการ
                                 </div>
                             @break
 
@@ -206,7 +209,77 @@
                         </div><!-- /.custom-accordion -->
                     </div>
                 @endif
+
+                {{-- repair --}}
+                
+                @foreach ($repairs as $repair)
+                @if ($repairs)
+                    <div class="col-lg-9 ">
+                        <div class="col-sm-12 section-title text-center pt-5">
+                            <h3><i class="line"></i>งานซ่อมล่าสุด<i class="line"></i></h3>
+                            <p>รายละเอียดงานซ่อมล่าสุดของคุณ</p>
+                        </div>
+                        
+                            @if ($repair->status == 1)
+                                <div class="alert alert-danger ">
+                                    <i class='bx bx-cog bx-spin bx-flip-horizontal'></i> กำลังดำเนินการ
+                                </div>
+                            @elseif ($repair->status == 2)
+                                <div class="alert alert-success">
+                                    <i class="bx bx-check-double"></i> ซ่อมเสร็จแล้ว
+                                </div>
+                            @elseif ($repair->status == 3)
+                                <div class="alert alert-warning">
+                                    <i class="bx bx-error"></i> ซ่อมไม่ได้
+                                </div>
+                            @endif
+                        
+                        {{-- @switch ($repair->status)
+                            @case(1)
+                                <div class="alert alert-danger ">
+                                    <i class='bx bx-cog bx-spin bx-flip-horizontal'></i> กำลังดำเนินการ
+                                </div>
+                            @break
+
+                            @case(2)
+                                <div class="alert alert-success">
+                                    <i class="bx bx-check-double"></i> ซ่อมเสร็จแล้ว
+                                </div>
+                            @break
+
+                            @case(3)
+                                <div class="alert alert-warning">
+                                    <i class="bx bx-error"></i> ซ่อมไม่ได้
+                                </div>
+                            @break
+
+                            @default
+                            @break
+                        @endswitch --}}
+
+                        <ul class="order-details">
+                            <li class="date">
+                                วันที่รับเครื่อง:
+                                <strong>{{ date('d/m/Y', strtotime($repair->repair_start_date)) }}</strong>
+                            </li>
+                            <li class="order">
+                                รุ่น:model: <strong>{{ $repair->model }}</strong>
+                            </li>
+                            <li class="method">
+                                รายการซ่อม: <strong>{{ $repair->detail }}</strong>
+                            </li>
+
+                            <li class="total">
+                                ราคา: <strong><span class="amount">{{ $repair->price }}</span></strong>
+                            </li>
+
+                        </ul><!-- /repair -->
+
+                    </div>
+                @endif
+                @endforeach
             </div>
+        </div>
     </section>
 
     <section class="section pt-0">
@@ -422,8 +495,10 @@
                                                 <tr>
                                                     <td>{{ $warranty->serial_no }}</td>
                                                     <td>{{ $warranty->product->sku }}</td>
-                                                    <td>{{ date_format(date_create($warranty->warranty_start_date), "d-m-Y") }}</td>
-                                                    <td>{{ date_format(date_create($warranty->warranty_end_date), "d-m-Y") }}</td>
+                                                    <td>{{ date_format(date_create($warranty->warranty_start_date), 'd-m-Y') }}
+                                                    </td>
+                                                    <td>{{ date_format(date_create($warranty->warranty_end_date), 'd-m-Y') }}
+                                                    </td>
                                                     <td>
                                                         @if ($warranty->agent)
                                                             {{ $warranty->agent->name }}
@@ -467,9 +542,7 @@
                                             @foreach ($repairs as $repair)
                                                 <tr>
                                                     <td>
-                                                        
-                                                        {{ date_format(date_create($repair->repair_start_date), "d-m-Y") }}
-                                                    
+                                                        {{ date_format(date_create($repair->repair_start_date), 'd-m-Y') }}
                                                     </td>
                                                     <!--วันที่รับเครื่อง -->
                                                     <td>{{ $repair->model }}</td>
@@ -479,7 +552,7 @@
                                                     <td>{{ $repair->price }}</td>
                                                     <!--ราคา -->
                                                     <td>
-                                                        {{ date_format(date_create($repair->repair_end_date), "d-m-Y") }}
+                                                        {{ date_format(date_create($repair->repair_end_date), 'd-m-Y') }}
                                                     </td>
                                                     <!--วันสิ้นสุดประกัน -->
                                                     <td>
@@ -498,12 +571,12 @@
                                                     <td>
                                                         <?php
                                                         $status = $repair->status;
-                                                        if($status == 1):
-                                                          echo '<span class="badge badge-danger"> กำลังดำเนินการ </span>';
-                                                          elseif ($status == 2):
-                                                          echo '<span class="badge badge-success"> ซ่อมเสร็จแล้ว </span>';
-                                                          elseif ($status == 3):
-                                                          echo '<span class="badge badge-warning"> ซ่อมไม่ได้ </span>';
+                                                        if ($status == 1):
+                                                            echo '<span class="badge badge-danger"> กำลังดำเนินการ </span>';
+                                                        elseif ($status == 2):
+                                                            echo '<span class="badge badge-success"> ซ่อมเสร็จแล้ว </span>';
+                                                        elseif ($status == 3):
+                                                            echo '<span class="badge badge-warning"> ซ่อมไม่ได้ </span>';
                                                         endif;
                                                         ?>
 
@@ -515,7 +588,7 @@
                                         @endif
                                     </tbody>
                                 </table>
-                            </div><!-- ./tab-orders -->
+                            </div><!-- ./tab-repair -->
 
                             <div class="tab-pane" id="tab-profile">
                                 <form action="#!" class="form-horizontal row" method="POST" id="form-customer">
