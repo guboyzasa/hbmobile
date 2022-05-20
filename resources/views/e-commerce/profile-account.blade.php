@@ -211,52 +211,28 @@
                 @endif
 
                 {{-- repair --}}
-                
-                @foreach ($repairs as $repair)
-                @if ($repairs)
+                {{-- @if ($repairs)
+                    @foreach ($repairs as $repair)
+                    @endforeach
                     <div class="col-lg-9 ">
                         <div class="col-sm-12 section-title text-center pt-5">
                             <h3><i class="line"></i>งานซ่อมล่าสุด<i class="line"></i></h3>
                             <p>รายละเอียดงานซ่อมล่าสุดของคุณ</p>
                         </div>
-                        
-                            @if ($repair->status == 1)
-                                <div class="alert alert-danger ">
-                                    <i class='bx bx-cog bx-spin bx-flip-horizontal'></i> กำลังดำเนินการ
-                                </div>
-                            @elseif ($repair->status == 2)
-                                <div class="alert alert-success">
-                                    <i class="bx bx-check-double"></i> ซ่อมเสร็จแล้ว
-                                </div>
-                            @elseif ($repair->status == 3)
-                                <div class="alert alert-warning">
-                                    <i class="bx bx-error"></i> ซ่อมไม่ได้
-                                </div>
-                            @endif
-                        
-                        {{-- @switch ($repair->status)
-                            @case(1)
-                                <div class="alert alert-danger ">
-                                    <i class='bx bx-cog bx-spin bx-flip-horizontal'></i> กำลังดำเนินการ
-                                </div>
-                            @break
 
-                            @case(2)
-                                <div class="alert alert-success">
-                                    <i class="bx bx-check-double"></i> ซ่อมเสร็จแล้ว
-                                </div>
-                            @break
-
-                            @case(3)
-                                <div class="alert alert-warning">
-                                    <i class="bx bx-error"></i> ซ่อมไม่ได้
-                                </div>
-                            @break
-
-                            @default
-                            @break
-                        @endswitch --}}
-
+                        @if ($repair->status == 1)
+                            <div class="alert alert-danger ">
+                                <i class='bx bx-cog bx-spin bx-flip-horizontal'></i> กำลังดำเนินการ
+                            </div>
+                        @elseif ($repair->status == 2)
+                            <div class="alert alert-success">
+                                <i class="bx bx-check-double"></i> ซ่อมเสร็จแล้ว
+                            </div>
+                        @elseif ($repair->status == 3)
+                            <div class="alert alert-warning">
+                                <i class="bx bx-error"></i> ซ่อมไม่ได้
+                            </div>
+                        @endif
                         <ul class="order-details">
                             <li class="date">
                                 วันที่รับเครื่อง:
@@ -273,11 +249,9 @@
                                 ราคา: <strong><span class="amount">{{ $repair->price }}</span></strong>
                             </li>
 
-                        </ul><!-- /repair -->
-
-                    </div>
-                @endif
-                @endforeach
+                        </ul>
+                    </div><!-- /repair -->
+                @endif --}}
             </div>
         </div>
     </section>
@@ -739,8 +713,6 @@
         </div>
         </div>
     </section>
-
-
 @endsection
 
 @section('script')
