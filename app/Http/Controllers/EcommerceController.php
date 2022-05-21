@@ -430,11 +430,16 @@ class EcommerceController extends Controller
 
         $company = CompanyContract::first();
         $warrantys = WarrantyRegistration::with('customer', 'product','agent')->where('customer_id', $customer->id)->orderBy('id', 'asc')->get();
-        $repairs = RepairRegistration::with('customer', 'product','agent')->where('customer_id', $customer->id)->orderBy('id', 'asc')->get();
+        
+        $repair = RepairRegistration::with('customer','agent')->where('customer_id', $customer->id)->orderBy('id', 'desc')->first();
+        $repairs = RepairRegistration::with('customer','agent')->where('customer_id', $customer->id)->orderBy('id', 'desc')->get();
+
+
+        // return $repairs;
 
         $provinces = Province::all();
   
-        return view('e-commerce.profile-account',compact('company','order','orders','customer','warrantys','repairs','provinces','user'));
+        return view('e-commerce.profile-account',compact('company','order','orders','customer','warrantys','repairs','repair','provinces','user'));
     }
 
     public function formUploadSlip($id)

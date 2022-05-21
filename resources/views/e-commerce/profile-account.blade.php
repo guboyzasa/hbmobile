@@ -27,212 +27,58 @@
                     @endif
                 </div>
 
-                {{-- avatar --}}
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="promotion text-center pt-5 pb-5">
-                        <div class="icon">
-                            <i class='bx bxs-user-circle' style="font-size: 8rem;"></i>
-                        </div>
-                        <h4 class="mt-4 text-primary">ชื่อ : {{ @$customer->name }}</h4>
-                        <p>เบอร์โทร: {{ @$customer->phone }}</p>
-                        <p>Email: {{ @$customer->email }}</p>
-                    </div>
-                </div>
-                {{-- order --}}
-                @if ($order)
-                    <div class="col-lg-9 ">
-                        <div class="col-sm-12 section-title text-center pt-5">
-                            <h3><i class="line"></i>การสั่งซื้อล่าสุด<i class="line"></i></h3>
-                            <p>รายละเอียดการสั่งซื้อล่าสุดของคุณ</p>
-                        </div>
-                        @switch ($order->status)
-                            @case(0)
-                                <div class="alert alert-warning ">
-                                    <i class='bx bx-loader-circle bx-spin bx-flip-horizontal'></i> รออัพโหลดสลิป
-                                </div>
-                            @break
-
-                            @case(1)
-                                <div class="alert alert-dark">
-                                    <i class='bx bx-check-double'></i> อัพโหลดสลิปแล้ว
-                                </div>
-                            @break
-
-                            @case(2)
-                                <div class="alert alert-warning ">
-                                    <i class="bx bx-save"></i> ยืนยันการชำระเงิน
-                                </div>
-                            @break
-
-                            @case(3)
-                                <div class="alert alert-dark">
-                                    <i class="bx bx-paper-plane"></i> กำลังเตรียมจัดส่ง
-                                </div>
-                            @break
-
-                            @case(4)
-                                <div class="alert alert-success">
-                                    <i class="bx bx-check-double"></i> จัดส่งแล้ว
-                                </div>
-                            @break
-
-                            @case(5)
-                                <div class="alert alert-danger">
-                                    <i class="bx bx-error"></i> จัดส่งไม่สำเร็จ
-                                </div>
-                            @break
-
-                            @case(6)
-                                <div class="alert alert-danger">
-                                    <i class="bx bx-x-circle"></i> ยกเลิกรายการ
-                                </div>
-                            @break
-
-                            @default
-                            @break
-                        @endswitch
-
-                        <ul class="order-details">
-                            <li class="order">
-                                รหัสใบสั่งซื้อ: <strong>{{ $order->code }}</strong>
-                            </li>
-                            <li class="date">
-                                วันที่สั่ง: <strong>{{ date('d/m/Y', strtotime($order->created_at)) }}</strong>
-                            </li>
-                            <li class="total">
-                                รวมทั้งสิ้น: <strong><span
-                                        class="amount">{{ $order->total_amount }}</span></strong>
-                            </li>
-                            <li class="method">
-                                ประเภทการชำระ: <strong>โอนชำระ</strong>
-                            </li>
-                        </ul><!-- /.order-details -->
-
-                        <div class="custom-accordion flex-column" id="order-detail" role="tablist"
-                            aria-multiselectable="true">
-                            <div class="card card-default">
-                                <div class="card-header cursor-pointer" data-toggle="collapse" data-target="#last-order"
-                                    aria-expanded="true">
-                                    <h4 class="h4 mb-0">
-                                        Order Details
-                                    </h4>
-                                </div>
-                                <div id="last-order" class="card-collapse collapse" data-parent="#order-detail">
-                                    <div class="card-body">
-                                        <div class="box table-responsive">
-                                            <table class="table cart-table order-details-table w-100">
-                                                <thead>
-                                                    <tr>
-                                                        <th colspan="2">
-                                                            @if ($order->orderDeliveryAddress)
-                                                                <p>
-                                                                    <i class='bx bxs-map'></i>
-                                                                    ที่อยู่จัดส่ง :
-                                                                    {{ $order->orderDeliveryAddress->address }}
-                                                                    {{ $order->orderDeliveryAddress->district }}
-                                                                    {{ $order->orderDeliveryAddress->sub_district }}
-                                                                    {{ $order->orderDeliveryAddress->province }}
-                                                                    {{ $order->orderDeliveryAddress->zipcode }}
-                                                                </p>
-                                                            @endif
-
-                                                            @if ($order->orderBillAddress)
-                                                                <p>
-                                                                    <i class='bx bx-receipt'></i>
-                                                                    ที่อยู่ออกบิล :
-                                                                    {{ $order->orderBillAddress->address }}
-                                                                    {{ $order->orderBillAddress->district }}
-                                                                    {{ $order->orderBillAddress->sub_district }}
-                                                                    {{ $order->orderBillAddress->province }}
-                                                                    {{ $order->orderBillAddress->zipcode }}
-                                                                </p>
-                                                            @endif
-                                                        </th>
-                                                    </tr>
-                                                    <tr>
-                                                        <th class="product-name">สินค้า</th>
-                                                        <th class="product-total">ราคา</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    @foreach ($order->orderDetails as $detail)
-                                                        <tr class="item">
-                                                            <td class="product-name">
-                                                                <a href="product.html">{{ $detail->product->name }}</a>
-                                                                <strong class="product-quantity">×
-                                                                    {{ $detail->amount }}</strong>
-                                                            </td>
-                                                            <td class="product-total">
-                                                                <span
-                                                                    class="amount">{{ $detail->total_amount }}</span>
-                                                            </td>
-                                                        </tr>
-                                                    @endforeach
-                                                </tbody>
-                                                <tfoot>
-                                                    <tr>
-                                                        <th scope="row">รวม:</th>
-                                                        <td><span class="amount">{{ $order->total }}</span></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">ค่าส่ง:</th>
-                                                        <td><span
-                                                                class="amount">{{ $order->shipping_price }}</span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">ประเภทการชำระ:</th>
-                                                        <td>
-                                                            <p>ธนาคาร : {{ $order->paymentMethod->bank_name }}</p>
-                                                            <p>ชื่อบัญชี : {{ $order->paymentMethod->bank_account_name }}
-                                                            </p>
-                                                            <p>เลขที่บัญชี : {{ $order->paymentMethod->bank_account_no }}
-                                                            </p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">รวมทั้งสิ้น:</th>
-                                                        <td><span
-                                                                class="amount text-primary">{{ $order->total_amount }}</span>
-                                                        </td>
-                                                    </tr>
-                                                </tfoot>
-                                            </table>
-                                        </div> <!-- /.box -->
-                                        <div class="text-right">
-                                            <a href="/form-upload-slip/order/{{ $order->id }}" class="btn btn-primary">
-                                                อัพโหลดสลิป</a>
-                                        </div>
-                                    </div>
-                                </div>
+                @if ($repair == null && $order == null)
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="promotion text-center pt-5 pb-5">
+                            <div class="icon">
+                                <i class='bx bxs-user-circle' style="font-size: 8rem;"></i>
                             </div>
-                        </div><!-- /.custom-accordion -->
+                            <h4 class="mt-4 text-primary">ชื่อ : {{ @$customer->name }}</h4>
+                            <p>เบอร์โทร: {{ @$customer->phone }}</p>
+                            <p>Email: {{ @$customer->email }}</p>
+                        </div>
                     </div>
                 @endif
 
-                {{-- repair --}}
-                {{-- @if ($repairs)
-                    @foreach ($repairs as $repair)
-                    @endforeach
+                @if ($repair != null && $order == null)
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="promotion text-center pt-5 pb-5">
+                            <div class="icon">
+                                <i class='bx bxs-user-circle' style="font-size: 8rem;"></i>
+                            </div>
+                            <h4 class="mt-4 text-primary">ชื่อ : {{ @$customer->name }}</h4>
+                            <p>เบอร์โทร: {{ @$customer->phone }}</p>
+                            <p>Email: {{ @$customer->email }}</p>
+                        </div>
+                    </div>
                     <div class="col-lg-9 ">
                         <div class="col-sm-12 section-title text-center pt-5">
                             <h3><i class="line"></i>งานซ่อมล่าสุด<i class="line"></i></h3>
                             <p>รายละเอียดงานซ่อมล่าสุดของคุณ</p>
                         </div>
 
-                        @if ($repair->status == 1)
-                            <div class="alert alert-danger ">
-                                <i class='bx bx-cog bx-spin bx-flip-horizontal'></i> กำลังดำเนินการ
-                            </div>
-                        @elseif ($repair->status == 2)
-                            <div class="alert alert-success">
-                                <i class="bx bx-check-double"></i> ซ่อมเสร็จแล้ว
-                            </div>
-                        @elseif ($repair->status == 3)
-                            <div class="alert alert-warning">
-                                <i class="bx bx-error"></i> ซ่อมไม่ได้
-                            </div>
-                        @endif
+                        @switch($repair->status)
+                            @case(1)
+                                <div class="alert alert-danger ">
+                                    <i class='bx bx-cog bx-spin bx-flip-horizontal'></i> กำลังดำเนินการ
+                                </div>
+                            @break
+
+                            @case(2)
+                                <div class="alert alert-success">
+                                    <i class="bx bx-check-double"></i> ซ่อมเสร็จแล้ว
+                                </div>
+                            @break
+
+                            @case(3)
+                                <div class="alert alert-warning">
+                                    <i class="bx bx-error"></i> ซ่อมไม่ได้
+                                </div>
+                            @break
+
+                            @default
+                        @endswitch
+
                         <ul class="order-details">
                             <li class="date">
                                 วันที่รับเครื่อง:
@@ -250,8 +96,444 @@
                             </li>
 
                         </ul>
-                    </div><!-- /repair -->
-                @endif --}}
+                    </div>
+                @endif
+
+                @if ($order != null && $repair == null)
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="promotion text-center pt-5 pb-5">
+                            <div class="icon">
+                                <i class='bx bxs-user-circle' style="font-size: 8rem;"></i>
+                            </div>
+                            <h4 class="mt-4 text-primary">ชื่อ : {{ @$customer->name }}</h4>
+                            <p>เบอร์โทร: {{ @$customer->phone }}</p>
+                            <p>Email: {{ @$customer->email }}</p>
+                        </div>
+                    </div>
+
+                    @if ($order)
+
+                        <div class="col-lg-9 ">
+                            <div class="col-sm-12 section-title text-center pt-5">
+                                <h3><i class="line"></i>การสั่งซื้อล่าสุด<i class="line"></i></h3>
+                                <p>รายละเอียดการสั่งซื้อล่าสุดของคุณ</p>
+                            </div>
+
+                            @switch ($order->status)
+                                @case(0)
+                                    <div class="alert alert-warning ">
+                                        <i class='bx bx-loader-circle bx-spin bx-flip-horizontal'></i> รออัพโหลดสลิป
+                                    </div>
+                                @break
+
+                                @case(1)
+                                    <div class="alert alert-dark">
+                                        <i class='bx bx-check-double'></i> อัพโหลดสลิปแล้ว
+                                    </div>
+                                @break
+
+                                @case(2)
+                                    <div class="alert alert-warning ">
+                                        <i class="bx bx-save"></i> ยืนยันการชำระเงิน
+                                    </div>
+                                @break
+
+                                @case(3)
+                                    <div class="alert alert-dark">
+                                        <i class="bx bx-paper-plane"></i> กำลังเตรียมจัดส่ง
+                                    </div>
+                                @break
+
+                                @case(4)
+                                    <div class="alert alert-success">
+                                        <i class="bx bx-check-double"></i> จัดส่งแล้ว
+                                    </div>
+                                @break
+
+                                @case(5)
+                                    <div class="alert alert-danger">
+                                        <i class="bx bx-error"></i> จัดส่งไม่สำเร็จ
+                                    </div>
+                                @break
+
+                                @case(6)
+                                    <div class="alert alert-danger">
+                                        <i class="bx bx-x-circle"></i> ยกเลิกรายการ
+                                    </div>
+                                @break
+
+                                @default
+                                @break
+                            @endswitch
+
+                            <ul class="order-details">
+                                <li class="order">
+                                    รหัสใบสั่งซื้อ: <strong>{{ $order->code }}</strong>
+                                </li>
+                                <li class="date">
+                                    วันที่สั่ง: <strong>{{ date('d/m/Y', strtotime($order->created_at)) }}</strong>
+                                </li>
+                                <li class="total">
+                                    รวมทั้งสิ้น: <strong><span
+                                            class="amount">{{ $order->total_amount }}</span></strong>
+                                </li>
+                                <li class="method">
+                                    ประเภทการชำระ: <strong>โอนชำระ</strong>
+                                </li>
+                            </ul><!-- /.order-details -->
+
+                            <div class="custom-accordion flex-column" id="order-detail" role="tablist"
+                                aria-multiselectable="true">
+                                <div class="card card-default">
+                                    <div class="card-header cursor-pointer" data-toggle="collapse" data-target="#last-order"
+                                        aria-expanded="true">
+                                        <h4 class="h4 mb-0">
+                                            Order Details
+                                        </h4>
+                                    </div>
+                                    <div id="last-order" class="card-collapse collapse" data-parent="#order-detail">
+                                        <div class="card-body">
+                                            <div class="box table-responsive">
+                                                <table class="table cart-table order-details-table w-100">
+                                                    <thead>
+                                                        <tr>
+                                                            <th colspan="2">
+                                                                @if ($order->orderDeliveryAddress)
+                                                                    <p>
+                                                                        <i class='bx bxs-map'></i>
+                                                                        ที่อยู่จัดส่ง :
+                                                                        {{ $order->orderDeliveryAddress->address }}
+                                                                        {{ $order->orderDeliveryAddress->district }}
+                                                                        {{ $order->orderDeliveryAddress->sub_district }}
+                                                                        {{ $order->orderDeliveryAddress->province }}
+                                                                        {{ $order->orderDeliveryAddress->zipcode }}
+                                                                    </p>
+                                                                @endif
+
+                                                                @if ($order->orderBillAddress)
+                                                                    <p>
+                                                                        <i class='bx bx-receipt'></i>
+                                                                        ที่อยู่ออกบิล :
+                                                                        {{ $order->orderBillAddress->address }}
+                                                                        {{ $order->orderBillAddress->district }}
+                                                                        {{ $order->orderBillAddress->sub_district }}
+                                                                        {{ $order->orderBillAddress->province }}
+                                                                        {{ $order->orderBillAddress->zipcode }}
+                                                                    </p>
+                                                                @endif
+                                                            </th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th class="product-name">สินค้า</th>
+                                                            <th class="product-total">ราคา</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @foreach ($order->orderDetails as $detail)
+                                                            <tr class="item">
+                                                                <td class="product-name">
+                                                                    <a
+                                                                        href="product.html">{{ $detail->product->name }}</a>
+                                                                    <strong class="product-quantity">×
+                                                                        {{ $detail->amount }}</strong>
+                                                                </td>
+                                                                <td class="product-total">
+                                                                    <span
+                                                                        class="amount">{{ $detail->total_amount }}</span>
+                                                                </td>
+                                                            </tr>
+                                                        @endforeach
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <th scope="row">รวม:</th>
+                                                            <td><span class="amount">{{ $order->total }}</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">ค่าส่ง:</th>
+                                                            <td><span
+                                                                    class="amount">{{ $order->shipping_price }}</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">ประเภทการชำระ:</th>
+                                                            <td>
+                                                                <p>ธนาคาร : {{ $order->paymentMethod->bank_name }}</p>
+                                                                <p>ชื่อบัญชี :
+                                                                    {{ $order->paymentMethod->bank_account_name }}
+                                                                </p>
+                                                                <p>เลขที่บัญชี :
+                                                                    {{ $order->paymentMethod->bank_account_no }}
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">รวมทั้งสิ้น:</th>
+                                                            <td><span
+                                                                    class="amount text-primary">{{ $order->total_amount }}</span>
+                                                            </td>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div> <!-- /.box -->
+                                            <div class="text-right">
+                                                <a href="/form-upload-slip/order/{{ $order->id }}"
+                                                    class="btn btn-primary">
+                                                    อัพโหลดสลิป</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- /.custom-accordion -->
+
+                        </div>
+
+                    @endif
+                @endif
+
+                @if ($order != null && $repair != null)
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="promotion text-center pt-5 pb-5">
+                            <div class="icon">
+                                <i class='bx bxs-user-circle' style="font-size: 8rem;"></i>
+                            </div>
+                            <h4 class="mt-4 text-primary">ชื่อ : {{ @$customer->name }}</h4>
+                            <p>เบอร์โทร: {{ @$customer->phone }}</p>
+                            <p>Email: {{ @$customer->email }}</p>
+                        </div>
+                    </div>
+
+                    @if ($repair)
+                        <div class="col-lg-9 ">
+                            <div class="col-sm-12 section-title text-center pt-5">
+                                <h3><i class="line"></i>งานซ่อมล่าสุด<i class="line"></i></h3>
+                                <p>รายละเอียดงานซ่อมล่าสุดของคุณ</p>
+                            </div>
+
+                            @switch($repair->status)
+                                @case(1)
+                                    <div class="alert alert-danger ">
+                                        <i class='bx bx-cog bx-spin bx-flip-horizontal'></i> กำลังดำเนินการ
+                                    </div>
+                                @break
+
+                                @case(2)
+                                    <div class="alert alert-success">
+                                        <i class="bx bx-check-double"></i> ซ่อมเสร็จแล้ว
+                                    </div>
+                                @break
+
+                                @case(3)
+                                    <div class="alert alert-warning">
+                                        <i class="bx bx-error"></i> ซ่อมไม่ได้
+                                    </div>
+                                @break
+
+                                @default
+                            @endswitch
+
+                            <ul class="order-details">
+                                <li class="date">
+                                    วันที่รับเครื่อง:
+                                    <strong>{{ date('d/m/Y', strtotime($repair->repair_start_date)) }}</strong>
+                                </li>
+                                <li class="order">
+                                    รุ่น:model: <strong>{{ $repair->model }}</strong>
+                                </li>
+                                <li class="method">
+                                    รายการซ่อม: <strong>{{ $repair->detail }}</strong>
+                                </li>
+
+                                <li class="total">
+                                    ราคา: <strong><span class="amount">{{ $repair->price }}</span></strong>
+                                </li>
+
+                            </ul>
+                        </div>
+                    @endif
+
+                    @if ($order)
+                    <div class="col-lg-3 col-md-6 text-center">
+                    </div>
+                        <div class="col-lg-9 ">
+                            <div class="col-sm-12 section-title text-center pt-5">
+                                <h3><i class="line"></i>การสั่งซื้อล่าสุด<i class="line"></i></h3>
+                                <p>รายละเอียดการสั่งซื้อล่าสุดของคุณ</p>
+                            </div>
+
+                            @switch ($order->status)
+                                @case(0)
+                                    <div class="alert alert-warning ">
+                                        <i class='bx bx-loader-circle bx-spin bx-flip-horizontal'></i> รออัพโหลดสลิป
+                                    </div>
+                                @break
+
+                                @case(1)
+                                    <div class="alert alert-dark">
+                                        <i class='bx bx-check-double'></i> อัพโหลดสลิปแล้ว
+                                    </div>
+                                @break
+
+                                @case(2)
+                                    <div class="alert alert-warning ">
+                                        <i class="bx bx-save"></i> ยืนยันการชำระเงิน
+                                    </div>
+                                @break
+
+                                @case(3)
+                                    <div class="alert alert-dark">
+                                        <i class="bx bx-paper-plane"></i> กำลังเตรียมจัดส่ง
+                                    </div>
+                                @break
+
+                                @case(4)
+                                    <div class="alert alert-success">
+                                        <i class="bx bx-check-double"></i> จัดส่งแล้ว
+                                    </div>
+                                @break
+
+                                @case(5)
+                                    <div class="alert alert-danger">
+                                        <i class="bx bx-error"></i> จัดส่งไม่สำเร็จ
+                                    </div>
+                                @break
+
+                                @case(6)
+                                    <div class="alert alert-danger">
+                                        <i class="bx bx-x-circle"></i> ยกเลิกรายการ
+                                    </div>
+                                @break
+
+                                @default
+                                @break
+                            @endswitch
+
+                            <ul class="order-details">
+                                <li class="order">
+                                    รหัสใบสั่งซื้อ: <strong>{{ $order->code }}</strong>
+                                </li>
+                                <li class="date">
+                                    วันที่สั่ง: <strong>{{ date('d/m/Y', strtotime($order->created_at)) }}</strong>
+                                </li>
+                                <li class="total">
+                                    รวมทั้งสิ้น: <strong><span
+                                            class="amount">{{ $order->total_amount }}</span></strong>
+                                </li>
+                                <li class="method">
+                                    ประเภทการชำระ: <strong>โอนชำระ</strong>
+                                </li>
+                            </ul><!-- /.order-details -->
+
+                            <div class="custom-accordion flex-column" id="order-detail" role="tablist"
+                                aria-multiselectable="true">
+                                <div class="card card-default">
+                                    <div class="card-header cursor-pointer" data-toggle="collapse"
+                                        data-target="#last-order" aria-expanded="true">
+                                        <h4 class="h4 mb-0">
+                                            Order Details
+                                        </h4>
+                                    </div>
+                                    <div id="last-order" class="card-collapse collapse" data-parent="#order-detail">
+                                        <div class="card-body">
+                                            <div class="box table-responsive">
+                                                <table class="table cart-table order-details-table w-100">
+                                                    <thead>
+                                                        <tr>
+                                                            <th colspan="2">
+                                                                @if ($order->orderDeliveryAddress)
+                                                                    <p>
+                                                                        <i class='bx bxs-map'></i>
+                                                                        ที่อยู่จัดส่ง :
+                                                                        {{ $order->orderDeliveryAddress->address }}
+                                                                        {{ $order->orderDeliveryAddress->district }}
+                                                                        {{ $order->orderDeliveryAddress->sub_district }}
+                                                                        {{ $order->orderDeliveryAddress->province }}
+                                                                        {{ $order->orderDeliveryAddress->zipcode }}
+                                                                    </p>
+                                                                @endif
+
+                                                                @if ($order->orderBillAddress)
+                                                                    <p>
+                                                                        <i class='bx bx-receipt'></i>
+                                                                        ที่อยู่ออกบิล :
+                                                                        {{ $order->orderBillAddress->address }}
+                                                                        {{ $order->orderBillAddress->district }}
+                                                                        {{ $order->orderBillAddress->sub_district }}
+                                                                        {{ $order->orderBillAddress->province }}
+                                                                        {{ $order->orderBillAddress->zipcode }}
+                                                                    </p>
+                                                                @endif
+                                                            </th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th class="product-name">สินค้า</th>
+                                                            <th class="product-total">ราคา</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @foreach ($order->orderDetails as $detail)
+                                                            <tr class="item">
+                                                                <td class="product-name">
+                                                                    <a
+                                                                        href="product.html">{{ $detail->product->name }}</a>
+                                                                    <strong class="product-quantity">×
+                                                                        {{ $detail->amount }}</strong>
+                                                                </td>
+                                                                <td class="product-total">
+                                                                    <span
+                                                                        class="amount">{{ $detail->total_amount }}</span>
+                                                                </td>
+                                                            </tr>
+                                                        @endforeach
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <th scope="row">รวม:</th>
+                                                            <td><span class="amount">{{ $order->total }}</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">ค่าส่ง:</th>
+                                                            <td><span
+                                                                    class="amount">{{ $order->shipping_price }}</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">ประเภทการชำระ:</th>
+                                                            <td>
+                                                                <p>ธนาคาร : {{ $order->paymentMethod->bank_name }}</p>
+                                                                <p>ชื่อบัญชี :
+                                                                    {{ $order->paymentMethod->bank_account_name }}
+                                                                </p>
+                                                                <p>เลขที่บัญชี :
+                                                                    {{ $order->paymentMethod->bank_account_no }}
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">รวมทั้งสิ้น:</th>
+                                                            <td><span
+                                                                    class="amount text-primary">{{ $order->total_amount }}</span>
+                                                            </td>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div> <!-- /.box -->
+                                            <div class="text-right">
+                                                <a href="/form-upload-slip/order/{{ $order->id }}"
+                                                    class="btn btn-primary">
+                                                    อัพโหลดสลิป</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- /.custom-accordion -->
+
+                        </div>
+                    
+                    @endif
+                @endif
             </div>
         </div>
     </section>
@@ -285,8 +567,8 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-primary" href="#tab-customer-bill" aria-controls="tab-customer-bill"
-                                    data-toggle="tab">
+                                <a class="nav-link text-primary" href="#tab-customer-bill"
+                                    aria-controls="tab-customer-bill" data-toggle="tab">
                                     <i class='bx bx-receipt'></i> แก้ไขที่อยู่ออกบิล
                                 </a>
                             </li>
