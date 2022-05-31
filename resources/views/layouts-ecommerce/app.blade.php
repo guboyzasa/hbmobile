@@ -18,8 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HB Mobile - ซ่อมโทรศัพท์ แม็คบุ๊ค โน๊ตบุ๊ค</title>
 
-    <link rel="apple-touch-icon" sizes="180x180"
-        href="{{ URL::asset('/assets/dist/images/favicon/icon.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ URL::asset('/assets/dist/images/favicon/icon.png') }}">
     <link rel="icon" type="image/png" sizes="32x32"
         href="{{ URL::asset('/assets/dist/images/favicon/icon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="16x16"
@@ -34,7 +33,7 @@
     <!-- Sweet Alert-->
     <link href="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
 
-    <script src="{{ URL::asset('assets/libs/jquery/jquery.min.js')}}"></script>
+    <script src="{{ URL::asset('assets/libs/jquery/jquery.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 
     @yield('css')
@@ -47,6 +46,39 @@
 
     @include('layouts-ecommerce.footer')
 
+    <!-- Messenger ปลั๊กอินแชท Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your ปลั๊กอินแชท code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+        var chatbox = document.getElementById('fb-customer-chat');
+        chatbox.setAttribute("page_id", "292740724668103");
+        chatbox.setAttribute("attribution", "biz_inbox");
+    </script>
+
+    <!-- Your SDK code -->
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                xfbml: true,
+                version: 'v14.0'
+            });
+        };
+
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = 'https://connect.facebook.net/th_TH/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
 </body>
-    @yield('script')
+@yield('script')
+
 </html>
