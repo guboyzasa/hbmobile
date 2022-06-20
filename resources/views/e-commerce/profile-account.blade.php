@@ -232,8 +232,7 @@
                                                         @foreach ($order->orderDetails as $detail)
                                                             <tr class="item">
                                                                 <td class="product-name">
-                                                                    <a
-                                                                        href="product.html">{{ $detail->product->name }}</a>
+                                                                    <a href="product.html">{{ $detail->product->name }}</a>
                                                                     <strong class="product-quantity">×
                                                                         {{ $detail->amount }}</strong>
                                                                 </td>
