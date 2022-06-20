@@ -83,6 +83,10 @@
                             {{-- <li><a class="nav-link" href="/products?product_filter_category=1">แบตเตอรี่เพิ่มความจุ</a>
                             </li> --}}
                             <li><a class="nav-link" href="/products?product_filter_category=2">แบตเตอรี่มือถือ</a></li>
+                            <li><a class="nav-link" href="/products?product_filter_category=8">จอมือถือ</a></li>
+                            {{-- <li><a class="nav-link" href="#">อะไหล่มือถือ</a></li> --}}
+                            <li><a class="nav-link" href="/products?product_filter_category=10">ปริ้นเตอร์</a></li>
+                            <li><a class="nav-link" href="/products?product_filter_category=11">พาวเวอร์แบงค์</a></li>
                             <li><a class="nav-link" href="/products?product_filter_category=3">สายชาร์จมือถือ</a></li>
                             <li><a class="nav-link" href="/products?product_filter_category=4">อุปกรณ์อื่นๆ</a></li>
                         </ul>
@@ -100,8 +104,8 @@
                         <ul class="dropdown-menu">
                             <li><a class="nav-link" href="{{ route('agent') }}">จุดบริการ</a>
                             </li>
-                            <li><a class="nav-link" href="{{ route('option') }}">เงื่อนไขและข้อแนะนำผลิตภัณฑ์</a></li>
-                            <li><a class="nav-link" href="{{ route('produce') }}">กระบวนการผลิตและการรับรอง</a>
+                            {{-- <li><a class="nav-link" href="{{ route('option') }}">เงื่อนไขและข้อแนะนำผลิตภัณฑ์</a></li> --}}
+                            {{-- <li><a class="nav-link" href="{{ route('produce') }}">กระบวนการผลิตและการรับรอง</a> --}}
                             </li>
                         </ul>
                     </li>
