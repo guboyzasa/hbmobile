@@ -14,6 +14,7 @@
 
 @section('body')
     <body data-sidebar="dark">
+        
 @show
     <!-- Begin page -->
     <div id="layout-wrapper">

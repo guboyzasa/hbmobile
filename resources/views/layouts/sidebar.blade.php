@@ -4,11 +4,10 @@
     <div data-simplebar class="h-100">
 
         <!--- Sidemenu -->
-        <div id="sidebar-menu">
+        <div id="sidebar-menu"> 
             <!-- Left Menu Start -->
             <ul class="metismenu list-unstyled" id="side-menu">
                 <li class="menu-title " key="t-menu">@lang('translation.Menu')</li>
-
                 <li>
                     <a href="{{ route('admin.dashboard') }}" class="waves-effect">
                         <i class="bx bx-home-circle"></i>
@@ -60,12 +59,12 @@
                 </li>
 
                 @if (Auth::user()->is_super_admin == 1)
-                <li>
+                {{-- <li>
                     <a href="{{ route('admin.agent.index') }}" class="waves-effect">
                         <i class="bx bxs-store-alt"></i>
                         <span key="t-agent"> จัดการตัวแทนจำหน่าย </span>
                     </a>
-                </li>
+                </li> --}}
                 @endif
             </ul>
         </div>

@@ -13,9 +13,9 @@
             <!-- Slides -->
             @foreach($banner_imgs as $banner_img)
             <div class="swiper-slide">
-                {{-- <div class="d-flex align-items-center">
+                <div class="d-flex align-items-center">
                     <img src='https://drive.google.com/uc?id={{$banner_img->img}}&export=download' class="img-fluid" alt="" style="width:100%;">
-                </div> --}}
+                </div>
             </div>
             @endforeach
         </div>
