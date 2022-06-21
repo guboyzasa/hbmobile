@@ -53,22 +53,22 @@
                     กล้องวงจรปิด, โซล่าเซลล์, จานดาวเทียม, ครบเครื่องเรื่อง IT, IOT, มือถือ, โน๊ตบุ๊ค, แม็กบุ๊ค
                 </p>
             </div><!-- /.collection -->
-            <div class="col-md-12 col-lg-6 collection">
-                <div class="row">
+            {{-- <div class="col-md-12 col-lg-6 collection">
+                <div class="row"> --}}
                     @foreach($product_categorys as $product_category)
-                    <div class="col-6 col-md-6 collection">
+                    <div class="col-3 col-md-3 collection">
                         <a href="products?product_filter_category={{$product_category->id}}">
                             <img src='{{ URL::asset("get-content/$product_category->logo_img") }}' class="img-fluid" alt="">
                         </a>
                     </div><!-- /.collection -->
                     @endforeach
-                </div>
-            </div>
+                {{-- </div>
+            </div> --}}
         </div><!-- /.row -->
     </div><!-- /.container -->
 </section><!-- /.collections -->
 
-<section class="section promotions pb-0 small-padding-top" id="promotions">
+{{-- <section class="section promotions pb-0 small-padding-top" id="promotions">
     <div class="container">
         <div class="row">
             <div class="col-sm-12 section-title text-center">
@@ -88,7 +88,7 @@
             @endforeach
         </div><!-- /.row -->
     </div><!-- /.container -->
-</section><!-- /.promotions -->
+</section><!-- /.promotions --> --}}
 
 <section class="section products second-style" id="home-products">
     <div class="container">
@@ -157,7 +157,7 @@
 
            
             <div class="col-md-6 col-lg-3">
-                <a href="{{ route('produce') }}">
+                {{-- <a href="{{ route('produce') }}">
                 <div class="promotion text-center">
                     <div class="icon">
                         <img src="{{ URL::asset('/assets/dist/images/option/01.png') }}" class="w-126 shadow bx-border-circle" alt="">
@@ -165,11 +165,11 @@
                     <h3 class="mt-4 text-primary">การรับรองมาตรฐาน</h3>
                     <p>ได้รับการตรวจสอบและรับรองมาตรญานโดย ม.อ.ก.</p>
                 </div>
-                 </a>
+                 </a> --}}
             </div>
            
             <div class="col-md-6 col-lg-3">
-                <a href="{{ route('option') }}">
+                {{-- <a href="{{ route('option') }}"> --}}
                 <div class="promotion text-center">
                     <div class="icon">
                         <img src="{{ URL::asset('/assets/dist/images/option/02.png') }}" class="w-126 shadow bx-border-circle" alt="">
@@ -177,23 +177,23 @@
                     <h3 class="mt-4 text-primary">ประกันสินค้า</h3>
                     <p>สินค้ารับประกัน 1 ปีเต็ม</p>
                 </div>
-                </a>
+                {{-- </a> --}}
             </div>
 
             <div class="col-md-6 col-lg-3">
-                <a href="{{ route('produce') }}">
+                {{-- <a href="{{ route('produce') }}"> --}}
                 <div class="promotion text-center">
                     <div class="icon">
                         <img src="{{ URL::asset('/assets/dist/images/option/03.png') }}" class="w-126 shadow bx-border-circle" alt="">
                     </div>
-                    <h3 class="mt-4 text-primary">ประกันอุบัติเหตุ</h3>
-                    <p>มีประกันอุบัติเหตุสูงสุด 1 ล้านบาท</p>
+                    <h3 class="mt-4 text-primary">ประกันงานซ่อม</h3>
+                    <p>งานซ่อมรับประกัน 3 เดือน</p>
                 </div>
-                </a>
+                {{-- </a> --}}
             </div>
 
             <div class="col-md-6 col-lg-3">
-                <a href="{{ route('produce') }}">
+                {{-- <a href="{{ route('produce') }}">
                 <div class="promotion text-center">
                     <div class="icon">
                         <img src="{{ URL::asset('/assets/dist/images/option/04.png') }}" class="w-126 shadow bx-border-circle" alt="">
@@ -201,7 +201,7 @@
                     <h3 class="mt-4 text-primary">ผ่านการตรวจสอบ</h3>
                     <p>สินค้าทุกชิ้นผ่านการตรวจสอบอย่างดี</p>
                 </div>
-                </a>
+                </a> --}}
             </div>
         </div>
     </div>
