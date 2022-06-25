@@ -18,7 +18,8 @@
                             <li class="dropdown-footer p-0 text-center text-uppercase font-weight-bold bg-gray">
                                 <form action="{{ route('cart-post') }}" id="cart-form">
                                     <input type="hidden" id="cart_post" name="cart_post">
-                                    <a href="#" class="p-3 d-block" onclick="cart()"><i class="bx bx-shopping-bag"></i>
+                                    <a href="#" class="p-3 d-block" onclick="cart()"><i
+                                            class="bx bx-shopping-bag"></i>
                                         ดูตระกร้า</a>
                                 </form>
                             </li>
@@ -27,35 +28,36 @@
                 </li>
 
                 @auth
-                <li class="nav-item profile">
-                    <a href="#!" class="li-icon" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false"><i
-                            class='bx bx-user'></i></a>
-                    <div class="dropdown-menu dropdown-menu-right border-0 shadow">
-                        <ul class="position-relative" data-slimscroll="true">
-                            <li class="d-flex align-middle">
-                                <a href="{{ route('profile-account') }}">การซื้อของฉัน <i
-                                        class='bx bxs-user-circle align-middle text-primary'></i></a>
-                            </li>
-                            <li class="d-flex align-middle">
-                                <a href="{{ route('ecom.change-password') }}">แก้ไขรหัสผ่าน <i
-                                        class='bx bx-wrench align-middle me-1'></i></a>
-                            </li>
-                            <li class="d-flex align-middle">
-                                <a href="#"
-                                    onclick=" event.preventDefault();document.getElementById('logout-form').submit();">ออกจากระบบ
-                                    <i class='bx bx-log-out align-middle text-danger'></i></a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                    style="display: none;">
-                                    @csrf
-                                </form>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+                    <li class="nav-item profile">
+                        <a href="#!" class="li-icon" data-toggle="dropdown" aria-haspopup="false"
+                            aria-expanded="false"><i class='bx bx-user'></i></a>
+                        <div class="dropdown-menu dropdown-menu-right border-0 shadow">
+                            <ul class="position-relative" data-slimscroll="true">
+                                <li class="d-flex align-middle">
+                                    <a href="{{ route('profile-account') }}">การซื้อของฉัน <i
+                                            class='bx bxs-user-circle align-middle text-primary'></i></a>
+                                </li>
+                                <li class="d-flex align-middle">
+                                    <a href="{{ route('ecom.change-password') }}">แก้ไขรหัสผ่าน <i
+                                            class='bx bx-wrench align-middle me-1'></i></a>
+                                </li>
+                                <li class="d-flex align-middle">
+                                    <a href="#"
+                                        onclick=" event.preventDefault();document.getElementById('logout-form').submit();">ออกจากระบบ
+                                        <i class='bx bx-log-out align-middle text-danger'></i></a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                        style="display: none;">
+                                        @csrf
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
                 @else
-                <li class="nav-item">
-                    <a href="{{ route('login-register') }}" class="li-icon" id=""><i class='bx bx-user'></i></a>
-                </li>
+                    <li class="nav-item">
+                        <a href="{{ route('login-register') }}" class="li-icon" id=""><i
+                                class='bx bx-user'></i></a>
+                    </li>
                 @endauth
             </ul>
 
@@ -79,7 +81,7 @@
                             สินค้าของเรา
                         </a>
                         <ul class="dropdown-menu">
-                           <!-- <li><a class="nav-link" href="{{ route('products') }}">สินค้าทั้งหมด</a></li> -->
+                            <li><a class="nav-link" href="{{ route('products') }}">สินค้าทั้งหมด</a></li> 
                             {{-- <li><a class="nav-link" href="/products?product_filter_category=1">แบตเตอรี่เพิ่มความจุ</a>
                             </li> --}}
                             <li><a class="nav-link" href="/products?product_filter_category=8">จอมือถือ</a></li>
@@ -92,11 +94,12 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="{{ route('manual') }}" role="button" aria-haspopup="true" aria-expanded="false">
-                            ขั้นตอนการสั่งซื้อและส่งเครื่องซ่อม
+                        <a class="nav-link" href="{{ route('manual') }}" role="button" aria-haspopup="true"
+                            aria-expanded="false">
+                            ขั้นตอนต่างๆ
                         </a>
                     </li>
-                    
+
                     {{-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
@@ -114,7 +117,8 @@
                     <li class="nav-item"><a class="nav-link" href="{{ route('about') }}">เกี่ยวกับเรา</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">ติดต่อเรา</a></li>
                     @if (Auth::user() && Auth::user()->is_agent == 0 && Auth::user()->is_admin == 0)
-                    <li class="nav-item"><a class="nav-link text-success" href="{{ route('profile-account') }}">ยืนยันการชำระเงิน</a></li>
+                        <li class="nav-item"><a class="nav-link text-success"
+                                href="{{ route('profile-account') }}">ยืนยันการชำระเงิน</a></li>
                     @endif
                 </ul>
             </div>
@@ -125,12 +129,12 @@
 </div><!-- /.nav-container -->
 
 <script>
-$(document).ready(function() {
-    var products = sessionStorage.getItem("products");
-    var array_products = JSON.parse("[" + products + "]") // ตัด [ ] ออก 
-    if (array_products[0] != null) {
-        array_products[0].forEach(function(row) {
-            $('.dropdown-wrap').prepend(`
+    $(document).ready(function() {
+        var products = sessionStorage.getItem("products");
+        var array_products = JSON.parse("[" + products + "]") // ตัด [ ] ออก 
+        if (array_products[0] != null) {
+            array_products[0].forEach(function(row) {
+                $('.dropdown-wrap').prepend(`
                 <li class="d-flex" id="product${row.id}">
                     <a href="product.html">
                         <img src="{{ URL::asset('get-content/${row.img}') }}"
@@ -149,40 +153,40 @@ $(document).ready(function() {
                     </div>
                 </li>
             `)
-        })
-    }
-})
+            })
+        }
+    })
 
-function removeCart(id) {
-    let get_session_id = sessionStorage.getItem("p_id"); // get sessionStorage ออกมาใส่ตัวแปล
-    let get_session_products = sessionStorage.getItem("products"); // get sessionStorage ออกมาใส่ตัวแปล
-    let p_ids = JSON.parse("[" + get_session_id + "]") // ตัด [ ] ออก 
-    let products = JSON.parse("[" + get_session_products + "]") // ตัด [ ] ออก 
-    $('#product' + id).remove();
-    index = p_ids[0].indexOf(id);
-    if (index > -1) {
-        p_ids[0].splice(index, 1);
-        products[0].splice(index, 1);
-        sessionStorage.setItem("p_id", JSON.stringify(p_ids[0])); //เอา array ใส่ใน sessionStorage
-        sessionStorage.setItem("products", JSON.stringify(products[0])); //เอา array ใส่ใน sessionStorage
+    function removeCart(id) {
+        let get_session_id = sessionStorage.getItem("p_id"); // get sessionStorage ออกมาใส่ตัวแปล
+        let get_session_products = sessionStorage.getItem("products"); // get sessionStorage ออกมาใส่ตัวแปล
+        let p_ids = JSON.parse("[" + get_session_id + "]") // ตัด [ ] ออก 
+        let products = JSON.parse("[" + get_session_products + "]") // ตัด [ ] ออก 
+        $('#product' + id).remove();
+        index = p_ids[0].indexOf(id);
+        if (index > -1) {
+            p_ids[0].splice(index, 1);
+            products[0].splice(index, 1);
+            sessionStorage.setItem("p_id", JSON.stringify(p_ids[0])); //เอา array ใส่ใน sessionStorage
+            sessionStorage.setItem("products", JSON.stringify(products[0])); //เอา array ใส่ใน sessionStorage
+        }
+        // console.log($(this))
+        // $('.product'+id).find('.bx').addClass('d-none')
+        $('.product' + id).prop("disabled", false);
+        $('.product' + id).find('.text-cart').text("เพิ่มลงสินค้า");
+        $('.product' + id).removeClass('added');
+        $('.product' + id).parent().attr('data-original-title', 'เพิ่มลงตระกร้า');
+        $('.product' + id).find('#icon' + id).addClass('d-none')
     }
-    // console.log($(this))
-    // $('.product'+id).find('.bx').addClass('d-none')
-    $('.product' + id).prop("disabled", false);
-    $('.product' + id).find('.text-cart').text("เพิ่มลงสินค้า");
-    $('.product' + id).removeClass('added');
-    $('.product' + id).parent().attr('data-original-title', 'เพิ่มลงตระกร้า');
-    $('.product' + id).find('#icon' + id).addClass('d-none')
-}
 
-function cart() {
-    // sessionStorage.setItem("p_id",JSON.stringify(array_id));
-    // var p_id = sessionStorage.getItem("p_id");
-    // $('#cart_post').val(JSON.stringify(p_id))
-    // console.log(p_id)
-    var get_session = sessionStorage.getItem("p_id"); // get sessionStorage ออกมาใส่ตัวแปล
-    let p_id = JSON.parse("[" + get_session + "]") // ตัด [ ] ออก 
-    $('#cart_post').val(p_id) // string ใส่ input
-    $('#cart-form').submit();
-}
+    function cart() {
+        // sessionStorage.setItem("p_id",JSON.stringify(array_id));
+        // var p_id = sessionStorage.getItem("p_id");
+        // $('#cart_post').val(JSON.stringify(p_id))
+        // console.log(p_id)
+        var get_session = sessionStorage.getItem("p_id"); // get sessionStorage ออกมาใส่ตัวแปล
+        let p_id = JSON.parse("[" + get_session + "]") // ตัด [ ] ออก 
+        $('#cart_post').val(p_id) // string ใส่ input
+        $('#cart-form').submit();
+    }
 </script>

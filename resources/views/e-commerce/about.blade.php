@@ -25,24 +25,23 @@
 		<div class="container">
 			<div class="row align-items-center mb-5">
 				<div class="col-lg-4">
-					<h2 class="title">HB Mobile Services <br> เฮียบอยโมบายขอนแก่น ศูนย์บริการด้านสมาร์ทโฟนครบวงจร</h2>
-					<p class="subtitle description">
+					<h2 class="title">เฮียบอยโมบาย เซอร์วิส<br>HB Mobile</h2>
+					
+					{{-- <p class="subtitle description">
 						<i class='bx bxs-circle' ></i> จำหน่ายแบตเตอรี่มือถือหลากหลายรุ่น สายชาร์จ อุปกรณ์ อะไหล่มือถือสมาร์ทโฟน
-					</p>
-					<p class="subtitle description">
+					</p> --}}
+					{{-- <p class="subtitle description">
 						<i class='bx bxs-circle' ></i> สินค้าเราได้มาตราฐาน ม.อ.ก อย่างถูกต้อง พร้อมทีมช่างเทคนิคดูแลให้คำปรึกษาอย่างไกล้ชิด
-					</p>
+					</p> --}}
 				</div>
 				<div class="col-lg-8">
 					<div class="image">
-						<img src='{{ URL::asset("/assets/dist/images/qr.png") }}' class="img-fluid" alt="" width="50%">
+						<img src='{{ URL::asset("/assets/dist/images/qr.png") }}' class="img-fluid" alt="" width="40%">
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						<img src='{{ URL::asset("/assets/dist/images/qr.png") }}' class="img-fluid" alt="" width="40%">
 					</div>
-					
 				</div>
 			</div><!-- /.row -->
-
-			
-
 		</div><!-- /.container -->
 	</section><!-- #page-about -->
 </div><!-- /.page-wrapper -->

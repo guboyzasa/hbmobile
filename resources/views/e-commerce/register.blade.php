@@ -106,7 +106,7 @@
                                         ต้องการ<a href="{{ route('login-register') }}" class="effect ml-1 mr-1"><span
                                                 class="text-primary">เข้าสู่ระบบ</span></a>หรือไม่ ?
                                     </div>
-                                    <button type="submit" class="btn btn-primary rounded-pill">สมัคร</button>
+                                    <button type="submit" class="btn btn-primary rounded-pill">สมัครสมาชิก</button>
                                 </div>
 
                             </form>

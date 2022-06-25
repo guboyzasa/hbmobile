@@ -1,178 +1,107 @@
 @extends('layouts.master')
 
-@section('title') Dashboard | Admin - HB Mobile Services @endsection
+@section('title')
+    Dashboard | Admin - HB Mobile Services
+@endsection
 
 @section('content')
 
-    {{-- @component('components.breadcrumb')
-        @slot('li_1') Dashboards @endslot
-        @slot('title') Saas @endslot
-    @endcomponent --}}
-
-{{-- 
-    <div class="row">
-        <div class="col-xl-4">
+    {{-- <div class="row"> --}}
+        <div class="col-xl-12">
             <div class="card bg-primary bg-soft">
-                <div>
-                    <div class="row">
-                        <div class="col-7">
-                            <div class="text-primary p-3">
-                                <h5 class="text-primary">Welcome Back !</h5>
-                                <p>HB MOBILE SERVICES Dashboard</p>
-
-                                <ul class="ps-3 mb-0">
-                                 
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-5 align-self-end">
-                            <img src="{{ URL::asset('/assets/images/profile-img.png') }}" alt="" class="img-fluid">
+                {{-- <div class="row"> --}}
+                    <div class="col-12">
+                        <div class="text-primary p-4">
+                            <h2 class="text-primary">HB MOBILE SERVICES Dashboard !</h2>
+                            {{-- <p>HB MOBILE SERVICES Dashboard</p> --}}
+                            <h4 align="right" >
+                                <a style="color: rgb(205, 11, 11)">ยอดรวม : </a>
+                                <a style="color: rgb(13, 141, 221)">฿</a>
+                                <a style="color: rgb(13, 141, 221)">{{ number_format($sumOrder + $sumOrder) }}</a>
+                                <a style="color: rgb(13, 141, 221)">บาท </a>
+                                <i class="mdi mdi-chevron-up ms-1 text-success"></i>
+                            </h4>
+                    
                         </div>
                     </div>
-                </div>
+                {{-- </div> --}}
             </div>
         </div>
-        <div class="col-xl-8">
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="avatar-xs me-3">
-                                    <span class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-18">
-                                        <i class="bx bx-copy-alt"></i>
-                                    </span>
-                                </div>
-                                <h5 class="font-size-14 mb-0">Orders</h5>
-                            </div>
-                            <div class="text-muted mt-4">
-                                <h4>1,452 <i class="mdi mdi-chevron-up ms-1 text-success"></i></h4>
-                                <div class="d-flex">
-                                    <span class="badge badge-soft-success font-size-12"> + 0.2% </span> <span
-                                        class="ms-2 text-truncate">From previous period</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="avatar-xs me-3">
-                                    <span class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-18">
-                                        <i class="bx bx-archive-in"></i>
-                                    </span>
-                                </div>
-                                <h5 class="font-size-14 mb-0">Revenue</h5>
-                            </div>
-                            <div class="text-muted mt-4">
-                                <h4>$ 28,452 <i class="mdi mdi-chevron-up ms-1 text-success"></i></h4>
-                                <div class="d-flex">
-                                    <span class="badge badge-soft-success font-size-12"> + 0.2% </span> <span
-                                        class="ms-2 text-truncate">From previous period</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="avatar-xs me-3">
-                                    <span class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-18">
-                                        <i class="bx bx-purchase-tag-alt"></i>
-                                    </span>
-                                </div>
-                                <h5 class="font-size-14 mb-0">Average Price</h5>
-                            </div>
-                            <div class="text-muted mt-4">
-                                <h4>$ 16.2 <i class="mdi mdi-chevron-up ms-1 text-success"></i></h4>
-
-                                <div class="d-flex">
-                                    <span class="badge badge-soft-warning font-size-12"> 0% </span> <span
-                                        class="ms-2 text-truncate">From previous period</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- end row -->
-        </div>
-    </div> --}}
+    {{-- </div> --}}
 
     <div class="row">
         <div class="col-xl-12">
             <div class="row">
-
                 <div class="col-sm-4">
                     <a href="{{ route('admin.warranty.index') }}">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="avatar-xs me-3">
-                                    <span class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-18">
-                                        <i class="bx bx-battery"></i>
-                                    </span>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="avatar-xs me-3">
+                                        <span
+                                            class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-18">
+                                            <i class="bx bx-battery"></i>
+                                        </span>
+                                    </div>
+                                    <h5 class="font-size-14 mb-0">ลงทะเบียนรับประกัน</h5>
                                 </div>
-                                <h5 class="font-size-14 mb-0">ลงทะเบียนรับประกัน</h5>
-                            </div>
-                            <div class="text-muted mt-4">
-                                <h4> {{ number_format($countRegisterWarranty) }}  ชิ้น<i class="mdi mdi-chevron-up ms-1 text-success"></i></h4>
-                       
+                                <div class="text-muted mt-4">
+                                    <h4> {{ number_format($countRegisterWarranty) }} ชิ้น<i
+                                            class="mdi mdi-chevron-up ms-1 text-success"></i></h4>
+
+                                </div>
                             </div>
                         </div>
-                    </div>
                     </a>
                 </div>
                 <div class="col-sm-4">
                     <a href="{{ route('admin.order.index') }}">
-                    <div class="card">
-                        <div class="card-body">
-                          
+                        <div class="card">
+                            <div class="card-body">
+
                                 <div class="d-flex align-items-center mb-3">
                                     <div class="avatar-xs me-3">
-                                        <span class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-18">
+                                        <span
+                                            class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-18">
                                             <i class="bx bx-package"></i>
                                         </span>
                                     </div>
                                     <h5 class="font-size-14 mb-0">จำนวนออเดอร์</h5>
                                 </div>
                                 <div class="text-muted mt-4">
-                                    <h4>{{ number_format($countOrder) }} ออเดอร์<i class="mdi mdi-chevron-up ms-1 text-success"></i></h4>
-                            
+                                    <h4>{{ number_format($countOrder) }} ออเดอร์<i
+                                            class="mdi mdi-chevron-up ms-1 text-success"></i></h4>
+
                                 </div>
+                            </div>
                         </div>
-                    </div>
                     </a>
                 </div>
 
                 <div class="col-sm-4">
                     <a href="#">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="avatar-xs me-3">
-                                    <span class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-18">
-                                        <i class="bx bx-archive-in"></i>
-                                    </span>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="avatar-xs me-3">
+                                        <span
+                                            class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-18">
+                                            <i class="bx bx-archive-in"></i>
+                                        </span>
+                                    </div>
+                                    <h5 class="font-size-14 mb-0">ยอดขาย</h5>
                                 </div>
-                                <h5 class="font-size-14 mb-0">ยอดขาย</h5>
-                            </div>
-                            <div class="text-muted mt-4">
-                                <h4>฿ {{ number_format($sumOrder) }}  บาท<i class="mdi mdi-chevron-up ms-1 text-success"></i></h4>
-                           
+                                <div class="text-muted mt-4">
+                                    <h4>฿ {{ number_format($sumOrder) }} บาท<i
+                                            class="mdi mdi-chevron-up ms-1 text-success"></i></h4>
+
+                                </div>
                             </div>
                         </div>
-                    </div>
                     </a>
                 </div>
 
-            
+
 
             </div>
             <!-- end row -->
@@ -185,108 +114,118 @@
 
                 <div class="col-sm-4">
                     <a href="{{ route('admin.customer.index') }}">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="avatar-xs me-3">
-                                    <span class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-18">
-                                        <i class="bx bx-user "></i>
-                                    </span>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="avatar-xs me-3">
+                                        <span
+                                            class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-18">
+                                            <i class="bx bx-user "></i>
+                                        </span>
+                                    </div>
+                                    <h5 class="font-size-14 mb-0">จำนวนลูกค้า</h5>
                                 </div>
-                                <h5 class="font-size-14 mb-0">จำนวนลูกค้า</h5>
-                            </div>
-                            <div class="text-muted mt-4">
-                                <h4> {{  number_format($countCustomer)  }}  คน<i class="mdi mdi-chevron-up ms-1 text-success"></i></h4>
-                       
-                            </div>
-                        </div>
-                    </div>
-                    </a>
-                </div>
-                <div class="col-sm-4">
-                    <a href="#"> <!-- {{ route('admin.customer.index') }} -->
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="avatar-xs me-3">
-                                    <span class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-18">
-                                        <i class="bx bx-user-check"></i>
-                                    </span>
-                                </div>
-                                <h5 class="font-size-14 mb-0">ลูกค้าที่เข้าสู่ระบบแล้ว</h5>
-                            </div>
-                            <div class="text-muted mt-4">
-                                <h4> {{ number_format($countUserCustomer) }}  คน<i class="mdi mdi-chevron-up ms-1 text-success"></i></h4>
-                           
-                            </div>
-                        </div>
-                    </div>
-                    </a>
-                </div>
-                <div class="col-sm-4">
-                    <a href="#"> <!--{{ route('admin.agent.index') }} -->
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="avatar-xs me-3">
-                                    <span class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-18">
-                                        <i class="bx bx-run"></i>
-                                    </span>
-                                </div>
-                                <h5 class="font-size-14 mb-0">ตัวแทนจำหน่าย</h5>
-                            </div>
-                            <div class="text-muted mt-4">
-                                <h4>{{ number_format($countAgent)  }} ตัวแทน<i class="mdi mdi-chevron-up ms-1 text-success"></i></h4>
-                         
-                            </div>
-                        </div>
-                    </div>
-                    </a>
-                </div>
-                <div class="col-sm-4">
-                    <a href="#"> <!--{{ route('admin.agent.index') }} -->
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="avatar-xs me-3">
-                                    <span class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-18">
-                                        <i class="bx bx-run"></i>
-                                    </span>
-                                </div>
-                                <h5 class="font-size-14 mb-0">ลงทะเบียนงานซ่อม</h5>
-                            </div>
-                            <div class="text-muted mt-4">
-                                <h4>{{ number_format($countRegisterRepair)  }} คน<i class="mdi mdi-chevron-up ms-1 text-success"></i></h4>
-                         
-                            </div>
-                        </div>
-                    </div>
-                    </a>
-                </div>
-                <div class="col-sm-4">
-                    <a href="#"> <!--{{ route('admin.agent.index') }} -->
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="avatar-xs me-3">
-                                    <span class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-18">
-                                        <i class="bx bx-run"></i>
-                                    </span>
-                                </div>
-                                <h5 class="font-size-14 mb-0">ยอดซ่อม</h5>
-                            </div>
-                            <div class="text-muted mt-4">
-                                <h4>{{ number_format($sumOrder)  }} บาท<i class="mdi mdi-chevron-up ms-1 text-success"></i></h4>
-                         
-                            </div>
-                        </div>
-                    </div>
-                    </a>
-                </div>
-           
+                                <div class="text-muted mt-4">
+                                    <h4> {{ number_format($countCustomer) }} คน<i
+                                            class="mdi mdi-chevron-up ms-1 text-success"></i></h4>
 
-            
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    <a href="#">
+                        <!-- {{ route('admin.customer.index') }} -->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="avatar-xs me-3">
+                                        <span
+                                            class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-18">
+                                            <i class="bx bx-user-check"></i>
+                                        </span>
+                                    </div>
+                                    <h5 class="font-size-14 mb-0">ลูกค้าที่เข้าสู่ระบบแล้ว</h5>
+                                </div>
+                                <div class="text-muted mt-4">
+                                    <h4> {{ number_format($countUserCustomer) }} คน<i
+                                            class="mdi mdi-chevron-up ms-1 text-success"></i></h4>
 
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    <a href="#">
+                        <!--{{ route('admin.agent.index') }} -->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="avatar-xs me-3">
+                                        <span
+                                            class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-18">
+                                            <i class="bx bx-run"></i>
+                                        </span>
+                                    </div>
+                                    <h5 class="font-size-14 mb-0">ตัวแทนจำหน่าย</h5>
+                                </div>
+                                <div class="text-muted mt-4">
+                                    <h4>{{ number_format($countAgent) }} ตัวแทน<i
+                                            class="mdi mdi-chevron-up ms-1 text-success"></i></h4>
+
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    <a href="#">
+                        <!--{{ route('admin.agent.index') }} -->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="avatar-xs me-3">
+                                        <span
+                                            class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-18">
+                                            <i class="bx bx-run"></i>
+                                        </span>
+                                    </div>
+                                    <h5 class="font-size-14 mb-0">ลงทะเบียนงานซ่อม</h5>
+                                </div>
+                                <div class="text-muted mt-4">
+                                    <h4>{{ number_format($countRegisterRepair) }} คน<i
+                                            class="mdi mdi-chevron-up ms-1 text-success"></i></h4>
+
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    <a href="#">
+                        <!--{{ route('admin.agent.index') }} -->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="avatar-xs me-3">
+                                        <span
+                                            class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-18">
+                                            <i class="bx bx-run"></i>
+                                        </span>
+                                    </div>
+                                    <h5 class="font-size-14 mb-0">ยอดซ่อม</h5>
+                                </div>
+                                <div class="text-muted mt-4">
+                                    <h4>฿ {{ number_format($sumOrder) }} บาท<i
+                                            class="mdi mdi-chevron-up ms-1 text-success"></i></h4>
+
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
             <!-- end row -->
         </div>
@@ -294,9 +233,8 @@
 
 
     <!-- end row -->
-{{-- 
-    <div class="row">
-        <div class="col-xl-4">
+    {{-- <div class="row">
+        {{-- <div class="col-xl-4">
             <div class="card">
                 <div class="card-body">
                     <div class="clearfix">
@@ -371,9 +309,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
-        <div class="col-xl-4">
+    {{-- <div class="col-xl-4">
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title mb-4">Tasks</h4>
@@ -599,14 +537,14 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> 
 
         <div class="col-xl-4">
             <div class="card">
                 <div class="card-body border-bottom">
                     <div class="row">
                         <div class="col-md-4 col-9">
-                            <h5 class="font-size-15 mb-1">Steven Franklin</h5>
+                            <h5 class="font-size-15 mb-1">Chat</h5>
                             <p class="text-muted mb-0"><i class="mdi mdi-circle text-success align-middle me-1"></i> Active
                                 now</p>
                         </div>
@@ -665,7 +603,7 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div> 
                 <div class="card-body pb-0">
                     <div>
                         <div class="chat-conversation">
@@ -842,9 +780,8 @@
             </div>
         </div>
 
-    </div> --}}
-    <!-- end row -->
-
+    </div> 
+    <!-- end row --> --}}
 @endsection
 @section('script')
     <!-- apexcharts -->

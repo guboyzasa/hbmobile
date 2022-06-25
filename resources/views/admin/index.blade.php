@@ -4,6 +4,25 @@
 
 @section('content')
 
+ {{-- <div class="row"> --}}
+    <div class="col-xl-12">
+        <div class="card bg-primary bg-soft">
+            {{-- <div class="row"> --}}
+                <div class="col-12">
+                    <div class="text-primary p-4">
+                        <h2 class="text-primary">Welcome to admin !</h2>
+                        <p>HB MOBILE SERVICES Dashboard</p>
+                        {{-- <h4 align="right" >ยอดรวม : ฿ {{ number_format($sumOrder + $sumOrder) }} บาท  --}}
+                            {{-- <i class="mdi mdi-chevron-up ms-1 text-success"></i> --}}
+                        {{-- </h4> --}}
+                
+                    </div>
+                </div>
+            {{-- </div> --}}
+        </div>
+    </div>
+{{-- </div> --}}
+{{-- 
 <div class="media-body">
     <h3 class="media-heading">Welcome to admin !</h3>
 </div>
@@ -74,9 +93,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-
+                </div> --}}
 @endsection
 @section('script')
     <!-- apexcharts -->

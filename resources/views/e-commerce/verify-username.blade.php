@@ -27,7 +27,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="box">
-                            <h2 class="mb-4">ยืนยัน Username หรือ หมายเลขโทรศัพท์</h2>
+                            <h2 class="mb-4">ยืนยันหมายเลขโทรศัพท์</h2>
                             <form action="{{ route('change-password.verify-username') }}" method="POST"
                                 class="login-form inputs-border inputs-bg">
                                 @csrf
