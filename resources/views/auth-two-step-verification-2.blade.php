@@ -1,4 +1,4 @@
-@extends('layouts.master-without-nav')
+{{-- @extends('layouts.master-without-nav')
 
 @section('title')
     @lang('translation.Two_step_verification') 2
@@ -188,4 +188,4 @@
         <script src="{{ URL::asset('/assets/js/pages/auth-2-carousel.init.js') }}"></script>
         <!-- two-step-verification.init -->
         <script src="{{ URL::asset('/assets/js/pages/two-step-verification.init.js') }}"></script>
-    @endsection
+    @endsection --}}

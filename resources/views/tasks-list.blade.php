@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Task_List') @endsection
 
@@ -516,4 +516,4 @@
 
     <!-- dashboard init -->
     <script src="{{ URL::asset('/assets/js/pages/tasklist.init.js') }}"></script>
-@endsection
+@endsection --}}

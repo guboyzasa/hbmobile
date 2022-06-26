@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Session_Timeout') @endsection
 
@@ -51,4 +51,4 @@
 
     <!-- Session timeout js -->
     <script src="{{ URL::asset('/assets/js/pages/session-timeout.init.js') }}"></script>
-@endsection
+@endsection --}}

@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Carousel') @endsection
 
@@ -213,4 +213,4 @@
     </div>
     <!-- end row -->
 
-@endsection
+@endsection --}}

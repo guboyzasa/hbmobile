@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Leaflet_Maps') @endsection
 
@@ -85,4 +85,4 @@
     <!-- leaflet map.init -->
     <script src="{{ URL::asset('/assets/js/pages/leaflet-us-states.js') }}"></script>
     <script src="{{ URL::asset('/assets/js/pages/leaflet-map.init.js') }}"></script>
-@endsection
+@endsection --}}

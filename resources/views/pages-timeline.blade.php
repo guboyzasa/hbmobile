@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Timeline') @endsection
 
@@ -224,4 +224,4 @@
 
     <!-- timeline init js -->
     <script src="{{ URL::asset('/assets/js/pages/timeline.init.js') }}"></script>
-@endsection
+@endsection --}}

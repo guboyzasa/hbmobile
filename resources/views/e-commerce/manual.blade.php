@@ -258,7 +258,9 @@
                                             </div>
                                             <div class="media-body">
                                                 <h3 class="media-heading">3. กดปุ่มสมัครสมาชิก</h3>
-
+                                                <p>3.1 ทำการ login</p>
+                                                <p>3.2 <a style="color:red;">แก้ไขข้อมูลส่วนตัวให้เรียบร้อย</a></p>
+                                                <p>3.3 <a style="color:red;">แก้ไขที่อยู่จัดส่งให้เรียบร้อย</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -312,7 +314,7 @@
                                             <div class="media-body">
                                                 <h3 class="media-heading">2. ยืนยันหมายเลขโทรศัพท์</h3>
                                                 <p>2.1 เบอร์ที่เคยสมัครสมาชิก</p>
-                                                <p>2.2 กดตกลง</p>
+                                                <p>2.2 กดยืนยัน</p>
                                             </div>
                                         </div>
                                     </div>

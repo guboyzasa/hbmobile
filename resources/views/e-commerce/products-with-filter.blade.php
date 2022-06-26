@@ -1,4 +1,4 @@
-@extends('layouts-ecommerce.app')
+{{-- @extends('layouts-ecommerce.app')
 
 @section('css')
 
@@ -303,4 +303,4 @@
 
 @section('script')
 
-@stop
+@stop --}}

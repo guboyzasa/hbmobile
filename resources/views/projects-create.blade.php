@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Create_New') @endsection
 
@@ -93,4 +93,4 @@
     <script src="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
     <!-- dropzone plugin -->
     <script src="{{ URL::asset('/assets/libs/dropzone/dropzone.min.js') }}"></script>
-@endsection
+@endsection --}}

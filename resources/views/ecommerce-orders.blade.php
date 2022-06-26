@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Orders') @endsection
 
@@ -501,4 +501,4 @@
     </div>
     <!-- end modal -->
 
-@endsection
+@endsection --}}

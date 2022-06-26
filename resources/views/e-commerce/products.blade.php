@@ -18,7 +18,7 @@
         </div>
     </div><!-- /.container -->
 </div><!-- /.page-head -->
-
+<div class="sharethis-sticky-share-buttons"></div>
 <section class="section products second-style">
     <div class="container">
         <div class="row">
@@ -69,8 +69,7 @@
                                     <span data-toggle="tooltip" data-placement="top" title="เพิ่มลงตระกร้า">
                                         <a href="#!" class="li-icon add-to-cart product{{ $product->id }}"
                                             data-product-id="{{ $product->id }}" data-path-img="{{ $product->img }}"
-                                            data-name="{{ $product->name }}" data-price="{{ $product->price }}"><i
-                                                class="bx bxs-cart"></i></a>
+                                            data-name="{{ $product->name }}" data-price="{{ $product->price }}"><i class="bx bxs-cart-add"></i></a>
                                     </span>
                                     <span data-toggle="tooltip" data-placement="top" title="ดูรายละเอียด">
                                         <a href="products/detail/{{ $product->id }}" class="li-icon view-details"><i

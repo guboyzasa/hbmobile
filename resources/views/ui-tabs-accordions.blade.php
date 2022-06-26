@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Tabs_&_Accordions') @endsection
 
@@ -631,4 +631,4 @@
     </div>
     <!-- end row -->
 
-@endsection
+@endsection --}}

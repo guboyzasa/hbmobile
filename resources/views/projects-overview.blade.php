@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Project_Overview') @endsection
 
@@ -344,4 +344,4 @@
 
     <!-- project-overview init -->
     <script src="{{ URL::asset('/assets/js/pages/project-overview.init.js') }}"></script>
-@endsection
+@endsection --}}

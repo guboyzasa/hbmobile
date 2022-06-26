@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Crypto') @endsection
 
@@ -1124,4 +1124,4 @@
     <script src="{{ URL::asset('/assets/libs/apexcharts/apexcharts.min.js') }}"></script>
     <!-- crypto dash init js -->
     <script src="{{ URL::asset('/assets/js/pages/crypto-dashboard.init.js') }}"></script>
-@endsection
+@endsection --}}

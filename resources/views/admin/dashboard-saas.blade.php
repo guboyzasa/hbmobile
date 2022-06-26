@@ -5,28 +5,28 @@
 @endsection
 
 @section('content')
-
     {{-- <div class="row"> --}}
-        <div class="col-xl-12">
-            <div class="card bg-primary bg-soft">
-                {{-- <div class="row"> --}}
-                    <div class="col-12">
-                        <div class="text-primary p-4">
-                            <h2 class="text-primary">HB MOBILE SERVICES Dashboard !</h2>
-                            {{-- <p>HB MOBILE SERVICES Dashboard</p> --}}
-                            <h4 align="right" >
-                                <a style="color: rgb(205, 11, 11)">ยอดรวม : </a>
-                                <a style="color: rgb(13, 141, 221)">฿</a>
-                                <a style="color: rgb(13, 141, 221)">{{ number_format($sumOrder + $sumOrder) }}</a>
-                                <a style="color: rgb(13, 141, 221)">บาท </a>
-                                <i class="mdi mdi-chevron-up ms-1 text-success"></i>
-                            </h4>
-                    
-                        </div>
-                    </div>
-                {{-- </div> --}}
+    <div class="col-xl-12">
+        <div class="card bg-primary bg-soft">
+            {{-- <div class="row"> --}}
+            <div class="col-12">
+                <div class="text-primary p-4">
+                    <div align="right" id="clock" onload="currentTime()"></div>
+                    <h2 class="text-primary">HB MOBILE SERVICES Dashboard !</h2>
+                    {{-- <p>HB MOBILE SERVICES Dashboard</p> --}}
+                    <h4 align="right">
+                        <a style="color: rgb(205, 11, 11)">ยอดรวม : </a>
+                        <a style="color: rgb(13, 141, 221)">฿</a>
+                        <a style="color: rgb(13, 141, 221)">{{ number_format($sumOrder + $sumOrder) }}</a>
+                        <a style="color: rgb(13, 141, 221)">บาท </a>
+                        <i class="mdi mdi-chevron-up ms-1 text-success"></i>
+                    </h4>
+
+                </div>
             </div>
+            {{-- </div> --}}
         </div>
+    </div>
     {{-- </div> --}}
 
     <div class="row">
@@ -157,7 +157,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-sm-4">
+                {{-- <div class="col-sm-4">
                     <a href="#">
                         <!--{{ route('admin.agent.index') }} -->
                         <div class="card">
@@ -179,10 +179,10 @@
                             </div>
                         </div>
                     </a>
-                </div>
+                </div> --}}
                 <div class="col-sm-4">
-                    <a href="#">
-                        <!--{{ route('admin.agent.index') }} -->
+                    <a href="{{ route('admin.repair.index') }} ">
+
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex align-items-center mb-3">
@@ -789,4 +789,33 @@
 
     <!-- Saas dashboard init -->
     <script src="{{ URL::asset('/assets/js/pages/saas-dashboard.init.js') }}"></script>
+    <script>
+        function currentTime() {
+            let date = new Date();
+            let hh = date.getHours();
+            let mm = date.getMinutes();
+            let ss = date.getSeconds();
+            let session = "AM";
+
+            if (hh == 0) {
+                hh = 12;
+            }
+            if (hh > 12) {
+                hh = hh - 12;
+                session = "PM";
+            }
+
+            hh = (hh < 10) ? "0" + hh : hh;
+            mm = (mm < 10) ? "0" + mm : mm;
+            ss = (ss < 10) ? "0" + ss : ss;
+
+            let time = hh + ":" + mm + ":" + ss + " " + session;
+
+            document.getElementById("clock").innerText = time;
+            let t = setTimeout(function() {
+                currentTime()
+            }, 1000);
+        }
+        currentTime();
+    </script>
 @endsection

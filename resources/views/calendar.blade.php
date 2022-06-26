@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Calendar') @endsection
 
@@ -124,4 +124,4 @@
     <script src="{{ URL::asset('/assets/js/pages/calendars.js') }}"></script>
     <script src="{{ URL::asset('/assets/js/pages/schedules.js') }}"></script>
     <script src="{{ URL::asset('/assets/js/pages/calendar.init.js') }}"></script>
-@endsection
+@endsection --}}

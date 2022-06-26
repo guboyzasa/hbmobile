@@ -1,4 +1,4 @@
-@extends('layouts.master-layouts')
+{{-- @extends('layouts.master-layouts')
 
 @section('title') @lang('translation.Boxed_Width') @endsection
 
@@ -691,4 +691,4 @@
     <!-- dashboard init -->
     <script src="{{ URL::asset('/assets/js/pages/dashboard.init.js') }}"></script>
 @endsection
-
+ --}}

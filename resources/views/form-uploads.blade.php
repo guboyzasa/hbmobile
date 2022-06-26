@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Form_File_Upload') @endsection
 
@@ -51,4 +51,4 @@
 @section('script')
     <!-- Plugins js -->
     <script src="{{ URL::asset('/assets/libs/dropzone/dropzone.min.js') }}"></script>
-@endsection
+@endsection --}}

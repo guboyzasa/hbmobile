@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.E_Charts') @endsection
 
@@ -95,4 +95,4 @@
     <script src="{{ URL::asset('/assets/libs/echarts/echarts.min.js') }}"></script>
     <!-- echarts init -->
     <script src="{{ URL::asset('/assets/js/pages/echarts.init.js') }}"></script>
-@endsection
+@endsection --}}

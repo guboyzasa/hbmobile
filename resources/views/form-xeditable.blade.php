@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Form_Xeditable') @endsection
 
@@ -91,4 +91,4 @@
 
     <!-- Init js-->
     <script src="{{ URL::asset('/assets/js/pages/form-xeditable.init.js') }}"></script>
-@endsection
+@endsection --}}

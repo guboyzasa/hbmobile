@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Basic_Tables') @endsection
 
@@ -788,4 +788,4 @@
     </div>
     <!-- end row -->
 
-@endsection
+@endsection --}}

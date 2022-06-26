@@ -210,7 +210,21 @@
                                                                         {{ $order->orderDeliveryAddress->phone }}
                                                                     </p>
                                                                 @endif
-                                                                @if ($order->orderDeliveryAddress)
+                                                                @if ($customer->customerBillAddress)
+                                                                    <p>
+                                                                        <i class='bx bxs-map'></i>
+                                                                        ที่อยู่จัดส่ง :
+                                                                        {{ $customer->customerBillAddress->address }}
+                                                                        ต.
+                                                                        {{ $customer->customerBillAddress->sub_district }}
+                                                                        อ.
+                                                                        {{ $customer->customerBillAddress->district }}
+                                                                        จ.
+                                                                        {{ $customer->customerBillAddress->province }}
+                                                                        {{ $customer->customerBillAddress->zipcode }}
+                                                                    </p>
+                                                                @endif
+                                                                {{-- @if ($order->orderDeliveryAddress)
                                                                     <p>
                                                                         <i class='bx bxs-map'></i>
                                                                         ที่อยู่จัดส่ง :
@@ -221,7 +235,7 @@
                                                                         {{ $order->orderDeliveryAddress->province }}
                                                                         {{ $order->orderDeliveryAddress->zipcode }}
                                                                     </p>
-                                                                @endif
+                                                                @endif --}}
 
                                                                 @if ($order->orderBillAddress)
                                                                     <p>
@@ -406,23 +420,26 @@
                                                                         <i class='bx bx-user'></i>
                                                                         ชื่อ :
 
-                                                                        {{ $order->orderDeliveryAddress->name }}
+                                                                        {{ $order->orderBillAddress->name }}
                                                                     </p>
                                                                     <p>
                                                                         <i class='bx bx-phone'></i>
                                                                         เบอร์โทร :
-                                                                        {{ $order->orderDeliveryAddress->phone }}
+                                                                        {{ $order->orderBillAddress->phone }}
                                                                     </p>
                                                                 @endif
-                                                                @if ($order->orderDeliveryAddress)
+                                                                @if ($customer->customerBillAddress)
                                                                     <p>
                                                                         <i class='bx bxs-map'></i>
                                                                         ที่อยู่จัดส่ง :
-                                                                        {{ $order->orderDeliveryAddress->address }}
-                                                                        {{ $order->orderDeliveryAddress->district }}
-                                                                        {{ $order->orderDeliveryAddress->sub_district }}
-                                                                        {{ $order->orderDeliveryAddress->province }}
-                                                                        {{ $order->orderDeliveryAddress->zipcode }}
+                                                                        {{ $customer->customerBillAddress->address }}
+                                                                        ต.
+                                                                        {{ $customer->customerBillAddress->sub_district }}
+                                                                        อ.
+                                                                        {{ $customer->customerBillAddress->district }}
+                                                                        จ.
+                                                                        {{ $customer->customerBillAddress->province }}
+                                                                        {{ $customer->customerBillAddress->zipcode }}
                                                                     </p>
                                                                 @endif
 
@@ -590,7 +607,7 @@
                             <li class="nav-item">
                                 <a class="nav-link text-primary" href="#tab-customer-bill"
                                     aria-controls="tab-customer-bill" data-toggle="tab">
-                                    <i class='bx bx-receipt'></i> แก้ไขที่อยู่ออกบิล
+                                    <i class='bx bx-receipt'></i> แก้ไขที่อยู่จัดส่ง
                                 </a>
                             </li>
                         </ul>
@@ -676,7 +693,21 @@
                                                                             {{ $order->orderDeliveryAddress->phone }}
                                                                         </p>
                                                                     @endif
-                                                                    @if ($order->orderDeliveryAddress)
+                                                                    @if ($customer->customerBillAddress)
+                                                                        <p>
+                                                                            <i class='bx bxs-map'></i>
+                                                                            ที่อยู่จัดส่ง :
+                                                                            {{ $customer->customerBillAddress->address }}
+                                                                            ต.
+                                                                            {{ $customer->customerBillAddress->sub_district }}
+                                                                            อ.
+                                                                            {{ $customer->customerBillAddress->district }}
+                                                                            จ.
+                                                                            {{ $customer->customerBillAddress->province }}
+                                                                            {{ $customer->customerBillAddress->zipcode }}
+                                                                        </p>
+                                                                    @endif
+                                                                    {{-- @if ($order->orderDeliveryAddress)
                                                                         <p>
                                                                             <i class='bx bxs-map'></i>
                                                                             ที่อยู่จัดส่ง :
@@ -686,7 +717,7 @@
                                                                             {{ $order->orderDeliveryAddress->province }}
                                                                             {{ $order->orderDeliveryAddress->zipcode }}
                                                                         </p>
-                                                                    @endif
+                                                                    @endif --}}
 
                                                                     @if ($order->orderBillAddress)
                                                                         <p>
@@ -790,9 +821,14 @@
                                                     <td>{{ date_format(date_create($warranty->warranty_end_date), 'd-m-Y') }}
                                                     </td>
                                                     <td>
-                                                        @if ($warranty->agent)
-                                                            {{ $warranty->agent->name }}
-                                                        @endif
+                                                        <?php
+                                                        $statAdmin = $warranty->user_create_id;
+                                                        if ($statAdmin == 1):
+                                                            echo '<span class="badge badge-danger"> Admin </span>';
+                                                        elseif ($statAdmin == 0):
+                                                            echo '<span class="badge badge-success"> Other </span>';
+                                                        endif;
+                                                        ?>
                                                     </td>
                                                     <td>
                                                         @php
@@ -943,21 +979,26 @@
                                                                         class="close">&times;</span>
 
                                                                     <div id='DivIdToPrint'>
+
                                                                         <div class="card-header cursor-pointer"
                                                                             data-toggle="collapse"
                                                                             data-target="#last-repair">
                                                                             <h4 class="h4 mb-0"><i
                                                                                     class="bx bx-receipt"></i>
-                                                                                ใบแจ้งหนี้/แจ้งชำระ
+                                                                                ใบแจ้งหนี้/แจ้งชำระ <span
+                                                                                    class="amount text-primary"> [ยอดชำระ :
+                                                                                    {{ $repair->price + 80 }}
+                                                                                    บาท]</span>
                                                                             </h4>
                                                                         </div>
                                                                         <div id="last-repair"
                                                                             class="card-collapse collapse"
-                                                                            data-parent="#order-detail">
+                                                                            data-parent="#last-repair">
                                                                             <div class="card-body">
                                                                                 <div class="box table-responsive">
+
                                                                                     <table
-                                                                                        class="table cart-table order-details-table w-100">
+                                                                                        class="table cart-table last-repair-table w-100">
                                                                                         <thead>
                                                                                             <tr>
                                                                                                 <th colspan="2">
@@ -984,8 +1025,11 @@
                                                                                                         ที่อยู่จัดส่ง
                                                                                                         :
                                                                                                         {{ $customer->customerAddress->address }}
+                                                                                                        ต.
                                                                                                         {{ $customer->customerAddress->sub_district }}
+                                                                                                        อ.
                                                                                                         {{ $customer->customerAddress->district }}
+                                                                                                        จ.
                                                                                                         {{ $customer->customerAddress->province }}
                                                                                                         {{ $customer->customerAddress->zipcode }}
                                                                                                     </p>
@@ -1001,7 +1045,7 @@
                                                                                             </tr>
                                                                                         </thead>
                                                                                         <tbody>
-                                                                                            {{-- @foreach ($repairs as $repair) --}}
+
                                                                                             <tr class="item">
                                                                                                 <td class="product-name">
                                                                                                     <a href="#">{{ $repair->model }}
@@ -1014,14 +1058,14 @@
                                                                                                         class="amount">{{ $repair->price }}</span>
                                                                                                 </td>
                                                                                             </tr>
-                                                                                            {{-- @endforeach --}}
+
                                                                                         </tbody>
                                                                                         <tfoot>
                                                                                             <tr>
                                                                                                 <th scope="row">
                                                                                                     ค่าส่ง:</th>
                                                                                                 <td><span class="amount">
-                                                                                                        50
+                                                                                                        80
                                                                                                     </span>
                                                                                                 </td>
                                                                                             </tr>
@@ -1031,14 +1075,21 @@
                                                                                                 </th>
                                                                                                 <td>
                                                                                                     <p>ธนาคาร :
-                                                                                                        ธนาคากรุงไทย
+                                                                                                        ธนาคาไทยพาณิชย์
                                                                                                     </p>
                                                                                                     <p>ชื่อบัญชี :
                                                                                                         นายรชต
                                                                                                         วันเทาแก้ว
                                                                                                     </p>
                                                                                                     <p>เลขที่บัญชี :
-                                                                                                        788-0-18635-2
+                                                                                                        808-2-70209-0
+                                                                                                    </p>
+                                                                                                    <p><a style="color:red;">*</a>โอนแล้ว :
+                                                                                                        รบกวนแจ้งสลิปได้ทางแชท
+                                                                                                        <a href="https://liff.line.me/1645278921-kWRPP32q?accountId=hbmobilekk&openerPlatform=native&openerKey=talkroom%3Aheader#mst_challenge=DviURfP2GW9z0o6eoP1xMF0s8C1qRokmKwj55BTIzms"
+                                                                                                            style="color:red;"
+                                                                                                            target="_blank">
+                                                                                                            chat (คลิก)</a>
                                                                                                     </p>
                                                                                                 </td>
                                                                                             </tr>
@@ -1047,11 +1098,12 @@
                                                                                                     รวมทั้งสิ้น:
                                                                                                 </th>
                                                                                                 <td><span
-                                                                                                        class="amount text-primary">{{ $repair->price + 50 }}</span>
+                                                                                                        class="amount text-primary">{{ $repair->price + 80 }}</span>
                                                                                                 </td>
                                                                                             </tr>
                                                                                         </tfoot>
                                                                                     </table>
+
                                                                                 </div> <!-- /.box -->
                                                                             </div>
                                                                             <div class="text-right">

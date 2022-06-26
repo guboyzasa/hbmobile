@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Blog') @endsection
 
@@ -1024,4 +1024,4 @@
     <script src="{{ URL::asset('/assets/libs/apexcharts/apexcharts.min.js') }}"></script>
     <!-- blog dashboard init -->
     <script src="{{ URL::asset('/assets/js/pages/dashboard-blog.init.js') }}"></script>
-@endsection
+@endsection --}}

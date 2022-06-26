@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Form_Editors') @endsection
 
@@ -35,4 +35,4 @@
 
     <!-- init js -->
     <script src="assets/js/pages/form-editor.init.js"></script>
-@endsection
+@endsection --}}

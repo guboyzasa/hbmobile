@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Font_awesome') @endsection
 
@@ -45,4 +45,4 @@
 @section('script')
     <!-- fontawesome init -->
     <script src="{{ URL::asset('/assets/js/pages/fontawesome.init.js') }}"></script>
-@endsection
+@endsection --}}

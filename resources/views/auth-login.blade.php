@@ -1,4 +1,4 @@
-@extends('layouts.master-without-nav')
+{{-- @extends('layouts.master-without-nav')
 
 @section('title')
     @lang('translation.Login')
@@ -133,4 +133,4 @@
         </div>
         <!-- end account-pages -->
 
-    @endsection
+    @endsection --}}

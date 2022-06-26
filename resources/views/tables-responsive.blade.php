@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Responsive_Table') @endsection
 
@@ -447,4 +447,4 @@
 
     <!-- Init js -->
     <script src="{{ URL::asset('/assets/js/pages/table-responsive.init.js') }}"></script>
-@endsection
+@endsection --}}

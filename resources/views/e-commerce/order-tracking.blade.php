@@ -1,4 +1,4 @@
-
+{{-- 
 
 @extends('layouts-ecommerce.app')
 
@@ -54,4 +54,4 @@
 
 @section('script')
 
-@stop
+@stop --}}

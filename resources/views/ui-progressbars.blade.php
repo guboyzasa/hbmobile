@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Progress_Bars') @endsection
 
@@ -311,4 +311,4 @@
         </div>
     </div>
 
-@endsection
+@endsection --}}

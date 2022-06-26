@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Editable_Table') @endsection
 
@@ -100,4 +100,4 @@
     <script src="{{ URL::asset('/assets/libs/table-edits/table-edits.min.js') }}"></script>
 
     <script src="{{ URL::asset('/assets/js/pages/table-editable.int.js') }}"></script>
-@endsection
+@endsection --}}

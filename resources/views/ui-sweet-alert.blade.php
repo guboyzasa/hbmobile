@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Sweet_Alert') @endsection
 
@@ -131,4 +131,4 @@
 
     <!-- Sweet alert init js-->
     <script src="{{ URL::asset('/assets/js/pages/sweet-alerts.init.js') }}"></script>
-@endsection
+@endsection --}}

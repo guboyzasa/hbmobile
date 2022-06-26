@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Form_Advanced') @endsection
 
@@ -786,4 +786,4 @@
 
     <!-- form advanced init -->
     <script src="{{ URL::asset('/assets/js/pages/form-advanced.init.js') }}"></script>
-@endsection
+@endsection --}}

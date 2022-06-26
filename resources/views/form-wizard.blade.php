@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Form_Wizard') @endsection
 
@@ -391,4 +391,4 @@
 
     <!-- form wizard init -->
     <script src="{{ URL::asset('/assets/js/pages/form-wizard.init.js') }}"></script>
-@endsection
+@endsection --}}

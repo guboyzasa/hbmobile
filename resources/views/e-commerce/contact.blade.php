@@ -18,7 +18,7 @@
             </div>
         </div><!-- /.container -->
     </div><!-- /.page-head -->
-
+    <div class="sharethis-sticky-share-buttons"></div>
     <section class="section" id="contact-info">
         <div class="container">
             <div class="row">
@@ -39,6 +39,7 @@
                                 target="_blank">{{ @$company->ig }}</a></p>
                         <p><strong>Youtube:</strong> <a href="{{ $company->youtube_link }}" class=""
                                 target="_blank">{{ @$company->youtube }}</a></p>
+                                
                         <!-- <p><strong>มีปัญหาการใช้งานเว็บไซต์:</strong> <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=188yanuk" target="_blank">Click Here!!</a></p> -->
                     </div>
                 </div>
@@ -63,7 +64,7 @@
                         aria-expanded="true">
                         <div class="media-left media-middle">
                             <h3 class="media-heading"><i class='bx bx-map' style='font-size:33px'></i>
-                                แผนที่สาขาในเมืองขอนแก่น</h3>
+                                แผนที่สาขา 1 ในเมืองขอนแก่น</h3>
                         </div>
                     </div>
                     <div id="last-manual-01" class="card-collapse collapse" data-parent="#manual-01-detail">
@@ -103,7 +104,7 @@
                         aria-expanded="true">
                         <div class="media-left media-middle">
                             <h3 class="media-heading"><i class='bx bx-map' style='font-size:33px'></i>
-                                แผนที่สาขา2 บ้านบ่อทอง ต.ขามป้อม อ.พระยืน จ.ขอนแก่น 40320</h3>
+                                แผนที่สาขา 2 บ้านบ่อทอง อ.พระยืน จ.ขอนแก่น</h3>
                         </div>
                     </div>
                     <div id="last-manual-02" class="card-collapse collapse" data-parent="#manual-02-detail">

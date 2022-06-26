@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Form_Mask') @endsection
 
@@ -87,4 +87,4 @@
 
     <!-- form mask init -->
     <script src="{{ URL::asset('/assets/js/pages/form-mask.init.js') }}"></script>
-@endsection
+@endsection --}}

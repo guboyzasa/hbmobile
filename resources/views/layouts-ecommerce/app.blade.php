@@ -16,7 +16,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>HB Mobile - ซ่อมโทรศัพท์ แม็คบุ๊ค โน๊ตบุ๊ค</title>
+    <title>HB Mobile - จำหน่ายและซ่อมโทรศัพท์ แม็คบุ๊ค โน๊ตบุ๊ค </title>
 
     <link rel="apple-touch-icon" sizes="180x180" href="{{ URL::asset('/assets/dist/images/favicon/icon.png') }}">
     <link rel="icon" type="image/png" sizes="32x32"
@@ -35,6 +35,7 @@
 
     <script src="{{ URL::asset('assets/libs/jquery/jquery.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=62b8c6063a1e900019a62f42&product=sticky-share-buttons" async="async"></script>
 
     @yield('css')
 </head>

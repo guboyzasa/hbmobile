@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Cards') @endsection
 
@@ -519,4 +519,4 @@
 @section('script')
     <!-- masonry pkgd -->
     <script src="{{ URL::asset('/assets/libs/masonry-layout/masonry-layout.min.js') }}"></script>
-@endsection
+@endsection --}}

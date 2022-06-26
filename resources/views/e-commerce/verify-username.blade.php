@@ -61,7 +61,7 @@
                                         กลับไปยังหน้า<a href="{{ route('login-register') }}"
                                             class="effect ml-1 mr-1"><span class="text-primary">เข้าสู่ระบบ</span></a>
                                     </div>
-                                    <button type="submit" class="btn btn-primary rounded-pill">ตกลง</button>
+                                    <button type="submit" class="btn btn-primary rounded-pill">ยืนยัน</button>
                                 </div>
                             </form>
                         </div>

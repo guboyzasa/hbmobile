@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Flot_Charts') @endsection
 
@@ -136,4 +136,4 @@
 
     <!-- flot init -->
     <script src="{{ URL::asset('/assets/js/pages/flot.init.js') }}"></script>
-@endsection
+@endsection --}}

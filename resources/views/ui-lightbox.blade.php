@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Lightbox') @endsection
 
@@ -196,4 +196,4 @@
 
     <!-- lightbox init js-->
     <script src="{{ URL::asset('/assets/js/pages/lightbox.init.js') }}"></script>
-@endsection
+@endsection --}}

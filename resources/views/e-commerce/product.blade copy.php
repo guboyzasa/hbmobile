@@ -6,7 +6,7 @@
 
 @section('content')
 
-<div class="page-head">
+<!-- <div class="page-head">
     <div class="container">
         <div class="d-flex flex-column flex-md-row">
             <ol class="breadcrumb p-0 bg-transparent mx-auto mx-md-0 mr-md-auto mb-0">
@@ -30,10 +30,10 @@
                 </a>
             </div>
         </div>
-    </div><!-- /.container -->
-</div><!-- /.page-head -->
+    </div>
+</div>/.page-head -->
 
-<section class="section single-product-wrapper">
+  <section class="section single-product-wrapper">
     <div class="container">
         <div class="row">
             <div class="col-lg-5">
@@ -323,7 +323,7 @@
 			</div> -->
         </div><!-- /.row -->
     </div><!-- /.container -->
-</section><!-- /.products -->
+</section> 
 
 <!-- Related Products -->
 <section class="section related-products second-style pt-0">

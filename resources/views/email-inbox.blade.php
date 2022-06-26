@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Inbox') @endsection
 
@@ -494,4 +494,4 @@
 
     <!-- email editor init -->
     <script src="{{ URL::asset('/assets/js/pages/email-editor.init.js') }}"></script>
-@endsection
+@endsection --}}

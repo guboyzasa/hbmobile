@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Notifications') @endsection
 
@@ -283,4 +283,4 @@
 
     <!-- toastr init -->
     <script src="{{ URL::asset('/assets/js/pages/toastr.init.js') }}"></script>
-@endsection
+@endsection --}}

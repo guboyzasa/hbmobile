@@ -312,7 +312,7 @@
                                             โอนชำระ: {{ $payment->bank_name }}
 
                                             <br>ชื่อบัญชี: {{ $payment->bank_account_name }}
-                                            <br>เลขที่บัญชี:{{ $payment->bank_account_no }}
+                                            <br>เลขที่บัญชี: {{ $payment->bank_account_no }}
                                         </label @endforeach>
 
                                         <!-- <div class="payment-box" id="payment-cheque">

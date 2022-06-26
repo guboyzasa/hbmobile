@@ -59,6 +59,7 @@
                 </div><!-- /.collection -->
                 {{-- <div class="col-md-12 col-lg-6 collection">
                 <div class="row"> --}}
+                    
                 @foreach ($product_categorys as $product_category)
                     <div class="col-3 col-md-3 collection">
                         <a href="products?product_filter_category={{ $product_category->id }}">
@@ -67,10 +68,15 @@
                         </a>
                     </div><!-- /.collection -->
                 @endforeach
+                <div class="sharethis-sticky-share-buttons"></div>
+                {{-- </div> --}}
+                {{-- </div> --}}
+
             </div><!-- /.row -->
         </div><!-- /.container -->
+        
     </section><!-- /.collections -->
-
+    
     <!-- produc brand -->
     {{-- <section class="section promotions pb-0 small-padding-top" id="promotions">
     <div class="container">
@@ -103,15 +109,16 @@
                 </div>
                 <div class="col-sm-12">
                     <div class="masonry row">
-
                         @foreach ($products as $key => $product)
                             <div class="product col-6 col-lg-3 col-md-6" data-product-id="{{ $product->id }}">
                                 <div class="inner-product">
-                                    @if ($product->is_new == 1)
+
+                                    @if (@$product->is_new == 1)
                                         <span class="onsale new">ใหม่ !</span>
-                                    @elseif($product->is_recommend == 1)
+                                    @elseif(@$product->is_recommend == 1)
                                         <span class="onsale hot">แนะนำ !</span>
                                     @endif
+                                    
                                     <div class="product-thumbnail">
                                         <img src='{{ URL::asset("get-content/$product->img") }}' class="img-fluid"
                                             alt="">
@@ -134,7 +141,7 @@
                                 <h4 class="product-title text-too-long"><a
                                         href="products/detail/{{ $product->id }}">{{ $product->name }}</a></h4>
                                 <div class="star-rating">
-                                    <span style="width:90%"></span>
+                                    <span style="width:80%"></span>
                                 </div>
                                 <p class="product-price text-primary">
                                     <ins>

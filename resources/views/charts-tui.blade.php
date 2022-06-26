@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Toast_UI_Charts') @endsection
 
@@ -183,4 +183,4 @@
 
     <!-- tui charts plugins -->
     <script src="{{ URL::asset('/assets/js/pages/tui-charts.init.js') }}"></script>
-@endsection
+@endsection --}}

@@ -1,4 +1,4 @@
-@extends('layouts.master-without-nav')
+{{-- @extends('layouts.master-without-nav')
 
 @section('title')
     @lang('translation.Register')
@@ -132,4 +132,4 @@
     @section('script')
         <!-- validation init -->
         <script src="{{ URL::asset('/assets/js/pages/validation.init.js') }}"></script>
-    @endsection
+    @endsection --}}

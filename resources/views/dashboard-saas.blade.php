@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Saas') @endsection
 
@@ -822,4 +822,4 @@
 
     <!-- Saas dashboard init -->
     <script src="{{ URL::asset('/assets/js/pages/saas-dashboard.init.js') }}"></script>
-@endsection
+@endsection --}}

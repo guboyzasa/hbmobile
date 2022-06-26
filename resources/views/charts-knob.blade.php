@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Jquery_Knob_Charts') @endsection
 
@@ -89,4 +89,4 @@
     <script src="{{ URL::asset('/assets/libs/jquery-knob/jquery-knob.min.js') }}"></script>
 
     <script src="{{ URL::asset('/assets/js/pages/jquery-knob.init.js') }}"></script>
-@endsection
+@endsection --}}

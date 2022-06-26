@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Rating') @endsection
 
@@ -169,4 +169,4 @@
     <script src="{{ URL::asset('/assets/libs/bootstrap-rating/bootstrap-rating.min.js') }}"></script>
 
     <script src="{{ URL::asset('/assets/js/pages/rating-init.js') }}"></script>
-@endsection
+@endsection --}}

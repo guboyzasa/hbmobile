@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Products') @endsection
 
@@ -339,4 +339,4 @@
 
     <!-- init js -->
     <script src="{{ URL::asset('/assets/js/pages/product-filter-range.init.js') }}"></script>
-@endsection
+@endsection --}}

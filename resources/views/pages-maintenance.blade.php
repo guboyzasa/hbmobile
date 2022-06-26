@@ -1,4 +1,4 @@
-@extends('layouts.master-without-nav')
+{{-- @extends('layouts.master-without-nav')
 
 @section('title')
     @lang('translation.Maintenance')
@@ -83,4 +83,4 @@
             </div>
         </section>
 
-    @endsection
+    @endsection --}}

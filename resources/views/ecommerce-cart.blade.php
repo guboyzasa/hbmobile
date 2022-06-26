@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Cart') @endsection
 
@@ -300,4 +300,4 @@
 
     <!-- init js -->
     <script src="{{ URL::asset('/assets/js/pages/ecommerce-cart.init.js') }}"></script>
-@endsection
+@endsection --}}

@@ -1,4 +1,4 @@
-@extends('layouts.master-without-nav')
+{{-- @extends('layouts.master-without-nav')
 
 @section('title')
     @lang('translation.Lock_Screen')
@@ -77,4 +77,4 @@
             </div>
         </div>
 
-    @endsection
+    @endsection --}}

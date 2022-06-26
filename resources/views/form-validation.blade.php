@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Form_Validation') @endsection
 
@@ -335,4 +335,4 @@
     <script src="{{ URL::asset('/assets/libs/parsleyjs/parsleyjs.min.js') }}"></script>
 
     <script src="{{ URL::asset('/assets/js/pages/form-validation.init.js') }}"></script>
-@endsection
+@endsection --}}

@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Starter_Page') @endsection
 
@@ -9,4 +9,4 @@
         @slot('title') Starter Page @endslot
     @endcomponent
 
-@endsection
+@endsection --}}

@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Orders') @endsection
 
@@ -422,4 +422,4 @@
 
     <!-- crypto-wallet init -->
     <script src="{{ URL::asset('/assets/js/pages/crypto-orders.init.js') }}"></script>
-@endsection
+@endsection --}}

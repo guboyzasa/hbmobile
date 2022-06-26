@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Kanban_Board') @endsection
 
@@ -733,4 +733,4 @@
     <script src="{{ URL::asset('/assets/js/pages/task-kanban.init.js') }}"></script>
 
     <script src="{{ URL::asset('/assets/js/pages/task-form.init.js') }}"></script>
-@endsection
+@endsection --}}

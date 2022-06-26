@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Create_Task') @endsection
 
@@ -106,4 +106,4 @@
     <script src="{{ URL::asset('/assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
 
     <script src="{{ URL::asset('/assets/js/pages/task-create.init.js') }}"></script>
-@endsection
+@endsection --}}

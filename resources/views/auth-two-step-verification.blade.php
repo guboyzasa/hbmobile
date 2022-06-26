@@ -1,4 +1,4 @@
-@extends('layouts.master-without-nav')
+{{-- @extends('layouts.master-without-nav')
 
 @section('title')
     @lang('translation.Two_step_verification')
@@ -99,4 +99,4 @@
 @section('script')
     <!-- two-step-verification js -->
     <script src="{{ URL::asset('/assets/js/pages/two-step-verification.init.js') }}" type="text/javascript"></script>
-@endsection
+@endsection --}}

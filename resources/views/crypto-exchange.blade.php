@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Exchange') @endsection
 
@@ -492,4 +492,4 @@
 
     <!-- crypto exchange init -->
     <script src="{{ URL::asset('/assets/js/pages/crypto-exchange.init.js') }}"></script>
-@endsection
+@endsection --}}

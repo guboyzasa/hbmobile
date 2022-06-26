@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.KYC_Application') @endsection
 
@@ -212,4 +212,4 @@
 
     <!-- init js -->
     <script src="{{ URL::asset('/assets/js/pages/crypto-kyc-app.init.js') }}"></script>
-@endsection
+@endsection --}}

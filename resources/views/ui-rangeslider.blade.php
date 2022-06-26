@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Range_Slider') @endsection
 
@@ -128,4 +128,4 @@
 
     <!-- Range slider init js-->
     <script src="{{ URL::asset('/assets/js/pages/range-sliders.init.js') }}"></script>
-@endsection
+@endsection --}}

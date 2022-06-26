@@ -10,7 +10,7 @@
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{ URL::asset('assets/images/favicon.ico') }}">
     @include('layouts.head-css')
-</head>
+    </head>
 
 @section('body')
     <body data-sidebar="dark">
@@ -36,11 +36,9 @@
         <!-- end main content-->
     </div>
     <!-- END layout-wrapper -->
-
     <!-- Right Sidebar -->
     @include('layouts.right-sidebar')
     <!-- /Right-bar -->
-
     <!-- JAVASCRIPT -->
     @include('layouts.vendor-scripts')
 </body>

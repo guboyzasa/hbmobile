@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Google_Maps') @endsection
 
@@ -72,4 +72,4 @@
 
     <!-- demo codes -->
     <script src="{{ URL::asset('/assets/js/pages/gmaps.init.js') }}"></script>
-@endsection
+@endsection --}}

@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Compact_Sidebar') @endsection
 
@@ -692,4 +692,4 @@
     <!-- dashboard init -->
     <script src="{{ URL::asset('/assets/js/pages/dashboard.init.js') }}"></script>
 @endsection
-
+ --}}

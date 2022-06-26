@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.File_Manager') @endsection
 
@@ -808,4 +808,4 @@
 
     <!-- dashboard init -->
     <script src="{{ URL::asset('/assets/js/pages/file-manager.init.js') }}"></script>
-@endsection
+@endsection --}}

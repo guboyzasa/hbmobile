@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Sparkline_Charts') @endsection
 
@@ -92,4 +92,4 @@
     <script src="{{ URL::asset('/assets/libs/jquery-sparkline/jquery-sparkline.min.js') }}"></script>
 
     <script src="{{ URL::asset('/assets/js/pages/sparklines.init.js') }}"></script>
-@endsection
+@endsection --}}

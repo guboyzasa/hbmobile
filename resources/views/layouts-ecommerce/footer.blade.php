@@ -8,6 +8,7 @@
                     {{ @$company->address1}}
                     <br>
                         {{-- <strong>Address2:</strong>  {{ @$company->address2}} --}}
+                        <p><strong>เปิดให้บริการ</strong> เวลา <time> 10:00 น.</time> - <time>21:00 น.</time> ทุกวัน</p>
                     </p>
                 </div><!-- ./widget -->
 
@@ -21,7 +22,8 @@
                             <li><img src="{{ URL::asset('/assets/dist/images/line.png') }}" alt=""> : <a
                                     href="{{ @$company->line_link }}" class="effect" target="_blank">{{ @$company->line }}</a></li>
                             <li>
-                                <i class='bx bxs-help-circle bx-sm'></i> : <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=188yanuk" target="_blank" class="effect">ต้องการความช่วยเหลือ</a>
+                                
+                                {{-- <i class='bx bxs-help-circle bx-sm'></i> : <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=188yanuk" target="_blank" class="effect">ต้องการความช่วยเหลือ</a> --}}
                             </li>
                         </ul>
                     </div>
@@ -31,11 +33,11 @@
     </div><!-- /.container -->
     <div class="copyright text-center">
         <p>
-            © Copyright 2022. All Rights Reserved.
+            © Copyright <script>document.write(new Date().getFullYear())</script> All Rights Reserved.
             <br>
             Created by 
-            <a href="https://www.facebook.com/boybbqs/" target="_blank" class="effect">
-                BOY BBQ
+            <a href="https://www.facebook.com/hbmobilekk/" target="_blank" class="effect">
+                HB Mobile Services.
             </a> 
         </p>
     </div>

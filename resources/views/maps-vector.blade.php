@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Vector_Maps') @endsection
 
@@ -103,4 +103,4 @@
 
     <!-- Init js-->
     <script src="{{ URL::asset('/assets/js/pages/vector-maps.init.js') }}"></script>
-@endsection
+@endsection --}}

@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Material_Design') @endsection
 
@@ -122,4 +122,4 @@
 @section('script')
     <!-- materialdesign init -->
     <script src="{{ URL::asset('/assets/js/pages/materialdesign.init.js') }}"></script>
-@endsection
+@endsection --}}

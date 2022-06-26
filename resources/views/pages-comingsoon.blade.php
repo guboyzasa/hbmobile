@@ -1,4 +1,4 @@
-@extends('layouts.master-without-nav')
+{{-- @extends('layouts.master-without-nav')
 
 @section('title')
     @lang('translation.Coming_Soon')
@@ -51,4 +51,4 @@
 
         <!-- oming-soon init -->
         <script src="{{ URL::asset('/assets/js/pages/coming-soon.init.js') }}"></script>
-    @endsection
+    @endsection --}}

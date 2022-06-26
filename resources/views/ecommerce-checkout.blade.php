@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('title') @lang('translation.Checkout') @endsection
 
@@ -507,4 +507,4 @@
 
     <!-- init js -->
     <script src="{{ URL::asset('/assets/js/pages/ecommerce-select2.init.js') }}"></script>
-@endsection
+@endsection --}}

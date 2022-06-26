@@ -1,4 +1,4 @@
-@extends('layouts.master-without-nav')
+{{-- @extends('layouts.master-without-nav')
 
 @section('title')
     @lang('translation.Register') 2
@@ -203,4 +203,4 @@
         <script src="{{ URL::asset('/assets/libs/owl.carousel/owl.carousel.min.js') }}"></script>
         <!-- auth-2-carousel init -->
         <script src="{{ URL::asset('/assets/js/pages/auth-2-carousel.init.js') }}"></script>
-    @endsection
+    @endsection --}}
