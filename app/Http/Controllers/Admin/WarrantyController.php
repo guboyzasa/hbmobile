@@ -128,6 +128,7 @@ class WarrantyController extends Controller
         $startDate = $req->startDate;
         $endDate = $req->endDate;
 
+       
         // return $req->all();
 
         $checkcode = WarrantyRegistration::whereIn('serial_no', $serials)->get();
@@ -189,7 +190,21 @@ class WarrantyController extends Controller
             $warranty->save();
 
         }
-      
+
+       //ลงทะเบียนประกัน LINE Notify
+       $customer = Customer::find($customer_id);
+       $productName = Product::find($product_id);
+       $shopName = Shop::find($shop_id);
+       $message1 = "message=" . "\n** บันทึกลงทะเบียนประกัน **" .
+       "\nSerial No: $warranty->serial_no" .
+       "\nชื่อลูกค้า: $customer->name" .
+       "\nชื่อสินค้า: $productName->name" .
+       "\nวันเริ่มประกัน: $req->startDate" .
+       "\nวันสินสุดประกัน: $req->endDate" .
+       "\nซื้อจาก: $shopName->name" ;
+
+       $this->sendLineNotify1(env('LINE_TOKEN1'), $message1);
+
         DB::commit();
 
         $data = [

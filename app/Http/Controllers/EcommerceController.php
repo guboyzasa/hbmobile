@@ -131,7 +131,7 @@ class EcommerceController extends Controller
         $bigDatas = [];
         $array_product = [];
         $data = [];
-
+        
         $product_ids = $req->product_id; //รหัสสินค้า
         $shipping_method = $req->shipping_method; //id ประเภทขนส่ง
         $subTotal = $req->subTotal; //ราคารวมก่อนรวมค่าส่ง
@@ -139,7 +139,7 @@ class EcommerceController extends Controller
         $summary = $req->summary; //ราคารวมค่า
         $qty = $req->qty; //จำนวนสินค้า
         $subPrice = $req->subPrice; //ราคาสินค้า
-
+       
         if($shipping_method){
             $shipping = ShippingMethod::find($shipping_method);
         }
@@ -297,6 +297,17 @@ class EcommerceController extends Controller
             $alert = 'danger';
             $msg = 'Error';
         }
+
+        //ลงทะเบียนประกัน LINE Notify
+
+        $message2 = "message=" . "\n** มีออเดอร์เข้า **" .
+        "\nรหัสออเดอร์: $order->code" .
+        "\nชื่อลูกค้า: $orderDelivery->name" .
+        "\nจำนวน: $orderDetail->amount ชิ้น" .
+        // "\nประเภทขนส่ง: " .
+        "\nยอดรวม: $order->total_amount บาท" ;
+
+        $this->sendLineNotify2(env('LINE_TOKEN2'), $message2);
 
         $order = Order::with('orderDetails.product','shippingMethod')->find($order->id);
         $company = CompanyContract::first();

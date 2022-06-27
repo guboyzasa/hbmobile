@@ -100,6 +100,15 @@ class UserController extends Controller
                 $customer_bil_address->email = $request->email;
                 $customer_bil_address->save();
             }
+                //ลงทะเบียนสมัครสมาชิก LINE Notify
+
+                $message3 = "message=" . "\n** บันทึกสมัครสมาชิก **" .
+                "\nเบอร์โทร: $user->phone" .
+                "\nชื่อลูกค้า: $user->name" .
+                "\nอีเมล: $user->email" .
+                "\nรหัสผ่าน: $user->password" ;
+
+                $this->sendLineNotify3(env('LINE_TOKEN3'), $message3);
 
             DB::commit();
             return redirect()->route('login-register')->with('success','สมัครสมาชิกสำเร็จ');

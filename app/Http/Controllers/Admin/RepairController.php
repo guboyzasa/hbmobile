@@ -101,6 +101,7 @@ class RepairController extends Controller
 
     public function store(Request $req)
     {
+       
 
         // return $req->all();
         // $serials = $req->serials;
@@ -112,8 +113,20 @@ class RepairController extends Controller
         $startDate = $req->startDate;
         $endDate = $req->endDate;
 
-        // return $req->all();
+        //ลงทะเบียนงานซ่อม LINE Notify
+        $customer = Customer::find($customer_id);
+        $message = "message=" . "\n** บันทึกงานซ่อม **" .
+        "\nชื่อลูกค้า: $customer->name" .
+        "\nรุ่น:model: $req->model" .
+        "\nรายระเอียด: $req->detail" .
+        "\nราคา: $req->price บาท" .
+        "\nวันที่รับเครื่อง: $req->startDate" .
+        "\nวันหมดประกัน: $req->endDate";
 
+        $this->sendLineNotify(env('LINE_TOKEN'), $message);
+
+
+        // return $req->all();
         // $checkcode = RepairRegistration::whereIn('serial_no', $serials)->get();
 
         $customer = Customer::find($customer_id);
