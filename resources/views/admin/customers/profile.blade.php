@@ -72,9 +72,9 @@
                                     href="#v-pills-warranty" role="tab" aria-controls="v-pills-warranty" 
                                     aria-selected="false"><i class="bx bx-check-double"></i>   การรับประกันสินค้า</a>
 
-                                <a class="nav-link" id="v-pills-warranty-tab" data-bs-toggle="pill" 
+                                {{-- <a class="nav-link" id="v-pills-warranty-tab" data-bs-toggle="pill" 
                                     href="#v-pills-warranty" role="tab" aria-controls="v-pills-warranty" 
-                                    aria-selected="false"><i class="bx bx-check-double"></i>   ติดตามงานซ่อม</a>
+                                    aria-selected="false"><i class="bx bx-check-double"></i>   ติดตามงานซ่อม</a> --}}
 
                                 <a class="nav-link" id="v-pills-order-tab" data-bs-toggle="pill" 
                                     href="#v-pills-order" role="tab" aria-controls="v-pills-order" 
@@ -264,43 +264,10 @@
                                     </div>
                                 </div>
 
-                                <div class="tab-pane fade" id="v-pills-warranty" role="tabpanel" aria-labelledby="v-pills-warranty-tab">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h4 class="card-title text-primary"><i class="bx bx-check-double"></i>  ลงทะเบียนรับประกันสินค้า</h4>
-                                          
-                                            <button type="button" style="float: right; margin: 2px;" class="btn btn-primary warranty_btn btn-sm" ><i class="bx bx-plus"></i> ลงทะเบียน </button>
-                                            <br>
-                                            <br>
-                                            <div class="row">
-                                                <table id="warranty_table" class="table table-bordered dt-responsive   w-100" width="100%">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>วันที่รับเครื่อง</th>
-                                                            <th>รุ่น:model</th>
-                                                            <th>รายการซ่อม</th>
-                                                            <th>ราคา</th>
-                                                            <th>วันสิ้นสุดประกัน</th>
-                                                            <th>สถานะประกัน</th>
-                                                            <th>สถานะซ่อม</th>
-                                                            <th></th>
-                                                        </tr>
-                                                    </thead>
-
-                                                    <tbody>
-
-                                                    </tbody>
-                                                </table>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
                                 <div class="tab-pane fade" id="v-pills-order" role="tabpanel" aria-labelledby="v-pills-order-tab">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h4 class="card-title text-primary"><i class="bx bx-check-double"></i>  ออเดอร์ทั้งหมด</h4>
+                                            <h4 class="card-title text-primary"><i class="bx bx-package"></i>  ออเดอร์ทั้งหมด</h4>
                             
                                             <div class="row">
                             

@@ -210,7 +210,7 @@
                                                                         {{ $order->orderDeliveryAddress->phone }}
                                                                     </p>
                                                                 @endif
-                                                                @if ($customer->customerBillAddress)
+                                                                {{-- @if ($customer->customerBillAddress)
                                                                     <p>
                                                                         <i class='bx bxs-map'></i>
                                                                         ที่อยู่จัดส่ง :
@@ -223,8 +223,8 @@
                                                                         {{ $customer->customerBillAddress->province }}
                                                                         {{ $customer->customerBillAddress->zipcode }}
                                                                     </p>
-                                                                @endif
-                                                                {{-- @if ($order->orderDeliveryAddress)
+                                                                @endif --}}
+                                                                @if ($order->orderDeliveryAddress)
                                                                     <p>
                                                                         <i class='bx bxs-map'></i>
                                                                         ที่อยู่จัดส่ง :
@@ -235,7 +235,7 @@
                                                                         {{ $order->orderDeliveryAddress->province }}
                                                                         {{ $order->orderDeliveryAddress->zipcode }}
                                                                     </p>
-                                                                @endif --}}
+                                                                @endif
 
                                                                 @if ($order->orderBillAddress)
                                                                     <p>
@@ -428,7 +428,7 @@
                                                                         {{ $order->orderBillAddress->phone }}
                                                                     </p>
                                                                 @endif
-                                                                @if ($customer->customerBillAddress)
+                                                                {{-- @if ($customer->customerBillAddress)
                                                                     <p>
                                                                         <i class='bx bxs-map'></i>
                                                                         ที่อยู่จัดส่ง :
@@ -441,7 +441,20 @@
                                                                         {{ $customer->customerBillAddress->province }}
                                                                         {{ $customer->customerBillAddress->zipcode }}
                                                                     </p>
+                                                                @endif --}}
+                                                                @if ($order->orderDeliveryAddress)
+                                                                    <p>
+                                                                        <i class='bx bxs-map'></i>
+                                                                        ที่อยู่จัดส่ง :
+
+                                                                        {{ $order->orderDeliveryAddress->address }}
+                                                                        {{ $order->orderDeliveryAddress->district }}
+                                                                        {{ $order->orderDeliveryAddress->sub_district }}
+                                                                        {{ $order->orderDeliveryAddress->province }}
+                                                                        {{ $order->orderDeliveryAddress->zipcode }}
+                                                                    </p>
                                                                 @endif
+
 
                                                                 @if ($order->orderBillAddress)
                                                                     <p>
@@ -601,13 +614,13 @@
                             <li class="nav-item">
                                 <a class="nav-link text-primary" href="#tab-profile" aria-controls="tab-profile"
                                     data-toggle="tab">
-                                    <i class='bx bxs-user-circle'></i> แก้ไขข้อมูลส่วนตัว
+                                    <i class='bx bxs-user-circle'></i> แก้ไขที่อยู่จัดส่ง
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-primary" href="#tab-customer-bill"
                                     aria-controls="tab-customer-bill" data-toggle="tab">
-                                    <i class='bx bx-receipt'></i> แก้ไขที่อยู่จัดส่ง
+                                    <i class='bx bx-receipt'></i> แก้ไขที่อยู่ออกบิล
                                 </a>
                             </li>
                         </ul>
@@ -693,7 +706,7 @@
                                                                             {{ $order->orderDeliveryAddress->phone }}
                                                                         </p>
                                                                     @endif
-                                                                    @if ($customer->customerBillAddress)
+                                                                    {{-- @if ($customer->customerBillAddress)
                                                                         <p>
                                                                             <i class='bx bxs-map'></i>
                                                                             ที่อยู่จัดส่ง :
@@ -706,26 +719,26 @@
                                                                             {{ $customer->customerBillAddress->province }}
                                                                             {{ $customer->customerBillAddress->zipcode }}
                                                                         </p>
-                                                                    @endif
-                                                                    {{-- @if ($order->orderDeliveryAddress)
+                                                                    @endif --}}
+                                                                    @if ($order->orderDeliveryAddress)
                                                                         <p>
                                                                             <i class='bx bxs-map'></i>
                                                                             ที่อยู่จัดส่ง :
                                                                             {{ $order->orderDeliveryAddress->address }}
-                                                                            {{ $order->orderDeliveryAddress->district }}
                                                                             {{ $order->orderDeliveryAddress->sub_district }}
+                                                                            {{ $order->orderDeliveryAddress->district }}
                                                                             {{ $order->orderDeliveryAddress->province }}
                                                                             {{ $order->orderDeliveryAddress->zipcode }}
                                                                         </p>
-                                                                    @endif --}}
+                                                                    @endif
 
                                                                     @if ($order->orderBillAddress)
                                                                         <p>
                                                                             <i class='bx bx-receipt'></i>
                                                                             ที่อยู่ออกบิล :
                                                                             {{ $order->orderBillAddress->address }}
-                                                                            {{ $order->orderBillAddress->district }}
                                                                             {{ $order->orderBillAddress->sub_district }}
+                                                                            {{ $order->orderBillAddress->district }}
                                                                             {{ $order->orderBillAddress->province }}
                                                                             {{ $order->orderBillAddress->zipcode }}
                                                                         </p>

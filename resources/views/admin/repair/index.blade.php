@@ -44,11 +44,12 @@
                         <thead>
                             <tr>
                                 <th>วันที่รับเครื่อง</th>
+                                <th>ชื่อลูกค้า</th>
                                 <th>รุ่น:model</th>
                                 <th>รายการซ่อม</th>
                                 <th>ราคา</th>
                                 {{-- <th>วันเริ่มประกัน</th> --}}
-                                <th>วันสิ้นสุดประกัน</th>
+                                {{-- <th>วันสิ้นสุดประกัน</th> --}}
                                 <th>สถานะประกัน</th>
                                 <th>สถานะซ่อม</th>
                                 <th></th>
@@ -543,6 +544,14 @@
                             return moment(data).format('DD-MM-YYYY');
                         }
                     },
+                    {
+                    "data": "customer",
+                         "render": function (data, type, full) {
+                            return data ? data.name : '<span class="badge badge-pill badge-soft-danger font-size-11"> ลูกค้าถูกลบ </span>';
+                        }
+                    },
+                    
+                    
 
                     {
                         "data": "model",
@@ -556,12 +565,12 @@
                         "data": "price",
                     },
 
-                    {
-                        "data": "repair_end_date",
-                        "render": function(data, type, full) {
-                            return moment(data).format('DD-MM-YYYY');
-                        }
-                    },
+                    // {
+                    //     "data": "repair_end_date",
+                    //     "render": function(data, type, full) {
+                    //         return moment(data).format('DD-MM-YYYY');
+                    //     }
+                    // },
                     {
                         "data": "repair_end_date",
                         "render": function(data, type, full) {
