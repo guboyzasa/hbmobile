@@ -61,7 +61,8 @@
                     <div class="card-header cursor-pointer" data-toggle="collapse" data-target="#last-manual"
                         aria-expanded="true">
                         <div class="media-left media-middle">
-                            <h3 class="media-heading"><i class='bx bx-cart' style='font-size:33px'></i>
+                            <h3 class="media-heading">
+                                <i class='bx bxl-apple'></i>
                                 1.IOS</h3>
                         </div>
                     </div>
@@ -122,7 +123,8 @@
                     <div class="card-header cursor-pointer" data-toggle="collapse" data-target="#last-manuals"
                         aria-expanded="true">
                         <div class="media-left media-middle">
-                            <h3 class="media-heading"><i class='bx bx-wrench' style='font-size:33px'></i>
+                            <h3 class="media-heading">
+                                <i class='bx bxl-android'></i>
                                 2.Android</h3>
                         </div>
                     </div>
@@ -179,7 +181,8 @@
                     <div class="card-header cursor-pointer" data-toggle="collapse" data-target="#last-manual-register"
                         aria-expanded="true">
                         <div class="media-left media-middle">
-                            <h3 class="media-heading"><i class='bx bx-group' style='font-size:33px'></i>
+                            <h3 class="media-heading">
+                                <i class='bx bx-desktop'></i>
                                 3.NoteBook</h3>
                         </div>
                     </div>
@@ -239,7 +242,8 @@
                     <div class="card-header cursor-pointer" data-toggle="collapse" data-target="#last-manual-password"
                         aria-expanded="true">
                         <div class="media-left media-middle">
-                            <h3 class="media-heading"><i class='bx bx-key' style='font-size:33px'></i>
+                            <h3 class="media-heading">
+                                <i class='bx bx-cog'></i>
                                 4.งานติดตั้ง (Onsite)</h3>
                         </div>
                     </div>

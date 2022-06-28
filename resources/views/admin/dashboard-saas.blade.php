@@ -17,7 +17,7 @@
                     <h4 align="right">
                         <a style="color: rgb(205, 11, 11)">ยอดรวม : </a>
                         <a style="color: rgb(13, 141, 221)">฿</a>
-                        <a style="color: rgb(13, 141, 221)">{{ number_format($sumOrder + $sumOrder) }}</a>
+                        <a style="color: rgb(13, 141, 221)">{{ number_format($sumOrder) }}</a>
                         <a style="color: rgb(13, 141, 221)">บาท </a>
                         <i class="mdi mdi-chevron-up ms-1 text-success"></i>
                     </h4>
@@ -40,7 +40,7 @@
                                     <div class="avatar-xs me-3">
                                         <span
                                             class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-18">
-                                            <i class="bx bx-battery"></i>
+                                            <i class="bx bx-task"></i>
                                         </span>
                                     </div>
                                     <h5 class="font-size-14 mb-0">ลงทะเบียนรับประกัน</h5>
@@ -189,7 +189,7 @@
                                     <div class="avatar-xs me-3">
                                         <span
                                             class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-18">
-                                            <i class="bx bx-run"></i>
+                                            <i class='bx bx-wrench'></i>
                                         </span>
                                     </div>
                                     <h5 class="font-size-14 mb-0">ลงทะเบียนงานซ่อม</h5>
@@ -203,7 +203,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-sm-4">
+                {{-- <div class="col-sm-4">
                     <a href="#">
                         <!--{{ route('admin.agent.index') }} -->
                         <div class="card">
@@ -225,7 +225,7 @@
                             </div>
                         </div>
                     </a>
-                </div>
+                </div> --}}
             </div>
             <!-- end row -->
         </div>

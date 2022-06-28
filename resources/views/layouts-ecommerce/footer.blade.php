@@ -5,10 +5,10 @@
                 <div class="col-lg-6 col-md-6 widget widget-about">
                     <h4 class="widget-title">{{ @$company->name }}</h4>
                     <p>
-                    {{ @$company->address1}}
+                    ที่อยู่ {{ @$company->address1}}
                     <br>
-                        {{-- <strong>Address2:</strong>  {{ @$company->address2}} --}}
-                        <p><strong>เปิดให้บริการ</strong> เวลา <time> 10:00 น.</time> - <time>21:00 น.</time> ทุกวัน</p>
+                        {{-- {{ @$company->address2}} --}}
+                        <strong>เปิดให้บริการเวลา </strong><time style="color: red"> 10:00 น.</time> - <time style="color: red">21:00 น.</time> <strong>ทุกวัน</strong>
                     </p>
                 </div><!-- ./widget -->
 
@@ -43,7 +43,7 @@
     </div>
 </footer><!-- /.footer -->
 
-<!-- open/close -->
+{{-- <!-- open/close -->
 <div class="overlay overlay-simplegenie">
     <i class="overlay-close bx bx-x"></i>
     <div class="container">
@@ -58,7 +58,7 @@
             </div>
         </div>
     </div>
-</div><!-- /.overlay -->
+</div><!-- /.overlay --> --}}
 
 <!-- Go to top -->
 <a href="#" class="go-to-top">
