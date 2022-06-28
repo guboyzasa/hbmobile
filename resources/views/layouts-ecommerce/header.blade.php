@@ -81,7 +81,7 @@
                             สินค้าของเรา
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="nav-link" href="{{ route('products') }}">สินค้าทั้งหมด</a></li> 
+                            <li><a class="nav-link" href="{{ route('products') }}">สินค้าทั้งหมด</a></li>
                             {{-- <li><a class="nav-link" href="/products?product_filter_category=1">แบตเตอรี่เพิ่มความจุ</a>
                             </li> --}}
                             <li><a class="nav-link" href="/products?product_filter_category=8">จอมือถือ</a></li>
@@ -99,7 +99,13 @@
                             ขั้นตอนต่างๆ
                         </a>
                     </li>
-                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="{{ route('repair-example') }}" role="button" aria-haspopup="true"
+                            aria-expanded="false">
+                            ตัวอย่างงานซ่อม
+                        </a>
+                    </li>
+
                     {{-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">

@@ -48,13 +48,13 @@
                         จานดาวเทียม, โซล่าเซล์, เน็ตเวิร์ก, กราฟิก
                     </p>
                     <p>
-                        <i class="bx bx-check-square"></i> เปลี่ยนแบตมือถือ-โน๊ตบุ๊ค, เปลี่ยนจอมือถือ-โน๊ตบุ๊ค,
+                        <i class="bx bx-check"></i> เปลี่ยนแบตมือถือ-โน๊ตบุ๊ค, เปลี่ยนจอมือถือ-โน๊ตบุ๊ค,
                         เปลี่ยนแป้นพิมพ์
-                        <br><i class="bx bx-check-square"></i> ลง Windows Programes, ลง Windows บน MacBook, iMac
-                        <br><i class="bx bx-check-square"></i> ปลด iCloud Clean - รหัสหน้าจอ - Bypass
-                        <br><i class="bx bx-check-square"></i> ปลดเครื่องติดรายเดือน - ติดเครื่อข่าย - Gmail Account
-                        <br><i class="bx bx-check-square"></i> ติดตั้งกล้องวงจรปิด, ติดตั้งโซล่าเซลล์, ติดตั้งจานดาวเทียม
-                        <br><i class="bx bx-check-square"></i> IT, IOT, OS, Osx, Android, Arduino, Rasp pi, Mikrotik
+                        <br><i class="bx bx-check"></i> ลง Windows Programes, ลง Windows บน MacBook, iMac
+                        <br><i class="bx bx-check"></i> ปลด iCloud Clean - รหัสหน้าจอ - Bypass
+                        <br><i class="bx bx-check"></i> ปลดเครื่องติดรายเดือน - ติดเครื่อข่าย - Gmail Account
+                        <br><i class="bx bx-check"></i> ติดตั้งกล้องวงจรปิด, ติดตั้งโซล่าเซลล์, ติดตั้งจานดาวเทียม
+                        <br><i class="bx bx-check"></i> IT, IOT, OS, Osx, Android, Arduino, Rasp pi, Mikrotik
                     </p>
                 </div><!-- /.collection -->
                 {{-- <div class="col-md-12 col-lg-6 collection">

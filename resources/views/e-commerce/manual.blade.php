@@ -99,6 +99,7 @@
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </div>
             {{-- </div> --}}
@@ -202,6 +203,7 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
                 {{-- </div> --}}
             </div><!-- /.container -->
@@ -264,12 +266,12 @@
                                             </div>
                                         </div>
                                     </div>
-
                                 </div><!-- /.row -->
 
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
             {{-- </div> --}}
@@ -346,9 +348,11 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
-                {{-- </div> --}}
-                {{-- </div><!-- /.container --> --}}
+            </div>
+            
+        </div><!-- /.container -->
     </section><!-- /.manuals -->
 
 @endsection

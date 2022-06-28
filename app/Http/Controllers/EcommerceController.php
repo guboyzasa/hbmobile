@@ -645,6 +645,11 @@ class EcommerceController extends Controller
         $company = CompanyContract::first();
         return view('e-commerce.manual',compact('company'));
     }
+    public function repairExample()
+    {
+        $company = CompanyContract::first();
+        return view('e-commerce.repair-example',compact('company'));
+    }
 
     public function changePasswordPage()
     {

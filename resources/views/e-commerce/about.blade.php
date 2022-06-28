@@ -36,9 +36,9 @@
 				</div>
 				<div class="col-lg-8">
 					<div class="image">
-						<img src='{{ URL::asset("/assets/dist/images/qr.png") }}' class="img-fluid" alt="" width="40%">
+						<img src='{{ URL::asset("/assets/dist/images/logo.png") }}' class="img-fluid" alt="" width="40%">
 						&nbsp;&nbsp;&nbsp;&nbsp;
-						<img src='{{ URL::asset("/assets/dist/images/qr.png") }}' class="img-fluid" alt="" width="40%">
+						<img src='{{ URL::asset("/assets/dist/images/tb.jpg") }}' class="img-fluid" alt="" width="40%">
 					</div>
 				</div>
 			</div><!-- /.row -->

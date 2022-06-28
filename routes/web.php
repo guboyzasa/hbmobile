@@ -53,6 +53,7 @@ Route::middleware(['checkEcommerceMaintenance'])->group(function () {
         Route::post('/profile-account/store', [App\Http\Controllers\EcommerceController::class, 'profileAccountStore'])->name('profile-account.store');
         Route::post('/profile-account-bill/store', [App\Http\Controllers\EcommerceController::class, 'profileAccountBillStore'])->name('profile-account-bill.store');
         Route::get('/manual', [App\Http\Controllers\EcommerceController::class, 'manual'])->name('manual');
+        Route::get('/repair-example', [App\Http\Controllers\EcommerceController::class, 'repairExample'])->name('repair-example');
         Route::get('/verify-username', [App\Http\Controllers\EcommerceController::class, 'verifyUsername'])->name('verify-username');
         Route::get('/ecom/change-password', [App\Http\Controllers\EcommerceController::class, 'changePasswordPage'])->name('ecom.change-password');
         // Route::post('/page/order-received', [App\Http\Controllers\EcommerceController::class, 'orderReceivedPage'])->name('order-received-page');
