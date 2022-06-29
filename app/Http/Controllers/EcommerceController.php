@@ -299,7 +299,6 @@ class EcommerceController extends Controller
         }
 
         //ลงทะเบียนประกัน LINE Notify
-
         $message2 = "message=" . "\n** มีออเดอร์เข้า **" .
         "\nรหัสออเดอร์: $order->code" .
         "\nชื่อลูกค้า: $orderDelivery->name" .
@@ -650,7 +649,7 @@ class EcommerceController extends Controller
         $company = CompanyContract::first();
         return view('e-commerce.repair-example',compact('company'));
     }
-
+    
     public function changePasswordPage()
     {
         $company = CompanyContract::first();
