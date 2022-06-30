@@ -814,12 +814,12 @@
                                 <table class="table shop_attributes" id="warranty_table">
                                     <thead>
                                         <tr>
-                                            <th>Serial No</th>
-                                            <th>รหัสสินค้า</th>
-                                            <th>วันที่เริ่มประกัน</th>
-                                            <th>วันสิ้นสุดประกัน</th>
-                                            <th>ผู้ลงทะเบียนรับประกัน</th>
-                                            <th>สถานะ</th>
+                                            <th style="text-align:center">Serial No</th>
+                                            <th style="text-align:center">รหัสสินค้า</th>
+                                            <th style="text-align:center">วันที่เริ่มประกัน</th>
+                                            <th style="text-align:center">วันสิ้นสุดประกัน</th>
+                                            <th style="text-align:center">ผู้ลงทะเบียนรับประกัน</th>
+                                            <th style="text-align:center">สถานะ</th>
 
                                         </tr>
                                     </thead>
@@ -827,13 +827,15 @@
                                         @if ($warrantys)
                                             @foreach ($warrantys as $warranty)
                                                 <tr>
-                                                    <td>{{ $warranty->serial_no }}</td>
-                                                    <td>{{ $warranty->product->sku }}</td>
-                                                    <td>{{ date_format(date_create($warranty->warranty_start_date), 'd-m-Y') }}
+                                                    <td style="text-align:center">{{ $warranty->serial_no }}</td>
+                                                    <td style="text-align:center">{{ $warranty->product->sku }}</td>
+                                                    <td style="text-align:center">
+                                                        {{ date_format(date_create($warranty->warranty_start_date), 'd-m-Y') }}
                                                     </td>
-                                                    <td>{{ date_format(date_create($warranty->warranty_end_date), 'd-m-Y') }}
+                                                    <td style="text-align:center">
+                                                        {{ date_format(date_create($warranty->warranty_end_date), 'd-m-Y') }}
                                                     </td>
-                                                    <td>
+                                                    <td style="text-align:center">
                                                         <?php
                                                         $statAdmin = $warranty->user_create_id;
                                                         if ($statAdmin == 1):
@@ -843,7 +845,7 @@
                                                         endif;
                                                         ?>
                                                     </td>
-                                                    <td>
+                                                    <td style="text-align:center">
                                                         @php
                                                             $dateNow = date_create(strval(date('Y-m-d')));
                                                             $dateEnd = date_create($warranty->warranty_end_date);
@@ -860,20 +862,20 @@
                                         @endif
                                     </tbody>
                                 </table>
-                            </div><!-- ./tab-orders -->
+                            </div><!-- ./tab-waranry-->
 
                             <div class="tab-pane" id="tab-repair">
                                 <table class="table shop_attributes" id="warranty_table">
                                     <thead>
                                         <tr>
-                                            <th>วันที่รับเครื่อง</th>
-                                            <th>รุ่น:model</th>
-                                            <th>รายการซ่อม</th>
-                                            <th>ราคา</th>
-                                            <th>วันสิ้นสุดประกัน</th>
-                                            <th>สถานะประกัน</th>
-                                            <th>สถานะซ่อม</th>
-                                            <th>ใบแจ้งหนี้</th>
+                                            <th style="text-align:center">วันที่รับเครื่อง</th>
+                                            {{-- <th>รุ่น:model</th> --}}
+                                            <th style="text-align:center">รายการซ่อม</th>
+                                            <th style="text-align:center">ราคา</th>
+                                            <th style="text-align:center">สิ้นสุดประกัน</th>
+                                            {{-- <th>สถานะประกัน</th> --}}
+                                            <th style="text-align:center">สถานะซ่อม</th>
+                                            <th>ใบแจ้งชำระ</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -881,21 +883,22 @@
                                             @foreach ($repairs as $repair)
                                                 <tr>
                                                     <!--วันที่รับเครื่อง -->
-                                                    <td>
-                                                        {{ date_format(date_create($repair->repair_start_date), 'd-m-Y') }}
+                                                    <td style="text-align:center">
+                                                        {{ date_format(date_create($repair->repair_start_date), 'd-m-y') }}
                                                     </td>
                                                     <!--รุ่น:model -->
-                                                    <td>{{ $repair->model }}</td>
+                                                    {{-- <td>{{ $repair->model }}</td> --}}
                                                     <!--รายการซ่อม -->
-                                                    <td>{{ $repair->detail }}</td>
+                                                    <td style="text-align:center">{{ $repair->model }} x
+                                                        {{ $repair->detail }}</td>
                                                     <!--ราคา -->
-                                                    <td>{{ $repair->price }}</td>
+                                                    <td style="text-align:center">{{ $repair->price }}</td>
                                                     <!--วันสิ้นสุดประกัน -->
-                                                    <td>
-                                                        {{ date_format(date_create($repair->repair_end_date), 'd-m-Y') }}
+                                                    <td style="text-align:center">
+                                                        {{ date_format(date_create($repair->repair_end_date), 'd-m-y') }}
                                                     </td>
                                                     <!--สะถานะประกัน -->
-                                                    <td>
+                                                    {{-- <td>
                                                         @php
                                                             $dateNow = date_create(strval(date('Y-m-d')));
                                                             $dateEnd = date_create($repair->repair_start_date);
@@ -907,9 +910,9 @@
                                                             <span class="badge badge-danger"> หมดประกันแล้ว </span>
                                                         @endif
 
-                                                    </td>
+                                                    </td> --}}
                                                     <!--สะถานะซ่อม -->
-                                                    <td>
+                                                    <td style="text-align:center">
                                                         <?php
                                                         $status = $repair->status;
                                                         if ($status == 1):
@@ -922,216 +925,237 @@
                                                         ?>
                                                     </td>
                                                     <td>
-                                                        <!DOCTYPE html>
-                                                        <html>
+                                                        <!-- Trigger/Open The Modal -->
+                                                        <div id="myBtn">
+                                                            <button type="button"
+                                                                class="badge badge-info waves-effect waves-light">
+                                                                ใบแจ้งชำระ</button>
+                                                        </div>
+                                                        <style>
+                                                            /* The Modal (background) */
+                                                            .modal {
+                                                                display: none;
+                                                                /* Hidden by default */
+                                                                position: fixed;
+                                                                /* Stay in place */
+                                                                z-index: 1;
+                                                                /* Sit on top */
+                                                                padding-top: 100px;
+                                                                /* Location of the box */
+                                                                left: 0;
+                                                                top: 0;
+                                                                width: 100%;
+                                                                /* Full width */
+                                                                height: 100%;
+                                                                /* Full height */
+                                                                overflow: auto;
+                                                                /* Enable scroll if needed */
+                                                                background-color: rgb(0, 0, 0);
+                                                                /* Fallback color */
+                                                                background-color: rgba(0, 0, 0, 0.4);
+                                                                /* Black w/ opacity */
+                                                            }
 
-                                                        <head>
-                                                            <meta name="viewport"
-                                                                content="width=device-width, initial-scale=1">
-                                                            <style>
-                                                                /* The Modal (background) */
-                                                                .modal {
-                                                                    display: none;
-                                                                    /* Hidden by default */
-                                                                    position: fixed;
-                                                                    /* Stay in place */
-                                                                    z-index: 1;
-                                                                    /* Sit on top */
-                                                                    padding-top: 100px;
-                                                                    /* Location of the box */
-                                                                    left: 0;
-                                                                    top: 0;
-                                                                    width: 100%;
-                                                                    /* Full width */
-                                                                    height: 100%;
-                                                                    /* Full height */
-                                                                    overflow: auto;
-                                                                    /* Enable scroll if needed */
-                                                                    background-color: rgb(0, 0, 0);
-                                                                    /* Fallback color */
-                                                                    background-color: rgba(0, 0, 0, 0.4);
-                                                                    /* Black w/ opacity */
-                                                                }
+                                                            /* Modal Content */
+                                                            .modal-content {
+                                                                background-color: #fefefe;
+                                                                margin: auto;
+                                                                padding: 20px;
+                                                                border: 1px solid #888;
+                                                                width: 71%;
+                                                            }
 
-                                                                /* Modal Content */
-                                                                .modal-content {
-                                                                    background-color: #fefefe;
-                                                                    margin: auto;
-                                                                    padding: 20px;
-                                                                    border: 1px solid #888;
-                                                                    width: 70%;
-                                                                }
+                                                            /* The Close Button */
+                                                            .close {
+                                                                color: #aaaaaa;
+                                                                float: right;
+                                                                /* font-size: 28px; */
+                                                                font-weight: bold;
+                                                            }
 
-                                                                /* The Close Button */
-                                                                .close {
-                                                                    color: #aaaaaa;
-                                                                    float: right;
-                                                                    /* font-size: 28px; */
-                                                                    font-weight: bold;
-                                                                }
+                                                            .close:hover,
+                                                            .close:focus {
+                                                                color: #000;
+                                                                text-decoration: none;
+                                                                cursor: pointer;
+                                                            }
 
-                                                                .close:hover,
-                                                                .close:focus {
-                                                                    color: #000;
-                                                                    text-decoration: none;
-                                                                    cursor: pointer;
-                                                                }
-                                                            </style>
-                                                        </head>
+                                                            .btn {
+                                                                width: 150px;
+                                                            }
+                                                        </style>
+                                                        <!-- The Modal -->
+                                                        <div id="myModal" class="modal">
+                                                            <!-- Modal content -->
+                                                            <div class="modal-content"><span class="close">&times;</span>
 
-                                                        <body>
-                                                            <!-- Trigger/Open The Modal -->
-                                                            <div id="myBtn">
-                                                                <button type="button" class="badge badge-info"><i
-                                                                        class="bx bx-printer"></i>ใบแจ้งหนี้</button>
-                                                            </div>
-                                                            <!-- The Modal -->
-                                                            <div id="myModal" class="modal">
-                                                                <!-- Modal content -->
-                                                                <div class="modal-content"><span
-                                                                        class="close">&times;</span>
 
-                                                                    <div id='DivIdToPrint'>
 
-                                                                        <div class="card-header cursor-pointer"
-                                                                            data-toggle="collapse"
-                                                                            data-target="#last-repair">
-                                                                            <h4 class="h4 mb-0"><i
-                                                                                    class="bx bx-receipt"></i>
-                                                                                ใบแจ้งหนี้/แจ้งชำระ <span
-                                                                                    class="amount text-primary"> [ยอดชำระ :
-                                                                                    {{ $repair->price + 80 }}
-                                                                                    บาท]</span>
-                                                                            </h4>
-                                                                        </div>
-                                                                        <div id="last-repair"
-                                                                            class="card-collapse collapse"
-                                                                            data-parent="#last-repair">
-                                                                            <div class="card-body">
-                                                                                <div class="box table-responsive">
+                                                                <div class="card-header cursor-pointer"
+                                                                    data-toggle="collapse" data-target="#last-repair">
+                                                                    <h4 class="h4 mb-0"><i class="bx bx-receipt"></i>
+                                                                        แจ้งชำระ <span class="amount text-primary"> [ยอด:
+                                                                            {{ $repair->price + 80 }}
+                                                                            ฿]</span>
+                                                                    </h4>
 
-                                                                                    <table
-                                                                                        class="table cart-table last-repair-table w-100">
-                                                                                        <thead>
-                                                                                            <tr>
-                                                                                                <th colspan="2">
-                                                                                                    {{-- @if ($customerAddress->customer) --}}
-                                                                                                    <p>
-                                                                                                        <i
-                                                                                                            class='bx bx-user'></i>
-                                                                                                        ชื่อ :
-                                                                                                        <span
-                                                                                                            class="text-primary">{{ @$customer->name }}</span>
-                                                                                                    </p>
-                                                                                                    {{-- @endif --}}
-                                                                                                    {{-- @if ($order->orderDeliveryAddress) --}}
-                                                                                                    <p>
-                                                                                                        <i
-                                                                                                            class='bx bx-phone'></i>
-                                                                                                        เบอร์โทร :
-                                                                                                        {{ @$customer->phone }}
-                                                                                                    </p>
-                                                                                                    {{-- @endif --}}
-                                                                                                    <p>
-                                                                                                        <i
-                                                                                                            class='bx bxs-map'></i>
-                                                                                                        ที่อยู่จัดส่ง
-                                                                                                        :
-                                                                                                        {{ $customer->customerAddress->address }}
-                                                                                                        ต.
-                                                                                                        {{ $customer->customerAddress->sub_district }}
-                                                                                                        อ.
-                                                                                                        {{ $customer->customerAddress->district }}
-                                                                                                        จ.
-                                                                                                        {{ $customer->customerAddress->province }}
-                                                                                                        {{ $customer->customerAddress->zipcode }}
-                                                                                                    </p>
-                                                                                                </th>
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                <th class="product-name">
-                                                                                                    รายการซ่อม
-                                                                                                </th>
-                                                                                                <th class="product-total">
-                                                                                                    ราคา (บาท)
-                                                                                                </th>
-                                                                                            </tr>
-                                                                                        </thead>
-                                                                                        <tbody>
+                                                                </div>
+                                                                <div id="last-repair" class="card-collapse collapse"
+                                                                    data-parent="#last-repair">
+                                                                    <div class="card-body">
+                                                                        <div class="box table-responsive">
+                                                                            <table
+                                                                                class="table cart-table last-repair-table w-100">
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <th colspan="2">
+                                                                                            {{-- @if ($customerAddress->customer) --}}
+                                                                                            <p>
+                                                                                                <i class='bx bx-user'></i>
+                                                                                                ชื่อ :
+                                                                                                <span
+                                                                                                    class="text-primary">{{ @$customer->name }}</span>
+                                                                                            </p>
+                                                                                            {{-- @endif --}}
+                                                                                            {{-- @if ($order->orderDeliveryAddress) --}}
+                                                                                            <p>
+                                                                                                <i class='bx bx-phone'></i>
+                                                                                                เบอร์โทร :
+                                                                                                {{ @$customer->phone }}
+                                                                                            </p>
+                                                                                            {{-- @endif --}}
+                                                                                            <p>
+                                                                                                <i class='bx bxs-map'></i>
+                                                                                                ที่อยู่จัดส่ง
+                                                                                                :
+                                                                                                {{ $customer->customerAddress->address }}
+                                                                                                ต.
+                                                                                                {{ $customer->customerAddress->sub_district }}
+                                                                                                อ.
+                                                                                                {{ $customer->customerAddress->district }}
+                                                                                                จ.
+                                                                                                {{ $customer->customerAddress->province }}
+                                                                                                {{ $customer->customerAddress->zipcode }}
+                                                                                            </p>
+                                                                                        </th>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <th class="product-name">
+                                                                                            รายการซ่อม
+                                                                                        </th>
+                                                                                        <th class="product-total">
+                                                                                            ราคา (บาท)
+                                                                                        </th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
 
-                                                                                            <tr class="item">
-                                                                                                <td class="product-name">
-                                                                                                    <a href="#">{{ $repair->model }}
-                                                                                                        x
-                                                                                                        {{ $repair->detail }}</a>
+                                                                                    <tr class="item">
+                                                                                        <td class="product-name">
+                                                                                            <a href="#">{{ $repair->model }}
+                                                                                                x
+                                                                                                {{ $repair->detail }}</a>
 
-                                                                                                </td>
-                                                                                                <td class="product-total">
-                                                                                                    <span
-                                                                                                        class="amount">{{ $repair->price }}</span>
-                                                                                                </td>
-                                                                                            </tr>
+                                                                                        </td>
+                                                                                        <td class="product-total">
+                                                                                            <span
+                                                                                                class="amount">{{ $repair->price }}</span>
+                                                                                        </td>
+                                                                                    </tr>
 
-                                                                                        </tbody>
-                                                                                        <tfoot>
-                                                                                            <tr>
-                                                                                                <th scope="row">
-                                                                                                    ค่าส่ง:</th>
-                                                                                                <td><span class="amount">
-                                                                                                        80
-                                                                                                    </span>
-                                                                                                </td>
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                <th scope="row">
-                                                                                                    ช่องทางการชำระ:
-                                                                                                </th>
-                                                                                                <td>
-                                                                                                    <p>ธนาคาร :
-                                                                                                        ธนาคาไทยพาณิชย์
-                                                                                                    </p>
-                                                                                                    <p>ชื่อบัญชี :
-                                                                                                        นายรชต
-                                                                                                        วันเทาแก้ว
-                                                                                                    </p>
-                                                                                                    <p>เลขที่บัญชี :
-                                                                                                        808-2-70209-0
-                                                                                                    </p>
-                                                                                                    <p><a style="color:red;">*</a>โอนแล้ว :
-                                                                                                        รบกวนแจ้งสลิปได้ทางแชท
-                                                                                                        <a href="https://liff.line.me/1645278921-kWRPP32q?accountId=hbmobilekk&openerPlatform=native&openerKey=talkroom%3Aheader#mst_challenge=DviURfP2GW9z0o6eoP1xMF0s8C1qRokmKwj55BTIzms"
-                                                                                                            style="color:red;"
-                                                                                                            target="_blank">
-                                                                                                            chat (คลิก)</a>
-                                                                                                    </p>
-                                                                                                </td>
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                <th scope="row">
-                                                                                                    รวมทั้งสิ้น:
-                                                                                                </th>
-                                                                                                <td><span
-                                                                                                        class="amount text-primary">{{ $repair->price + 80 }}</span>
-                                                                                                </td>
-                                                                                            </tr>
-                                                                                        </tfoot>
-                                                                                    </table>
+                                                                                </tbody>
+                                                                                <tfoot>
+                                                                                    <tr>
+                                                                                        <th scope="row">
+                                                                                            ค่าส่ง:</th>
+                                                                                        <td><span class="amount">
+                                                                                                80
+                                                                                            </span>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <th scope="row">
+                                                                                            ช่องทางการชำระ:
+                                                                                        </th>
+                                                                                        <td>
+                                                                                            <p>ธนาคาร :
+                                                                                                ธนาคาไทยพาณิชย์
+                                                                                            </p>
+                                                                                            <p>ชื่อบัญชี :
+                                                                                                นายรชต
+                                                                                                วันเทาแก้ว
+                                                                                            </p>
+                                                                                            <p>เลขที่บัญชี :
+                                                                                                808-2-70209-0
+                                                                                            </p>
+                                                                                            <p><a
+                                                                                                    style="color:red;">*</a>โอนแล้ว
+                                                                                                :
+                                                                                                รบกวนแจ้งสลิปได้ทางแชท
+                                                                                                <a href="https://liff.line.me/1645278921-kWRPP32q?accountId=hbmobilekk&openerPlatform=native&openerKey=talkroom%3Aheader#mst_challenge=DviURfP2GW9z0o6eoP1xMF0s8C1qRokmKwj55BTIzms"
+                                                                                                    style="color:red;"
+                                                                                                    target="_blank">
+                                                                                                    chat (คลิก)</a>
+                                                                                            </p>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <th scope="row">
+                                                                                            รวมทั้งสิ้น:
+                                                                                        </th>
+                                                                                        <td><span
+                                                                                                class="amount text-primary">{{ $repair->price + 80 }}</span>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tfoot>
+                                                                            </table>
 
-                                                                                </div> <!-- /.box -->
-                                                                            </div>
-                                                                            <div class="text-right">
-                                                                                <button class="btn btn-danger"
-                                                                                    type="button"
-                                                                                    onclick='printDiv();'><i
-                                                                                        class="bx bx-printer"></i>Print</button>
-                                                                            </div>
-                                                                        </div>
+                                                                        </div> <!-- /.box -->
                                                                     </div>
+
+                                                                    <form action="{{ url('/create-invoice') }}"
+                                                                        method="get">
+                                                                        @csrf
+
+                                                                        <input type="hidden"
+                                                                            value="{{ $customer->name }}"
+                                                                            name="name" />
+                                                                        <input type="hidden"
+                                                                            value="{{ $customer->phone }}"
+                                                                            name="phone" />
+                                                                        <input type="hidden"
+                                                                            value="{{ $customer->customerAddress->address }}
+                                                                                ต.
+                                                                                {{ $customer->customerAddress->sub_district }}
+                                                                                อ.
+                                                                                {{ $customer->customerAddress->district }}
+                                                                                จ.
+                                                                                {{ $customer->customerAddress->province }}
+                                                                                {{ $customer->customerAddress->zipcode }}
+                                                                                "
+                                                                            name="address" />
+                                                                        <input type="hidden"
+                                                                            value="{{ $repair->model }}"
+                                                                            name="model" />
+                                                                        <input type="hidden"
+                                                                            value="{{ $repair->detail }}"
+                                                                            name="listRepair" />
+                                                                        <input type="hidden"
+                                                                            value="{{ $repair->price }}"
+                                                                            name="price" />
+                                                                        <input type="hidden" value="80"
+                                                                            name="shipping" />
+
+                                                                        <div class="text-right">
+                                                                            <button type="submit"
+                                                                                class="btn btn-primary waves-effect waves-light"><i
+                                                                                    class="bx bx-printer"></i>
+                                                                                Print</button>
+                                                                        </div>
+                                                                    </form>
                                                                 </div>
                                                             </div>
-                                                        </body>
-
-                                                        </html>
+                                                        </div>
                                                     </td>
                                                 </tr>
                                             @endforeach
@@ -1282,8 +1306,8 @@
                                         <button type="submit" id="store-btn-bill-hidden" class="d-none">save</button>
                                     </div>
                                 </form>
-                            </div>
-                        </div><!-- ./tab-customer-bill -->
+                            </div><!-- ./tab-customer-bill -->
+                        </div><!-- ./tab-content -->
                     </div>
                 </div>
             </div>
@@ -1500,39 +1524,23 @@
         // End Bill
         // Get the modal
         var modal = document.getElementById("myModal");
-
         // Get the button that opens the modal
         var btn = document.getElementById("myBtn");
-
         // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close")[0];
-
         // When the user clicks the button, open the modal 
         btn.onclick = function() {
             modal.style.display = "block";
         }
-
         // When the user clicks on <span> (x), close the modal
         span.onclick = function() {
             modal.style.display = "none";
         }
-
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
             }
-        }
-
-        function printDiv() {
-            var divToPrint = document.getElementById('DivIdToPrint');
-            var newWin = window.open('', 'Print-Window');
-            newWin.document.open();
-            newWin.document.write('<html><body onload="window.print()">' + divToPrint.innerHTML + '</body></html>');
-            newWin.document.close();
-            setTimeout(function() {
-                newWin.close();
-            }, 10);
         }
     </script>
 @stop

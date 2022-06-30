@@ -2,17 +2,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\Customer;
-use App\Models\RepairRegistration;
-use Aws\Api\Validator;
-use AWS\CRT\HTTP\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Validator as FacadesValidator;
+use Error;
+use Illuminate\Http\Request;
 
 class PdfController extends Controller{
 
-    public function createPdf (){
-      
+    public function createPdf (Request $req){
         $defaultConfig = (new \Mpdf\Config\ConfigVariables())->getDefaults();
         $fontDirs = $defaultConfig['fontDir'];
 
@@ -34,25 +29,41 @@ class PdfController extends Controller{
         'default_font' => 'sarabun'
 
     ]);
-        // $mpdf->SetWatermarkText('HB Mobile');
-        // $mpdf->showWatermarkText = true;
-
-        $mpdf->WriteHTML($this->pdfHTML());
-        $fileName = 'htmltopdf.pdf';
+        $data = 'HB Mobile';
+        $mpdf->SetWatermarkText($data,0.1);
+        $mpdf->showWatermarkText = true;
+        
+        $mpdf->WriteHTML($this->pdfHTML($req));
+        $fileName = 'invoicesPdf.pdf';
         $mpdf->Output('pdfFile/'.$fileName,"I");
     }
-    public function pdfHTML(){
-           
-        $number='1';
-        $userName = 'ลูกค้า';
-        $phone = '0850033441';
-        $address = '1 ม.6 บ้านบ่อทอง อ.พระยืน จ.ขอนแก่น 40000';
-        $listRepair = 'เปลี่ยนแบต';
-        $price = '600';
-        $shipping = '80';
+
+    public function pdfHTML(Request $req){
+        if($req->name == null){
+            return abort(404);
+        }
+
+        //รับค่าจาก form profile-account.blade.php
+        $userNames = $req->name;
+        $phones = $req->phone;
+        $addressing = $req->address;
+        $models = $req->model;
+        $listRepairs = $req->listRepair;
+        $prices = $req->price;
+        $shippings = $req->shipping;
+
+        //ส่งค่า show to page
+        $userName = $userNames;
+        $phone = $phones;
+        $address = $addressing;
+        $model = $models;
+        $listRepair = $listRepairs;
+        $price = $prices;
+        $shipping = $shippings;
+
         
-        return view('e-commerce.pdf',compact('number','userName','phone','address','listRepair','price','shipping'));
-        // ,compact('number','userName','phone','address','listRepair','price','shipping') 
+
+        return view('e-commerce.pdf',compact('userName','phone','address','model','listRepair','price','shipping'));
     }
 
 }

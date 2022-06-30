@@ -55,8 +55,9 @@ Route::middleware(['checkEcommerceMaintenance'])->group(function () {
         Route::get('/manual', [App\Http\Controllers\EcommerceController::class, 'manual'])->name('manual');
         Route::get('/repair-example', [App\Http\Controllers\EcommerceController::class, 'repairExample'])->name('repair-example');
         Route::get('/invoices', [App\Http\Controllers\PdfController::class, 'pdfHTML'])->name('pdf');
-        Route::post('/create',[App\Http\Controllers\PdfController::class, 'createPdf']);
-        // Route::post('/create',[App\Http\Controllers\PdfController::class, 'createPdf']);
+        Route::get('/create-invoice',[App\Http\Controllers\PdfController::class, 'createPdf']);
+        // Route::post('/pagetopdf',[App\Http\Controllers\PdfController::class, 'store']);
+        // Route::get('/ttest',[App\Http\Controllers\PdfController::class, 'test']);
         Route::get('/verify-username', [App\Http\Controllers\EcommerceController::class, 'verifyUsername'])->name('verify-username');
         Route::get('/ecom/change-password', [App\Http\Controllers\EcommerceController::class, 'changePasswordPage'])->name('ecom.change-password');
         // Route::post('/page/order-received', [App\Http\Controllers\EcommerceController::class, 'orderReceivedPage'])->name('order-received-page');

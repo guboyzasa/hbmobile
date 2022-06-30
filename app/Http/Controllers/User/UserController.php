@@ -105,8 +105,8 @@ class UserController extends Controller
                 $message3 = "message=" . "\n** บันทึกสมัครสมาชิก **" .
                 "\nเบอร์โทร: $user->phone" .
                 "\nชื่อลูกค้า: $user->name" .
-                "\nอีเมล: $user->email" .
-                "\nรหัสผ่าน: $user->password" ;
+                "\nอีเมล: $user->email" ;
+                // "\nรหัสผ่าน: $user->password" ;
 
                 $this->sendLineNotify3(env('LINE_TOKEN3'), $message3);
 
