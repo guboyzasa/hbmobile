@@ -19,7 +19,7 @@
                     height="48px">
             </div> --}}
             <div class="d-flex flex-column">
-                <span class="font-weight-bold">เฮียบอยโมบาย เซอร์วิส</span>
+                <span class="font-weight-bold"><strong>เฮียบอยโมบาย เซอร์วิส</strong></span>
                 <br><small>HB MOBILE SERVICES.093-5287744</small>
             </div>
 
@@ -65,11 +65,9 @@
                             <td style="text-align:center">{{ @$price + @$shipping }}</td>
                         </tr>
                         <tr style="font-weight: bold;">
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td style="text-align:center;">ยอดรวม</td>
-                            <td style="text-align:center;">{{ @$price + @$shipping }}
+                            <td colspan="3"></td>
+                            <td style="text-align:center;"><strong>ยอดรวม</strong></td>
+                            <td style="text-align:center;"><strong>{{ @$price + @$shipping }}</strong>
                             </td>
                         </tr>
 
