@@ -1,13 +1,14 @@
 <?php
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller; 
+use App\Http\Controllers\Controller;
+use App\Models\OrderDetail; 
 use Illuminate\Http\Request;
 
-class PdfController extends Controller{
+class pdfOrderController extends Controller{
 
-    public function createPdf (Request $req){
-        if($req->name == null){
+    public function createOrderPdf (Request $req){
+        if($req->id == null){
             return abort(404);
         }
         $defaultConfig = (new \Mpdf\Config\ConfigVariables())->getDefaults();
@@ -16,10 +17,11 @@ class PdfController extends Controller{
         $defaultFontConfig = (new \Mpdf\Config\FontVariables())->getDefaults();
         $fontData = $defaultFontConfig['fontdata'];
 
-        $mpdf = new \Mpdf\Mpdf([
+        $mpdf = new \Mpdf\Mpdf(
+            [
         'fontDir' => array_merge($fontDirs, [
         __DIR__ . '/tmp',
-    ]),
+    ]), 
         'fontdata' => $fontData + [
         'sarabun' => [
             'R' => 'THSarabunNew.ttf',
@@ -29,38 +31,42 @@ class PdfController extends Controller{
         ]
     ],
         'default_font' => 'sarabun'
-
     ]);
     ([  
         'mode' => 'utf-8', 'format' => [190, 236]
     ]);
         $data = 'HB Mobile';
         $mpdf->SetWatermarkText($data,0.1);
-        $mpdf->showWatermarkText = true;
-        
-        $mpdf->WriteHTML($this->pdfHTML($req));
-        $fileName = 'invoicesPdf.pdf';
+        $mpdf->showWatermarkText = true; 
+
+        $mpdf->WriteHTML($this->OrderPdfHTML($req));
+        $fileName = 'invoicesOrderPdf.pdf';
         $mpdf->Output('pdfFile/'.$fileName,"I");
     }
 
-    public function pdfHTML(Request $req){
-        if($req->name == null){
+    public function OrderPdfHTML(Request $req){
+        if($req->id == null){
             return abort(404);
         }
 
-        //รับค่าจาก form profile-account.blade.php
-        //ส่งค่า show to page
+        //รับค่าจาก form detail.blade.php
+        //ส่งค่า show to page admin.orders.pdf-order
         $i = 1;
+        $id = $req->id;
+        $order = $req->order;
         $userName = $req->name;
         $phone = $req->phone;
         $address = $req->address;
-        $model = $req->model;
-        $listRepair = $req->listRepair; 
-        $price = $req->price;
+        $email= $req->mail; 
         $shipping = $req->shipping;
-       
+        
+        $total_product = $req->total_product;
+        $total_amount = $req->total_amount;
 
-        return view('e-commerce.pdf',compact('i','userName','phone','address','model','listRepair','price','shipping'));
+        $orderDetails = OrderDetail::all();
+
+        return view('admin.orders.pdf-order',compact('i','id','userName','phone','address','shipping','email','order','orderDetails','total_product','total_amount'));
+
     }
 
 }

@@ -248,7 +248,6 @@
                                 </tr>
                             </tbody>
                         </table>
-
                     </div>
 
                     <form action="{{ route('admin.order.change-status') }}" method="POST">
@@ -404,13 +403,43 @@
                             <div class="float-end">
                                 <a href="{{ route('admin.order.index') }}" class="btn btn btn-secondary pull-right"><i
                                         class="fa fa-arrow-left" aria-hidden="true"></i> ย้อนกลับ </a>
-                                <a href="javascript:window.print()"
+                                {{-- <a href="javascript:window.print()"
                                     class="btn btn-success waves-effect waves-light me-1"><i class="fa fa-print"></i>
-                                    Print </a>
+                                    Print </a> --}}
                                 <button type="submit" class="btn btn-primary w-md waves-effect waves-light"> <i
                                         class="bx bx-save"></i> บันทึก </a>
                             </div>
+
                         </div>
+                    </form>
+                    <form action="{{ url('/create-invoices-order') }}" method="get">
+                        @csrf
+                        <input type="hidden" value="{{ @$order->id }}" name="id" />
+                        <input type="hidden" value="{{ @$order->code }}" name="order" />
+                        <input type="hidden" value="{{ @$order->user->name }}" name="name" />
+                        <input type="hidden" value="{{ @$order->user->phone }}" name="phone" />
+                        <input type="hidden" value="{{ @$order->customer->email }}" name="mail" />
+                        <input type="hidden"
+                            value="{{ @$order->orderBillAddress->address }}
+                                                                ต.
+                                                                {{ @$order->orderBillAddress->sub_district }}
+                                                                อ.
+                                                                {{ @$order->orderBillAddress->district }}
+                                                                จ.
+                                                                {{ @$order->orderBillAddress->province }}
+                                                                {{ @$order->orderBillAddress->zipcode }}
+                                                                "
+                            name="address" />
+                        <input type="hidden" value="{{ number_format(@$order->total, 2) }}" name="total_product" />
+                        <input type="hidden" value="{{ number_format(@$order->total_amount, 2) }}"
+                            name="total_amount" />
+                        <input type="hidden" value="{{ number_format(@$order->shipping_price, 2) }}"
+                            name="shipping" />
+
+                        <button type="submit" class="btn btn-info waves-effect waves-light"><i
+                                class="bx bx-printer"></i>
+                            PDF To Print</button>
+
                     </form>
 
                 </div>

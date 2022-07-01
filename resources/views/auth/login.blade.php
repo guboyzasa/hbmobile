@@ -44,7 +44,7 @@
                                     <a href="index" class="auth-logo-dark">
                                         <div class="avatar-md profile-user-wid mb-4">
                                             <span class="avatar-title rounded-circle bg-light">
-                                                <img src="{{ URL::asset('/assets/images/logo.svg') }}" alt=""
+                                                <img src="{{ URL::asset('/assets/images/logo.png') }}" alt=""
                                                     class="rounded-circle" height="34">
                                             </span>
                                         </div>
@@ -136,7 +136,7 @@
                                             Signup now </a> </p> -->
                             <script>
                                 document.write(new Date().getFullYear())
-                            </script> HB Mobile Services
+                            </script> HB Mobile Services.
                             </p>
                         </div>
                     </div>

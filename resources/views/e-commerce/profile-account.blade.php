@@ -937,8 +937,6 @@
                                                                     <!-- Modal content-->
                                                                     <div class="modal-content">
                                                                         <div class="modal-header">
-                                                                            
-
                                                                             <h4 class="modal-title" style="text-align: left">
                                                                                 <i class="bx bx-receipt"></i>
                                                                                 แจ้งชำระ <a class="amount text-primary">
@@ -953,20 +951,14 @@
                                                                             <table class="table">
                                                                                 <thead>
                                                                                     <tr>
-                                                                                        <th>
-                                                                                            {{-- @if ($customerAddress->customer) --}}
-                                                                                            
-                                                                                                <i class='bx bx-user'></i>
+                                                                                        <th> 
+                                                                                            <i class='bx bx-user'></i>
                                                                                                 ชื่อ :
-                                                                                                <a class="text-primary">{{ @$customer->name }}</a>
-                                                                                            
-                                                                                            {{-- @endif --}}
-                                                                                            {{-- @if ($order->orderDeliveryAddress) --}}
+                                                                                                <a class="text-primary">{{ @$customer->name }}</a> 
                                                                                             <br>
                                                                                                 <i class='bx bx-phone'></i>
                                                                                                 เบอร์โทร :
-                                                                                                {{ @$customer->phone }} 
-                                                                                            {{-- @endif --}}
+                                                                                                {{ @$customer->phone }}  
                                                                                             <br>
                                                                                                 <i class='bx bxs-map'></i>
                                                                                                 ที่อยู่จัดส่ง
@@ -1085,15 +1077,12 @@
                                                                                         Print</button>
                                                                                         <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
                                                                                 </div>
-                                                                            </form>
-                                                                        
-                                                                            
+                                                                            </form>  
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        
+                                                        </div> 
                                                     </td>
                                                 </tr>
                                             @endforeach
@@ -1459,26 +1448,5 @@
                 },
             );
         });
-        // // End Bill
-        // // Get the modal
-        // var modal = document.getElementById("myModal");
-        // // Get the button that opens the modal
-        // var btn = document.getElementById("myBtn");
-        // // Get the <span> element that closes the modal
-        // var span = document.getElementsByClassName("close")[0];
-        // // When the user clicks the button, open the modal 
-        // btn.onclick = function() {
-        //     modal.style.display = "block";
-        // }
-        // // When the user clicks on <span> (x), close the modal
-        // span.onclick = function() {
-        //     modal.style.display = "none";
-        // }
-        // // When the user clicks anywhere outside of the modal, close it
-        // window.onclick = function(event) {
-        //     if (event.target == modal) {
-        //         modal.style.display = "none";
-        //     }
-        // }
     </script>
 @stop
