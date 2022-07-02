@@ -925,7 +925,21 @@
                                                         ?>
                                                     </td>
                                                     <td>
-                                                        
+                                                        <style>
+                                                            
+                                                            input {
+                                                              border-top-style: hidden;
+                                                              border-right-style: hidden;
+                                                              border-left-style: hidden;
+                                                              border-bottom-style: hidden;
+                                                              border-radius: 5px;
+                                                              background-color: rgb(241, 220, 36);
+                                                            }
+                                                            
+                                                            .no-outline:focus {
+                                                              outline: none;
+                                                            }
+                                                          </style>
                                                         <div class="container">
                                                             <button type="button"
                                                                 class="badge badge-info waves-effect waves-light"
@@ -1014,16 +1028,18 @@
                                                                                     <tr class="table-primary">
                                                                                         <th scope="row">
                                                                                             {{-- <div class="modal-body"> --}}
-                                                                                            <b>ช่องทางการชำระ:</b>
+                                                                                            <strong>ช่องทางการชำระ:</strong>
                                                                                             <br>
                                                                                             ธนาคาร : ธนาคาไทยพาณิชย์
                                                                                             <br>
                                                                                             ชื่อบัญชี : นายรชต วันเทาแก้ว
                                                                                             <br>
-                                                                                            เลขที่บัญชี : 808-2-70209-0
+                                                                                            เลขที่บัญชี : 
+                                                                                                <input type="text" value="8082702090" id="myInput" size="10" maxlength="1"readonly/>
+                                                                                                <button class="badge badge-info waves-effect waves-light no-outline" onclick="myFunction()">Copy</button>
+                                                                                            
                                                                                             <br>
-                                                                                            <br>
-                                                                                            <a style="color:red;">*</a>โอนแล้ว: รบกวนแจ้งสลิปได้ทางแชท
+                                                                                           <p> <a style="color:red;">*</a>โอนแล้ว: รบกวนแจ้งสลิปได้ทางแชท
                                                                                                 <a href="https://liff.line.me/1645278921-kWRPP32q?accountId=hbmobilekk&openerPlatform=native&openerKey=talkroom%3Aheader#mst_challenge=DviURfP2GW9z0o6eoP1xMF0s8C1qRokmKwj55BTIzms"
                                                                                                     style="color:red;"
                                                                                                     target="_blank">
@@ -1449,4 +1465,14 @@
             );
         });
     </script>
+<script>
+function myFunction() {
+  var copyTextfield = document.getElementById("myInput");
+  copyTextfield.select();
+  document.execCommand("copy");
+  alert("คัดลอกเลขบัญชีสำเร็จ: " + copyTextfield.value);
+  copyTextfield.value = "8082702090";
+}
+</script>
+
 @stop

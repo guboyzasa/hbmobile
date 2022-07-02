@@ -26,7 +26,7 @@
             <b>วันที่ออกบิล:</b> <?php echo date('d-m-Y'); ?>
         </div>
         <div style="text-align: left;border-top:1px solid #000;">
-            <div style="font-size: 30px;color: #666;">INVOICE [ยอดชำระ: {{ number_format($price + @$shipping,2) }} ฿]</div>
+            <div style="font-size: 30px;color: #666;">INVOICE # <?php echo date('dmY'); ?> [ยอดชำระ: {{ number_format($price + @$shipping,2) }} ฿]</div>
         </div>
         <table style="line-height: 1.3;">
             <tr>
@@ -84,9 +84,10 @@
         <div style="border-bottom:1px solid #000;"></div>
         <br>
         <p><u><b>ช่องทางชำระ</b></u>:<br />
-            ธนาคาร: ไทยพาณิชย์<br />
-            ชื่อบัญชี: นายรชต วันเทาแก้ว<br />
+            ธนาคาร: ไทยพาณิชย์<br /> 
             เลขที่บัญชี: 808-2-70209-0<br />
+            พร้อมเพย์: 0935287744<br />
+            ชื่อบัญชี: นายรชต วันเทาแก้ว<br />
         </p>
         <p><b style="color:red;">หมายเหตุ:</b> โอนแล้ว รบกวนแจ้งสลิปได้ทางแชท </a></p>
 
