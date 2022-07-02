@@ -230,8 +230,8 @@
                                                                         ที่อยู่จัดส่ง :
 
                                                                         {{ $order->orderDeliveryAddress->address }}
-                                                                        {{ $order->orderDeliveryAddress->district }}
                                                                         {{ $order->orderDeliveryAddress->sub_district }}
+                                                                        {{ $order->orderDeliveryAddress->district }}
                                                                         {{ $order->orderDeliveryAddress->province }}
                                                                         {{ $order->orderDeliveryAddress->zipcode }}
                                                                     </p>
@@ -242,8 +242,8 @@
                                                                         <i class='bx bx-receipt'></i>
                                                                         ที่อยู่ออกบิล :
                                                                         {{ $order->orderBillAddress->address }}
-                                                                        {{ $order->orderBillAddress->district }}
                                                                         {{ $order->orderBillAddress->sub_district }}
+                                                                        {{ $order->orderBillAddress->district }}
                                                                         {{ $order->orderBillAddress->province }}
                                                                         {{ $order->orderBillAddress->zipcode }}
                                                                     </p>
@@ -448,8 +448,8 @@
                                                                         ที่อยู่จัดส่ง :
 
                                                                         {{ $order->orderDeliveryAddress->address }}
-                                                                        {{ $order->orderDeliveryAddress->district }}
                                                                         {{ $order->orderDeliveryAddress->sub_district }}
+                                                                        {{ $order->orderDeliveryAddress->district }}
                                                                         {{ $order->orderDeliveryAddress->province }}
                                                                         {{ $order->orderDeliveryAddress->zipcode }}
                                                                     </p>
@@ -461,8 +461,8 @@
                                                                         <i class='bx bx-receipt'></i>
                                                                         ที่อยู่ออกบิล :
                                                                         {{ $order->orderBillAddress->address }}
-                                                                        {{ $order->orderBillAddress->district }}
                                                                         {{ $order->orderBillAddress->sub_district }}
+                                                                        {{ $order->orderBillAddress->district }}
                                                                         {{ $order->orderBillAddress->province }}
                                                                         {{ $order->orderBillAddress->zipcode }}
                                                                     </p>
@@ -926,65 +926,92 @@
                                                     </td>
                                                     <td>
                                                         <style>
-                                                            
                                                             input {
-                                                              border-top-style: hidden;
-                                                              border-right-style: hidden;
-                                                              border-left-style: hidden;
-                                                              border-bottom-style: hidden;
-                                                              border-radius: 5px;
-                                                              background-color: rgb(241, 220, 36);
+                                                                border-top-style: hidden;
+                                                                border-right-style: hidden;
+                                                                border-left-style: hidden;
+                                                                border-bottom-style: hidden;
+                                                                border-radius: 5px;
+                                                                background-color: rgb(241, 220, 36);
                                                             }
-                                                            
+
                                                             .no-outline:focus {
-                                                              outline: none;
+                                                                outline: none;
                                                             }
-                                                          </style>
+                                                        </style>
                                                         <div class="container">
                                                             <button type="button"
                                                                 class="badge badge-info waves-effect waves-light"
                                                                 data-toggle="modal"
-                                                                data-target="#myModal-{{$repair->id }}">ใบแจ้งชำระ</button>
-                                                            <!-- The Modal --> 
-                                                                    <div class="modal fade bd-example-modal-lg" tabindex="-1" id="myModal-{{$repair->id }}" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                                                                        <div class="modal-dialog modal-lg">
+                                                                data-target="#myModal-{{ $repair->id }}">ใบแจ้งชำระ</button>
+                                                            <!-- The Modal -->
+                                                            <div class="modal fade bd-example-modal-lg" tabindex="-1"
+                                                                id="myModal-{{ $repair->id }}" role="dialog"
+                                                                aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                                                <div class="modal-dialog modal-lg">
                                                                     <!-- Modal content-->
                                                                     <div class="modal-content">
                                                                         <div class="modal-header">
-                                                                            <h4 class="modal-title" style="text-align: left">
+                                                                            <h4 class="modal-title"
+                                                                                style="text-align: left">
                                                                                 <i class="bx bx-receipt"></i>
                                                                                 แจ้งชำระ <a class="amount text-primary">
                                                                                     [ยอด:
-                                                                                    {{ $repair->price + 80 }}
+                                                                                    {{ number_format($repair->price + 80, 2) }}
                                                                                     ฿]</a>
                                                                             </h4>
                                                                             <button type="button" class="close"
                                                                                 data-dismiss="modal">&times;</button>
-                                                                        </div> 
+                                                                        </div>
                                                                         <div class="modal-body">
                                                                             <table class="table">
                                                                                 <thead>
                                                                                     <tr>
-                                                                                        <th> 
+                                                                                        <th>
                                                                                             <i class='bx bx-user'></i>
-                                                                                                ชื่อ :
-                                                                                                <a class="text-primary">{{ @$customer->name }}</a> 
+                                                                                            ชื่อ :
+                                                                                            <a
+                                                                                                class="text-primary">{{ @$customer->name }}</a>
                                                                                             <br>
-                                                                                                <i class='bx bx-phone'></i>
-                                                                                                เบอร์โทร :
-                                                                                                {{ @$customer->phone }}  
+                                                                                            <i class='bx bx-phone'></i>
+                                                                                            เบอร์โทร :
+                                                                                            {{ @$customer->phone }}
                                                                                             <br>
-                                                                                                <i class='bx bxs-map'></i>
-                                                                                                ที่อยู่จัดส่ง
-                                                                                                :
-                                                                                                {{ $customer->customerAddress->address }}
-                                                                                                ต.
+                                                                                            <i class='bx bxs-map'></i>
+                                                                                            ที่อยู่จัดส่ง
+                                                                                            :
+                                                                                            @if ($order->orderDeliveryAddress->address == null || $customer->customerAddress->address != null)
+                                                                                                {{ $customer->customerAddress->address }} 
+                                                                                            @elseif ($customer->customerAddress->address == null || $order->orderDeliveryAddress->address !=NULL)
+                                                                                                {{ $order->orderDeliveryAddress->address }} 
+                                                                                            @endif
+
+                                                                                            ต.
+                                                                                            @if ($order->orderDeliveryAddress->sub_district == null||$customer->customerAddress->sub_district != null)
                                                                                                 {{ $customer->customerAddress->sub_district }}
-                                                                                                อ.
+                                                                                                @elseif ($customer->customerAddress->sub_district == null||$order->orderDeliveryAddress->sub_district != null)
+                                                                                                {{ $order->orderDeliveryAddress->sub_district }}
+                                                                                            @endif
+
+                                                                                            อ.
+                                                                                            @if ($order->orderDeliveryAddress->district == null||$customer->customerAddress->district != null)
                                                                                                 {{ $customer->customerAddress->district }}
-                                                                                                จ.
+                                                                                                @elseif ($customer->customerAddress->district == null||$order->orderDeliveryAddress->district != null)
+                                                                                                {{ $order->orderDeliveryAddress->district }}
+                                                                                            @endif
+
+                                                                                            จ.
+                                                                                            @if ($order->orderDeliveryAddress->province == null||$customer->customerAddress->province != null)
                                                                                                 {{ $customer->customerAddress->province }}
-                                                                                                {{ $customer->customerAddress->zipcode }} 
+                                                                                                @elseif ($customer->customerAddress->province == null||$order->orderDeliveryAddress->province != null)
+                                                                                                {{ $order->orderDeliveryAddress->province }}
+                                                                                            @endif
+                                                                                            @if ($order->orderDeliveryAddress->zipcode == null||$customer->customerAddress->zipcode != null)
+                                                                                                {{ $customer->customerAddress->zipcode }}
+                                                                                                @elseif ($customer->customerAddress->zipcode == null||$order->orderDeliveryAddress->zipcode != null)
+                                                                                                {{ $order->orderDeliveryAddress->zipcode }}
+                                                                                            @endif
+
                                                                                         </th>
                                                                                         <th></th>
                                                                                     </tr>
@@ -992,7 +1019,8 @@
                                                                                         <th scope="col">
                                                                                             รายการซ่อม
                                                                                         </th>
-                                                                                        <th scope="col">
+                                                                                        <th scope="col"
+                                                                                            style="text-align: right">
                                                                                             ราคา
                                                                                         </th>
                                                                                     </tr>
@@ -1002,10 +1030,12 @@
                                                                                         <th scope="row">
                                                                                             <a href="#">{{ $repair->model }}
                                                                                                 x
-                                                                                                {{ $repair->detail }}</a> 
+                                                                                                {{ $repair->detail }}</a>
                                                                                         </th>
                                                                                         <td>
-                                                                                            <p style="text-align: right">{{ $repair->price }}</p>
+                                                                                            <p style="text-align: right">
+                                                                                                {{ number_format($repair->price, 2) }}
+                                                                                            </p>
                                                                                         </td>
                                                                                     </tr>
                                                                                     <tr>
@@ -1013,18 +1043,23 @@
                                                                                             ค่าส่ง:
                                                                                         </th>
                                                                                         <td>
-                                                                                            <p style="text-align: right">80</p>
+                                                                                            <p style="text-align: right">
+                                                                                                {{ number_format(80, 2) }}
+                                                                                            </p>
                                                                                         </td>
                                                                                     </tr>
                                                                                 </tbody>
                                                                                 <tfoot>
-                                                                                        <th scope="row">
-                                                                                            รวมทั้งสิ้น:
-                                                                                        </th>
-                                                                                        <td><p style="text-align: right"
-                                                                                                class="amount text-primary">{{ $repair->price + 80 }}</p>
-                                                                                        </td>
-                                                                                        
+                                                                                    <th scope="row">
+                                                                                        รวมทั้งสิ้น:
+                                                                                    </th>
+                                                                                    <td>
+                                                                                        <p style="text-align: right"
+                                                                                            class="amount text-primary">
+                                                                                            {{ number_format($repair->price + 80, 2) }}
+                                                                                        </p>
+                                                                                    </td>
+
                                                                                     <tr class="table-primary">
                                                                                         <th scope="row">
                                                                                             {{-- <div class="modal-body"> --}}
@@ -1034,25 +1069,34 @@
                                                                                             <br>
                                                                                             ชื่อบัญชี : นายรชต วันเทาแก้ว
                                                                                             <br>
-                                                                                            เลขที่บัญชี : 
-                                                                                                <input type="text" value="8082702090" id="myInput" size="10" maxlength="1"readonly/>
-                                                                                                <button class="badge badge-info waves-effect waves-light no-outline" onclick="myFunction()">Copy</button>
-                                                                                            
+                                                                                            เลขที่บัญชี :
+                                                                                            <input type="text"
+                                                                                                value="8082702090"
+                                                                                                id="myInput"
+                                                                                                size="10"
+                                                                                                maxlength="1"readonly />
+                                                                                            <button
+                                                                                                class="badge badge-info waves-effect waves-light no-outline"
+                                                                                                onclick="myFunction()">Copy</button>
+
                                                                                             <br>
-                                                                                           <p> <a style="color:red;">*</a>โอนแล้ว: รบกวนแจ้งสลิปได้ทางแชท
+                                                                                            <p> <a
+                                                                                                    style="color:red;">*</a>โอนแล้ว:
+                                                                                                รบกวนแจ้งสลิปได้ทางแชท
                                                                                                 <a href="https://liff.line.me/1645278921-kWRPP32q?accountId=hbmobilekk&openerPlatform=native&openerKey=talkroom%3Aheader#mst_challenge=DviURfP2GW9z0o6eoP1xMF0s8C1qRokmKwj55BTIzms"
                                                                                                     style="color:red;"
                                                                                                     target="_blank">
-                                                                                                    chat (คลิก)</a></p>
+                                                                                                    chat (คลิก)</a>
+                                                                                            </p>
                                                                                             {{-- </div> --}}
                                                                                         </th>
                                                                                         <td></td>
-                                                                                    </tr> 
+                                                                                    </tr>
                                                                                 </tfoot>
                                                                             </table>
                                                                         </div>
                                                                         <div class="modal-footer">
-                                                                        <form action="{{ url('/create-invoice') }}"
+                                                                            <form action="{{ url('/create-invoice') }}"
                                                                                 method="get">
                                                                                 @csrf
 
@@ -1063,14 +1107,38 @@
                                                                                     value="{{ $customer->phone }}"
                                                                                     name="phone" />
                                                                                 <input type="hidden"
-                                                                                    value="{{ $customer->customerAddress->address }}
+                                                                                    value=" @if ($order->orderDeliveryAddress->address == null || $customer->customerAddress->address != null)
+                                                                                    {{ $customer->customerAddress->address }} 
+                                                                                @elseif ($customer->customerAddress->address == null || $order->orderDeliveryAddress->address !=NULL)
+                                                                                    {{ $order->orderDeliveryAddress->address }} 
+                                                                                @endif
+
                                                                                 ต.
-                                                                                {{ $customer->customerAddress->sub_district }}
+                                                                                @if ($order->orderDeliveryAddress->sub_district == null||$customer->customerAddress->sub_district != null)
+                                                                                    {{ $customer->customerAddress->sub_district }}
+                                                                                    @elseif ($customer->customerAddress->sub_district == null||$order->orderDeliveryAddress->sub_district != null)
+                                                                                    {{ $order->orderDeliveryAddress->sub_district }}
+                                                                                @endif
+
                                                                                 อ.
-                                                                                {{ $customer->customerAddress->district }}
+                                                                                @if ($order->orderDeliveryAddress->district == null||$customer->customerAddress->district != null)
+                                                                                    {{ $customer->customerAddress->district }}
+                                                                                    @elseif ($customer->customerAddress->district == null||$order->orderDeliveryAddress->district != null)
+                                                                                    {{ $order->orderDeliveryAddress->district }}
+                                                                                @endif
+
                                                                                 จ.
-                                                                                {{ $customer->customerAddress->province }}
-                                                                                {{ $customer->customerAddress->zipcode }}
+                                                                                @if ($order->orderDeliveryAddress->province == null||$customer->customerAddress->province != null)
+                                                                                    {{ $customer->customerAddress->province }}
+                                                                                    @elseif ($customer->customerAddress->province == null||$order->orderDeliveryAddress->province != null)
+                                                                                    {{ $order->orderDeliveryAddress->province }}
+                                                                                @endif
+                                                                                @if ($order->orderDeliveryAddress->zipcode == null||$customer->customerAddress->zipcode != null)
+                                                                                    {{ $customer->customerAddress->zipcode }}
+                                                                                    @elseif ($customer->customerAddress->zipcode == null||$order->orderDeliveryAddress->zipcode != null)
+                                                                                    {{ $order->orderDeliveryAddress->zipcode }}
+                                                                                @endif
+
                                                                                 "
                                                                                     name="address" />
                                                                                 <input type="hidden"
@@ -1086,19 +1154,21 @@
                                                                                     name="shipping" />
 
                                                                                 <div class="text-right">
-                                                                                    
+
                                                                                     <button type="submit"
                                                                                         class="btn btn-primary waves-effect waves-light"><i
                                                                                             class="bx bx-printer"></i>
                                                                                         Print</button>
-                                                                                        <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                                                                                    <button type="button"
+                                                                                        class="btn btn-info"
+                                                                                        data-dismiss="modal">Close</button>
                                                                                 </div>
-                                                                            </form>  
+                                                                            </form>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div> 
+                                                        </div>
                                                     </td>
                                                 </tr>
                                             @endforeach
@@ -1465,14 +1535,14 @@
             );
         });
     </script>
-<script>
-function myFunction() {
-  var copyTextfield = document.getElementById("myInput");
-  copyTextfield.select();
-  document.execCommand("copy");
-  alert("คัดลอกเลขบัญชีสำเร็จ: " + copyTextfield.value);
-  copyTextfield.value = "8082702090";
-}
-</script>
+    <script>
+        function myFunction() {
+            var copyTextfield = document.getElementById("myInput");
+            copyTextfield.select();
+            document.execCommand("copy");
+            alert("คัดลอกเลขบัญชีสำเร็จ: " + copyTextfield.value);
+            copyTextfield.value = "8082702090";
+        }
+    </script>
 
 @stop

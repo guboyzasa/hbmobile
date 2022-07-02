@@ -101,7 +101,6 @@ class UserController extends Controller
                 $customer_bil_address->save();
             }
                 //ลงทะเบียนสมัครสมาชิก LINE Notify
-
                 $message3 = "message=" . "\n** บันทึกสมัครสมาชิก **" .
                 "\nเบอร์โทร: $user->phone" .
                 "\nชื่อลูกค้า: $user->name" .

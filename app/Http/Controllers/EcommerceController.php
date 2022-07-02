@@ -298,11 +298,11 @@ class EcommerceController extends Controller
             $msg = 'Error';
         }
 
-        //ลงทะเบียนประกัน LINE Notify
+        //ออเดอร์ LINE Notify
         $message2 = "message=" . "\n** มีออเดอร์เข้า **" .
         "\nรหัสออเดอร์: $order->code" .
         "\nชื่อลูกค้า: $orderDelivery->name" .
-        "\nจำนวน: $orderDetail->amount ชิ้น" .
+        // "\nจำนวน: $orderDetail->amount ชิ้น" .
         // "\nประเภทขนส่ง: " .
         "\nยอดรวม: $order->total_amount บาท" ;
 
