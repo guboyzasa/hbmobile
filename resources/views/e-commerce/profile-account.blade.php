@@ -959,7 +959,7 @@
                                                                                     [ยอด:
                                                                                     {{ number_format($repair->price + 80, 2) }}
                                                                                     ฿]</a>
-                                                                            </h4>
+                                                                            </h4> 
                                                                             <button type="button" class="close"
                                                                                 data-dismiss="modal">&times;</button>
                                                                         </div>
@@ -1090,7 +1090,13 @@
                                                                                             </p>
                                                                                             {{-- </div> --}}
                                                                                         </th>
-                                                                                        <td></td>
+                                                                                        <td>
+                                                                                            <h4 class="modal-title"
+                                                                                style="text-align: right">
+                                                                                <a class="amount text-primary">
+                                                                                    *กรอกที่อยู่จัดส่งให้ครบ*</a>
+                                                                            </h4>
+                                                                                        </td>
                                                                                     </tr>
                                                                                 </tfoot>
                                                                             </table>

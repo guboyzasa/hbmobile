@@ -60,7 +60,6 @@ Route::middleware(['checkEcommerceMaintenance'])->group(function () {
         #pdf-invoice-order
         Route::get('/invoices-order', [App\Http\Controllers\pdfOrderController::class, 'OrderPdfHTML'])->name('pdf-order');
         Route::get('/create-invoices-order',[App\Http\Controllers\pdfOrderController::class, 'createOrderPdf']); 
-        
         Route::get('/verify-username', [App\Http\Controllers\EcommerceController::class, 'verifyUsername'])->name('verify-username');
         Route::get('/ecom/change-password', [App\Http\Controllers\EcommerceController::class, 'changePasswordPage'])->name('ecom.change-password');
         // Route::post('/page/order-received', [App\Http\Controllers\EcommerceController::class, 'orderReceivedPage'])->name('order-received-page');

@@ -50,21 +50,21 @@ class EcommerceController extends Controller
 
         return view('e-commerce.index',compact('company','product_brands','product_categorys','products','banner_imgs'));
     }
-    public function index2()
-    {
-        $company = CompanyContract::first();
-        return view('e-commerce.index-2',compact('company'));
-    }
-    public function index3()
-    {
-        $company = CompanyContract::first();
-        return view('e-commerce.index-3',compact('company'));
-    }
-    public function index4()
-    {
-        $company = CompanyContract::first();
-        return view('e-commerce.index-4',compact('company'));
-    }
+    // public function index2()
+    // {
+    //     $company = CompanyContract::first();
+    //     return view('e-commerce.index-2',compact('company'));
+    // }
+    // public function index3()
+    // {
+    //     $company = CompanyContract::first();
+    //     return view('e-commerce.index-3',compact('company'));
+    // }
+    // public function index4()
+    // {
+    //     $company = CompanyContract::first();
+    //     return view('e-commerce.index-4',compact('company'));
+    // }
     public function products(Request $request)
     {
         $company = CompanyContract::first();
@@ -110,11 +110,11 @@ class EcommerceController extends Controller
         $product = Product::where('id',1)->first();
         return view('e-commerce.product',compact('company','product'));
     }
-    public function wishlist()
-    {
-        $company = CompanyContract::first();
-        return view('e-commerce.wishlist',compact('company'));
-    }
+    // public function wishlist()
+    // {
+    //     $company = CompanyContract::first();
+    //     return view('e-commerce.wishlist',compact('company'));
+    // }
     public function cart(Request $req)
     {
         // $value = $req->session()->get('p_id');
@@ -314,16 +314,16 @@ class EcommerceController extends Controller
         // return view('e-commerce.order-received',compact('company','alert','msg','order'));
         return redirect()->route('profile-account')->with('success', 'สั่งซื้อสินค้าสำเร็จ !');
     }
-    public function orderTracking()
-    {
-        $company = CompanyContract::first();
-        return view('e-commerce.order-tracking',compact('company'));
-    }
-    public function page()
-    {
-        $company = CompanyContract::first();
-        return view('e-commerce.page',compact('company'));
-    }
+    // public function orderTracking()
+    // {
+    //     $company = CompanyContract::first();
+    //     return view('e-commerce.order-tracking',compact('company'));
+    // }
+    // public function page()
+    // {
+    //     $company = CompanyContract::first();
+    //     return view('e-commerce.page',compact('company'));
+    // }
     public function loginRegister()
     {
         $company = CompanyContract::first();
@@ -334,16 +334,16 @@ class EcommerceController extends Controller
         $company = CompanyContract::first();
         return view('e-commerce.register',compact('company'));
     }
-    public function Error404()
-    {
-        $company = CompanyContract::first();
-        return view('e-commerce.Error-404',compact('company'));
-    }
-    public function faqs()
-    {
-        $company = CompanyContract::first();
-        return view('e-commerce.faqs',compact('company'));
-    }
+    // public function Error404()
+    // {
+    //     $company = CompanyContract::first();
+    //     return view('e-commerce.Error-404',compact('company'));
+    // }
+    // public function faqs()
+    // {
+    //     $company = CompanyContract::first();
+    //     return view('e-commerce.faqs',compact('company'));
+    // }
     public function about()
     {
         $company = CompanyContract::first();

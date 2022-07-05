@@ -13,7 +13,7 @@
                     <li class="breadcrumb-item">
                         <a href="{{ route('index') }}">หน้าหลัก</a>
                     </li>
-                    <li class="breadcrumb-item active">เปลี่ยนรหัสผ่าน</li>
+                    <li class="breadcrumb-item active">ยืนยันหมายเลขโทรศัพท์</li>
                 </ol>
             </div>
         </div>
