@@ -878,6 +878,7 @@
                                             <th>ใบแจ้งชำระ</th>
                                         </tr>
                                     </thead>
+                                    
                                     <tbody>
                                         @if ($repairs)
                                             @foreach ($repairs as $repair)

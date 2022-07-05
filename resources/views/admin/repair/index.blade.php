@@ -13,7 +13,6 @@
             z-index: 100000;
 
         }
-
     </style>
 @endsection
 
@@ -45,6 +44,7 @@
                             <tr>
                                 <th>วันที่รับเครื่อง</th>
                                 <th>ชื่อลูกค้า</th>
+                                <th>ข้อมูล</th>
                                 <th>รุ่น:model</th>
                                 <th>รายการซ่อม</th>
                                 <th>ราคา</th>
@@ -52,6 +52,7 @@
                                 {{-- <th>วันสิ้นสุดประกัน</th> --}}
                                 <th>สถานะประกัน</th>
                                 <th>สถานะซ่อม</th>
+
                                 <th></th>
                             </tr>
                         </thead>
@@ -65,8 +66,6 @@
             </div>
         </div> <!-- end col -->
     </div> <!-- end row -->
-
-
 
     <div class="modal fade update-profile" id="customerModal" tabindex="-1" role="dialog"
         aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -143,10 +142,11 @@
                                 <div class="col-6">
                                     <label for="datepicker1">วันที่รับเครื่อง</label>
                                     <div class="input-group" id="datepicker1">
-                                        <input type="text" id="startDate" class="form-control " placeholder="วัน-เดือน-ปี"
-                                            data-date-format="dd-mm-yyyy" data-date-container='#datepicker1'
-                                            data-date-end-date="" value="{{ date('d-m-Y') }}" data-provide="datepicker"
-                                            name="startDate" autocomplete="off" required>
+                                        <input type="text" id="startDate" class="form-control "
+                                            placeholder="วัน-เดือน-ปี" data-date-format="dd-mm-yyyy"
+                                            data-date-container='#datepicker1' data-date-end-date=""
+                                            value="{{ date('d-m-Y') }}" data-provide="datepicker" name="startDate"
+                                            autocomplete="off" required>
                                         <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
                                     </div>
                                 </div>
@@ -179,9 +179,10 @@
                                 <div class="col-6">
                                     <label for="" class="form-label">ราคา </label>
                                     <div class="input-group" id="datepicker2">
-                                        <input type="text" class="form-control formInput formInputWarranty" id="price"
-                                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
-                                        name="price" placeholder="ราคา" aria-describedby="add" aria-label="shop">
+                                        <input type="text" class="form-control formInput formInputWarranty"
+                                            id="price"
+                                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                                            name="price" placeholder="ราคา" aria-describedby="add" aria-label="shop">
                                         <span class="input-group-text">บาท</span>
                                     </div>
                                 </div>
@@ -195,7 +196,8 @@
                                 <div class="col-6">
 
                                     <label for="" class="form-label">สถานะซ่อม</label>
-                                    <select name="status" id="" class="form-control formInput formInputWarranty" required>
+                                    <select name="status" id=""
+                                        class="form-control formInput formInputWarranty" required>
                                         <option value=""> -- เลือกสถานะซ่อม -- </option>
                                         @foreach ($statusRe as $status)
                                             <option value="{{ $status->id }}">{{ $status->name }}</option>
@@ -208,7 +210,8 @@
                         <div class="mb-3">
                             <div class="field_wrapper">
                                 <div class="input-group" style="margin-bottom: 5px;">
-                                    <button class="btn btn-light" type="button"> <i class="bx bx-wrench text-primary"></i>
+                                    <button class="btn btn-light" type="button"> <i
+                                            class="bx bx-wrench text-primary"></i>
                                     </button>
                                     <input type="text" class="form-control detail formInputWarranty" id="detail"
                                         name="detail" placeholder="เพิ่มรายการซ่อม" aria-describedby="add"
@@ -243,7 +246,8 @@
 
                     <form class="form-horizontal warranty-form" action="#" id="warranty-form-2">
                         @csrf
-                        <input type="hidden" class="formInputWarranty" name="warranty_id" value="" id="warranty_id">
+                        <input type="hidden" class="formInputWarranty" name="warranty_id" value=""
+                            id="warranty_id">
                         {{-- <input type="hidden" class="" name="customer" value="{{ $customer->id }}" id="customerEdit"> --}}
 
                         <div class="mb-3">
@@ -306,7 +310,7 @@
                                     <div class="input-group" id="datepicker2">
                                         {{-- <select name="shop" id="priceEdit" class="form-control formInput" required> --}}
                                         <input type="text" class="form-control price" id="priceEdit" name="price"
-                                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
                                             placeholder="ราคา" aria-describedby="add" aria-label="serial">
                                         <span class="input-group-text">บาท</span>
                                     </div>
@@ -393,25 +397,25 @@
             e.preventDefault();
             let formData = new FormData(this);
             var customer = $('#customer').val();
-       
-                openLoading();
 
-                $.ajax({
-                    type: "method",
-                    method: "POST",
-                    url: "{{ route('admin.repair.store') }}",
-                    processData: false,
-                    contentType: false,
-                    data: formData,
-                    success: function(res) {
-                        console.log(res);
-                        simple.ajax.reload();
-                        Swal.fire(res.title, res.msg, res.status);
-                        $('#simpleModal').modal("hide");
-                        closeLoading();
-                    }
-                });
-            
+            openLoading();
+
+            $.ajax({
+                type: "method",
+                method: "POST",
+                url: "{{ route('admin.repair.store') }}",
+                processData: false,
+                contentType: false,
+                data: formData,
+                success: function(res) {
+                    console.log(res);
+                    simple.ajax.reload();
+                    Swal.fire(res.title, res.msg, res.status);
+                    $('#simpleModal').modal("hide");
+                    closeLoading();
+                }
+            });
+
 
         });
 
@@ -545,13 +549,23 @@
                         }
                     },
                     {
-                    "data": "customer",
-                         "render": function (data, type, full) {
-                            return data ? data.name : '<span class="badge badge-pill badge-soft-danger font-size-11"> ลูกค้าถูกลบ </span>';
+                        "data": "customer",
+                        "render": function(data, type, full) {
+                            return data ? data.name :
+                                '<span class="badge badge-pill badge-soft-danger font-size-11"> ลูกค้าถูกลบ </span>';
+
+                        } 
+                    },
+                    {
+                        "data": "customer_id",
+                        "render": function(data, type, full) {
+                            var obj = JSON.stringify(full);
+                            var button = ` 
+                            <a  href="/admin/customer/profile/${data}" class="btn btn-sm btn-warning" ><i class="bx bx-user"></i></a>
+                             `;
+                            return button;
                         }
                     },
-                    
-                    
 
                     {
                         "data": "model",
@@ -595,18 +609,18 @@
                     //         return text;
                     //     }
                     // },
-                    
-                      {
+
+                    {
                         "data": "status",
                         "render": function(data, type, full) {
                             var text = data;
-                            if(text==1){
+                            if (text == 1) {
                                 text =
                                     `<span class="badge badge-pill badge-soft-danger font-size-11"> กำลังดำเนินการ </span>`;
-                            }else if(text==2){
+                            } else if (text == 2) {
                                 text =
                                     `<span class="badge badge-pill badge-soft-success font-size-11"> ซ่อมเสร็จแล้ว </span>`;
-                            }else if(text==3){
+                            } else if (text == 3) {
                                 text =
                                     `<span class="badge badge-pill badge-soft-warning font-size-11"> ซ่อมไม่ได้ </span>`;
                             }
@@ -670,7 +684,7 @@
             console.log('customer : ' + customer)
             // console.log('product : ' + product)
             console.log('id : ' + id)
-            if (customer == null && customer == '' ) {
+            if (customer == null && customer == '') {
                 Swal.fire('ผิดพลาด!', 'กรุณากรอกข้อมูลให้ครบถ้วน', 'warning');
             } else {
                 openLoading();

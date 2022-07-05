@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Storage;
 
 class RepairController extends Controller
 {
+
     public function index()
     {
 
