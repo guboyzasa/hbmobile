@@ -1,4 +1,3 @@
-
 @extends('layouts-ecommerce.app')
 
 @section('css')
@@ -7,44 +6,49 @@
 
 @section('content')
 
-<div class="page-head">
-	<div class="container">
-		<div class="d-flex flex-column flex-md-row">
-			<ol class="breadcrumb p-0 bg-transparent mx-auto mx-md-0 mr-md-auto mb-0">
-				<li class="breadcrumb-item">
-					<a href="{{ route('index') }}">หน้าแรก</a>
-				</li>
-				<li class="breadcrumb-item active">เกี่ยวกับเรา</li>
-			</ol>
-		</div>
-	</div><!-- /.container -->
-</div><!-- /.page-head -->
+    <div class="page-head">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row">
+                <ol class="breadcrumb p-0 bg-transparent mx-auto mx-md-0 mr-md-auto mb-0">
+                    <li class="breadcrumb-item">
+                        <a href="{{ route('index') }}">หน้าแรก</a>
+                    </li>
+                    <li class="breadcrumb-item active">เกี่ยวกับเรา</li>
+                </ol>
+            </div>
+        </div><!-- /.container -->
+    </div><!-- /.page-head -->
 
-<div class="page-wrapper">
-	<section class="section" id="page-about">
-		<div class="container">
-			<div class="row align-items-center mb-5">
-				<div class="col-lg-4">
-					<h2 class="title">เฮียบอยโมบาย เซอร์วิส<br>HB Mobile</h2>
-					
-					{{-- <p class="subtitle description">
-						<i class='bx bxs-circle' ></i> จำหน่ายแบตเตอรี่มือถือหลากหลายรุ่น สายชาร์จ อุปกรณ์ อะไหล่มือถือสมาร์ทโฟน
-					</p> --}}
-					{{-- <p class="subtitle description">
-						<i class='bx bxs-circle' ></i> สินค้าเราได้มาตราฐาน ม.อ.ก อย่างถูกต้อง พร้อมทีมช่างเทคนิคดูแลให้คำปรึกษาอย่างไกล้ชิด
-					</p> --}}
-				</div>
-				<div class="col-lg-8">
-					<div class="image">
-						<img src='{{ URL::asset("/assets/dist/images/logo.png") }}' class="img-fluid" alt="" width="40%">
-						&nbsp;&nbsp;&nbsp;&nbsp;
-						<img src='{{ URL::asset("/assets/dist/images/tb.jpg") }}' class="img-fluid" alt="" width="40%">
-					</div>
-				</div>
-			</div><!-- /.row -->
-		</div><!-- /.container -->
-	</section><!-- #page-about -->
-</div><!-- /.page-wrapper -->
+    <div style="text-align: center" class="page-wrapper">
+        <section class="section" id="page-about">
+            <div class="container">
+               
+                <div class="col-lg-12">
+                    <h2 class="title">เฮียบอยโมบาย เซอร์วิส<br>HB Mobile Services.</h2>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-12">
+                        <figure class="product-thumbnail text-center">
+                            <a href="{{ URL::asset('/assets/dist/images/001.png') }}" data-fancybox="images">
+                                <img src="{{ URL::asset('/assets/dist/images/001.png') }}" class="img-fluid shadow p-2"
+                                    alt="" width="250px">
+                            </a>
+                        </figure>
+                    </div>
+                </div>
+				<div class="col-md-12">
+                    <img style="text-align: center" src='{{ URL::asset('/assets/dist/images/logo.png') }}'
+                        class="img-fluid p-2" alt="" width="100px">
+                    {{-- <img style="text-align: center" src='{{ URL::asset('/assets/dist/images/tisi.png') }}'
+                        class="img-fluid p-2" alt="" width="270px"> --}}
+                    <img style="text-align: center" src='{{ URL::asset('/assets/dist/images/qr.png') }}'
+                        class="img-fluid p-2" alt="" width="83px">
+                </div>
+            </div><!-- /.row -->
+    </div><!-- /.container -->
+    </section><!-- #page-about -->
+    </div><!-- /.page-wrapper -->
 
 @endsection
 

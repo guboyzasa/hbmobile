@@ -109,13 +109,13 @@
                 </div>
                 <div class="col-sm-12">
                     <div class="masonry row">
-                        @foreach ($products as $key => $product)
+                        @foreach ($products as $product)
                             <div class="product col-6 col-lg-3 col-md-6" data-product-id="{{ $product->id }}">
                                 <div class="inner-product">
-
-                                    @if (@$product->is_new == 1)
+                                    
+                                    @if ($product->is_new == 1)
                                         <span class="onsale new">ใหม่ !</span>
-                                    @elseif(@$product->is_recommend == 1)
+                                    @elseif($product->is_recommend == 1)
                                         <span class="onsale hot">แนะนำ !</span>
                                     @endif
                                     

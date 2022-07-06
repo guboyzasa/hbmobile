@@ -942,7 +942,7 @@
                                                         </style>
                                                         <div class="container">
                                                             <button type="button"
-                                                                class="badge badge-info waves-effect waves-light"
+                                                                class="badge badge-info"
                                                                 data-toggle="modal"
                                                                 data-target="#myModal-{{ $repair->id }}">ใบแจ้งชำระ</button>
                                                             <!-- The Modal -->
@@ -1095,7 +1095,7 @@
                                                                                             <h4 class="modal-title"
                                                                                 style="text-align: right">
                                                                                 <a class="amount text-primary">
-                                                                                    *กรอกที่อยู่จัดส่งให้ครบ*</a>
+                                                                                    *กรอกที่อยู่ให้ครบ*</a>
                                                                             </h4>
                                                                                         </td>
                                                                                     </tr>
@@ -1164,7 +1164,7 @@
 
                                                                                     <button type="submit"
                                                                                         class="btn btn-primary waves-effect waves-light"><i
-                                                                                            class="bx bx-printer"></i>
+                                                                                            class="bx bx-printer" target="_black"></i>
                                                                                         Print</button>
                                                                                     <button type="button"
                                                                                         class="btn btn-info"
