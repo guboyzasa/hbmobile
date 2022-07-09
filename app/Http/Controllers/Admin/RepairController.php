@@ -45,6 +45,7 @@ class RepairController extends Controller
         $model = $req->model;
         $detail = $req->detail;
         $price = $req->price;
+        $shipping_price = $req->shippingPrice;
         $status = $req->status;
         $startDate = $req->startDate;
         $endDate = $req->endDate;
@@ -84,6 +85,7 @@ class RepairController extends Controller
         $repair->price = $price;
         $repair->detail = $detail;
         $repair->status = $status;
+        $repair->shipping_price = $shipping_price;
         $repair->repair_start_date = Carbon::parse($startDate);
         $repair->repair_end_date = Carbon::parse($endDate);
         $repair->repair_months = $months;
@@ -111,6 +113,7 @@ class RepairController extends Controller
         $detail = $req->detail;
         $price = $req->price;
         $status = $req->status;
+        $shipping_price = $req->shippingPrice;
         $startDate = $req->startDate;
         $endDate = $req->endDate;
 
@@ -121,6 +124,7 @@ class RepairController extends Controller
         "\nรุ่น:model: $req->model" .
         "\nรายระเอียด: $req->detail" .
         "\nราคา: $req->price บาท" .
+        "\nค่าขนส่ง: $req->shippingPrice บาท" .
         "\nวันที่รับเครื่อง: $req->startDate" .
         "\nวันหมดประกัน: $req->endDate";
 
@@ -157,6 +161,7 @@ class RepairController extends Controller
             // $repair->serial_no = $serial;
             $repair->price = $price;
             $repair->detail = $detail;
+            $repair->shipping_price = $shipping_price;
             $repair->repair_start_date = Carbon::parse($startDate);
             $repair->repair_end_date = Carbon::parse($endDate);
             $repair->repair_months = $months;

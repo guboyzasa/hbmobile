@@ -95,6 +95,10 @@
                                 ราคา: <strong><span class="amount">{{ $repair->price }}</span></strong>
                             </li>
 
+                            <li class="total">
+                                ค่าส่ง: <strong><span class="amount">{{ @$repair->shipping_price }}</span></strong>
+                            </li>
+
                         </ul>
                     </div>
                 @endif
@@ -581,6 +585,10 @@
                                     ราคา: <strong><span class="amount">{{ $repair->price }}</span></strong>
                                 </li>
 
+                                <li class="total">
+                                    ค่าส่ง: <strong><span class="amount">{{ @$repair->shipping_price }}</span></strong>
+                                </li>
+
                             </ul>
                         </div>
                     @endif
@@ -608,7 +616,7 @@
                             <li class="nav-item">
                                 <a class="nav-link text-info" href="#tab-repair" aria-controls="tab-information"
                                     data-toggle="tab"><i class='bx bx-wrench'></i>
-                                    ติดตามงานซ่อม
+                                    ชำระงานซ่อม
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -865,13 +873,14 @@
                             </div><!-- ./tab-waranry-->
 
                             <div class="tab-pane" id="tab-repair">
+                                <div class="table-responsive">
                                 <table class="table shop_attributes" id="warranty_table">
                                     <thead>
                                         <tr>
                                             <th style="text-align:center">วันที่รับเครื่อง</th>
                                             {{-- <th>รุ่น:model</th> --}}
                                             <th style="text-align:center">รายการซ่อม</th>
-                                            <th style="text-align:center">ราคา</th>
+                                            <th style="text-align:center">ราคารวม</th>
                                             <th style="text-align:center">สิ้นสุดประกัน</th>
                                             {{-- <th>สถานะประกัน</th> --}}
                                             <th style="text-align:center">สถานะซ่อม</th>
@@ -893,7 +902,7 @@
                                                     <td style="text-align:center">{{ $repair->model }} x
                                                         {{ $repair->detail }}</td>
                                                     <!--ราคา -->
-                                                    <td style="text-align:center">{{ $repair->price }}</td>
+                                                    <td style="text-align:center">{{ $repair->price + $repair->shipping_price}}</td>
                                                     <!--วันสิ้นสุดประกัน -->
                                                     <td style="text-align:center">
                                                         {{ date_format(date_create($repair->repair_end_date), 'd-m-y') }}
@@ -958,14 +967,15 @@
                                                                                 <i class="bx bx-receipt"></i>
                                                                                 แจ้งชำระ <a class="amount text-primary">
                                                                                     [ยอด:
-                                                                                    {{ number_format($repair->price + 80, 2) }}
+                                                                                    {{ number_format($repair->price + @$repair->shipping_price, 2) }}
                                                                                     ฿]</a>
                                                                             </h4> 
                                                                             <button type="button" class="close"
                                                                                 data-dismiss="modal">&times;</button>
                                                                         </div>
                                                                         <div class="modal-body">
-                                                                            <table class="table">
+                                                                            <div class="table-responsive-sm">
+                                                                            <table class="table ">
                                                                                 <thead>
                                                                                     <tr>
                                                                                         <th>
@@ -1045,7 +1055,7 @@
                                                                                         </th>
                                                                                         <td>
                                                                                             <p style="text-align: right">
-                                                                                                {{ number_format(80, 2) }}
+                                                                                                {{ number_format(@$repair->shipping_price, 2) }}
                                                                                             </p>
                                                                                         </td>
                                                                                     </tr>
@@ -1057,7 +1067,7 @@
                                                                                     <td>
                                                                                         <p style="text-align: right"
                                                                                             class="amount text-primary">
-                                                                                            {{ number_format($repair->price + 80, 2) }}
+                                                                                            {{ number_format($repair->price + @$repair->shipping_price, 2) }}
                                                                                         </p>
                                                                                     </td>
 
@@ -1090,17 +1100,19 @@
                                                                                                     chat (คลิก)</a>
                                                                                             </p>
                                                                                             {{-- </div> --}}
+                                                                                            <td>
+                                                                                                <h4 class="modal-title"
+                                                                                    style="text-align: right">
+                                                                                    <a class="amount text-primary">
+                                                                                        *กรอกที่อยู่ให้ครบ*</a>
+                                                                                </h4>
+                                                                                            </td>
                                                                                         </th>
-                                                                                        <td>
-                                                                                            <h4 class="modal-title"
-                                                                                style="text-align: right">
-                                                                                <a class="amount text-primary">
-                                                                                    *กรอกที่อยู่ให้ครบ*</a>
-                                                                            </h4>
-                                                                                        </td>
+                                                                                        
                                                                                     </tr>
                                                                                 </tfoot>
                                                                             </table>
+                                                                            </div>
                                                                         </div>
                                                                         <div class="modal-footer">
                                                                             <form action="{{ url('/create-invoice') }}"
@@ -1157,7 +1169,7 @@
                                                                                 <input type="hidden"
                                                                                     value="{{ $repair->price }}"
                                                                                     name="price" />
-                                                                                <input type="hidden" value="80"
+                                                                                <input type="hidden" value="{{@$repair->shipping_price}}"
                                                                                     name="shipping" />
 
                                                                                 <div class="text-right">
@@ -1182,6 +1194,7 @@
                                         @endif
                                     </tbody>
                                 </table>
+                                </div>
                             </div><!-- ./tab-repair -->
 
                             <div class="tab-pane" id="tab-profile">

@@ -44,15 +44,14 @@
                             <tr>
                                 <th>วันที่รับเครื่อง</th>
                                 <th>ชื่อลูกค้า</th>
-                                <th>ข้อมูล</th>
-                                <th>รุ่น:model</th>
+                                {{-- <th>รุ่น</th> --}} 
                                 <th>รายการซ่อม</th>
                                 <th>ราคา</th>
-                                {{-- <th>วันเริ่มประกัน</th> --}}
+                                <th>ค่าส่ง</th>
                                 {{-- <th>วันสิ้นสุดประกัน</th> --}}
                                 <th>สถานะประกัน</th>
                                 <th>สถานะซ่อม</th>
-
+                                <th></th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -175,7 +174,6 @@
                                         aria-label="model">
 
                                 </div>
-
                                 <div class="col-6">
                                     <label for="" class="form-label">ราคา </label>
                                     <div class="input-group" id="datepicker2">
@@ -186,15 +184,11 @@
                                         <span class="input-group-text">บาท</span>
                                     </div>
                                 </div>
-
                             </div>
-
                         </div>
                         <div class="mb-3">
                             <div class="row">
-
                                 <div class="col-6">
-
                                     <label for="" class="form-label">สถานะซ่อม</label>
                                     <select name="status" id=""
                                         class="form-control formInput formInputWarranty" required>
@@ -203,6 +197,17 @@
                                             <option value="{{ $status->id }}">{{ $status->name }}</option>
                                         @endforeach
                                     </select>
+                                </div>
+                                <div class="col-2">
+                                    <label for="" class="form-label">ค่าขนส่ง </label>
+                                    <div class="input-group" id="datepicker2">
+                                        <input type="text" class="form-control formInput formInputWarranty"
+                                            id="shippingPrice"
+                                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                                            name="shippingPrice" placeholder="ราคา" aria-describedby="add"
+                                            aria-label="shop">
+                                        <span class="input-group-text">บาท</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -301,8 +306,6 @@
                                         style="width: 100% " required> --}}
                                     <input type="text" class="form-control models" id="modelEdit" name="model"
                                         placeholder="เพิ่มรุ่น:model" aria-describedby="add" aria-label="model">
-
-
                                 </div>
 
                                 <div class="col-6">
@@ -320,9 +323,7 @@
                         </div>
                         <div class="mb-3">
                             <div class="row">
-
                                 <div class="col-6">
-
                                     <label for="status" class="form-label">สถานะซ่อม</label>
                                     <select name="status" id="statusEdit" class="form-control ">
                                         <option value=""> -- เลือกสถานะซ่อม -- </option>
@@ -330,6 +331,17 @@
                                             <option value="{{ $status->id }}">{{ $status->name }}</option>
                                         @endforeach
                                     </select>
+                                </div>
+                                <div class="col-2">
+                                    <label for="shippingPrice" class="form-label">ค่าขนส่ง</label>
+                                    <div class="input-group" id="datepicker2">
+                                        {{-- <select name="shop" id="priceEdit" class="form-control formInput" required> --}}
+                                        <input type="text" class="form-control shippingPrice" id="shippingPriceEdit"
+                                            name="shippingPrice"
+                                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                                            placeholder="ราคา" aria-describedby="add" aria-label="serial">
+                                        <span class="input-group-text">บาท</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -426,6 +438,7 @@
             $("#model").val(obj.model).trigger('change'); //รุ่น
             $('#price').val(obj.price); //ราคา
             $('#status').val(obj.status); //สถานะ
+            $('#shippingPrice').val(obj.shippingPrice); //ราคาขนส่ง
             $('#startDate').val(moment(obj.repair_start_date).format('DD-MM-YYYY'));
             $('#endDate').val(moment(obj.repair_end_date).format('DD-MM-YYYY'));
             $('#detail').val(obj.detail); //รายการซ่อม
@@ -554,29 +567,22 @@
                             return data ? data.name :
                                 '<span class="badge badge-pill badge-soft-danger font-size-11"> ลูกค้าถูกลบ </span>';
 
-                        } 
-                    },
+                        }
+                    }, 
+
                     {
-                        "data": "customer_id",
+                        "data": "customer",
                         "render": function(data, type, full) {
-                            var obj = JSON.stringify(full);
-                            var button = ` 
-                            <a  href="/admin/customer/profile/${data}" class="btn btn-sm btn-warning" ><i class="bx bx-user"></i></a>
-                             `;
-                            return button;
+                            return full.model + " x " + full.detail;
                         }
                     },
 
                     {
-                        "data": "model",
-                    },
-
-                    {
-                        "data": "detail",
-                    },
-
-                    {
                         "data": "price",
+                    },
+
+                    {
+                        "data": "shipping_price",
                     },
 
                     // {
@@ -627,20 +633,31 @@
                             return text;
                         }
                     },
+                    {
+                        "data": "customer_id",
+                        "render": function(data, type, full) {
+                            var obj = JSON.stringify(full);
+                            var button = ` 
+                                <a  href="/admin/customer/profile/${data}" class="btn btn-sm btn-warning" ><i class="bx bx-user"></i></a>
+                         `;
+                            return button;
+                        }
+                    },
 
                     {
                         "data": "id",
                         "render": function(data, type, full) {
                             var obj = JSON.stringify(full);
                             var button = `
-
+                            
                                 <button type="button" class="btn btn-sm btn-info" onclick='showInfoWarranty(${obj})'><i class="bx bx-search-alt-2"></i> </button>
-                                   <button type="button" class="btn btn-sm btn-danger" onclick='destroyWarranty(${data})'><i class="bx bx-trash"></i>  </button>
+                                <button type="button" class="btn btn-sm btn-danger" onclick='destroyWarranty(${data})'><i class="bx bx-trash"></i>  </button>
                             `;
                             return button;
 
                         }
                     },
+
 
                 ],
             });
@@ -734,6 +751,7 @@
             $("#modelEdit").val(obj.model).trigger('change');
             $('#priceEdit').val(obj.price).trigger('change');
             $('#statusEdit').val(obj.status).trigger('change');
+            $('#shippingPriceEdit').val(obj.shippingPrice).trigger('change');
             $('#startDateEdit').val(moment(obj.repair_start_date).format('DD-MM-YYYY'));
             $('#endDateEdit').val(moment(obj.repair_end_date).format('DD-MM-YYYY'));
             $('#detailEdit').val(obj.detail).trigger('change');
