@@ -54,7 +54,7 @@
             <div class="col-sm-12">
                 <div class="masonry row">
                     @foreach($products as $product)
-                    <div class="product col-lg-3 col-md-6 p-2 category-{{ $product->product_category_id }} {{$product->is_new == 1 ? 'category-new' : ''}} {{$product->is_recommend == 1 ? 'category-recommend' : ''}} category-{{$product->product_category_id}}-brand-{{$product->product_brand_id}}" data-product-id="{{ $product->id }}">
+                    <div class="product col-6 col-lg-3 col-md-6 category-{{ $product->product_category_id }} {{$product->is_new == 1 ? 'category-new' : ''}} {{$product->is_recommend == 1 ? 'category-recommend' : ''}} category-{{$product->product_category_id}}-brand-{{$product->product_brand_id}}" data-product-id="{{ $product->id }}">
                         <div class="inner-product">
                             @if($product->is_new == 1)
                             <span class="onsale new">ใหม่ !</span>
@@ -119,4 +119,5 @@
         $(`.cataegory-brand`).addClass('d-none');
     }
 </script>
+<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=62b8c6063a1e900019a62f42&product=sticky-share-buttons" async="async"></script>
 @stop

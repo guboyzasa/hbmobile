@@ -217,5 +217,5 @@
 @endsection
 
 @section('script')
-
+<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=62b8c6063a1e900019a62f42&product=sticky-share-buttons" async="async"></script>
 @stop

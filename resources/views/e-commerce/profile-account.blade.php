@@ -981,36 +981,36 @@
                                                                                             <i class='bx bxs-map'></i>
                                                                                             ที่อยู่จัดส่ง
                                                                                             :
-                                                                                            @if ($order->orderDeliveryAddress->address == null || $customer->customerAddress->address != null)
-                                                                                                {{ $customer->customerAddress->address }} 
-                                                                                            @elseif ($customer->customerAddress->address == null || $order->orderDeliveryAddress->address !=NULL)
-                                                                                                {{ $order->orderDeliveryAddress->address }} 
+                                                                                            @if (@$order->orderDeliveryAddress->address == null || @$customer->customerAddress->address != null)
+                                                                                                {{ @$customer->customerAddress->address }} 
+                                                                                            @elseif (@$customer->customerAddress->address == null || @$order->orderDeliveryAddress->address !=NULL)
+                                                                                                {{ @$order->orderDeliveryAddress->address }} 
                                                                                             @endif
 
                                                                                             ต.
-                                                                                            @if ($order->orderDeliveryAddress->sub_district == null||$customer->customerAddress->sub_district != null)
-                                                                                                {{ $customer->customerAddress->sub_district }}
-                                                                                                @elseif ($customer->customerAddress->sub_district == null||$order->orderDeliveryAddress->sub_district != null)
-                                                                                                {{ $order->orderDeliveryAddress->sub_district }}
+                                                                                            @if (@$order->orderDeliveryAddress->sub_district == null||@$customer->customerAddress->sub_district != null)
+                                                                                                {{ @$customer->customerAddress->sub_district }}
+                                                                                                @elseif (@$customer->customerAddress->sub_district == null||@$order->orderDeliveryAddress->sub_district != null)
+                                                                                                {{ @$order->orderDeliveryAddress->sub_district }}
                                                                                             @endif
 
                                                                                             อ.
-                                                                                            @if ($order->orderDeliveryAddress->district == null||$customer->customerAddress->district != null)
-                                                                                                {{ $customer->customerAddress->district }}
-                                                                                                @elseif ($customer->customerAddress->district == null||$order->orderDeliveryAddress->district != null)
-                                                                                                {{ $order->orderDeliveryAddress->district }}
+                                                                                            @if (@$order->orderDeliveryAddress->district == null||@$customer->customerAddress->district != null)
+                                                                                                {{ @$customer->customerAddress->district }}
+                                                                                                @elseif (@$customer->customerAddress->district == null||@$order->orderDeliveryAddress->district != null)
+                                                                                                {{ @$order->orderDeliveryAddress->district }}
                                                                                             @endif
 
                                                                                             จ.
-                                                                                            @if ($order->orderDeliveryAddress->province == null||$customer->customerAddress->province != null)
-                                                                                                {{ $customer->customerAddress->province }}
-                                                                                                @elseif ($customer->customerAddress->province == null||$order->orderDeliveryAddress->province != null)
-                                                                                                {{ $order->orderDeliveryAddress->province }}
+                                                                                            @if (@$order->orderDeliveryAddress->province == null||@$customer->customerAddress->province != null)
+                                                                                                {{ @$customer->customerAddress->province }}
+                                                                                                @elseif ($customer->customerAddress->province == null||@$order->orderDeliveryAddress->province != null)
+                                                                                                {{ @$order->orderDeliveryAddress->province }}
                                                                                             @endif
-                                                                                            @if ($order->orderDeliveryAddress->zipcode == null||$customer->customerAddress->zipcode != null)
-                                                                                                {{ $customer->customerAddress->zipcode }}
-                                                                                                @elseif ($customer->customerAddress->zipcode == null||$order->orderDeliveryAddress->zipcode != null)
-                                                                                                {{ $order->orderDeliveryAddress->zipcode }}
+                                                                                            @if (@$order->orderDeliveryAddress->zipcode == null||@$customer->customerAddress->zipcode != null)
+                                                                                                {{ @$customer->customerAddress->zipcode }}
+                                                                                                @elseif (@$customer->customerAddress->zipcode == null||@$order->orderDeliveryAddress->zipcode != null)
+                                                                                                {{ @$order->orderDeliveryAddress->zipcode }}
                                                                                             @endif
 
                                                                                         </th>
@@ -1114,36 +1114,36 @@
                                                                                     value="{{ $customer->phone }}"
                                                                                     name="phone" />
                                                                                 <input type="hidden"
-                                                                                    value=" @if ($order->orderDeliveryAddress->address == null || $customer->customerAddress->address != null)
-                                                                                    {{ $customer->customerAddress->address }} 
-                                                                                @elseif ($customer->customerAddress->address == null || $order->orderDeliveryAddress->address !=NULL)
-                                                                                    {{ $order->orderDeliveryAddress->address }} 
+                                                                                    value=" @if (@$order->orderDeliveryAddress->address == null || @$customer->customerAddress->address != null)
+                                                                                    {{ @$customer->customerAddress->address }} 
+                                                                                @elseif (@$customer->customerAddress->address == null || @$order->orderDeliveryAddress->address !=NULL)
+                                                                                    {{ @$order->orderDeliveryAddress->address }} 
                                                                                 @endif
 
                                                                                 ต.
-                                                                                @if ($order->orderDeliveryAddress->sub_district == null||$customer->customerAddress->sub_district != null)
-                                                                                    {{ $customer->customerAddress->sub_district }}
-                                                                                    @elseif ($customer->customerAddress->sub_district == null||$order->orderDeliveryAddress->sub_district != null)
-                                                                                    {{ $order->orderDeliveryAddress->sub_district }}
+                                                                                @if (@$order->orderDeliveryAddress->sub_district == null||@$customer->customerAddress->sub_district != null)
+                                                                                    {{ @$customer->customerAddress->sub_district }}
+                                                                                    @elseif (@$customer->customerAddress->sub_district == null||@$order->orderDeliveryAddress->sub_district != null)
+                                                                                    {{ @$order->orderDeliveryAddress->sub_district }}
                                                                                 @endif
 
                                                                                 อ.
-                                                                                @if ($order->orderDeliveryAddress->district == null||$customer->customerAddress->district != null)
-                                                                                    {{ $customer->customerAddress->district }}
-                                                                                    @elseif ($customer->customerAddress->district == null||$order->orderDeliveryAddress->district != null)
-                                                                                    {{ $order->orderDeliveryAddress->district }}
+                                                                                @if (@$order->orderDeliveryAddress->district == null||@$customer->customerAddress->district != null)
+                                                                                    {{ @$customer->customerAddress->district }}
+                                                                                    @elseif (@$customer->customerAddress->district == null||@$order->orderDeliveryAddress->district != null)
+                                                                                    {{ @$order->orderDeliveryAddress->district }}
                                                                                 @endif
 
                                                                                 จ.
-                                                                                @if ($order->orderDeliveryAddress->province == null||$customer->customerAddress->province != null)
-                                                                                    {{ $customer->customerAddress->province }}
-                                                                                    @elseif ($customer->customerAddress->province == null||$order->orderDeliveryAddress->province != null)
-                                                                                    {{ $order->orderDeliveryAddress->province }}
+                                                                                @if (@$order->orderDeliveryAddress->province == null||@$customer->customerAddress->province != null)
+                                                                                    {{ @$customer->customerAddress->province }}
+                                                                                    @elseif (@$customer->customerAddress->province == null||@$order->orderDeliveryAddress->province != null)
+                                                                                    {{ @$order->orderDeliveryAddress->province }}
                                                                                 @endif
-                                                                                @if ($order->orderDeliveryAddress->zipcode == null||$customer->customerAddress->zipcode != null)
-                                                                                    {{ $customer->customerAddress->zipcode }}
-                                                                                    @elseif ($customer->customerAddress->zipcode == null||$order->orderDeliveryAddress->zipcode != null)
-                                                                                    {{ $order->orderDeliveryAddress->zipcode }}
+                                                                                @if (@$order->orderDeliveryAddress->zipcode == null||@$customer->customerAddress->zipcode != null)
+                                                                                    {{ @$customer->customerAddress->zipcode }}
+                                                                                    @elseif (@$customer->customerAddress->zipcode == null||@$order->orderDeliveryAddress->zipcode != null)
+                                                                                    {{ @$order->orderDeliveryAddress->zipcode }}
                                                                                 @endif
 
                                                                                 "

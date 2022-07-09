@@ -122,10 +122,10 @@
 
                     <li class="nav-item"><a class="nav-link" href="{{ route('about') }}">เกี่ยวกับเรา</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">ติดต่อเรา</a></li>
-                    @if (Auth::user() && Auth::user()->is_agent == 0 && Auth::user()->is_admin == 0)
+                    {{-- @if (Auth::user() && Auth::user()->is_agent == 0 && Auth::user()->is_admin == 0)
                         <li class="nav-item"><a class="nav-link text-success"
                                 href="{{ route('profile-account') }}">ยืนยันการชำระเงิน</a></li>
-                    @endif
+                    @endif --}}
                 </ul>
             </div>
             <!--/.nav-collapse -->
