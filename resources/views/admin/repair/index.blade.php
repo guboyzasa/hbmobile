@@ -43,12 +43,10 @@
                         <thead>
                             <tr>
                                 <th>วันที่รับเครื่อง</th>
-                                <th>ชื่อลูกค้า</th>
-                                {{-- <th>รุ่น</th> --}}
+                                <th>ชื่อลูกค้า</th> 
                                 <th>รายการซ่อม</th>
                                 <th>ราคา</th>
-                                <th>ค่าส่ง</th>
-                                {{-- <th>วันสิ้นสุดประกัน</th> --}}
+                                <th>ค่าส่ง</th> 
                                 <th>สถานะประกัน</th>
                                 <th>สถานะซ่อม</th>
                                 <th></th>
@@ -177,7 +175,7 @@
                                 <div class="col-6">
                                     <label for="" class="form-label">ราคา </label>
                                     <div class="input-group" id="datepicker2">
-                                        <input type="text" class="form-control formInput formInputWarranty"
+                                        <input type="number" class="form-control formInput formInputWarranty"
                                             id="price"
                                             oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
                                             name="price" placeholder="ราคา" aria-describedby="add" aria-label="shop">
@@ -198,10 +196,10 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="col-2">
+                                <div class="col-4">
                                     <label for="" class="form-label">ค่าขนส่ง </label>
                                     <div class="input-group" id="datepicker2">
-                                        <input type="text" class="form-control formInput formInputWarranty"
+                                        <input type="number" class="form-control formInput formInputWarranty"
                                             id="shippingPrice"
                                             oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
                                             name="shippingPrice" placeholder="ราคา" aria-describedby="add"
@@ -312,7 +310,7 @@
                                     <label for="price" class="form-label">ราคา</label>
                                     <div class="input-group" id="datepicker2">
                                         {{-- <select name="shop" id="priceEdit" class="form-control formInput" required> --}}
-                                        <input type="text" class="form-control price" id="priceEdit" name="price"
+                                        <input type="number" class="form-control price" id="priceEdit" name="price"
                                             oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
                                             placeholder="ราคา" aria-describedby="add" aria-label="serial">
                                         <span class="input-group-text">บาท</span>
@@ -332,11 +330,11 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="col-2">
+                                <div class="col-4">
                                     <label for="shippingPrice" class="form-label">ค่าขนส่ง</label>
                                     <div class="input-group" id="datepicker2">
                                         {{-- <select name="shop" id="priceEdit" class="form-control formInput" required> --}}
-                                        <input type="text" class="form-control shippingPrice" id="shippingPriceEdit"
+                                        <input type="number" class="form-control shippingPrice" id="shippingPriceEdit"
                                             name="shippingPrice"
                                             oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
                                             placeholder="ราคา" aria-describedby="add" aria-label="serial">

@@ -7,8 +7,10 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use App\Models\User;
+use CURLFile;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Routing\Controller as BaseController; 
+use Illuminate\Support\Facades\URL;
 
 class Controller extends BaseController
 {
@@ -167,6 +169,34 @@ class Controller extends BaseController
         curl_setopt($chOne, CURLOPT_POSTFIELDS, $message3);
 
         $headers = array('Content-type: application/x-www-form-urlencoded', 'Authorization: Bearer ' . $token3 . '');
+        curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($chOne, CURLOPT_RETURNTRANSFER, 1);
+        $result = curl_exec($chOne);
+
+        curl_close($chOne);
+    }
+    //Line Notify อัพโหลดสลิป
+    public function sendLineNotify4($token2, $message4)
+    {
+        ini_set('display_errors', 1);
+        ini_set('display_startup_errors', 1);
+        error_reporting(E_ALL);
+        date_default_timezone_set("Asia/Bangkok");
+
+        
+		// $data  = array(
+		// 	'message'=> $message4, 
+        // );
+
+        $chOne = curl_init();
+        curl_setopt($chOne, CURLOPT_URL, "https://notify-api.line.me/api/notify");
+        curl_setopt($chOne, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($chOne, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($chOne, CURLOPT_POST, 1); 
+        
+        curl_setopt($chOne, CURLOPT_POSTFIELDS, $message4);
+
+        $headers = array('Content-type: application/x-www-form-urlencoded', 'Authorization: Bearer ' . $token2 . '');
         curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers);
         curl_setopt($chOne, CURLOPT_RETURNTRANSFER, 1);
         $result = curl_exec($chOne);

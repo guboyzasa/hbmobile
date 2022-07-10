@@ -31,12 +31,13 @@ use App\Models\CustomerBillAddress;
 use App\Models\BannerImage;
 
 use Carbon\Carbon;
+use CURLFile;
 use Session;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Auth; 
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\URL;
 
 class EcommerceController extends Controller
 {
@@ -477,6 +478,19 @@ class EcommerceController extends Controller
                 'status' => 'error',
             ];
         }
+            //อัพโหลดสลิป LINE Notify 
+            // $link = 'http://127.0.0.1:8000/get-content/';
+
+            $imageFile = URL::asset('get-content');
+            $message4 = "message=" ."\n** อัพโหลดสลิปแล้ว **" .
+            "\nรหัสออเดอร์: $order->code" .
+            "\nวันที่: $date" .
+            "\nเวลา: $time น." .
+            "\nยอดรวม: $order_payment->payment_amount บาท" .
+            "\nสลิป: $imageFile/$fullPath" ;
+
+            $this->sendLineNotify4(env('LINE_TOKEN2'), $message4);
+
         DB::commit();
         // return $data;
         return redirect()->route('profile-account');
