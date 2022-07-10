@@ -135,9 +135,9 @@
                                 </div>
                                 <h4 class="product-title text-too-long"><a
                                         href="products/detail/{{ $product->id }}">{{ $product->name }}</a></h4>
-                                <div class="star-rating">
+                                {{-- <div class="star-rating">
                                     <span style="width:80%"></span>
-                                </div>
+                                </div> --}}
                                 <p class="product-price text-primary">
                                     <ins>
                                         <span class="amount">ราคา <b>{{ number_format($product->price) }}</b> บาท</span>
