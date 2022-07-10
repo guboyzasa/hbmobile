@@ -616,7 +616,7 @@
                             <li class="nav-item">
                                 <a class="nav-link text-info" href="#tab-repair" aria-controls="tab-information"
                                     data-toggle="tab"><i class='bx bx-wrench'></i>
-                                    ชำระงานซ่อม
+                                    เช็คประกันงานซ่อม
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -882,7 +882,7 @@
                                             <th style="text-align:center">รายการซ่อม</th>
                                             <th style="text-align:center">ราคารวม</th>
                                             <th style="text-align:center">สิ้นสุดประกัน</th>
-                                            {{-- <th>สถานะประกัน</th> --}}
+                                            <th style="text-align:center">สถานะประกัน</th>
                                             <th style="text-align:center">สถานะซ่อม</th>
                                             <th>ใบแจ้งชำระ</th>
                                         </tr>
@@ -908,7 +908,7 @@
                                                         {{ date_format(date_create($repair->repair_end_date), 'd-m-y') }}
                                                     </td>
                                                     <!--สะถานะประกัน -->
-                                                    {{-- <td>
+                                                    <td style="text-align:center">
                                                         @php
                                                             $dateNow = date_create(strval(date('Y-m-d')));
                                                             $dateEnd = date_create($repair->repair_start_date);
@@ -920,7 +920,7 @@
                                                             <span class="badge badge-danger"> หมดประกันแล้ว </span>
                                                         @endif
 
-                                                    </td> --}}
+                                                    </td>
                                                     <!--สะถานะซ่อม -->
                                                     <td style="text-align:center">
                                                         <?php

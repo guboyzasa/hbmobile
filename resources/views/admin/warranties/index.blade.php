@@ -84,11 +84,11 @@
                                 placeholder="กรอกชื่อ - นามสกุล" required>
                         </div>
 
-                        <div class="mb-3">
+                        {{-- <div class="mb-3">
                             <label for="name" class="form-label">Email</label>
                             <input type="email" class="formInput form-control" id="email" value="" name="email"
                                 placeholder="Email" required>
-                        </div>
+                        </div> --}}
            
                         <div class="mt-3 d-grid">
                             <br>
@@ -328,7 +328,6 @@
             var customerId = $('#customer_id').val();
             var i = 0;
         });
-
         
         $(".create_btn").click(function () {
 
@@ -442,7 +441,7 @@
                      },
                      function (res) {
                         //  console.log(res)
-                        simple.ajax.reload();
+                        // simple.ajax.reload();
                         Swal.fire(res.title, res.msg, res.status);
                         closeLoading();
                         window.location.reload();

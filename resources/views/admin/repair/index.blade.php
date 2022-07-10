@@ -44,7 +44,7 @@
                             <tr>
                                 <th>วันที่รับเครื่อง</th>
                                 <th>ชื่อลูกค้า</th>
-                                {{-- <th>รุ่น</th> --}} 
+                                {{-- <th>รุ่น</th> --}}
                                 <th>รายการซ่อม</th>
                                 <th>ราคา</th>
                                 <th>ค่าส่ง</th>
@@ -92,11 +92,11 @@
                             placeholder="กรอกชื่อ - นามสกุล" required>
                     </div>
 
-                    <div class="mb-3">
+                    {{-- <div class="mb-3">
                         <label for="name" class="form-label">Email</label>
                         <input type="email" class="formInput form-control" id="email" value="" name="email"
                             placeholder="Email" required>
-                    </div>
+                    </div> --}}
 
                     <div class="mt-3 d-grid">
                         <br>
@@ -378,7 +378,7 @@
 
     <script>
         $(document).ready(function() {
-            var simple = '';
+            // var simple = '';
             $('.select2').select2();
             var warranty = '';
             var order = '';
@@ -496,7 +496,7 @@
                     },
                     function(res) {
                         //  console.log(res)
-                        simple.ajax.reload();
+                        // simple.ajax.reload();
                         Swal.fire(res.title, res.msg, res.status);
                         closeLoading();
                         window.location.reload();
@@ -568,7 +568,7 @@
                                 '<span class="badge badge-pill badge-soft-danger font-size-11"> ลูกค้าถูกลบ </span>';
 
                         }
-                    }, 
+                    },
 
                     {
                         "data": "customer",
