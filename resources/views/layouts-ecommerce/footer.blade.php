@@ -61,9 +61,9 @@
 </div><!-- /.overlay --> --}}
 
 <!-- Go to top -->
-<a href="#" class="go-to-top">
+{{-- <a href="#" class="go-to-top">
     <i class="bx bx-chevrons-down"></i>
-</a>
+</a> --}}
 
 <!-- All Theme Scripts -->
 <script type="text/javascript" src="{{ URL::asset('/assets/dist/js/app.js') }}"></script>
