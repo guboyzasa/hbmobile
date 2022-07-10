@@ -6,77 +6,72 @@
 
 @section('content')
     <!-- //braner img// -->
-    {{-- <div class="swiper-slider">
-    <!-- Slider main container -->
-    <div class="swiper-container" dir="ltr">
-        <!-- Additional required wrapper -->
-        
-        <div class="swiper-wrapper text-center">
-            <!-- Slides -->
-            @foreach ($banner_imgs as $banner_img)
-            <div class="swiper-slide">
-                <div class="d-flex align-items-center">
-                    <img src='https://drive.google.com/uc?id={{$banner_img->img}}&export=download' class="img-fluid" alt="" style="width:100%;">
-                </div>
+    <div class="container">
+        <div class="swiper-slider">
+            <div class="sharethis-sticky-share-buttons"></div>
+            <div class="swiper-wrapper text-center">
+                <!-- Slides -->
+                @foreach ($banner_imgs as $banner_img)
+                    {{-- <div class="swiper-slide"> --}}
+                    <div class="d-flex align-items-center">
+                        <img src='https://drive.google.com/uc?id={{ $banner_img->img }}&export=download' class="img-fluid"
+                            alt="" style="width:100%;">
+                    </div>
+                    {{-- </div> --}}
+                @endforeach
             </div>
-            @endforeach
-        </div>
 
-        <!-- If we need pagination -->
-        <div class="swiper-pagination swiper-pagination-white"></div>
-        <!-- If we need navigation buttons -->
-        <div class="d-none d-md-block">
-            <!-- Remove this "div" to show the navigation on mobile -->
-            <div class="swiper-button-prev swiper-button-white"><i class="bx bx-chevron-left"></i></div>
-            <div class="swiper-button-next swiper-button-white"><i class="bx bx-chevron-right"></i></div>
-        </div>
+            <!-- If we need pagination -->
+            {{-- <div class="swiper-pagination swiper-pagination-white"></div>
+            <!-- If we need navigation buttons -->
+            <div class="d-none d-md-block">
+                <!-- Remove this "div" to show the navigation on mobile -->
+                <div class="swiper-button-prev swiper-button-white"><i class="bx bx-chevron-left"></i></div>
+                <div class="swiper-button-next swiper-button-white"><i class="bx bx-chevron-right"></i></div>
+            </div> --}}
+            {{-- </div> --}}
+        </div><!-- /.swiper-slider -->
     </div>
-</div><!-- /.swiper-slider --> --}}
 
 
     <section class="section collections pb-0 " id="home-collections">
         <div class="container">
             <div class="row">
                 <div class="col-md- 12 col-lg-6 collection">
-                    {{-- <a href="#!">
-                    <img src="{{ URL::asset('/assets/dist/images/collections/01.jpg') }}" class="img-fluid" alt=""
-                        style="margin-top:-30px">
-                         </a> --}}
                     <h3 class="text-primary"><span class="autotype"></span></h3>
                     <p>
-                        ครบเครื่องเรื่องไอที : โทรศัพท์, โน๊ตบุ๊ค, แม็คบุ๊ค, ปริ้นเตอร์, เครื่องใช้ไฟฟ้า,<br> กล้องวงจรปิด,
-                        จานดาวเทียม, โซล่าเซล์, เน็ตเวิร์ก, กราฟิก
+                        ครบเครื่องเรื่องไอที : โทรศัพท์, โน้ตบุ๊ค, แม็คบุ๊ค, ปริ้นเตอร์, เครื่องใช้ไฟฟ้า,<br> กล้องวงจรปิด,
+                        จานดาวเทียม, โซล่าเซล์, เน็ตเวิร์ก, กราฟิกดีไซน์
                     </p>
                     <p>
-                        <i class="bx bx-check"></i> เปลี่ยนแบตมือถือ-โน๊ตบุ๊ค, เปลี่ยนจอมือถือ-โน๊ตบุ๊ค,
-                        เปลี่ยนแป้นพิมพ์
+                        <i class="bx bx-check"></i> เปลี่ยนแบต,เปลี่ยนจอ, มือถือ-โน้ตบุ๊ค, เปลี่ยนแป้นพิมพ์ 
+                        <br><i class="bx bx-check"></i> ซ่อมเครื่องตกน้ำ, เปิดไม่ติด, ติดดับเอง, ชาร์จไม่เข้า
                         <br><i class="bx bx-check"></i> ลง Windows Programes, ลง Windows บน MacBook, iMac
-                        <br><i class="bx bx-check"></i> ปลด iCloud Clean - รหัสหน้าจอ - Bypass
-                        <br><i class="bx bx-check"></i> ปลดเครื่องติดรายเดือน - ติดเครื่อข่าย - Gmail Account
+                        <br><i class="bx bx-check"></i> ปลด iCloud Clean, รหัสหน้าจอ, Bypass
+                        <br><i class="bx bx-check"></i> ปลดเครื่องติดรายเดือน, ติดเครื่อข่าย, Gmail Account
                         <br><i class="bx bx-check"></i> ติดตั้งกล้องวงจรปิด, ติดตั้งโซล่าเซลล์, ติดตั้งจานดาวเทียม
                         <br><i class="bx bx-check"></i> IT, IOT, OS, Osx, Android, Arduino, Rasp pi, Mikrotik
                     </p>
                 </div><!-- /.collection -->
-                {{-- <div class="col-md-12 col-lg-6 collection">
+                {{-- <div class="col-md-12 col-lg-8 collection">
                 <div class="row"> --}}
-                    
+
                 @foreach ($product_categorys as $product_category)
-                    <div class="col-3 col-md-3 collection">
+                    <div class="col-6 col-md-3 collection">
                         <a href="products?product_filter_category={{ $product_category->id }}">
                             <img src='{{ URL::asset("get-content/$product_category->logo_img") }}' class="img-fluid"
                                 alt="">
                         </a>
                     </div><!-- /.collection -->
                 @endforeach
-                <div class="sharethis-sticky-share-buttons"></div>
-                {{-- </div> --}}
-                {{-- </div> --}}
+                {{-- </div>
+                </div> --}}
 
             </div><!-- /.row -->
         </div><!-- /.container -->
-        
+
     </section><!-- /.collections -->
-    
+
     <!-- produc brand -->
     {{-- <section class="section promotions pb-0 small-padding-top" id="promotions">
     <div class="container">
@@ -112,13 +107,13 @@
                         @foreach ($products as $product)
                             <div class="product col-6 col-lg-3 col-md-6" data-product-id="{{ $product->id }}">
                                 <div class="inner-product">
-                                    
+
                                     @if ($product->is_new == 1)
                                         <span class="onsale new">ใหม่ !</span>
                                     @elseif($product->is_recommend == 1)
                                         <span class="onsale hot">แนะนำ !</span>
                                     @endif
-                                    
+
                                     <div class="product-thumbnail">
                                         <img src='{{ URL::asset("get-content/$product->img") }}' class="img-fluid"
                                             alt="">
@@ -217,5 +212,7 @@
 @endsection
 
 @section('script')
-<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=62b8c6063a1e900019a62f42&product=sticky-share-buttons" async="async"></script>
+    <script type="text/javascript"
+        src="https://platform-api.sharethis.com/js/sharethis.js#property=62b8c6063a1e900019a62f42&product=sticky-share-buttons"
+        async="async"></script>
 @stop

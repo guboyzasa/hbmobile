@@ -64,7 +64,7 @@
                         aria-expanded="true">
                         <div class="media-left media-middle">
                             <h3 class="media-heading"><i class='bx bx-map' style='font-size:33px'></i>
-                                แผนที่สาขา 1 ในเมืองขอนแก่น</h3>
+                                สาขา 1 ในเมืองขอนแก่น</h3>
                         </div>
                     </div>
                     <div id="last-manual-01" class="card-collapse collapse" data-parent="#manual-01-detail">
@@ -104,7 +104,7 @@
                         aria-expanded="true">
                         <div class="media-left media-middle">
                             <h3 class="media-heading"><i class='bx bx-map' style='font-size:33px'></i>
-                                แผนที่สาขา 2 บ้านบ่อทอง อ.พระยืน จ.ขอนแก่น</h3>
+                                สาขา 2 บ้านบ่อทอง อ.พระยืน</h3>
                         </div>
                     </div>
                     <div id="last-manual-02" class="card-collapse collapse" data-parent="#manual-02-detail">

@@ -16,7 +16,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>HB Mobile|เฮียบอยโมบาย - ติดตั้ง,จำหน่าย,ซ่อมโทรศัพท์,แม็คบุ๊ก,โน้ตบุ๊ก </title>
+    <title>HB Mobile|เฮียบอยโมบาย - ติดตั้ง,จำหน่าย,ซ่อมโทรศัพท์,แม็คบุ๊ค,โน้ตบุ๊ค </title>
     
     <link rel="apple-touch-icon" sizes="180x180" href="{{ URL::asset('/assets/dist/images/favicon/icon.png') }}">
     <link rel="icon" type="image/png" sizes="32x32"
