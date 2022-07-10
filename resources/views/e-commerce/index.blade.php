@@ -8,7 +8,7 @@
     <!-- //braner img// -->
     <div class="container">
         <div class="swiper-slider">
-            <div class="sharethis-sticky-share-buttons"></div>
+            {{-- <div class="sharethis-sticky-share-buttons"></div> --}}
             <div class="swiper-wrapper text-center">
                 <!-- Slides -->
                 @foreach ($banner_imgs as $banner_img)
@@ -212,7 +212,5 @@
 @endsection
 
 @section('script')
-    <script type="text/javascript"
-        src="https://platform-api.sharethis.com/js/sharethis.js#property=62b8c6063a1e900019a62f42&product=sticky-share-buttons"
-        async="async"></script>
+<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=62cad181a12f7c001a58e62a&product=sticky-share-buttons' async='async'></script>
 @stop

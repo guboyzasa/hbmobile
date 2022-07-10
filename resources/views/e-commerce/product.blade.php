@@ -449,4 +449,5 @@ $('#addProduct').on('click', function() {
     // $(this).parent().attr('data-original-title', 'Added');
 })
 </script>
+<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=62cad181a12f7c001a58e62a&product=sticky-share-buttons' async='async'></script>
 @stop
