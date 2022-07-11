@@ -477,15 +477,16 @@ class EcommerceController extends Controller
             ];
         }
             //อัพโหลดสลิป LINE Notify 
-            $slips = URL::asset("get-content/".$fullPath); 
-            $message4 = "message=" . "\n** อัพโหลดสลิปแล้ว **" .
+            $imageFile = new CURLFILE(URL::asset("get-content/".$fullPath)); 
+            // $slips = URL::asset("get-content/".$fullPath);   "message=" . 
+            $message4 = "\n** อัพโหลดสลิปแล้ว **" .
                         "\nรหัสออเดอร์: $order->code" .
                         "\nวันที่: $date" .
                         "\nเวลา: $time น." .
-                        "\nยอดรวม: $order_payment->payment_amount บาท" .
-                        "\nสลิป: $slips " ;
-        
-            $this->sendLineNotify4(env('LINE_TOKEN2'), $message4);
+                        "\nยอดรวม: $order_payment->payment_amount บาท" ;
+                        // "\nสลิป: $slips " ;
+            // dd($imageFile);
+            $this->sendLineNotify4(env('LINE_TOKEN2'), $message4, $imageFile);
 
         DB::commit();
         // return $data;
