@@ -194,7 +194,6 @@ class WarrantyController extends Controller
        //ลงทะเบียนประกัน LINE Notify
        $customer = Customer::find($customer_id);
        $productName = Product::find($product_id);
-    //    $shopName = Shop::find($shop_id);
        $message1 = "message=" . "\n** บันทึกลงทะเบียนประกัน **" .
        "\nSerial No: $warranty->serial_no" .
        "\nชื่อลูกค้า: $customer->name" .

@@ -283,8 +283,6 @@ class EcommerceController extends Controller
         $message2 = "message=" . "\n** มีออเดอร์เข้า **" .
         "\nรหัสออเดอร์: $order->code" .
         "\nชื่อลูกค้า: $orderDelivery->name" .
-        // "\nจำนวน: $orderDetail->amount ชิ้น" .
-        // "\nประเภทขนส่ง: " .
         "\nยอดรวม: $order->total_amount บาท" ;
 
         $this->sendLineNotify2(env('LINE_TOKEN2'), $message2);
@@ -479,23 +477,20 @@ class EcommerceController extends Controller
             ];
         }
             //อัพโหลดสลิป LINE Notify 
-            // $link = 'http://127.0.0.1:8000/get-content/';
-
-            $imageFile = URL::asset('get-content');
-            $message4 = "message=" ."\n** อัพโหลดสลิปแล้ว **" .
-            "\nรหัสออเดอร์: $order->code" .
-            "\nวันที่: $date" .
-            "\nเวลา: $time น." .
-            "\nยอดรวม: $order_payment->payment_amount บาท" .
-            "\nสลิป: $imageFile/$fullPath" ;
-
+            $slips = URL::asset("get-content/".$fullPath); 
+            $message4 = "message=" . "\n** อัพโหลดสลิปแล้ว **" .
+                        "\nรหัสออเดอร์: $order->code" .
+                        "\nวันที่: $date" .
+                        "\nเวลา: $time น." .
+                        "\nยอดรวม: $order_payment->payment_amount บาท" .
+                        "\nสลิป: $slips " ;
+        
             $this->sendLineNotify4(env('LINE_TOKEN2'), $message4);
 
         DB::commit();
         // return $data;
-        return redirect()->route('profile-account');
-    }
-
+        return redirect()->route('profile-account');  
+    } 
     public function getDistrict(Request $req)
     {
         $provinceCode = $req->provinceCode;

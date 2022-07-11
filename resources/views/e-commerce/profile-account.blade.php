@@ -289,13 +289,24 @@
                                                         <tr>
                                                             <th scope="row">ประเภทการชำระ:</th>
                                                             <td>
-                                                                <p>ธนาคาร : {{ $order->paymentMethod->bank_name }}</p>
-                                                                <p>ชื่อบัญชี :
-                                                                    {{ $order->paymentMethod->bank_account_name }}
-                                                                </p>
-                                                                <p>เลขที่บัญชี :
+                                                                <p>ธนาคาร : {{ $order->paymentMethod->bank_name }}<br>
+                                                                ชื่อบัญชี :
+                                                                    {{ $order->paymentMethod->bank_account_name }}<br>
+                                                                
+                                                                เลขที่บัญชี :
                                                                     {{ $order->paymentMethod->bank_account_no }}
                                                                 </p>
+                                                                <div class="amount text-info">
+                                                                ชำระผ่าน QR-Code :
+                                                                </div>
+                                                                <div class="center">
+                                                                <figure class="product-thumbnail text-center">
+                                                                    <a href="{{ URL::asset('/assets/dist/images/qr-payment.PNG') }}" data-fancybox="images">
+                                                                        <img src="{{ URL::asset('/assets/dist/images/qr-payment.PNG') }}" class="img-fluid shadow p-1"
+                                                                            alt="" width="250px">
+                                                                    </a>
+                                                                </figure>
+                                                                </div>
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -508,13 +519,24 @@
                                                         <tr>
                                                             <th scope="row">ประเภทการชำระ:</th>
                                                             <td>
-                                                                <p>ธนาคาร : {{ $order->paymentMethod->bank_name }}</p>
-                                                                <p>ชื่อบัญชี :
-                                                                    {{ $order->paymentMethod->bank_account_name }}
-                                                                </p>
-                                                                <p>เลขที่บัญชี :
+                                                                <p>ธนาคาร : {{ $order->paymentMethod->bank_name }}<br>
+                                                                ชื่อบัญชี :
+                                                                    {{ $order->paymentMethod->bank_account_name }}<br>
+                                                                
+                                                                เลขที่บัญชี :
                                                                     {{ $order->paymentMethod->bank_account_no }}
                                                                 </p>
+                                                                <div class="amount text-info">
+                                                                ชำระผ่าน QR-Code :
+                                                                </div>
+                                                                <div class="center">
+                                                                <figure class="product-thumbnail text-center">
+                                                                    <a href="{{ URL::asset('/assets/dist/images/qr-payment.PNG') }}" data-fancybox="images">
+                                                                        <img src="{{ URL::asset('/assets/dist/images/qr-payment.PNG') }}" class="img-fluid shadow p-1"
+                                                                            alt="" width="250px">
+                                                                    </a>
+                                                                </figure>
+                                                                </div>
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -616,7 +638,7 @@
                             <li class="nav-item">
                                 <a class="nav-link text-info" href="#tab-repair" aria-controls="tab-information"
                                     data-toggle="tab"><i class='bx bx-wrench'></i>
-                                    เช็คประกันงานซ่อม
+                                    ประกันงานซ่อม
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -789,13 +811,24 @@
                                                             <tr>
                                                                 <th scope="row">ประเภทการชำระ:</th>
                                                                 <td>
-                                                                    <p>ธนาคาร : {{ $order->paymentMethod->bank_name }}
+                                                                    <p>ธนาคาร : {{ $order->paymentMethod->bank_name }}<br>
+                                                                    ชื่อบัญชี :
+                                                                        {{ $order->paymentMethod->bank_account_name }}<br>
+                                                                    
+                                                                    เลขที่บัญชี :
+                                                                        {{ $order->paymentMethod->bank_account_no }}
                                                                     </p>
-                                                                    <p>ชื่อบัญชี :
-                                                                        {{ $order->paymentMethod->bank_account_name }}
-                                                                    </p>
-                                                                    <p>เลขที่บัญชี :
-                                                                        {{ $order->paymentMethod->bank_account_no }}</p>
+                                                                    <div class="amount text-info">
+                                                                    ชำระผ่าน QR-Code :
+                                                                    </div>
+                                                                    <div class="center">
+                                                                    <figure class="product-thumbnail text-center">
+                                                                        <a href="{{ URL::asset('/assets/dist/images/qr-payment.PNG') }}" data-fancybox="images">
+                                                                            <img src="{{ URL::asset('/assets/dist/images/qr-payment.PNG') }}" class="img-fluid shadow p-1"
+                                                                                alt="" width="250px">
+                                                                        </a>
+                                                                    </figure>
+                                                                    </div>
                                                                 </td>
                                                             </tr>
                                                             <tr>
