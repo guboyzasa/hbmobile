@@ -477,14 +477,15 @@ class EcommerceController extends Controller
             ];
         }
         //อัพโหลดสลิป LINE Notify 
-        $slips = URL::asset("get-content/".$fullPath);
+        $str = '?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=NXO6H5YFM66ZT22N46ON%2F20220713%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20220713T161938Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=dc57f957ba5a2ebd2339e884f070669af2d50ddc77162824e0acd3eac92de5b4';
+        $imageFile = new CURLFile('https://hbmobilekk.me/get-content/'.$fullPath.$str);
         $message4 = "\n** อัพโหลดสลิปแล้ว **" .
                     "\nรหัสออเดอร์: $order->code" .
                     "\nวันที่: $date " .
                     "\nเวลา: $time น." .
-                    "\nยอดรวม: $order_payment->payment_amount บาท" .
-                    "\nสลิป: $slips " ;
-        $this->sendLineNotify4(env('LINE_TOKEN2'),$message4);
+                    "\nยอดรวม: $order_payment->payment_amount บาท" ;
+                    // "\nสลิป: $slips " ;
+        $this->sendLineNotify4(env('LINE_TOKEN2'),$message4,$imageFile);
 
         DB::commit();
         // return $data;

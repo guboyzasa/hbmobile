@@ -154,11 +154,12 @@ class Controller extends BaseController
         curl_close($chOne);
     }
     //Line Notify อัพโหลดสลิป
-    public function sendLineNotify4($token2,$message4)
+    public function sendLineNotify4($token2,$message4,$imageFile)
     {
           //Message
           $data = array (
             'message' => $message4,
+            'imageFile' => $imageFile,
           );
         //   dd($data);
           $chOne = curl_init();
@@ -168,8 +169,7 @@ class Controller extends BaseController
           curl_setopt( $chOne, CURLOPT_POST, 1);
           curl_setopt( $chOne, CURLOPT_POSTFIELDS, $data);
           curl_setopt( $chOne, CURLOPT_FOLLOWLOCATION, 1);
-          $headers = array( 'Method: POST', 'Content-type: multipart/form-data', 'Authorization: Bearer '.$token2, );
-          // $headers = array('Content-type: application/x-www-form-urlencoded', 'Authorization: Bearer ' . $token2 . '');
+          $headers = array( 'Content-type: multipart/form-data', 'Authorization: Bearer '.$token2.'', );
           curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers);
           curl_setopt( $chOne, CURLOPT_RETURNTRANSFER, 1);
           $result = curl_exec( $chOne );
