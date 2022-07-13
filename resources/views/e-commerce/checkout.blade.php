@@ -301,7 +301,7 @@
                             <h2>วิธีการชำระเงิน</h2>
                             <div id="payment" class="checkout-payment">
                                 <ul class="payment-methods">
-
+                                <div class="row">
                                     <li class="payment-method">
                                         @foreach ($paymentMethod as $payment)
                                         <input id="payment_method_cheque_{{ $payment->id }}" type="radio"
@@ -314,17 +314,19 @@
                                             <br>ชื่อบัญชี: {{ $payment->bank_account_name }}
                                             <br>เลขที่บัญชี: {{ $payment->bank_account_no }}
                                         </label @endforeach>
-
-                                        <!-- <div class="payment-box" id="payment-cheque">
-                                            <p>
-                                                Please send your cheque to Store Name, Store Street, Store Town, Store
-                                                State / County,
-                                                Store Postcode.
-                                            </p>
-
-                                        </div> -->
+                                       
                                     </li>
-
+                                    <li class="col">
+                                    {{-- <div class=""> --}}
+                                        <figure class="product-thumbnail text-right">
+                                            <a href="{{ URL::asset('/assets/dist/images/qr-payment.PNG') }}" data-fancybox="images">
+                                                <img src="{{ URL::asset('/assets/dist/images/qr-payment.PNG') }}" class="img-fluid shadow p-1"
+                                                    alt="" width="45px">
+                                            </a>
+                                        </figure>
+                                    </li>  
+                                </div> 
+                                        {{-- </div> --}}
                                     <!-- <li class="payment-method">
                                         <input id="payment_method_cod" type="radio" name="payment_method">
                                         <label for="payment_method_cod" class="radio" data-slide-toggle="#payment-cash"

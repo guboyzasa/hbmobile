@@ -84,18 +84,18 @@
                                 วันที่รับเครื่อง:
                                 <strong>{{ date('d/m/Y', strtotime($repair->repair_start_date)) }}</strong>
                             </li>
-                            <li class="order">
+                            {{-- <li class="order">
                                 รุ่น:model: <strong>{{ $repair->model }}</strong>
-                            </li>
-                            <li class="method">
-                                รายการซ่อม: <strong>{{ $repair->detail }}</strong>
+                            </li> --}}
+                            <li class="method" style="text-align:center">
+                                รายการซ่อม: <strong>{{ $repair->model }} x {{ $repair->detail }}</strong>
                             </li>
 
-                            <li class="total">
+                            <li class="total" style="text-align:center">
                                 ราคา: <strong><span class="amount">{{ $repair->price }}</span></strong>
                             </li>
 
-                            <li class="total">
+                            <li class="total" style="text-align:center">
                                 ค่าส่ง: <strong><span class="amount">{{ @$repair->shipping_price }}</span></strong>
                             </li>
 
@@ -596,21 +596,21 @@
                                     วันที่รับเครื่อง:
                                     <strong>{{ date('d/m/Y', strtotime($repair->repair_start_date)) }}</strong>
                                 </li>
-                                <li class="order">
+                                {{-- <li class="order">
                                     รุ่น:model: <strong>{{ $repair->model }}</strong>
+                                </li> --}}
+                                <li class="method" style="text-align:center">
+                                    รายการซ่อม: <strong>{{ $repair->model }} x {{ $repair->detail }}</strong>
                                 </li>
-                                <li class="method">
-                                    รายการซ่อม: <strong>{{ $repair->detail }}</strong>
-                                </li>
-
-                                <li class="total">
+    
+                                <li class="total" style="text-align:center">
                                     ราคา: <strong><span class="amount">{{ $repair->price }}</span></strong>
                                 </li>
-
-                                <li class="total">
+    
+                                <li class="total" style="text-align:center">
                                     ค่าส่ง: <strong><span class="amount">{{ @$repair->shipping_price }}</span></strong>
                                 </li>
-
+    
                             </ul>
                         </div>
                     @endif

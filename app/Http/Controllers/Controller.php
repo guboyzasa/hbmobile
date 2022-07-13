@@ -154,31 +154,28 @@ class Controller extends BaseController
         curl_close($chOne);
     }
     //Line Notify อัพโหลดสลิป
-    public function sendLineNotify4($token2, $message4, $imageFile)
-    { 
-        ini_set('display_errors', 1);
-        ini_set('display_startup_errors', 1);
-        error_reporting(E_ALL);
-        date_default_timezone_set("Asia/Bangkok");
-        $data = array(
+    public function sendLineNotify4($token2,$message4)
+    {
+          //Message
+          $data = array (
             'message' => $message4,
-            // 'imageFile'=> $imageFile,
-            'imageThumbnail'=> $imageFile,
-            'imageFullsize'=> $imageFile,
-        );
-        $chOne = curl_init();
-        curl_setopt( $chOne, CURLOPT_URL, "https://notify-api.line.me/api/notify");
-        curl_setopt( $chOne, CURLOPT_SSL_VERIFYHOST, 0);
-        curl_setopt( $chOne, CURLOPT_SSL_VERIFYPEER, 0);
-        curl_setopt( $chOne, CURLOPT_POST, 1);
-        curl_setopt( $chOne, CURLOPT_POSTFIELDS, $data);
-        curl_setopt( $chOne, CURLOPT_FOLLOWLOCATION, 1);
-        $headers = array('Method: POST','Content-type: multipart/form-data', 'Authorization: Bearer '.$token2, );
-        // $headers = array('Content-type: application/x-www-form-urlencoded', 'Authorization: Bearer ' . $token2 . '');
-        curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers);
-        curl_setopt( $chOne, CURLOPT_RETURNTRANSFER, 1);
-        $result = curl_exec( $chOne );
-        //Close connection
-        curl_close( $chOne );
-    }
+          );
+        //   dd($data);
+          $chOne = curl_init();
+          curl_setopt( $chOne, CURLOPT_URL, "https://notify-api.line.me/api/notify");
+          curl_setopt( $chOne, CURLOPT_SSL_VERIFYHOST, 0);
+          curl_setopt( $chOne, CURLOPT_SSL_VERIFYPEER, 0);
+          curl_setopt( $chOne, CURLOPT_POST, 1);
+          curl_setopt( $chOne, CURLOPT_POSTFIELDS, $data);
+          curl_setopt( $chOne, CURLOPT_FOLLOWLOCATION, 1);
+          $headers = array( 'Method: POST', 'Content-type: multipart/form-data', 'Authorization: Bearer '.$token2, );
+          // $headers = array('Content-type: application/x-www-form-urlencoded', 'Authorization: Bearer ' . $token2 . '');
+          curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers);
+          curl_setopt( $chOne, CURLOPT_RETURNTRANSFER, 1);
+          $result = curl_exec( $chOne );
+          //Close connection
+          curl_close( $chOne );
+        }
+
 }
+
