@@ -8,7 +8,7 @@
                     {{-- ที่อยู่ {{ @$company->address1}} --}}
                     
                         {{-- {{ @$company->address2}} --}}
-                        <strong>เปิดให้บริการเวลา </strong><time style="color: red"> 10:00 น.</time> - <time style="color: red">21:00 น.</time> <strong>ทุกวัน</strong>
+                        <strong>เปิดให้บริการเวลา </strong><time style="color: #CC0000"> 10:00 น.</time> - <time style="color: #CC0000">21:00 น.</time> <strong>ทุกวัน</strong>
                     
                 </div><!-- ./widget -->
 

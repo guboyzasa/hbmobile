@@ -13,7 +13,7 @@
                 <li class="breadcrumb-item">
                     <a href="{{ route('index') }}">หน้าแรก</a>
                 </li>
-                <li class="breadcrumb-item active">ตัวอย่างงานซ่อม</li>
+                <li class="breadcrumb-item active">EX-งานซ่อม</li>
             </ol>
         </div>
     </div><!-- /.container -->
@@ -22,7 +22,7 @@
 <section class="section manuals">
     <div class="container">
         <div style="text-align: center">
-            <h2 style="color:red"><i class='bx bx-cog'></i> ตัวอย่างงานซ่อม <i class='bx bx-cog'></i></h2>
+            <h2 style="color:#CC0000"><i class='bx bx-cog'></i> ตัวอย่างงานซ่อม <i class='bx bx-cog'></i></h2>
         </div>
         <div style="text-align: center" class="row row-cols">
             <div class="col-xl">
@@ -42,9 +42,7 @@
                 </div>
             </div>
         </div>
-    </div><!-- /.container -->
-
-
+    </div><!-- /.container video-->
 
     <div class="container">
         <div class="custom-accordion flex-column" id="manual-detail" role="tablist" aria-multiselectable="true">
@@ -58,52 +56,48 @@
                         </h3>
                     </div>
                 </div>
-                <div id="last-manual" class="card-collapse collapse" data-parent="#manual-detail">
+            
+            
+                <div id="last-manual" class="card-collapse collapse" data-parent="#manual-detail" style="margin-top: 2%">
                     <div class="container">
-                        <div style="text-align: center" class="row row-cols">
-                            <div class="col-xl">
-                                <div class="box table-responsive">
-                                    <iframe
-                                        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhbmobilekk%2Fphotos%2Fa.292762624665913%2F1024674664808035%2F%3Ftype%3D3%26av%3D292740724668103%26eav%3DAfZhSC97FshXIa3bmZnvD517T3slREGnhiq3OU28Ig9KlGoVjhjBejznAsRLQ70QqEI&show_text=true&width=500"
-                                        width="400" height="400" style="border:none;overflow:hidden" scrolling="no"
-                                        frameborder="0" allowfullscreen="true"
-                                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                        <div style="text-align:center" class="row row-cols">
+                            <div class="col-sm">
+                                <div class="box table-responsive-sm">
+                                    <img src="https://scontent.fkkc2-1.fna.fbcdn.net/v/t39.30808-6/279207844_1024674641474704_6323494351878325286_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeGKkcpIo-hZO_4lLZG3aj62ljuQoTSVGoKWO5ChNJUaguZ_acaC3zX-PHeI1oUAopTEjvFtrhwSV0HAQixHwOnr&_nc_ohc=DI87xuk-1rcAX8NBCiF&tn=vb5FvuXwdZC7-_Nl&_nc_ht=scontent.fkkc2-1.fna&oh=00_AT-jjvyGVG_JmR7tRm1IN3ie7Z-MN6uh10jafJM4XeQzZQ&oe=62D5D3BE"
+                                        width="100%">
+                                </div>
+                            </div>
+
+                            <div class="col-sm">
+                                <div class="box table-responsive-sm">
+                                    <img src="https://scontent.fkkc2-1.fna.fbcdn.net/v/t39.30808-6/279139751_1024674678141367_4926102314911277739_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeH3KGjPcXqumj-oY28y9o_7jcIdIVzcA96Nwh0hXNwD3tFTxTO_Il72o-gEfjtEtHew1QzNjAL4W1dJlnwouwMh&_nc_ohc=92wNjHQNwQ8AX_4Wl5O&_nc_ht=scontent.fkkc2-1.fna&oh=00_AT_CC-6O7HxF4NvHrDhOgPOE6Deul7mIsDHIdRCLVkljZQ&oe=62D6C14B"
+                                        width="100%">
                                 </div>
                             </div>
                             <div class="col-sm">
-                                <div class="box table-responsive">
-                                    <iframe
-                                        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhbmobilekk%2Fphotos%2Fa.292762624665913%2F1024674724808029%2F%3Ftype%3D3%26av%3D292740724668103%26eav%3DAfa6318Y2ZpTm39Enogpx30L56zrB1ROHllphawjBqIW9tP1HcvW0mVAzjIS0Cf7Bsk&show_text=true&width=500"
-                                        width="400" height="400" style="border:none;overflow:hidden" scrolling="no"
-                                        frameborder="0" allowfullscreen="true"
-                                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                                <div class="box table-responsive-sm">
+                                    <img src="https://scontent.fkkc2-1.fna.fbcdn.net/v/t39.30808-6/279206237_1024674608141374_4543428641325967516_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeHWveMw1ydydK9jZtAQG1C4k_1GN_f-4C6T_UY39_7gLj8iIljNuL4BWtTDVGjI7mU7SowewybZeBJfO_FE6k-O&_nc_ohc=mevEBpfUHTMAX93BbSr&tn=vb5FvuXwdZC7-_Nl&_nc_ht=scontent.fkkc2-1.fna&oh=00_AT9dypw4P55cn21Ioo6rNE7PNoVaMNeTIHjmtM2S4QQiPg&oe=62D62E13"
+                                        width="100%">
                                 </div>
                             </div>
                             <div class="col-sm">
-                                <div class="box table-responsive">
-                                    <iframe
-                                        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhbmobilekk%2Fphotos%2Fa.292762624665913%2F1024674628141372%2F%3Ftype%3D3%26av%3D292740724668103%26eav%3DAfZaAxQ43vz0kIR1qMUyIuS1CWDiGKRSOyXkRdOKcAdDt5oNERlYk5p6Frzb3l54dQE&show_text=true&width=500"
-                                        width="400" height="400" style="border:none;overflow:hidden" scrolling="no"
-                                        frameborder="0" allowfullscreen="true"
-                                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                                <div class="box table-responsive-sm">
+                                    <img src="https://scontent.fkkc2-1.fna.fbcdn.net/v/t39.30808-6/279193311_1024674711474697_13520213737528606_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeEIdv79yiclsF75KQlxFUQ3Ee2orvD4CfsR7aiu8PgJ-wHnvB_x8QaA7cehgjCnRBTLbLd8n1SVCKPdoUpxHldO&_nc_ohc=3EGmdTPesUEAX87DehK&_nc_ht=scontent.fkkc2-1.fna&oh=00_AT8hSELWiFv1u6RXi-y-okcdxmceVWqrtTKeSolLkmLlPg&oe=62D6CA52"
+                                        width="100%">
                                 </div>
                             </div>
-                            <div class="col-sm">
+                            {{-- <div class="col-sm">
                                 <div class="box table-responsive">
-                                    <iframe
-                                        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhbmobilekk%2Fphotos%2Fa.292762624665913%2F1024674768141358%2F%3Ftype%3D3%26av%3D292740724668103%26eav%3DAfaeP_oW1x_r08IQfiMHiM55Nppj7hWkUgvHf6Zk_WuHx8xFkE3IkdpirQbfTrAhc0k&show_text=true&width=500"
-                                        width="400" height="400" style="border:none;overflow:hidden" scrolling="no"
-                                        frameborder="0" allowfullscreen="true"
-                                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                                    <img src="" width="100%">
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div><!-- /.container -->
                     <!--./ios -->
                 </div>
             </div>
-        </div>
-    </div><!-- /.container -->
+        </div><!-- ios -->
+    </div><!-- /.container ios -->
 
     <div class="container">
         <div class="custom-accordion flex-column" id="manuals-detail" role="tablist" aria-multiselectable="true">
@@ -117,43 +111,31 @@
                         </h3>
                     </div>
                 </div>
-                <div id="last-manuals" class="card-collapse collapse" data-parent="#manuals-detail">
+                <div id="last-manuals" class="card-collapse collapse" data-parent="#manuals-detail" style="margin-top: 2%">
                     <div class="container">
-                        <div style="text-align: center" class="row row-cols-auto">
+                        <div style="text-align: center" class="row row-cols">
                             <div class="col-sm">
                                 <div class="box table-responsive">
-                                    <iframe
-                                        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhbmobilekk%2Fphotos%2Fa.292762624665913%2F1024674611474707%2F%3Ftype%3D3%26av%3D292740724668103%26eav%3DAfaiwGqOv4RRmVXsS9GIByQNdDfQIiBJYwH_3LHk2hYq_WnJQs6cFXnvjfGAgJ2Ejl0&show_text=true&width=500"
-                                        width="400" height="400" style="border:none;overflow:hidden" scrolling="no"
-                                        frameborder="0" allowfullscreen="true"
-                                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                                    <img src="https://scontent.fkkc2-1.fna.fbcdn.net/v/t39.30808-6/279140865_1024674598141375_5313157152301214151_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeGAhbBlyhluIZYdygYLtL1mhepJZvktH96F6klm-S0f3gLR2kHbhc8RMGNRS4p8gM7LIRbRpWkgfJGjKvrTBFPj&_nc_ohc=dGXghYMj2zEAX-VVQPm&_nc_ht=scontent.fkkc2-1.fna&oh=00_AT8uRDtUoVV_G-PLvqUH0Ib84xlBzfhsGiez7FBOvkyMIA&oe=62D59669"
+                                        width="100%">
                                 </div>
                             </div>
                             <div class="col-sm">
                                 <div class="box table-responsive">
-                                    <iframe
-                                        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhbmobilekk%2Fphotos%2Fa.292762624665913%2F1024674781474690%2F%3Ftype%3D3%26av%3D292740724668103%26eav%3DAfbDrNbfURjVpu1zN4ReN9ezV_E8J2OkdnOfQS1MFc1la901o2sYMYE7v_sXdGmPDic&show_text=true&width=500"
-                                        width="400" height="400" style="border:none;overflow:hidden" scrolling="no"
-                                        frameborder="0" allowfullscreen="true"
-                                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                                    <img src="https://scontent.fkkc2-1.fna.fbcdn.net/v/t39.30808-6/279179489_1024674721474696_8973106228559485844_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeHuGxy4111zf9XICrJg5EW25pgKh8OtHrLmmAqHw60estdUUjYg7SQ5y52iD9FHit07YUUE8NqTy12twz-s9V5N&_nc_ohc=evVqrSPzzkUAX_H-838&_nc_ht=scontent.fkkc2-1.fna&oh=00_AT9VGZiSTNO2bK7X0pDfi8xT-o5B3h8HXpBaSsfNr0wlAQ&oe=62D69D1C"
+                                        width="100%">
                                 </div>
                             </div>
                             <div class="col-sm">
                                 <div class="box table-responsive">
-                                    <iframe
-                                        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhbmobilekk%2Fphotos%2Fa.292762624665913%2F1024674658141369%2F%3Ftype%3D3%26av%3D292740724668103%26eav%3DAfanf7wTY88DhJGJBjSXPadmVq387ZJm2ZucJYl44duyFAPxIMX1m9iNShW3-GGCF0s&show_text=true&width=500"
-                                        width="400" height="400" style="border:none;overflow:hidden" scrolling="no"
-                                        frameborder="0" allowfullscreen="true"
-                                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                                    <img src="https://scontent.fkkc2-1.fna.fbcdn.net/v/t39.30808-6/279184489_1024674744808027_933187063308857812_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeEQha7QX52PSwvnXwYd5r6Tbbg7i0SDI1RtuDuLRIMjVMJTvSO4kI8V62Ov3khIov573jyH2ZpUz9x7aQUP8mtT&_nc_ohc=algDtsjeVSQAX9NUH6B&tn=vb5FvuXwdZC7-_Nl&_nc_ht=scontent.fkkc2-1.fna&oh=00_AT9X47Oh1FX-f6oHpdEV4raRv2Bovwc_aI_fdo9Yif4XCw&oe=62D6E6A3"
+                                        width="100%">
                                 </div>
                             </div>
                             <div class="col-sm">
                                 <div class="box table-responsive">
-                                    <iframe
-                                        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhbmobilekk%2Fposts%2F1029121611030007&show_text=false&width=500"
-                                        width="400" height="400" style="border:none;overflow:hidden" scrolling="no"
-                                        frameborder="0" allowfullscreen="true"
-                                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                                    <img src="https://scontent.fkkc2-1.fna.fbcdn.net/v/t39.30808-6/279245482_1024674624808039_2260539461576899618_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeGxt1eRhXn8nCSuMzo2ZgSVLyKY1mNELW8vIpjWY0QtbxNsJaNfULZd_2JNwVMz6M1FeO6tidfajaWApVOxhmW2&_nc_ohc=jQpFEYBGZTwAX9L1IrA&_nc_ht=scontent.fkkc2-1.fna&oh=00_AT9pLNEthQNg7muHslEyZf9ev27NAS1c4pPhOZlKSfLG2w&oe=62D5BB4E"
+                                        width="100%">
                                 </div>
                             </div>
                         </div>
@@ -161,8 +143,8 @@
                     <!--./android -->
                 </div>
             </div>
-        </div>
-    </div><!-- /.container -->
+        </div><!-- android -->
+    </div><!-- /.container android -->
 
     <div class="container">
         <div class="custom-accordion flex-column" id="manual-register-detail" role="tablist"
@@ -177,43 +159,31 @@
                         </h3>
                     </div>
                 </div>
-                <div id="last-manual-register" class="card-collapse collapse" data-parent="#manual-register-detail">
+                <div id="last-manual-register" class="card-collapse collapse" data-parent="#manual-register-detail" style="margin-top: 2%">
                     <div class="container">
-                        <div style="text-align: center" class="row row-cols-auto">
+                        <div style="text-align: center" class="row row-cols">
                             <div class="col-sm">
                                 <div class="box table-responsive">
-                                    <iframe
-                                        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhbmobilekk%2Fphotos%2Fa.292762624665913%2F947969602478542%2F%3Ftype%3D3%26av%3D292740724668103%26eav%3DAfaF9LltG6ZSvG6NC0_wQuigZPtqn4lwnrr6CM1wgCcxRDH8XvF46Tn9D-w1DjtS4mk&show_text=true&width=500"
-                                        width="400" height="400" style="border:none;overflow:hidden" scrolling="no"
-                                        frameborder="0" allowfullscreen="true"
-                                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                                    <img src="https://scontent.fkkc2-1.fna.fbcdn.net/v/t39.30808-6/216148173_857779008164269_6685381950779794105_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeHTG0TvGXLCUmCjt5JBy3FNsto3ApvlmISy2jcCm-WYhKPEcOSgafIymud57RSDbrQ9SDxyxzVNBzwpXrqaYzut&_nc_ohc=0KRP8nBziZsAX_Py_8p&_nc_ht=scontent.fkkc2-1.fna&oh=00_AT-gLMNyqHKdojRxQligXRMX-i1QxIizTcbFADbhh1C6Zg&oe=62D68BEF" 
+                                    width="100%">
                                 </div>
                             </div>
                             <div class="col-sm">
                                 <div class="box table-responsive">
-                                    <iframe
-                                        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhbmobilekk%2Fposts%2F876321056310064&show_text=false&width=500"
-                                        width="400" height="400" style="border:none;overflow:hidden" scrolling="no"
-                                        frameborder="0" allowfullscreen="true"
-                                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                                    <img src="https://scontent.fkkc2-1.fna.fbcdn.net/v/t1.6435-9/195753776_837976236811213_6062226608574968098_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeEvljt_284kpXb9E3Tq1NIq3QXGM-Q5_7LdBcYz5Dn_ssxU4sU41E_6gTxmPo9-qgnsfgAXzSga1gPXCGuAeds2&_nc_ohc=pQ8hvOKrOSsAX-8WZB7&_nc_ht=scontent.fkkc2-1.fna&oh=00_AT-6UZtIjasV0vz_hasOZQseKoFZTxwVt78jV2oYMBj3bA&oe=62F71D9E" 
+                                    width="100%">
                                 </div>
                             </div>
                             <div class="col-sm">
                                 <div class="box table-responsive">
-                                    <iframe
-                                        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhbmobilekk%2Fposts%2F876318346310335&show_text=false&width=500"
-                                        width="400" height="400" style="border:none;overflow:hidden" scrolling="no"
-                                        frameborder="0" allowfullscreen="true"
-                                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                                    <img src="https://scontent.fkkc2-1.fna.fbcdn.net/v/t1.6435-9/182795637_817694915506012_8103964095566895776_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeEhmi09lHk3Ryp2EEukqW4QsZpqNlMaDt-xmmo2UxoO34dIZf26tBrBJcMjrg1r-DJTOXcQSJMZ_WZq2iwpnAfJ&_nc_ohc=TvFxWF29mdAAX_Xa7tR&_nc_ht=scontent.fkkc2-1.fna&oh=00_AT9Nllhg1Ub0knFhFIpZgR9foyf90yri0fO8pr0m3I5xUg&oe=62F513C0" 
+                                    width="100%">
                                 </div>
                             </div>
                             <div class="col-sm">
                                 <div class="box table-responsive">
-                                    <iframe
-                                        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhbmobilekk%2Fposts%2F857779038164266&show_text=false&width=500"
-                                        width="400" height="400" style="border:none;overflow:hidden" scrolling="no"
-                                        frameborder="0" allowfullscreen="true"
-                                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                                    <img src="https://scontent.fkkc2-1.fna.fbcdn.net/v/t1.6435-9/176133172_812386759370161_7905963580273804619_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeFwFzmCLmo96V2_6TR2OHYkQxEkspGoaGFDESSykahoYYQ-Xh4Tv6eRalIFnvbePfhemqbQU8fY7kd6xDHhvHhq&_nc_ohc=CeQuDF3GAq8AX8fEN-v&_nc_ht=scontent.fkkc2-1.fna&oh=00_AT9qRcxywOfpODdme-AvirnpfUlxDtrvudDKKQQfL4LwHw&oe=62F8B5C8" 
+                                    width="100%">
                                 </div>
                             </div>
                         </div>
@@ -221,8 +191,8 @@
                     <!--./notebook -->
                 </div>
             </div>
-        </div>
-    </div><!-- /.container -->
+        </div><!-- notebook -->
+    </div><!-- /.container notebook-->
 
     <div class="container">
         <div class="custom-accordion flex-column" id="manual-password-detail" role="tablist"
@@ -237,43 +207,31 @@
                         </h3>
                     </div>
                 </div>
-                <div id="last-manual-password" class="card-collapse collapse" data-parent="#manual-password-detail">
+                <div id="last-manual-password" class="card-collapse collapse" data-parent="#manual-password-detail" style="margin-top: 2%">
                     <div class="container">
-                        <div style="text-align: center" class="row row-cols-auto">
+                        <div style="text-align: center" class="row row-cols">
                             <div class="col-sm">
                                 <div class="box table-responsive">
-                                    <iframe
-                                        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fcamandservices%2Fphotos%2Fa.107698641950776%2F107717585282215%2F%3Ftype%3D3%26av%3D107692418618065%26eav%3DAfbxGYIh0iPPn7oCpySBaPtvzF2URSVJNq5zgsEJ4vMsSuJ25nSEGbWUE611AX7XBB4&show_text=false&width=500"
-                                        width="400" height="220" style="border:none;overflow:hidden" scrolling="no"
-                                        frameborder="0" allowfullscreen="true"
-                                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                                    <img src="https://scontent.fkkc2-1.fna.fbcdn.net/v/t39.30808-6/289919633_124912816896025_6646392615919899825_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=iZiNodbMMC0AX-lVqVd&_nc_ht=scontent.fkkc2-1.fna&oh=00_AT_4f8_jNb-2Gvaax7Ze31c71tvOl3mCZ0uK-PjCq7NPNQ&oe=62D730BD" 
+                                    width="100%">
                                 </div>
                             </div>
                             <div class="col-sm">
                                 <div class="box table-responsive">
-                                    <iframe
-                                        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fcamandservices%2Fphotos%2Fa.107698641950776%2F107717555282218%2F%3Ftype%3D3%26av%3D107692418618065%26eav%3DAfbi0IAY-UDa0tLjL-V06dtMRvHWUXqeZTq_VhkrRu6xGBAV6kI30QjbTHDyETl83pQ&show_text=false&width=500"
-                                        width="400" height="220" style="border:none;overflow:hidden" scrolling="no"
-                                        frameborder="0" allowfullscreen="true"
-                                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                                    <img src="https://scontent.fkkc2-1.fna.fbcdn.net/v/t39.30808-6/285754364_117058701014770_2430968516897204623_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=PnMOtZgwoqQAX_A7pgA&_nc_ht=scontent.fkkc2-1.fna&oh=00_AT_HDqdBKFpUNX2zuLGVHMBxAyhyw-h2j5pf-9AxxLnjrQ&oe=62D73A17" 
+                                    width="100%">
                                 </div>
                             </div>
                             <div class="col-sm">
                                 <div class="box table-responsive">
-                                    <iframe
-                                        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fcamandservices%2Fphotos%2Fa.107698641950776%2F107717528615554%2F%3Ftype%3D3%26av%3D107692418618065%26eav%3DAfZrxvtItrSMZW-aN7TwCE47Cu93BfkurC-RNbO1FMZ-O3mSaE3RhPBTW9Ho54bPGbk&show_text=false&width=500"
-                                        width="400" height="220" style="border:none;overflow:hidden" scrolling="no"
-                                        frameborder="0" allowfullscreen="true"
-                                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                                    <img src="https://scontent.fkkc2-1.fna.fbcdn.net/v/t39.30808-6/283616253_107717581948882_959966794016615792_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=730e14&_nc_ohc=hmEv7Pt3OcwAX9S97Bl&_nc_ht=scontent.fkkc2-1.fna&oh=00_AT9u97SwixKLYBxwM43TbjyIFWi8iOPcTJHDBkMVtnwtAQ&oe=62D6F12A" 
+                                    width="100%">
                                 </div>
                             </div>
                             <div class="col-sm">
                                 <div class="box table-responsive">
-                                    <iframe
-                                        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fcamandservices%2Fphotos%2Fa.107698641950776%2F107714991949141%2F%3Ftype%3D3%26av%3D107692418618065%26eav%3DAfYeEy3Ucreugp36firM9uO-Jhi8WJPha1ATs1Rcriydhus3rMOCNGQogbHCyYX7zAs&show_text=false&width=500"
-                                        width="400" height="220" style="border:none;overflow:hidden" scrolling="no"
-                                        frameborder="0" allowfullscreen="true"
-                                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                                    <img src="https://scontent.fkkc2-1.fna.fbcdn.net/v/t39.30808-6/283482082_107717525282221_8073631087816644674_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=730e14&_nc_ohc=u4tiZb5dvREAX-E5KHL&tn=vb5FvuXwdZC7-_Nl&_nc_ht=scontent.fkkc2-1.fna&oh=00_AT8cQtSdxlwMyVYdwdjfrmBYnxIypqCBYCJhbyacNVPEqw&oe=62D743BF" 
+                                    width="100%">
                                 </div>
                             </div>
                         </div>
@@ -281,8 +239,8 @@
                     <!--./other -->
                 </div>
             </div>
-        </div>
-    </div><!-- /.container -->
+        </div><!-- onsite -->
+    </div><!-- /.container onsite-->
 </section><!-- /.manuals -->
 
 
