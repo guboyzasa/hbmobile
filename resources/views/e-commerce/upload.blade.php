@@ -14,7 +14,7 @@
                 @csrf
                 <div class="col-sm-12 section-title text-center mb-4">
                     <h3><i class="line"></i>อัพโหลดสลิป<i class="line"></i></h3>
-                    <!-- <p>รายละเอียดการสั่งซื้อล่าสุดของคุณ</p> -->
+                    <p>กรอกรายละเอียดให้ตรงกับสลิป</p> 
                 </div>
 
                 <div class="col-md-6">
@@ -92,7 +92,7 @@
                         <div class="form-group">
                             <label>รายละเอียดเพิ่มเติม</label>
                             <textarea class="form-control"
-                                placeholder="Notes about your order, e.g. special notes for delivery." rows="5"
+                                placeholder="รายละเอียดเพิ่มเติมในการจัดส่ง" rows="4"
                                 name="note"></textarea>
                         </div>
                     </div><!-- /.billing-field -->

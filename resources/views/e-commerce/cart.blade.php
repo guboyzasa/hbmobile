@@ -23,7 +23,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="table-responsive">
+                    <div class="table-responsive-sm">
                         <form action="{{ route('checkout') }}" id="form-cart" method="post">
                             @csrf
                             <table class="table cart-table" cellspacing="0">
@@ -79,7 +79,7 @@
                                                 <div class="coupon col-lg-5">
                                                     <div class="row">
                                                         <label class="col-sm-2">ส่งโดย</label>
-                                                        <div class="col-sm-10">
+                                                        <div class="col-sm-8">
                                                             <div class="form-group">
                                                                 <select class="form-control" id="shipping_method" name="shipping_method">
                                                                     @foreach($shippings as $shipping)

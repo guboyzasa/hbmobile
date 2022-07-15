@@ -9,7 +9,7 @@
             <ul class="nav navbar-icons ml-auto order-lg-2">
                 <li class="nav-item mr-3 shopping-cart">
                     <a href="#!" class="li-icon" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
-                        <i class="bx bx-shopping-bag"></i>
+                        <i class='bx bx-cart' ></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-center border-0 shadow">
                         <ul class="dropdown-wrap position-relative" data-slimscroll="true">
@@ -18,9 +18,8 @@
                             <li class="dropdown-footer p-0 text-center text-uppercase font-weight-bold bg-gray">
                                 <form action="{{ route('cart-post') }}" id="cart-form">
                                     <input type="hidden" id="cart_post" name="cart_post">
-                                    <a href="#" class="p-3 d-block" onclick="cart()"><i
-                                            class="bx bx-shopping-bag"></i>
-                                        ดูตระกร้า</a>
+                                    <a href="#" class="p-3 d-block" onclick="cart()"><i class='bx bxs-cart-download'></i>
+                                        ดูตะกร้า</a>
                                 </form>
                             </li>
                         </ul>

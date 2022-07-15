@@ -30,9 +30,10 @@
                 @if ($repair == null && $order == null)
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="promotion text-center pt-5 pb-5">
-                            <div class="icon">
+                            <img src= "images/users/female_user.png" width="100">
+                            {{-- <div class="icon">
                                 <i class='bx bxs-user-circle' style="font-size: 8rem;"></i>
-                            </div>
+                            </div> --}}
                             <h4 class="mt-4 text-primary">ชื่อ : {{ @$customer->name }}</h4>
                             <p>เบอร์โทร: {{ @$customer->phone }}</p>
                             <p>Email: {{ @$customer->email }}</p>
@@ -43,9 +44,10 @@
                 @if ($repair != null && $order == null)
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="promotion text-center pt-5 pb-5">
-                            <div class="icon">
+                            <img src= "images/users/female_user.png" width="100">
+                            {{-- <div class="icon">
                                 <i class='bx bxs-user-circle' style="font-size: 8rem;"></i>
-                            </div>
+                            </div> --}}
                             <h4 class="mt-4 text-primary">ชื่อ : {{ @$customer->name }}</h4>
                             <p>เบอร์โทร: {{ @$customer->phone }}</p>
                             <p>Email: {{ @$customer->email }}</p>
@@ -98,6 +100,10 @@
                             <li class="total" style="text-align:center">
                                 ค่าส่ง: <strong><span class="amount">{{ @$repair->shipping_price }}</span></strong>
                             </li>
+                            <li class="total" style="text-align:center">
+                                รวมทั้งสิ้น: <strong>
+                                    <span class="amount">{{ $repair->price + @$repair->shipping_price }}</span></strong>
+                            </li>
 
                         </ul>
                     </div>
@@ -106,9 +112,10 @@
                 @if ($order != null && $repair == null)
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="promotion text-center pt-5 pb-5">
-                            <div class="icon">
-                                <i class='bx bxs-user-circle' style="font-size: 8rem;"></i>
-                            </div>
+                            <img src= "images/users/female_user.png" width="100">
+                            {{-- <div class="icon">
+                                <i class='bx bx-happy-heart-eyes' style="font-size: 8rem;"></i>
+                            </div> --}}
                             <h4 class="mt-4 text-primary">ชื่อ : {{ @$customer->name }}</h4>
                             <p>เบอร์โทร: {{ @$customer->phone }}</p>
                             <p>Email: {{ @$customer->email }}</p>
@@ -181,7 +188,7 @@
                                     รวมทั้งสิ้น: <strong><span class="amount">{{ $order->total_amount }}</span></strong>
                                 </li>
                                 <li class="method">
-                                    ประเภทการชำระ: <strong>โอนชำระ</strong>
+                                    ประเภท: <strong>โอนชำระ</strong>
                                 </li>
                             </ul><!-- /.order-details -->
 
@@ -230,7 +237,7 @@
                                                                 @endif --}}
                                                                 @if ($order->orderDeliveryAddress)
                                                                     <p>
-                                                                        <i class='bx bxs-map'></i>
+                                                                        <i class='bx bx-map'></i>
                                                                         ที่อยู่จัดส่ง :
 
                                                                         {{ $order->orderDeliveryAddress->address }}
@@ -336,9 +343,10 @@
                 @if ($order != null && $repair != null)
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="promotion text-center pt-5 pb-5">
-                            <div class="icon">
+                            <img src= "images/users/female_user.png" width="100">
+                            {{-- <div class="icon">
                                 <i class='bx bxs-user-circle' style="font-size: 8rem;"></i>
-                            </div>
+                            </div> --}}
                             <h4 class="mt-4 text-primary">ชื่อ : {{ @$customer->name }}</h4>
                             <p>เบอร์โทร: {{ @$customer->phone }}</p>
                             <p>Email: {{ @$customer->email }}</p>
@@ -410,7 +418,7 @@
                                     รวมทั้งสิ้น: <strong><span class="amount">{{ $order->total_amount }}</span></strong>
                                 </li>
                                 <li class="method">
-                                    ประเภทการชำระ: <strong>โอนชำระ</strong>
+                                    ประเภท: <strong>โอนชำระ</strong>
                                 </li>
                             </ul><!-- /.order-details -->
 
@@ -459,7 +467,7 @@
                                                                 @endif --}}
                                                                 @if ($order->orderDeliveryAddress)
                                                                     <p>
-                                                                        <i class='bx bxs-map'></i>
+                                                                        <i class='bx bx-map'></i>
                                                                         ที่อยู่จัดส่ง :
 
                                                                         {{ $order->orderDeliveryAddress->address }}
@@ -610,6 +618,10 @@
                                 <li class="total" style="text-align:center">
                                     ค่าส่ง: <strong><span class="amount">{{ @$repair->shipping_price }}</span></strong>
                                 </li>
+                                <li class="total" style="text-align:center">
+                                    รวมทั้งสิ้น: <strong>
+                                        <span class="amount">{{ $repair->price + @$repair->shipping_price }}</span></strong>
+                                </li>
     
                             </ul>
                         </div>
@@ -752,7 +764,7 @@
                                                                     @endif --}}
                                                                     @if ($order->orderDeliveryAddress)
                                                                         <p>
-                                                                            <i class='bx bxs-map'></i>
+                                                                            <i class='bx bx-map'></i>
                                                                             ที่อยู่จัดส่ง :
                                                                             {{ $order->orderDeliveryAddress->address }}
                                                                             {{ $order->orderDeliveryAddress->sub_district }}
@@ -1021,7 +1033,7 @@
                                                                                             เบอร์โทร :
                                                                                             {{ @$customer->phone }}
                                                                                             <br>
-                                                                                            <i class='bx bxs-map'></i>
+                                                                                            <i class='bx bx-map'></i>
                                                                                             ที่อยู่จัดส่ง
                                                                                             :
                                                                                             @if (@$order->orderDeliveryAddress->address == null || @$customer->customerAddress->address != null)

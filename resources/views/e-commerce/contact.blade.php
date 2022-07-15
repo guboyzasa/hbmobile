@@ -33,6 +33,8 @@
                         <p><strong>Address2:</strong> {{ @$company->address2 }}</p>
                         <p><strong>Facebook:</strong> <a href="{{ $company->facebook_link }}" class=""
                                 target="_blank">{{ @$company->facebook }}</a></p>
+                                <p><strong>Facebook:</strong> <a href="https://www.facebook.com/camandservices" class=""
+                                    target="_blank">ช่างบอย รับติดกล้องวงจรปิด จานดาวเทียม โซล่าเซลล์</a></p>
                         <p><strong>LINE Official Account:</strong> <a href="{{ $company->line_link }}" class=""
                                 target="_blank">{{ @$company->line }}</a></p>
                         <p><strong>Instagram:</strong> <a href="{{ $company->ig_link }}" class=""

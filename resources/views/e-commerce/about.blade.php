@@ -22,9 +22,9 @@
     <div style="text-align: center" class="page-wrapper">
         <section class="section" id="page-about">
             <div class="container">
-               
-                <div class="col-lg-12">
-                    <h2 class="title">เฮียบอยโมบาย เซอร์วิส<br>HB Mobile Services.</h2>
+                <div class="col-sm-12 text-center">
+                    <h2></i>เฮียบอยโมบาย เซอร์วิส</i></h2>
+                    <p>HB Mobile Services</p>
                 </div>
                 
                 <div class="row">

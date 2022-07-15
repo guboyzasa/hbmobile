@@ -11,11 +11,11 @@
             {{-- <div class="row"> --}}
             <div class="col-12">
                 <div class="text-primary p-4">
-                    <div align="right" id="clock" onload="currentTime()"></div>
+                    <div style="text-align: right" id="clock" onload="currentTime()"></div>
                     <h2 class="text-primary">HB MOBILE SERVICES Dashboard !</h2>
                     {{-- <p>HB MOBILE SERVICES Dashboard</p> --}}
-                    <h4 align="right">
-                        <a style="color: rgb(205, 11, 11)">ยอดรวม : </a>
+                    <h4 style="text-align: right">
+                        <a style="color: rgb(11, 205, 34)">ยอดขาย : </a>
                         <a style="color: rgb(13, 141, 221)">฿</a>
                         <a style="color: rgb(13, 141, 221)">{{ number_format($sumOrder) }}</a>
                         <a style="color: rgb(13, 141, 221)">บาท </a>

@@ -154,12 +154,12 @@ class Controller extends BaseController
         curl_close($chOne);
     }
     //Line Notify อัพโหลดสลิป
-    public function sendLineNotify4($token2,$message4,$imageFile)
+    public function sendLineNotify4($token2,$message4)
     {
           //Message
           $data = array (
             'message' => $message4,
-            'imageFile' => $imageFile,
+            // 'imageFile' => $imageFile,
           );
         //   dd($data);
           $chOne = curl_init();

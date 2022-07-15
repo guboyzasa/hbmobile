@@ -2,11 +2,15 @@
 <html lang="en">
 
 <head>
-    <title>ใบแจ้งชำระค่าซ่อม - {{ @$userName }} | <?php echo date('d-m-Y'); ?> - <?php echo date('h-i-s a'); ?></title>
+    <title>ใบแจ้งชำระค่าซ่อม - {{ @$userName }} |
+        <?php echo date('d-m-Y'); ?> -
+        <?php echo date('h-i-s a'); ?>
+    </title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> --}}
+    {{--
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> --}}
 
 </head>
 
@@ -18,15 +22,20 @@
             <img src="{{ URL::asset('/assets/dist/images/logo.png') }}" alt="" width="48px" height="48px">
         </div> --}}
         <div class="d-flex flex-column">
-            <span class="font-weight-bold"><strong>เฮียบอยโมบาย เซอร์วิส</strong></span>
-            <br><small>HB MOBILE SERVICES.093-5287744</small>
+            <img src="assets/dist/images/logo.png" width="80"><br>
+            <span class="font-weight-bold"><strong>เฮียบอยโมบาย เซอร์วิส | hbmobilekk.me</strong></span><br>
+            <small>HB MOBILE SERVICES. 093-5287744</small><br>
+            <small>673 เฮียบอยโมบาย เซอร์วิส ซ.วุฒาราม6 ถ.รื่นรมย์ ต.ในเมือง อ.เมือง จ.ขอนแก่น 40000</small>
         </div>
 
         <div style="text-align:right;">
-            <b>วันที่ออกบิล:</b> <?php echo date('d-m-Y'); ?>
+            <b>วันที่ออกบิล:</b>
+            <?php echo date('d-m-Y'); ?>
         </div>
         <div style="text-align: left;border-top:1px solid #000;">
-            <div style="font-size: 30px;color: #666;">INVOICE # <?php echo date('dmY'); ?> [ยอดชำระ: {{ number_format($price + @$shipping,2) }} ฿]</div>
+            <div style="font-size: 30px;color: #666;">INVOICE #
+                <?php echo date('dmY'); ?> [ยอดชำระ: {{ number_format($price + @$shipping,2) }} ฿]
+            </div>
         </div>
         <table style="line-height: 1.3;">
             <tr>
@@ -40,7 +49,7 @@
             <tr>
                 <td><b>ที่อยู่จัดส่ง:</b> {{ @$address }}
                 </td>
-            </tr> 
+            </tr>
         </table>
         <br>
         <div class="table-responsive">
@@ -81,10 +90,11 @@
             </table>
 
         </div>
+        <br>
         <div style="border-bottom:1px solid #000;"></div>
         <br>
         <p><u><b>ช่องทางชำระ</b></u>:<br />
-            ธนาคาร: ไทยพาณิชย์<br /> 
+            ธนาคาร: ไทยพาณิชย์<br />
             เลขที่บัญชี: 808-2-70209-0<br />
             พร้อมเพย์: 0935287744<br />
             ชื่อบัญชี: นายรชต วันเทาแก้ว<br />

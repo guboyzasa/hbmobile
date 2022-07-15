@@ -2,7 +2,10 @@
 <html lang="en">
 
 <head>
-    <title>ใบแจ้งชำระ Order-{{ @$order }}-{{ @$userName }}| <?php echo date('d-m-Y'); ?> - <?php echo date('h-i-s a'); ?></title>
+    <title>ใบแจ้งชำระ Order-{{ @$order }}-{{ @$userName }}|
+        <?php echo date('d-m-Y'); ?> -
+        <?php echo date('h-i-s a'); ?>
+    </title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,14 +15,18 @@
     <div class="container">
         <br>
         <div class="d-flex flex-column">
-            <span class="font-weight-bold"><strong>เฮียบอยโมบาย เซอร์วิส</strong></span>
-            <br><small>HB MOBILE SERVICES.093-5287744</small>
+            <img src="assets/dist/images/logo.png" width="80"><br>
+            <span class="font-weight-bold"><strong>เฮียบอยโมบาย เซอร์วิส | hbmobilekk.me</strong></span><br>
+            <small>HB MOBILE SERVICES. 093-5287744</small><br>
+            <small>673 เฮียบอยโมบาย เซอร์วิส ซ.วุฒาราม6 ถ.รื่นรมย์ ต.ในเมือง อ.เมือง จ.ขอนแก่น 40000</small>
         </div>
         <div style="text-align:right;">
-            <b>วันที่ออกบิล:</b> <?php echo date('d-m-Y'); ?><br>
+            <b>วันที่ออกบิล:</b>
+            <?php echo date('d-m-Y'); ?><br>
         </div>
         <div style="text-align: left;border-top:1px solid #000;">
-            <div style="font-size: 30px;color: #666;"><b>Order #</b> {{ @$order }} [ยอดชำระ: {{ @$total_amount }} ฿]</div>
+            <div style="font-size: 30px;color: #666;"><b>Order #</b> {{ @$order }} [ยอดชำระ: {{ @$total_amount }} ฿]
+            </div>
         </div>
         <table style="line-height: 1.2;">
             <tr>
@@ -54,15 +61,15 @@
                 <tbody>
 
                     @foreach ($orderDetails as $row)
-                        @if ($row->order_id == $id)
-                            <tr>
-                                <th scope="row" style="text-align:center">{{ $i++ }}</th>
-                                <td>{{ @$row->product->sku }} - {{ @$row->product->name }}</td>
-                                <td style="text-align:center">{{ number_format(@$row->total_amount, 2) }}</td>
-                                <td style="text-align:center">{{ @$row->amount }}</td>
-                                <td style="text-align:center">{{ number_format(@$row->total_amount, 2) }}</td>
-                            </tr>
-                        @endif
+                    @if ($row->order_id == $id)
+                    <tr>
+                        <th scope="row" style="text-align:center">{{ $i++ }}</th>
+                        <td>{{ @$row->product->sku }} - {{ @$row->product->name }}</td>
+                        <td style="text-align:center">{{ number_format(@$row->total_amount, 2) }}</td>
+                        <td style="text-align:center">{{ @$row->amount }}</td>
+                        <td style="text-align:center">{{ number_format(@$row->total_amount, 2) }}</td>
+                    </tr>
+                    @endif
                     @endforeach
 
 
@@ -83,7 +90,7 @@
                     </tr>
                     <tr style="font-weight: bold;">
                         <td colspan="3"></td>
-                        <td style="text-align:center;"><strong>ยอดรวม</strong></td> 
+                        <td style="text-align:center;"><strong>ยอดรวม</strong></td>
                         <td style="text-align:center;">
                             <strong>{{ @$total_amount }} </strong>
                         </td>
@@ -94,10 +101,11 @@
             </table>
 
         </div>
+        <br>
         <div style="border-bottom:1px solid #000;"></div>
         <br>
         <p><u><b>ช่องทางชำระ</b></u>:<br />
-            ธนาคาร: ไทยพาณิชย์<br /> 
+            ธนาคาร: ไทยพาณิชย์<br />
             เลขที่บัญชี: 808-2-70209-0<br />
             พร้อมเพย์: 0935287744<br />
             ชื่อบัญชี: นายรชต วันเทาแก้ว<br />

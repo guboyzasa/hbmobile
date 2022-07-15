@@ -34,7 +34,7 @@
                             <div class="form-group col-sm-12">
                                 <div class="required">
                                     <input type="text" class="form-control" placeholder="ชื่อ"
-                                        name="delivery_first_name" value="{{ @$customer->name }}" required>
+                                        name="delivery_first_name" value="{{ $customer->name }}" required>
                                 </div>
                             </div>
 
@@ -75,7 +75,7 @@
                             <div class="form-group col-sm-12">
                                 <div class="required">
                                     <input type="text" class="form-control" placeholder="ที่อยู่"
-                                        name="delivery_address" value="{{ @$customer->customerAddress->address }}"
+                                        name="delivery_address" value="{{ $customer->customerAddress->address }}"
                                         required>
                                 </div>
                             </div>
@@ -86,7 +86,7 @@
                                 <select class="form-control" id="delivery_province" name="delivery_province">
                                     <option value="">-- เลือกจังหวัด --</option>
                                     @foreach($provinces as $province)
-                                    <option value="{{ $province->code }}" {{ $customer->customerAddress->province_code == $province->code ? 'selected' : '' }}>{{ $province->name_th }}</option>
+                                    <option value="{{ $province->code }}" >{{ $province->name_th }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -95,17 +95,17 @@
                         <div class="row">
                             <div class="form-group col-sm-6">
                                 <div class="required">
-                                    <select class="form-control" id="delivery_district" name="delivery_district"
+                                    <select class="form-control" id="delivery_district" name="delivery_district" 
                                         disabled>
-                                        <option value="{{ $customer->customerAddress->district_code }}">{{ $customer->customerAddress->district }}</option>
+                                        {{-- <option value="{{ $customer->customerAddress->district_code }}">{{ $customer->customerAddress->district }}</option> --}}
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group col-sm-6">
                                 <div class="required">
-                                    <select class="form-control" id="delivery_sub_district" name="delivery_sub_district"
+                                    <select class="form-control" id="delivery_sub_district" name="delivery_sub_district" 
                                         disabled>
-                                        <option value="{{ $customer->customerAddress->sub_district_code }}">{{ $customer->customerAddress->sub_district }}</option>
+                                        {{-- <option value="{{ $customer->customerAddress->sub_district_code }}">{{ $customer->customerAddress->sub_district }}</option> --}}
                                     </select>
                                 </div>
                             </div>
@@ -114,7 +114,7 @@
                         <div class="form-group">
                             <div class="required">
                                 <input type="text" class="form-control" placeholder="รหัสไปรษณีย์"
-                                    name="delivery_zipcode" id="delivery_zipcode" value="{{ $customer->customerAddress->zipcode ? $customer->customerAddress->zipcode : '' }}" required disabled>
+                                    name="delivery_zipcode" id="delivery_zipcode" value="" required disabled>
                             </div>
                         </div>
 
@@ -223,7 +223,7 @@
                         <div class="form-group">
                             <label>รายละเอียดเพิ่มเติม</label>
                             <textarea class="form-control"
-                                placeholder="รายละเอียดเพิ่มเติมในการจัดส่ง" rows="5"
+                                placeholder="รายละเอียดเพิ่มเติมในการจัดส่ง" rows="4"
                                 name="note"></textarea>
                         </div>
                     </div><!-- /.billing-field -->
@@ -301,6 +301,7 @@
                             <h2>วิธีการชำระเงิน</h2>
                             <div id="payment" class="checkout-payment">
                                 <ul class="payment-methods">
+                                    <div class="container">
                                 <div class="row">
                                     <li class="payment-method">
                                         @foreach ($paymentMethod as $payment)
@@ -326,6 +327,7 @@
                                         </figure>
                                     </li>  
                                 </div> 
+                                    </div>
                                         {{-- </div> --}}
                                     <!-- <li class="payment-method">
                                         <input id="payment_method_cod" type="radio" name="payment_method">
