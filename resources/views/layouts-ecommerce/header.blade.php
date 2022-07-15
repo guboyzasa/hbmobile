@@ -18,7 +18,7 @@
                             <li class="dropdown-footer p-0 text-center text-uppercase font-weight-bold bg-gray">
                                 <form action="{{ route('cart-post') }}" id="cart-form">
                                     <input type="hidden" id="cart_post" name="cart_post">
-                                    <a href="#" class="p-3 d-block" onclick="cart()"><i class='bx bxs-cart-download'></i>
+                                    <a href="#" class="p-3 d-block" onclick="cart()"><i class='bx bxs-cart-download text-primary'></i>
                                         ดูตะกร้า</a>
                                 </form>
                             </li>
@@ -38,7 +38,7 @@
                                 </li>
                                 <li class="d-flex align-middle">
                                     <a href="{{ route('ecom.change-password') }}">แก้ไขรหัสผ่าน <i
-                                            class='bx bx-wrench align-middle me-1'></i></a>
+                                            class='bx bx-wrench align-middle me-1 text-primary'></i></a>
                                 </li>
                                 <li class="d-flex align-middle">
                                     <a href="#"
@@ -180,7 +180,7 @@
         $('.product' + id).prop("disabled", false);
         $('.product' + id).find('.text-cart').text("เพิ่มลงสินค้า");
         $('.product' + id).removeClass('added');
-        $('.product' + id).parent().attr('data-original-title', 'เพิ่มลงตระกร้า');
+        $('.product' + id).parent().attr('data-original-title', 'เพิ่มลงตะกร้า');
         $('.product' + id).find('#icon' + id).addClass('d-none')
     }
 

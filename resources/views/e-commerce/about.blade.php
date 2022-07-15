@@ -22,6 +22,7 @@
     <div style="text-align: center" class="page-wrapper">
         <section class="section" id="page-about">
             <div class="container">
+                <div class="card card-default">
                 <div class="col-sm-12 text-center">
                     <h2></i>เฮียบอยโมบาย เซอร์วิส</i></h2>
                     <p>HB Mobile Services</p>
@@ -44,6 +45,7 @@
                         class="img-fluid p-2" alt="" width="270px"> --}}
                     <img style="text-align: center" src='{{ URL::asset('/assets/dist/images/qr.png') }}'
                         class="img-fluid p-2" alt="" width="83px">
+                </div>
                 </div>
             </div><!-- /.row -->
     </div><!-- /.container -->

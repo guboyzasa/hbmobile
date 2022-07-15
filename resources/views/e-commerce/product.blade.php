@@ -169,7 +169,7 @@
                                     data-name="{{ $product->name }}" data-price="{{ $product->price }}">
                                     <i class="bx"></i>
                                     <span class="text-cart">
-                                        เพิ่มลงตระกร้า
+                                        เพิ่มลงตะกร้า
                                     </span>
                                 </a> -->
                                 <button type="button" id="addProduct"
@@ -178,7 +178,7 @@
                                     data-name="{{ $product->name }}" data-price="{{ $product->price }}" {{ $product->is_active == 0 ? 'disabled' : '' }}>
                                     <i class="bx" id="icon{{ $product->id }}"></i>
                                     <span class="text-cart">
-                                        เพิ่มลงตระกร้า
+                                        เพิ่มลงตะกร้า
                                     </span>
                                 </button>
                             </div>
@@ -370,7 +370,7 @@
                     </div>
                     <div class="product-details text-center">
                         <div class="product-btns">
-                            <span data-toggle="tooltip" data-placement="top" title="เพิ่มลงตระกร้า">
+                            <span data-toggle="tooltip" data-placement="top" title="เพิ่มลงตะกร้า">
                                 <a href="#!" class="li-icon add-to-cart product{{ $product->id }}"
                                     data-product-id="{{ $product->id }}" data-path-img="{{ $product->img }}"
                                     data-name="{{ $product->name }}" data-price="{{ $product->price }}"><i
@@ -440,7 +440,7 @@ $('#addProduct').on('click', function() {
         "showMethod": "fadeIn",
         "hideMethod": "fadeOut"
     }
-    toastr["success"]("", "เพิ่มลงตระกร้าเรียบร้อย")
+    toastr["success"]("", "เพิ่มลงตะกร้าเรียบร้อย")
     // $(this).removeClass('add-to-cart');
     $(this).find('.text-cart').empty();
     $(this).find('.bx').removeClass('d-none');

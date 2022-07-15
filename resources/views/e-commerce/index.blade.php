@@ -120,7 +120,7 @@
                                     </div>
                                     <div class="product-details text-center">
                                         <div class="product-btns">
-                                            <span data-toggle="tooltip" data-placement="top" title="เพิ่มลงตระกร้า">
+                                            <span data-toggle="tooltip" data-placement="top" title="เพิ่มลงตะกร้า">
                                                 <a href="#!" class="li-icon add-to-cart product{{ $product->id }}"
                                                     data-product-id="{{ $product->id }}"
                                                     data-path-img="{{ $product->img }}" data-name="{{ $product->name }}"
