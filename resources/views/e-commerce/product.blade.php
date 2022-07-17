@@ -2,6 +2,10 @@
 
 @section('css')
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('/assets/libs/toastr/toastr.min.css') }}">
+<meta property="og:title" content="{{ $product->name }}"/>
+<meta property="og:image" content="{{ URL::asset("get-content/$product->img") }}"/>
+<meta property="og:description" content="{{ $product->detail }}"/>
+<meta property="og:site_name" content="{{ URL::asset("/") }}"/>
 @endsection
 
 @section('content')
@@ -172,16 +176,26 @@
                                         เพิ่มลงตะกร้า
                                     </span>
                                 </a> -->
+                                
                                 <button type="button" id="addProduct"
                                     class="add-to-cart product{{ $product->id }} btn btn-primary rounded-pill"
                                     data-product-id="{{ $product->id }}" data-path-img="{{ $product->img }}"
-                                    data-name="{{ $product->name }}" data-price="{{ $product->price }}" {{ $product->is_active == 0 ? 'disabled' : '' }}>
+                                    data-name="{{ $product->name }}" data-price="{{ $product->price }}" {{
+                                    $product->is_active == 0 ? 'disabled' : '' }}>
                                     <i class="bx" id="icon{{ $product->id }}"></i>
                                     <span class="text-cart">
                                         เพิ่มลงตะกร้า
                                     </span>
                                 </button>
+                                
                             </div>
+                            <br>
+                            Share
+                                <div class="a2a_kit a2a_kit_size_25 a2a_default_style" style="text-align: center">
+                                    <a class="a2a_button_facebook"></a>
+                                    <a class="a2a_button_line"></a>
+                                    <a class="a2a_button_facebook_messenger"></a>
+                                </div>
                             <div class="d-none">
                                 <span class="product-title"><a href="#!">{{ $product->name }}</a></span>
                                 <p class="product-price">
@@ -398,14 +412,19 @@
 </section> -->
 @endsection
 
+
 @section('script')
+
+<!-- share plugin -->
+<script src="{{ URL::asset('/assets/js/pages/share.init.js') }}"></script>
+
 <!-- toastr plugin -->
 <script src="{{ URL::asset('/assets/libs/toastr/toastr.min.js') }}"></script>
 
 <!-- toastr init -->
 <script src="{{ URL::asset('/assets/js/pages/toastr.init.js') }}"></script>
 <script>
-$(document).ready(function() {
+    $(document).ready(function() {
     var get_session_id = sessionStorage.getItem("p_id");
     var p_id = parseInt($("#p_id").val());
 
@@ -449,5 +468,7 @@ $('#addProduct').on('click', function() {
     // $(this).parent().attr('data-original-title', 'Added');
 })
 </script>
-<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=62cad181a12f7c001a58e62a&product=sticky-share-buttons' async='async'></script>
+<script type='text/javascript'
+    src='https://platform-api.sharethis.com/js/sharethis.js#property=62cad181a12f7c001a58e62a&product=sticky-share-buttons'
+    async='async'></script>
 @stop

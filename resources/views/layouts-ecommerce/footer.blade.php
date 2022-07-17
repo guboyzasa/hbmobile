@@ -9,7 +9,9 @@
                     
                         {{-- {{ @$company->address2}} --}}
                         <strong>เปิดให้บริการเวลา </strong><time style="color: #CC0000"> 10:00 น.</time> - <time style="color: #CC0000">21:00 น.</time> <strong>ทุกวัน</strong>
-                    
+                        <br>
+                        <div class="fb-like text-center" data-href="https://www.facebook.com/hbmobilekk" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="false"></div>
+                        <div class="fb-like text-center" data-href="https://www.facebook.com/camandservices" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="false"></div>
                 </div><!-- ./widget -->
 
                 <div class="col-lg-6 col-md-6 widget widget-links">

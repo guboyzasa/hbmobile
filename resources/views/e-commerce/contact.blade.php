@@ -84,7 +84,6 @@
                     </div>
                 </div>
             </div>
-            <br>
         </div>
     </div><!-- /.container -->
 </section>
@@ -163,8 +162,6 @@
         </div>
     </div> <!-- /.container -->
 </section> --}}
-<br>
-<br>
 
 {{-- <div class="page-wrapper">
     MAP สาขาในเมือง
