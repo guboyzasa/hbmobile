@@ -59,16 +59,52 @@
                 {{-- <div class="col-md-12 col-lg-8 collection">
                 <div class="row"> --}}
 
-                @foreach ($product_categorys as $product_category)
+                    {{-- @foreach ($product_categorys as $product_category)
+                        <div class="col-6 col-md-3 collection">
+                            <a href="products?product_filter_category={{ $product_category->id }}">
+                                <img src='{{ URL::asset("get-content/$product_category->logo_img") }}' class="img-fluid"
+                             alt="">
+                            </a>
+                        </div><!-- /.collection -->
+                    @endforeach --}}
+
+                
                     <div class="col-6 col-md-3 collection">
-                        <a href="products?product_filter_category={{ $product_category->id }}">
-                            <img src='{{ URL::asset("get-content/$product_category->logo_img") }}' class="img-fluid"
+                        <a href="products?product_filter_category=8">
+                            <img src='{{ URL::asset("get-content/hbImages/product-categories/1655743784.jpg") }}' class="img-fluid"
                                 alt="">
                         </a>
                     </div><!-- /.collection -->
-                @endforeach
-                {{-- </div>
-                </div> --}}
+                    <div class="col-6 col-md-3 collection">
+                        <a href="products?product_filter_category=2">
+                            <img src='{{ URL::asset("get-content/hbImages/product-categories/1658082429.jpg") }}' class="img-fluid"
+                                alt="">
+                        </a>
+                    </div><!-- /.collection -->
+                    <div class="col-6 col-md-3 collection">
+                        <a href="products?product_filter_category=3">
+                            <img src='{{ URL::asset("get-content/hbImages/product-categories/1655743742.jpg") }}' class="img-fluid"
+                                alt="">
+                        </a>
+                    </div><!-- /.collection -->
+                    <div class="col-6 col-md-3 collection">
+                        <a href="products?product_filter_category=11">
+                            <img src='{{ URL::asset("get-content/hbImages/product-categories/1655743831.jpg") }}' class="img-fluid"
+                                alt="">
+                        </a>
+                    </div><!-- /.collection -->
+                    <div class="col-6 col-md-3 collection">
+                        <a href="products?product_filter_category=10">
+                            <img src='{{ URL::asset("get-content/hbImages/product-categories/1655743804.jpg") }}' class="img-fluid"
+                                alt="">
+                        </a>
+                    </div><!-- /.collection -->
+                    <div class="col-6 col-md-3 collection">
+                        <a href="products?product_filter_category=14">
+                            <img src='{{ URL::asset("get-content/hbImages/product-categories/1655743752.jpg") }}' class="img-fluid"
+                                alt="">
+                        </a>
+                    </div><!-- /.collection -->
 
             </div><!-- /.row -->
         </div><!-- /.container -->
