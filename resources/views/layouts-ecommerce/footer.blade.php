@@ -18,10 +18,10 @@
                     <h4 class="widget-title">ติดต่อเรา</h4>
                     <div class="row">
                         <ul class="list-unstyled col-12 col-lg-12 align-middle">
-                            <li><img src="{{ URL::asset('/assets/dist/images/phone.png') }}" alt="" width="4%"> : <a href="tel:0935287744" class="effect">{{ @$company->tel1 }}</a> ช่างบอย</li>
-                            <li><img src="{{ URL::asset('/assets/dist/images/facebook.png') }}" alt="" width="4%"> : <a href="https://www.facebook.com/camandservices" class="effect" target="_blank">ช่างบอย รับติดกล้องวงจรปิด จานดาวเทียม โซล่าเซลล์</a></li>
-                            <li><img src="{{ URL::asset('/assets/dist/images/facebook.png') }}" alt="" width="4%"> : <a href="{{ @$company->facebook_link }}" class="effect" target="_blank">{{ @$company->facebook }}</a></li>
-                            <li><img src="{{ URL::asset('/assets/dist/images/line.png') }}" alt="" width="4%"> : <a href="{{ @$company->line_link }}" class="effect" target="_blank">{{ @$company->line }}</a></li>
+                            <li><img src="{{ URL::asset('/assets/dist/images/footer/phone.png') }}" alt="" width="4%"> : <a href="tel:0935287744" class="effect">{{ @$company->tel1 }}</a> ช่างบอย</li>
+                            <li><img src="{{ URL::asset('/assets/dist/images/footer/facebook.png') }}" alt="" width="4%"> : <a href="https://www.facebook.com/camandservices" class="effect" target="_blank">ช่างบอย รับติดกล้องวงจรปิด จานดาวเทียม โซล่าเซลล์</a></li>
+                            <li><img src="{{ URL::asset('/assets/dist/images/footer/facebook.png') }}" alt="" width="4%"> : <a href="{{ @$company->facebook_link }}" class="effect" target="_blank">{{ @$company->facebook }}</a></li>
+                            <li><img src="{{ URL::asset('/assets/dist/images/footer/line.png') }}" alt="" width="4%"> : <a href="{{ @$company->line_link }}" class="effect" target="_blank">{{ @$company->line }}</a></li>
                             <li>
                                 
                                 {{-- <i class='bx bxs-help-circle bx-sm'></i> : <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=188yanuk" target="_blank" class="effect">ต้องการความช่วยเหลือ</a> --}}

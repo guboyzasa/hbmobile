@@ -1,7 +1,10 @@
 @extends('layouts-ecommerce.app')
 
 @section('css')
-
+<meta property="og:title" content="HB Mobile|เฮียบอยโมบาย - ติดต่อเรา"/>
+<meta property="og:image" content="{{ URL::asset('/assets/dist/images/img-link/contact.png') }}"/>
+<meta property="og:description" content="ครบเครื่องเรื่องไอที : โทรศัพท์, โน้ตบุ๊ค, แม็คบุ๊ค, ปริ้นเตอร์, เครื่องใช้ไฟฟ้า, กล้องวงจรปิด, จานดาวเทียม, โซล่าเซล์, เน็ตเวิร์ก, กราฟิกดีไซน์"/>
+<meta property="og:site_name" content="https://hbmobilekk.me"/>
 @endsection
 
 @section('content')

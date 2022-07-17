@@ -2,10 +2,10 @@
 
 @section('css')
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('/assets/libs/toastr/toastr.min.css') }}">
-<meta property="og:title" content="{{ $product->name }}"/>
+<meta property="og:title" content="HB Mobile|เฮียบอยโมบาย - {{ $product->name }}"/>
 <meta property="og:image" content="{{ URL::asset("get-content/$product->img") }}"/>
 <meta property="og:description" content="{{ $product->detail }}"/>
-<meta property="og:site_name" content="{{ URL::asset("/") }}"/>
+<meta property="og:site_name" content="https://hbmobilekk.me"/>
 @endsection
 
 @section('content')
