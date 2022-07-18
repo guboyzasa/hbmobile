@@ -19,7 +19,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body"> 
-                    <button type="button" style="float: right;" class="btn btn-primary create_btn" ><i class="bx bx-plus"></i> เพิ่มลูกค้า </button>
+                    <button type="button" style="float: right;" class="btn btn-success create_btn" ><i class="bx bx-plus"></i> เพิ่มลูกค้า </button>
                     <h4 class="card-title">จัดการลูกค้า</h4>
                     <br>
                     
@@ -185,15 +185,15 @@
                             // console.log('agentId : ' + agentId);
                             // console.log('full.agent_id : ' + full.agent_id);
                             var button = `
-                                    <a  href="/agent-member/customer/profile/${data}" class="btn btn-sm btn-info" ><i class="bx bx-search-alt-2"></i>  </a>`;
+                                    <a  href="/agent-member/customer/profile/${data}" class="btn btn-sm btn-warning" ><i class="bx bx-search-alt-2"></i>  </a>`;
                             if(agentId == full.agent_id){
                                 button = `
-                                    <a  href="/agent-member/customer/profile/${data}" class="btn btn-sm btn-info" ><i class="bx bx-search-alt-2"></i>  </a>
+                                    <a  href="/agent-member/customer/profile/${data}" class="btn btn-sm btn-warning" ><i class="bx bx-search-alt-2"></i>  </a>
                                     <button type="button" class="btn btn-sm btn-danger" onclick='destroy(${data})'><i class="bx bx-trash"></i>  </button>
                                     `;
                             }
                             if(full.user_id != null){
-                                button = `<a  href="/agent-member/customer/profile/${data}" class="btn btn-sm btn-info" ><i class="bx bx-search-alt-2"></i>  </a>`;
+                                button = `<a  href="/agent-member/customer/profile/${data}" class="btn btn-sm btn-warning" ><i class="bx bx-search-alt-2"></i>  </a>`;
                             }
                             return button;
 

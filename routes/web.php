@@ -155,6 +155,8 @@ Route::middleware(['checkAdminMaintenance'])->group(function () {
                 Route::post('/repair/check-code', [App\Http\Controllers\Admin\RepairController::class, 'checkCode'])->name('repair.check-code');
                 Route::post('/repair/repair-customer/{id}', [App\Http\Controllers\Admin\RepairController::class, 'repairCustomer'])->name('repair.repair-customer');
 
+                Route::get('/create-invoice/{id}',[App\Http\Controllers\PdfController::class, 'createPdfAdmin']); 
+
 
         });
 });

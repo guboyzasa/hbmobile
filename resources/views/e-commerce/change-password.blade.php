@@ -51,7 +51,7 @@
                             </div>
                             <br>
                             <div class="form-group d-flex align-items-center justify-content-between">
-                                <button type="submit" class="btn btn-primary w-100"
+                                <button type="submit" class="btn btn-danger w-100"
                                     data-id="{{ Auth::user() ? Auth::user()->id : '' }}">บันทึก</button>
                             </div>
                         </form>

@@ -158,7 +158,7 @@
         
 
         {{-- <div style="text-align: right">
-            <button type="button" class="btn btn-primary btn-sm waves-effect waves-light"
+            <button type="button" class="btn btn-danger btn-sm waves-effect waves-light"
                 onclick="history.back()">Back</button>
             <button type="button" class="btn btn-danger btn-sm waves-effect waves-light"
                 onclick="javascript:window.print()">

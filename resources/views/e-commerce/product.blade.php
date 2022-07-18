@@ -110,7 +110,7 @@
                     <div class="product-title">
                         <h3 class="product-name">{{ $product->name }}</h3>
                         @if($product->is_stock == 1)
-                        <p class="product-available text-primary">มีสินค้า</p>
+                        <p class="product-available text-danger">มีสินค้า</p>
                         @else
                         <p class="product-available text-secondary">ไม่มีสินค้า</p>
                         @endif
@@ -168,7 +168,7 @@
                                     style="display:none;">
                             </div>
                             <div class="product-btns">
-                                <!-- <a href="#!" id="addProduct" class="add-to-cart product{{ $product->id }} btn btn-primary rounded-pill"
+                                <!-- <a href="#!" id="addProduct" class="add-to-cart product{{ $product->id }} btn btn-danger rounded-pill"
                                     data-product-id="{{ $product->id }}" data-path-img="{{ $product->img }}"
                                     data-name="{{ $product->name }}" data-price="{{ $product->price }}">
                                     <i class="bx"></i>
@@ -178,7 +178,7 @@
                                 </a> -->
                                 
                                 <button type="button" id="addProduct"
-                                    class="add-to-cart product{{ $product->id }} btn btn-primary rounded-pill"
+                                    class="add-to-cart product{{ $product->id }} btn btn-danger rounded-pill"
                                     data-product-id="{{ $product->id }}" data-path-img="{{ $product->img }}"
                                     data-name="{{ $product->name }}" data-price="{{ $product->price }}" {{
                                     $product->is_active == 0 ? 'disabled' : '' }}>
@@ -351,7 +351,7 @@
 											<textarea class="form-control" placeholder="Your Review*" rows="5" required></textarea>
 										</div>
 										<div class="form-group">
-											<button type="button" class="btn btn-primary">Leave Rating</button>
+											<button type="button" class="btn btn-danger">Leave Rating</button>
 										</div>
 									</form>
 								</div>
@@ -398,7 +398,7 @@
                     </div>
                 </div>
                 <h4 class="product-title"><a href="#!" class="text-too-long">{{ $product->name }}</a></h4>
-                <p class="product-price text-primary">
+                <p class="product-price text-danger">
                     <ins>
                         <span class="amount">ราคา <b>{{ number_format($product->price) }}</b> บาท</span>
                     </ins>

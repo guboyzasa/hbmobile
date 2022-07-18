@@ -25,7 +25,7 @@
                                     placeholder="กรุณาเลือกรูปภาพ" style="display:none" onchange="loadFile(event)"
                                     required>
                                 <input type="hidden" id="imgbase64" name="imgbase64" value="" />
-                                <button type="button" style="display:block;" class="btn btn-primary w-100"
+                                <button type="button" style="display:block;" class="btn btn-danger w-100"
                                     onclick="document.getElementById('imgFile').click()"> เลือกรูปภาพ </button>
                             </div>
                             <div class="form-group">
@@ -101,7 +101,7 @@
                 <div class="col-md-12">
                     <div class="text-center">
                         <div class="form-group">
-                            <button type="submit" class="btn btn-outline-primary w-100">อัพโหลดสลิป</button>
+                            <button type="submit" class="btn btn-outline-danger w-100">อัพโหลดสลิป</button>
                         </div>
                         <div class="form-group">
                             <button type="button" class="btn btn-outline-dark w-100">ยกเลิก</button>

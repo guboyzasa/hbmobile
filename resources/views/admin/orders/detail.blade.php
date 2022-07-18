@@ -412,7 +412,7 @@
 
                         </div>
                     </form>
-                    <form action="{{ url('/create-invoices-order') }}" method="get">
+                    <form action="{{ url('/create-invoices-order') }}" method="get" target="_blank">
                         @csrf
                         <input type="hidden" value="{{ @$order->id }}" name="id" />
                         <input type="hidden" value="{{ @$order->code }}" name="order" />

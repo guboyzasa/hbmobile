@@ -39,7 +39,7 @@
                                     alt="" width="250px">
                             </a>
                         </figure>
-                        <button class="btn btn-primary rounded-pill"><a href="https://dbdregcom.dbd.go.th/regc-app/public/rcp010700.xhtml?qr=5d2f2a95-5666-49c0-8994-da931d609a69" target="_blank"><b style="color: white">dbdregcom</b></a></button>
+                        <button class="btn btn-danger rounded-pill"><a href="https://dbdregcom.dbd.go.th/regc-app/public/rcp010700.xhtml?qr=5d2f2a95-5666-49c0-8994-da931d609a69" target="_blank"><b style="color: white">dbdregcom</b></a></button>
                     </div>
                 </div>
 				<div class="col-md-12">

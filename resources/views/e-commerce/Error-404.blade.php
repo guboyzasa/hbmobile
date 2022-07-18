@@ -28,8 +28,8 @@
 					<h3 class="px-5">Sorry, the page you were looking for doesn’t exist.</h3>
 					<p>Let's get back on track..</p>
 					<div class="button-group">
-						<a href="index.html" class="btn btn-primary">Home</a>
-						<a href="products-sidebar-right.html" class="btn btn-primary">Shop</a>
+						<a href="index.html" class="btn btn-danger">Home</a>
+						<a href="products-sidebar-right.html" class="btn btn-danger">Shop</a>
 					</div>
 					<h2 class="or">OR</h2>
 					<form action="#!" method="GET" class="inputs-border">

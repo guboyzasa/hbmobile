@@ -107,9 +107,9 @@
                                 <div class="form-group d-flex align-items-center justify-content-between">
                                     <div>
                                         ต้องการ<a href="{{ route('login-register') }}" class="effect ml-1 mr-1"><span
-                                                class="text-primary">เข้าสู่ระบบ</span></a>หรือไม่ ?
+                                                class="text-danger">เข้าสู่ระบบ</span></a>หรือไม่ ?
                                     </div>
-                                    <button type="submit" class="btn btn-primary rounded-pill">สมัครสมาชิก</button>
+                                    <button type="submit" class="btn btn-danger rounded-pill">สมัครสมาชิก</button>
                                 </div>
 
                             </form>

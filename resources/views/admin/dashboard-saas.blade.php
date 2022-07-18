@@ -7,15 +7,15 @@
 @section('content')
     {{-- <div class="row"> --}}
     <div class="col-xl-12">
-        <div class="card bg-primary bg-soft">
+        <div class="card bg-danger bg-soft">
             {{-- <div class="row"> --}}
             <div class="col-12">
-                <div class="text-primary p-4">
+                <div class="text-danger p-4">
                     <div style="text-align: right" id="clock" onload="currentTime()"></div>
                     <h2 class="text-primary">HB MOBILE SERVICES Dashboard !</h2>
                     {{-- <p>HB MOBILE SERVICES Dashboard</p> --}}
                     <h4 style="text-align: right">
-                        <a style="color: rgb(11, 205, 34)">ยอดขาย : </a>
+                        <a style="color: #cc0000">ยอดขาย : </a>
                         <a style="color: rgb(13, 141, 221)">฿</a>
                         <a style="color: rgb(13, 141, 221)">{{ number_format($sumOrder) }}</a>
                         <a style="color: rgb(13, 141, 221)">บาท </a>
@@ -39,7 +39,7 @@
                                 <div class="d-flex align-items-center mb-3">
                                     <div class="avatar-xs me-3">
                                         <span
-                                            class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-18">
+                                            class="avatar-title rounded-circle bg-danger bg-soft text-danger font-size-18">
                                             <i class="bx bx-task"></i>
                                         </span>
                                     </div>
@@ -62,7 +62,7 @@
                                 <div class="d-flex align-items-center mb-3">
                                     <div class="avatar-xs me-3">
                                         <span
-                                            class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-18">
+                                            class="avatar-title rounded-circle bg-danger bg-soft text-danger font-size-18">
                                             <i class="bx bx-package"></i>
                                         </span>
                                     </div>
@@ -85,7 +85,7 @@
                                 <div class="d-flex align-items-center mb-3">
                                     <div class="avatar-xs me-3">
                                         <span
-                                            class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-18">
+                                            class="avatar-title rounded-circle bg-danger bg-soft text-danger font-size-18">
                                             <i class="bx bx-archive-in"></i>
                                         </span>
                                     </div>
@@ -119,7 +119,7 @@
                                 <div class="d-flex align-items-center mb-3">
                                     <div class="avatar-xs me-3">
                                         <span
-                                            class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-18">
+                                            class="avatar-title rounded-circle bg-danger bg-soft text-danger font-size-18">
                                             <i class="bx bx-user "></i>
                                         </span>
                                     </div>
@@ -142,7 +142,7 @@
                                 <div class="d-flex align-items-center mb-3">
                                     <div class="avatar-xs me-3">
                                         <span
-                                            class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-18">
+                                            class="avatar-title rounded-circle bg-danger bg-soft text-danger font-size-18">
                                             <i class="bx bx-user-check"></i>
                                         </span>
                                     </div>
@@ -165,7 +165,7 @@
                                 <div class="d-flex align-items-center mb-3">
                                     <div class="avatar-xs me-3">
                                         <span
-                                            class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-18">
+                                            class="avatar-title rounded-circle bg-danger bg-soft text-danger font-size-18">
                                             <i class="bx bx-run"></i>
                                         </span>
                                     </div>
@@ -188,7 +188,7 @@
                                 <div class="d-flex align-items-center mb-3">
                                     <div class="avatar-xs me-3">
                                         <span
-                                            class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-18">
+                                            class="avatar-title rounded-circle bg-danger bg-soft text-danger font-size-18">
                                             <i class='bx bx-wrench'></i>
                                         </span>
                                     </div>
@@ -211,7 +211,7 @@
                                 <div class="d-flex align-items-center mb-3">
                                     <div class="avatar-xs me-3">
                                         <span
-                                            class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-18">
+                                            class="avatar-title rounded-circle bg-danger bg-soft text-danger font-size-18">
                                             <i class="bx bx-run"></i>
                                         </span>
                                     </div>
@@ -533,7 +533,7 @@
 
                 <div class="card-footer bg-transparent border-top">
                     <div class="text-center">
-                        <a href="javascript: void(0);" class="btn btn-primary waves-effect waves-light"> Add new Task</a>
+                        <a href="javascript: void(0);" class="btn btn-danger waves-effect waves-light"> Add new Task</a>
                     </div>
                 </div>
             </div>
@@ -563,7 +563,7 @@
                                                         <input type="text" class="form-control" placeholder="Search ..."
                                                             aria-label="Recipient's username">
 
-                                                        <button class="btn btn-primary" type="submit"><i
+                                                        <button class="btn btn-danger" type="submit"><i
                                                                 class="mdi mdi-magnify"></i></button>
                                                     </div>
                                                 </div>
@@ -772,7 +772,7 @@
                             </div>
                         </div>
                         <div class="col-auto">
-                            <button type="submit" class="btn btn-primary chat-send w-md waves-effect waves-light"><span
+                            <button type="submit" class="btn btn-danger chat-send w-md waves-effect waves-light"><span
                                     class="d-none d-sm-inline-block me-2">Send</span> <i class="mdi mdi-send"></i></button>
                         </div>
                     </div>

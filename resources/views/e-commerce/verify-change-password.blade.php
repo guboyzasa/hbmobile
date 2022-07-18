@@ -76,9 +76,9 @@
                                 <div class="form-group d-flex align-items-center justify-content-between">
                                     <div>
                                         กลับไปยังหน้า<a href="{{ route('login-register') }}"
-                                            class="effect ml-1 mr-1"><span class="text-primary">เข้าสู่ระบบ</span></a>
+                                            class="effect ml-1 mr-1"><span class="text-danger">เข้าสู่ระบบ</span></a>
                                     </div>
-                                    <button type="submit" class="btn btn-primary rounded-pill">ยืนยัน</button>
+                                    <button type="submit" class="btn btn-danger rounded-pill">ยืนยัน</button>
                                 </div>
                             </form>
                         </div>

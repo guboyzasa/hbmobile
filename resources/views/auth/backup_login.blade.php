@@ -32,8 +32,8 @@
                                                 <div class="text-center">
 
                                                     <h4 class="mb-3"><i
-                                                            class="bx bxs-quote-alt-left text-primary h1 align-middle me-3"></i><span
-                                                            class="text-primary">5k</span>+ Satisfied clients</h4>
+                                                            class="bx bxs-quote-alt-left text-danger h1 align-middle me-3"></i><span
+                                                            class="text-danger">5k</span>+ Satisfied clients</h4>
 
                                                     <div dir="ltr">
                                                         <div class="owl-carousel owl-theme auth-review-carousel"
@@ -48,7 +48,7 @@
                                                                         stuff the documentation talks about. "</p>
 
                                                                     <div>
-                                                                        <h4 class="font-size-16 text-primary">Abs1981</h4>
+                                                                        <h4 class="font-size-16 text-danger">Abs1981</h4>
                                                                         <p class="font-size-14 mb-0">- Skote User</p>
                                                                     </div>
                                                                 </div>
@@ -63,7 +63,7 @@
                                                                         us the good work. "</p>
 
                                                                     <div>
-                                                                        <h4 class="font-size-16 text-primary">nezerious</h4>
+                                                                        <h4 class="font-size-16 text-danger">nezerious</h4>
                                                                         <p class="font-size-14 mb-0">- Skote User</p>
                                                                     </div>
                                                                 </div>
@@ -97,7 +97,7 @@
                                     <div class="my-auto">
 
                                         <div>
-                                            <h5 class="text-primary">Welcome Back !</h5>
+                                            <h5 class="text-danger">Welcome Back !</h5>
                                             <p class="text-muted">Sign in to continue to Skote.</p>
                                         </div>
 
@@ -150,7 +150,7 @@
                                                 </div>
 
                                                 <div class="mt-3 d-grid">
-                                                    <button class="btn btn-primary waves-effect waves-light"
+                                                    <button class="btn btn-danger waves-effect waves-light"
                                                         type="submit">Log
                                                         In</button>
                                                 </div>
@@ -161,7 +161,7 @@
                                                     <ul class="list-inline">
                                                         <li class="list-inline-item">
                                                             <a href="#"
-                                                                class="social-list-item bg-primary text-white border-primary">
+                                                                class="social-list-item bg-danger text-white border-danger">
                                                                 <i class="mdi mdi-facebook"></i>
                                                             </a>
                                                         </li>
@@ -182,7 +182,7 @@
                                             </form>
                                             <div class="mt-5 text-center">
                                                 <p>Don't have an account ? <a href="{{ url('register') }}"
-                                                        class="fw-medium text-primary"> Signup now </a> </p>
+                                                        class="fw-medium text-danger"> Signup now </a> </p>
                                             </div>
                                         </div>
                                     </div>

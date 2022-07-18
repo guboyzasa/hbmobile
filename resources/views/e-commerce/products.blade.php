@@ -85,7 +85,7 @@
                         <!-- <div class="star-rating">
 							<span style="width:90%"></span>
 						</div> -->
-                        <p class="product-price f3 text-primary">
+                        <p class="product-price f3 text-danger">
                             <ins>
                                 <span class="amount">ราคา <b>{{ number_format($product->price) }}</b> บาท</span>
                             </ins>
@@ -98,7 +98,7 @@
                 </div><!-- /.masonry -->
             </div>
             <!-- <div class="col-sm-12 text-center">
-                <a href="#!" class="btn btn-primary rounded-pill">ดูเพิ่มเติม</a>
+                <a href="#!" class="btn btn-danger rounded-pill">ดูเพิ่มเติม</a>
             </div> -->
         </div><!-- /.row -->
     </div><!-- /.container -->

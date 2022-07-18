@@ -280,7 +280,7 @@
                     <h4 class="card-title mb-3">รูปสินค้าเพิ่มเติม (ขนาดไม่เกิน 2 mb และ ไม่เกิน 4 รูป)</h4>
                                     <form action="{{ route('admin.product.update') }}"  method="POST" enctype="multipart/form-data">
                                                 <div class="d-flex flex-wrap gap-2" style="float: right;">
-                                                    <button type="submit" class="btn btn-primary waves-effect waves-light"> อัพโหลรูปภาพ </button>
+                                                    <button type="submit" class="btn btn-danger waves-effect waves-light"> อัพโหลรูปภาพ </button>
                                                 </div>
                                                 
                                                 @csrf

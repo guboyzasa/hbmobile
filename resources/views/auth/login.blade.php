@@ -19,8 +19,8 @@
                             <div class="bg-success bg-soft">
                                 <div class="row">
                                     <div class="col-7">
-                                        <div class="text-primary p-4">
-                                            <h5 class="text-primary">Welcome Back !</h5>
+                                        <div class="text-danger p-4">
+                                            <h5 class="text-danger">Welcome Back !</h5>
                                             <p>Sign in to continue to HB Mobile Services.</p>
                                         </div>
                                     </div>
@@ -90,7 +90,7 @@
                                         </div> --}}
 
                                         <div class="mt-3 d-grid">
-                                            <button class="btn btn-primary waves-effect waves-light" type="submit">Log
+                                            <button class="btn btn-danger waves-effect waves-light" type="submit">Log
                                                 In</button>
                                         </div>
 
@@ -100,7 +100,7 @@
                                                 <ul class="list-inline">
                                                     <li class="list-inline-item">
                                                         <a href="javascript::void()"
-                                                            class="social-list-item bg-primary text-white border-primary">
+                                                            class="social-list-item bg-danger text-white border-danger">
                                                             <i class="mdi mdi-facebook"></i>
                                                         </a>
                                                     </li>
@@ -132,7 +132,7 @@
                     <div class="mt-5 text-center">
 
                         <div>
-                            <!-- <p>Don't have an account ? <a href="auth-register" class="fw-medium text-primary">
+                            <!-- <p>Don't have an account ? <a href="auth-register" class="fw-medium text-danger">
                                             Signup now </a> </p> -->
                             <script>
                                 document.write(new Date().getFullYear())

@@ -17,7 +17,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body"> 
-                    <button type="button" style="float: right;" class="btn btn-primary create_btn" ><i class="bx bx-plus"></i> เพิ่มหมวดหมู่สินค้า </button>
+                    <button type="button" style="float: right;" class="btn btn-success create_btn" ><i class="bx bx-plus"></i> เพิ่มหมวดหมู่สินค้า </button>
                     <h4 class="card-title">จัดการหมวดหมู่สินค้า</h4>
                     <br>
                     
@@ -189,7 +189,7 @@
                             var obj = JSON.stringify(full);
                             var button = `
 
-                            <button type="button" class="btn btn-sm btn-info" onclick='showInfo(${obj})'><i class="bx bx-pencil"></i> แก้ไข </button>
+                            <button type="button" class="btn btn-sm btn-secondary" onclick='showInfo(${obj})'><i class="bx bx-pencil"></i> แก้ไข </button>
                             `;
                             return button;
 

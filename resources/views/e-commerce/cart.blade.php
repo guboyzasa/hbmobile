@@ -140,7 +140,7 @@
 
                                                         <div class="form-group clearfix d-flex align-items-center justify-content-between">
                                                             <div class="ml-auto">
-                                                                <button type="submit" class="btn btn-primary">สั่งซื้อสินค้า</button>
+                                                                <button type="submit" class="btn btn-danger">สั่งซื้อสินค้า</button>
                                                             </div>
                                                         </div>
                                                     </div>

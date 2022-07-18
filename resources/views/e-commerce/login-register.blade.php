@@ -80,9 +80,9 @@
                                 <div class="form-group d-flex align-items-center justify-content-between">
                                     <div>
                                         ต้องการ<a href="{{ route('register-page') }}" class="effect ml-1 mr-1"><span
-                                                class="text-primary">สมัครสมาชิก</span></a>หรือไม่ ?
+                                                class="text-danger">สมัครสมาชิก</span></a>หรือไม่ ?
                                     </div>
-                                    <button type="submit" class="btn btn-primary rounded-pill">เข้าสู่ระบบ</button>
+                                    <button type="submit" class="btn btn-danger rounded-pill">เข้าสู่ระบบ</button>
                                 </div>
                             </form>
                         </div>

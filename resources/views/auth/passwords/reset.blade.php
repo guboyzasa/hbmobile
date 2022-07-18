@@ -32,8 +32,8 @@
                                                 <div class="text-center">
 
                                                     <h4 class="mb-3"><i
-                                                            class="bx bxs-quote-alt-left text-primary h1 align-middle me-3"></i><span
-                                                            class="text-primary">5k</span>+ Satisfied clients</h4>
+                                                            class="bx bxs-quote-alt-left text-danger h1 align-middle me-3"></i><span
+                                                            class="text-danger">5k</span>+ Satisfied clients</h4>
 
                                                     <div dir="ltr">
                                                         <div class="owl-carousel owl-theme auth-review-carousel"
@@ -48,7 +48,7 @@
                                                                         stuff the documentation talks about. "</p>
 
                                                                     <div>
-                                                                        <h4 class="font-size-16 text-primary">Abs1981</h4>
+                                                                        <h4 class="font-size-16 text-danger">Abs1981</h4>
                                                                         <p class="font-size-14 mb-0">- Skote User</p>
                                                                     </div>
                                                                 </div>
@@ -63,7 +63,7 @@
                                                                         us the good work. "</p>
 
                                                                     <div>
-                                                                        <h4 class="font-size-16 text-primary">nezerious</h4>
+                                                                        <h4 class="font-size-16 text-danger">nezerious</h4>
                                                                         <p class="font-size-14 mb-0">- Skote User</p>
                                                                     </div>
                                                                 </div>
@@ -97,7 +97,7 @@
                                     <div class="my-auto">
 
                                         <div>
-                                            <h5 class="text-primary"> Reset Password</h5>
+                                            <h5 class="text-danger"> Reset Password</h5>
                                             <p class="text-muted">Re-Password with Skote.</p>
                                         </div>
 
@@ -139,14 +139,14 @@
                                                 </div>
 
                                                 <div class="text-end">
-                                                    <button class="btn btn-primary w-md waves-effect waves-light"
+                                                    <button class="btn btn-danger w-md waves-effect waves-light"
                                                         type="submit">Reset</button>
                                                 </div>
 
                                             </form>
                                             <div class="mt-5 text-center">
                                                 <p>Remember It ? <a href="{{ url('login') }}"
-                                                        class="font-weight-medium text-primary"> Sign In here</a> </p>
+                                                        class="font-weight-medium text-danger"> Sign In here</a> </p>
                                             </div>
                                         </div>
                                     </div>

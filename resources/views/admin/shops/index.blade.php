@@ -17,7 +17,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body"> 
-                    <button type="button" style="float: right;" class="btn btn-primary create_btn" ><i class="bx bx-plus"></i> เพิ่มแบรนด์สินค้า </button>
+                    <button type="button" style="float: right;" class="btn btn-success create_btn" ><i class="bx bx-plus"></i> เพิ่มแบรนด์สินค้า </button>
                     <h4 class="card-title">จัดการแบรนด์สินค้า</h4>
                     <br>
                     
@@ -166,10 +166,10 @@
                         "render": function (data, type, full) {
                             var text = ``;
                             if(data == 1){
-                                text = `<input type="checkbox" onclick="changeStatus(${full.id})" id="switch${full.id}" switch="primary" checked />
+                                text = `<input type="checkbox" onclick="changeStatus(${full.id})" id="switch${full.id}" switch="danger" checked />
                                     <label for="switch${full.id}" data-on-label="เปิด" data-off-label="ปิด"></label>`;
                             }else{
-                                   text = `<input type="checkbox" onclick="changeStatus(${full.id})" id="switch${full.id}" switch="primary"  />
+                                   text = `<input type="checkbox" onclick="changeStatus(${full.id})" id="switch${full.id}" switch="danger"  />
                                     <label for="switch${full.id}" data-on-label="เปิด" data-off-label="ปิด"></label>`;
                             }
                             return text;
@@ -189,7 +189,7 @@
                             var obj = JSON.stringify(full);
                             var button = `
 
-                            <button type="button" class="btn btn-sm btn-info" onclick='showInfo(${obj})'><i class="bx bx-pencil"></i> แก้ไข </button>
+                            <button type="button" class="btn btn-sm btn-secondary" onclick='showInfo(${obj})'><i class="bx bx-pencil"></i> แก้ไข </button>
                             `;
                             return button;
 

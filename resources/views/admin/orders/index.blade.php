@@ -200,7 +200,7 @@
                             var obj = JSON.stringify(full);
                             var button = `
 
-                            <a type="button" class="btn btn-sm btn-info" href="/admin/order/${data}"><i class="bx bx-search-alt-2"></i> </a>
+                            <a type="button" class="btn btn-sm btn-warning" href="/admin/order/${data}"><i class="bx bx-search-alt-2"></i> </a>
                              <button type="button" class="btn btn-sm btn-danger" onclick="destroy(${data})"><i class="bx bx-trash"></i> </button>
                             `;
                             return button;

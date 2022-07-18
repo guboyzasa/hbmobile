@@ -288,7 +288,7 @@
                                             <th colspan="2">รวมทั้งสิน</th>
                                             <td>
                                                 <strong><span
-                                                        class="amount text-primary">{{ $bigDatas['summary'] }}</span>
+                                                        class="amount text-danger">{{ $bigDatas['summary'] }}</span>
                                                     บาท</strong>
                                                 <input type="hidden" name="total_amount"
                                                     value="{{ $bigDatas['summary'] }}">
@@ -354,7 +354,7 @@
                                     </li> -->
                                 </ul>
                                 <div class="text-right">
-                                    <button type="button" id="store-btn" class="btn btn-primary">สั่งซื้อสินค้า</button>
+                                    <button type="button" id="store-btn" class="btn btn-danger">สั่งซื้อสินค้า</button>
                                     <button type="submit" id="store-hidden-btn" class="d-none">save</button>
                                 </div>
                             </div>

@@ -18,11 +18,11 @@
                 <div class="row justify-content-center">
                     <div class="col-md-8 col-lg-6 col-xl-5">
                         <div class="card overflow-hidden">
-                            <div class="bg-primary bg-soft">
+                            <div class="bg-danger bg-soft">
                                 <div class="row">
                                     <div class="col-7">
-                                        <div class="text-primary p-4">
-                                            <h5 class="text-primary">Free Register</h5>
+                                        <div class="text-danger p-4">
+                                            <h5 class="text-danger">Free Register</h5>
                                             <p>Get your free Skote account now.</p>
                                         </div>
                                     </div>
@@ -120,7 +120,7 @@
                                         </div>
 
                                         <div class="mt-4 d-grid">
-                                            <button class="btn btn-primary waves-effect waves-light"
+                                            <button class="btn btn-danger waves-effect waves-light"
                                                 type="submit">Register</button>
                                         </div>
 
@@ -130,7 +130,7 @@
                                             <ul class="list-inline">
                                                 <li class="list-inline-item">
                                                     <a href="#"
-                                                        class="social-list-item bg-primary text-white border-primary">
+                                                        class="social-list-item bg-danger text-white border-danger">
                                                         <i class="mdi mdi-facebook"></i>
                                                     </a>
                                                 </li>
@@ -151,7 +151,7 @@
 
                                         <div class="mt-4 text-center">
                                             <p class="mb-0">By registering you agree to the Skote <a href="#"
-                                                    class="text-primary">Terms of Use</a></p>
+                                                    class="text-danger">Terms of Use</a></p>
                                         </div>
                                     </form>
                                 </div>
@@ -161,7 +161,7 @@
                         <div class="mt-5 text-center">
 
                             <div>
-                                <p>Already have an account ? <a href="{{ url('login') }}" class="fw-medium text-primary">
+                                <p>Already have an account ? <a href="{{ url('login') }}" class="fw-medium text-danger">
                                         Login</a> </p>
                                 <p>© <script>
                                         document.write(new Date().getFullYear())

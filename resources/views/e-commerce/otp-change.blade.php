@@ -77,11 +77,11 @@
                                     <div>
                                         ได้รับ OTP หรือไม่ ? <a class="effect ml-1 mr-1" style="cursor: pointer"
                                             onclick="document.getElementById('sendAgain').submit();"><span
-                                                class="text-primary">ส่ง
+                                                class="text-danger">ส่ง
                                                 OTP
                                                 อีกครั้ง</span></a>
                                     </div>
-                                    <button type="submit" class="btn btn-primary rounded-pill">ยืนยัน</button>
+                                    <button type="submit" class="btn btn-danger rounded-pill">ยืนยัน</button>
                                 </div>
                             </form>
                         </div>

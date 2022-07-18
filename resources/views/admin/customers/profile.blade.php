@@ -87,7 +87,7 @@
                                 <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"aria-labelledby="v-pills-home-tab">
                                     <div class="card" >
                                         <div class="card-body">
-                                            <button type="button" class="btn btn-sm btn-warning" onclick='showInfo({{ $customer }})'  style="float:right;"><i class="bx bx-pencil"></i> แก้ไข </button>
+                                            <button type="button" class="btn btn-sm btn-secondary" onclick='showInfo({{ $customer }})'  style="float:right;"><i class="bx bx-pencil"></i> แก้ไข </button>
                                             <h4 class="card-title mb-4 text-primary"><i class="bx bx-user"></i>  ข้อมูลส่วนตัว</h4>
 
                                             @if($customer->user_id && $customer->user)
@@ -129,7 +129,7 @@
                                 <div class="tab-pane fade" id="v-pills-address" role="tabpanel" aria-labelledby="v-pills-address-tab">
                                     <div class="card">
                                         <div class="card-body">
-                                            <button type="button" class="btn btn-sm btn-warning" onclick='showInfoAddress({{ $customerAddress }})'  style="float:right;"><i class="bx bx-pencil"></i> แก้ไข </button>
+                                            <button type="button" class="btn btn-sm btn-secondary" onclick='showInfoAddress({{ $customerAddress }})'  style="float:right;"><i class="bx bx-pencil"></i> แก้ไข </button>
                                             <h4 class="card-title mb-4 text-primary"><i class="bx bx-home"></i>  ข้อมูลที่อยู่สำหรับจัดส่ง </h4>
 
 
@@ -181,7 +181,7 @@
                                 <div class="tab-pane fade" id="v-pills-billaddress" role="tabpanel" aria-labelledby="v-pills-billaddress-tab">
                                     <div class="card">
                                         <div class="card-body">
-                                            <button type="button" class="btn btn-sm btn-warning" onclick='showInfoBillAddress({{ $customerBillAddress }})'  style="float:right;"><i class="bx bx-pencil"></i> แก้ไข </button>
+                                            <button type="button" class="btn btn-sm btn-secondary" onclick='showInfoBillAddress({{ $customerBillAddress }})'  style="float:right;"><i class="bx bx-pencil"></i> แก้ไข </button>
                                             <h4 class="card-title mb-4 text-primary"><i class="bx bx-home-alt"></i>  ข้อมูลที่อยู่สำหรับออกบิล </h4>
 
 
@@ -236,7 +236,7 @@
                                         <div class="card-body">
                                             <h4 class="card-title text-primary"><i class="bx bx-check-double"></i>  ลงทะเบียนรับประกันสินค้า</h4>
                                           
-                                            <button type="button" style="float: right; margin: 2px;" class="btn btn-primary warranty_btn btn-sm" ><i class="bx bx-plus"></i> ลงทะเบียน </button>
+                                            <button type="button" style="float: right; margin: 2px;" class="btn btn-danger warranty_btn btn-sm" ><i class="bx bx-plus"></i> ลงทะเบียน </button>
                                             <br>
                                             <br>
                                             <div class="row">
@@ -643,7 +643,7 @@
                                     <div class="input-group" style="margin-bottom: 5px;">
                                         <button class="btn btn-light" type="button" > <i class="bx bx-barcode text-primary"></i> </button>
                                         <input type="text" class="form-control serials formInputWarranty" name="serials[]" placeholder="กรอก Serial no" aria-describedby="add" aria-label="serial">
-                                        {{-- <button class="btn btn-primary check_button" type="button" id="check"><i class="bx bx-check-double"></i> </button> --}}
+                                        {{-- <button class="btn btn-danger check_button" type="button" id="check"><i class="bx bx-check-double"></i> </button> --}}
                                         <button class="btn btn-success add_button" type="button" id="add"> <i class="bx bxs-add-to-queue"></i> </button>
                                     </div>
                             </div>
@@ -745,7 +745,7 @@
                                     <div class="input-group" style="margin-bottom: 5px;">
                                         <button class="btn btn-light" type="button" > <i class="bx bx-barcode text-primary"></i> </button>
                                         <input type="text" class="form-control serials serialEdit" id="serialEdit" name="serials[]" placeholder="กรอก Serial no" aria-describedby="add" aria-label="serial">
-                                        {{-- <button class="btn btn-primary check_button" type="button" id="check"><i class="bx bx-check-double"></i> </button> --}}
+                                        {{-- <button class="btn btn-danger check_button" type="button" id="check"><i class="bx bx-check-double"></i> </button> --}}
                       
                                     </div>
                             </div>
@@ -1110,7 +1110,7 @@
                             var obj = JSON.stringify(full);
                             var button = `
 
-                                <button type="button" class="btn btn-sm btn-info" onclick='showInfoWarranty(${obj})'><i class="bx bx-search-alt-2"></i>  </button>
+                                <button type="button" class="btn btn-sm btn-warning" onclick='showInfoWarranty(${obj})'><i class="bx bx-search-alt-2"></i>  </button>
                                    <button type="button" class="btn btn-sm btn-danger" onclick='destroyWarranty(${data})'><i class="bx bx-trash"></i>  </button>
                             `;
                             return button;
@@ -1416,7 +1416,7 @@
                             var obj = JSON.stringify(full);
                             var button = `
 
-                            <a type="button" class="btn btn-sm btn-info" href="/admin/order/${data}"><i class="bx bx-search-alt-2"></i> </a>
+                            <a type="button" class="btn btn-sm btn-warning" href="/admin/order/${data}"><i class="bx bx-search-alt-2"></i> </a>
                              <button type="button" class="btn btn-sm btn-danger" onclick="destroyOrder(${data})"><i class="bx bx-trash"></i> </button>
                             `;
                             return button;

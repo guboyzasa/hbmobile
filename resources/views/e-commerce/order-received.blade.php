@@ -28,7 +28,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     @if($alert=='success')
-                    <div class="alert alert-primary">Thank you, Your order has been received. {{ $msg }}</div>
+                    <div class="alert alert-danger">Thank you, Your order has been received. {{ $msg }}</div>
 					@else
 					<div class="alert alert-danger">Error. {{ $msg }}</div>
                     @endif
@@ -124,7 +124,7 @@
                         </table>
                     </div><!-- /.box -->
                     <div class="text-right">
-                        <a href="/form-upload-slip/order/{{ $order->id }}" class="btn btn-primary">อัพโหลดสลิป</a>
+                        <a href="/form-upload-slip/order/{{ $order->id }}" class="btn btn-danger">อัพโหลดสลิป</a>
                         <a href="{{ route('index') }}" class="btn btn-light">กลับหน้าแรก</a>
                     </div>
                 </div>

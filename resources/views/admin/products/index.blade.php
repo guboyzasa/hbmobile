@@ -17,7 +17,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body"> 
-                    <button type="button" style="float: right;" class="btn btn-primary create_btn" ><i class="bx bx-plus"></i> เพิ่มสินค้า </button>
+                    <button type="button" style="float: right;" class="btn btn-success create_btn" ><i class="bx bx-plus"></i> เพิ่มสินค้า </button>
                     <h4 class="card-title">จัดการสินค้า</h4>
                     <br>
                     
@@ -226,7 +226,7 @@
                             var obj = JSON.stringify(full);
                             var button = `
 
-                            <a href="/admin/product/detail/${data}" class="btn btn-sm btn-info"><i class="bx bx-search-alt-2"></i>  </a>
+                            <a href="/admin/product/detail/${data}" class="btn btn-sm btn-warning"><i class="bx bx-search-alt-2"></i>  </a>
                              <button type="button" class="btn btn-sm btn-danger" onclick='destroy(${data})'><i class="bx bx-trash"></i>  </button>
                             `;
                             return button;

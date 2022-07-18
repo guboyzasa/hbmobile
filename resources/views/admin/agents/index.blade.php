@@ -18,7 +18,7 @@
             <div class="card">
                 <div class="card-body"> 
                     <a href="{{ route('admin.agent.create-user') }}" style="float: right; margin-left: 5px;" class="btn btn-success btn-sm " ><i class="bx bx-plus"></i> จัดการ Account </a>
-                    <button type="button" style="float: right;" class="btn btn-primary create_btn btn-sm " ><i class="bx bx-plus"></i> เพิ่มตัวแทนจำหน่าย </button>
+                    <button type="button" style="float: right;" class="btn btn-danger create_btn btn-sm " ><i class="bx bx-plus"></i> เพิ่มตัวแทนจำหน่าย </button>
                     <h4 class="card-title">จัดการตัวแทนจำหน่าย</h4>
                     <br>
                     
@@ -255,12 +255,12 @@
                         "render": function (data, type, full) {
                             var obj = JSON.stringify(full);
                             var button = `
-                            <button type="button" class="btn btn-sm btn-info" onclick='showInfo(${obj})'><i class="bx bx-search-alt-2"></i> </button>
+                            <button type="button" class="btn btn-sm btn-warning" onclick='showInfo(${obj})'><i class="bx bx-search-alt-2"></i> </button>
                              <button type="button" class="btn btn-sm btn-danger" onclick='destroy(${data})'><i class="bx bx-trash"></i>  </button>
                             `;
                             if(full.user_id){
                                 button = `
-                                    <button type="button" class="btn btn-sm btn-info" onclick='showInfo(${obj})'><i class="bx bx-search-alt-2"></i> </button>
+                                    <button type="button" class="btn btn-sm btn-warning" onclick='showInfo(${obj})'><i class="bx bx-search-alt-2"></i> </button>
                             `;
                             }
                             return button;

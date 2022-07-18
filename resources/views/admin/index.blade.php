@@ -6,9 +6,9 @@
 
 @section('content')
     <div class="col-xl-12">
-        <div class="card bg-primary bg-soft">
+        <div class="card bg-danger bg-soft">
             <div class="col-12">
-                <div class="text-primary p-4">
+                <div class="text-danger p-4">
                     <div style="text-align: right" id="clock" onload="currentTime()"></div>
                     <h2 class="text-primary">Welcome to admin !</h2>
                     <p>HB MOBILE SERVICES Dashboard</p>

@@ -40,7 +40,7 @@
 								<input type="email" id="billing_email" class="form-control" placeholder="Billing Email*">
 							</div>
 							<div class="form-group text-right">
-								<button type="button" class="btn btn-primary">Track</button>
+								<button type="button" class="btn btn-danger">Track</button>
 							</div>
 						</form>
 					</div><!-- /.box -->

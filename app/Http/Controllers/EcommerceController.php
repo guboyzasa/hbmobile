@@ -44,9 +44,9 @@ class EcommerceController extends Controller
     public function index()
     {
         $company = CompanyContract::first();
-        $product_brands = ProductBrand::where('is_active',1)->get();
-        $product_categorys = ProductCategory::where('is_active',1)->get();
-        $products = Product::inRandomOrder()->limit(8)->get();
+        $product_brands = ProductBrand::inRandomOrder()->where('is_active',1)->limit(6)->get();
+        $product_categorys = ProductCategory::where('is_active',1)->limit(6)->get();
+        $products = Product::inRandomOrder()->where('is_active',1)->where('is_new', 1)->orWhere('is_recommend', 1)->limit(8)->get();
         $banner_imgs = BannerImage::all();
 
 

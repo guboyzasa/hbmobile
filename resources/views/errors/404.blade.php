@@ -16,10 +16,10 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="text-center mb-5">
-                            <h1 class="display-2 fw-medium">4<i class="bx bx-buoy bx-spin text-primary display-3"></i>4</h1>
+                            <h1 class="display-2 fw-medium">4<i class="bx bx-buoy bx-spin text-danger display-3"></i>4</h1>
                             <h4 class="text-uppercase">Sorry, page not found</h4>
                             <div class="mt-5 text-center">
-                                <a class="btn btn-primary waves-effect waves-light" href="{{ route('index') }}">Back to
+                                <a class="btn btn-danger waves-effect waves-light" href="{{ route('index') }}">Back to
                                     Home</a>
                             </div>
                         </div>

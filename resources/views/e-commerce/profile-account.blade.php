@@ -34,7 +34,7 @@
                             {{-- <div class="icon">
                                 <i class='bx bxs-user-circle' style="font-size: 8rem;"></i>
                             </div> --}}
-                            <h4 class="mt-4 text-primary">ชื่อ : {{ @$customer->name }}</h4>
+                            <h4 class="mt-4 text-danger">ชื่อ : {{ @$customer->name }}</h4>
                             <p>เบอร์โทร: {{ @$customer->phone }}</p>
                             <p>Email: {{ @$customer->email }}</p>
                         </div>
@@ -48,7 +48,7 @@
                             {{-- <div class="icon">
                                 <i class='bx bxs-user-circle' style="font-size: 8rem;"></i>
                             </div> --}}
-                            <h4 class="mt-4 text-primary">ชื่อ : {{ @$customer->name }}</h4>
+                            <h4 class="mt-4 text-danger">ชื่อ : {{ @$customer->name }}</h4>
                             <p>เบอร์โทร: {{ @$customer->phone }}</p>
                             <p>Email: {{ @$customer->email }}</p>
                         </div>
@@ -116,7 +116,7 @@
                             {{-- <div class="icon">
                                 <i class='bx bx-happy-heart-eyes' style="font-size: 8rem;"></i>
                             </div> --}}
-                            <h4 class="mt-4 text-primary">ชื่อ : {{ @$customer->name }}</h4>
+                            <h4 class="mt-4 text-danger">ชื่อ : {{ @$customer->name }}</h4>
                             <p>เบอร์โทร: {{ @$customer->phone }}</p>
                             <p>Email: {{ @$customer->email }}</p>
                         </div>
@@ -319,7 +319,7 @@
                                                         <tr>
                                                             <th scope="row">รวมทั้งสิ้น:</th>
                                                             <td><span
-                                                                    class="amount text-primary">{{ $order->total_amount }}</span>
+                                                                    class="amount text-danger">{{ $order->total_amount }}</span>
                                                             </td>
                                                         </tr>
                                                     </tfoot>
@@ -327,7 +327,7 @@
                                             </div> <!-- /.box -->
                                             <div class="text-right">
                                                 <a href="/form-upload-slip/order/{{ $order->id }}"
-                                                    class="btn btn-primary">
+                                                    class="btn btn-danger">
                                                     อัพโหลดสลิป</a>
                                             </div>
                                         </div>
@@ -347,7 +347,7 @@
                             {{-- <div class="icon">
                                 <i class='bx bxs-user-circle' style="font-size: 8rem;"></i>
                             </div> --}}
-                            <h4 class="mt-4 text-primary">ชื่อ : {{ @$customer->name }}</h4>
+                            <h4 class="mt-4 text-danger">ชื่อ : {{ @$customer->name }}</h4>
                             <p>เบอร์โทร: {{ @$customer->phone }}</p>
                             <p>Email: {{ @$customer->email }}</p>
                         </div>
@@ -550,7 +550,7 @@
                                                         <tr>
                                                             <th scope="row">รวมทั้งสิ้น:</th>
                                                             <td><span
-                                                                    class="amount text-primary">{{ $order->total_amount }}</span>
+                                                                    class="amount text-danger">{{ $order->total_amount }}</span>
                                                             </td>
                                                         </tr>
                                                     </tfoot>
@@ -558,7 +558,7 @@
                                             </div> <!-- /.box -->
                                             <div class="text-right">
                                                 <a href="/form-upload-slip/order/{{ $order->id }}"
-                                                    class="btn btn-primary">
+                                                    class="btn btn-danger">
                                                     อัพโหลดสลิป</a>
                                             </div>
                                         </div>
@@ -654,13 +654,13 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-primary" href="#tab-profile" aria-controls="tab-profile"
+                                <a class="nav-link text-danger" href="#tab-profile" aria-controls="tab-profile"
                                     data-toggle="tab">
                                     <i class='bx bxs-user-circle'></i> แก้ไขที่อยู่จัดส่ง
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-primary" href="#tab-customer-bill"
+                                <a class="nav-link text-danger" href="#tab-customer-bill"
                                     aria-controls="tab-customer-bill" data-toggle="tab">
                                     <i class='bx bx-receipt'></i> แก้ไขที่อยู่ออกบิล
                                 </a>
@@ -692,7 +692,7 @@
 
                                                     @case(2)
                                                         <i class='bx bxs-hand-up bx-flashing'></i> รหัสใบสั่งซื้อ
-                                                        {{ $order->code }} <span class="float-right badge badge-primary">
+                                                        {{ $order->code }} <span class="float-right badge badge-danger">
                                                             ยืนยันการชำระเงิน </span>
                                                     @break
 
@@ -846,7 +846,7 @@
                                                             <tr>
                                                                 <th scope="row">รวมทั้งสิ้น:</th>
                                                                 <td><span
-                                                                        class="amount text-primary">{{ $order->total_amount }}</span>
+                                                                        class="amount text-danger">{{ $order->total_amount }}</span>
                                                                 </td>
                                                             </tr>
                                                         </tfoot>
@@ -854,7 +854,7 @@
                                                 </div> <!-- /.box -->
                                                 <div class="text-right">
                                                     <a href="/form-upload-slip/order/{{ $order->id }}"
-                                                        class="btn btn-primary">
+                                                        class="btn btn-danger">
                                                         อัพโหลดสลิป</a>
                                                 </div>
                                             </div>
@@ -864,6 +864,7 @@
                             </div><!-- ./tab-orders -->
 
                             <div class="tab-pane" id="tab-information">
+                                <div class="table-responsive">
                                 <table class="table shop_attributes" id="warranty_table">
                                     <thead>
                                         <tr>
@@ -915,6 +916,7 @@
                                         @endif
                                     </tbody>
                                 </table>
+                                </div>
                             </div><!-- ./tab-waranry-->
 
                             <div class="tab-pane" id="tab-repair">
@@ -929,7 +931,7 @@
                                             <th style="text-align:center">สิ้นสุดประกัน</th>
                                             <th style="text-align:center">สถานะประกัน</th>
                                             <th style="text-align:center">สถานะซ่อม</th>
-                                            <th>ใบแจ้งชำระ</th>
+                                            <th style="text-align:center">ใบแจ้งชำระ</th>
                                         </tr>
                                     </thead>
                                     
@@ -995,10 +997,12 @@
                                                             }
                                                         </style>
                                                         <div class="container">
+                                                        <div style="text-align: center">
                                                             <button type="button"
-                                                                class="badge badge-info"
+                                                                class="btn badge badge-warning"
                                                                 data-toggle="modal"
-                                                                data-target="#myModal-{{ $repair->id }}">ใบแจ้งชำระ</button>
+                                                                data-target="#myModal-{{ $repair->id }}"><i
+                                                                class="bx bx-printer"></i>ชำระ</button></div>
                                                             <!-- The Modal -->
                                                             <div class="modal fade bd-example-modal-lg" tabindex="-1"
                                                                 id="myModal-{{ $repair->id }}" role="dialog"
@@ -1010,7 +1014,7 @@
                                                                             <h4 class="modal-title"
                                                                                 style="text-align: left">
                                                                                 <i class="bx bx-receipt"></i>
-                                                                                แจ้งชำระ <a class="amount text-primary">
+                                                                                แจ้งชำระ <a class="amount text-danger">
                                                                                     [ยอด:
                                                                                     {{ number_format($repair->price + @$repair->shipping_price, 2) }}
                                                                                     ฿]</a>
@@ -1027,7 +1031,7 @@
                                                                                             <i class='bx bx-user'></i>
                                                                                             ชื่อ :
                                                                                             <a
-                                                                                                class="text-primary">{{ @$customer->name }}</a>
+                                                                                                class="text-danger">{{ @$customer->name }}</a>
                                                                                             <br>
                                                                                             <i class='bx bx-phone'></i>
                                                                                             เบอร์โทร :
@@ -1111,7 +1115,7 @@
                                                                                     </th>
                                                                                     <td>
                                                                                         <p style="text-align: right"
-                                                                                            class="amount text-primary">
+                                                                                            class="amount text-danger">
                                                                                             {{ number_format($repair->price + @$repair->shipping_price, 2) }}
                                                                                         </p>
                                                                                     </td>
@@ -1132,7 +1136,7 @@
                                                                                                 size="10"
                                                                                                 maxlength="1"readonly />
                                                                                             <button
-                                                                                                class="badge badge-info waves-effect waves-light no-outline"
+                                                                                                class="btn badge badge-danger waves-effect waves-light no-outline"
                                                                                                 onclick="myFunction()">Copy</button>
 
                                                                                             <br>
@@ -1148,7 +1152,7 @@
                                                                                             <td>
                                                                                                 <h4 class="modal-title"
                                                                                     style="text-align: right">
-                                                                                    <a class="amount text-primary">
+                                                                                    <a class="amount text-danger">
                                                                                         *กรอกที่อยู่ให้ครบ*</a>
                                                                                 </h4>
                                                                                             </td>
@@ -1161,7 +1165,7 @@
                                                                         </div>
                                                                         <div class="modal-footer">
                                                                             <form action="{{ url('/create-invoice') }}"
-                                                                                method="get">
+                                                                                method="get" target="_blank">
                                                                                 @csrf
 
                                                                                 <input type="hidden"
@@ -1220,11 +1224,11 @@
                                                                                 <div class="text-right">
 
                                                                                     <button type="submit"
-                                                                                        class="btn btn-primary waves-effect waves-light"><i
-                                                                                            class="bx bx-printer" target="_black"></i>
+                                                                                        class="btn btn-warning waves-effect waves-light"><i
+                                                                                            class="bx bx-printer"></i>
                                                                                         Print</button>
                                                                                     <button type="button"
-                                                                                        class="btn btn-info"
+                                                                                        class="btn btn-outline-secondary"
                                                                                         data-dismiss="modal">Close</button>
                                                                                 </div>
                                                                             </form>
@@ -1389,7 +1393,6 @@
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </section>
 @endsection

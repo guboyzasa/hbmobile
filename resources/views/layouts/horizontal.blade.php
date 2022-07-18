@@ -181,7 +181,7 @@
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="@lang('translation.Search')" aria-label="Search input">
 
-                                <button class="btn btn-primary" type="submit"><i class="mdi mdi-magnify"></i></button>s
+                                <button class="btn btn-danger" type="submit"><i class="mdi mdi-magnify"></i></button>s
                             </div>
                         </div>
                     </form>
@@ -316,7 +316,7 @@
                         <a href="" class="text-reset notification-item">
                             <div class="media">
                                 <div class="avatar-xs me-3">
-                                    <span class="avatar-title bg-primary rounded-circle font-size-16">
+                                    <span class="avatar-title bg-danger rounded-circle font-size-16">
                                         <i class="bx bx-cart"></i>
                                     </span>
                                 </div>
@@ -815,7 +815,7 @@ aria-labelledby="myLargeModalLabel" aria-hidden="true">
                     </div>
 
                     <div class="mt-3 d-grid">
-                        <button class="btn btn-primary waves-effect waves-light UpdatePassword" data-id="{{ Auth::user() ? Auth::user()->id : ''}}"
+                        <button class="btn btn-danger waves-effect waves-light UpdatePassword" data-id="{{ Auth::user() ? Auth::user()->id : ''}}"
                             type="submit">ยืนยันรหัสผ่าน</button>
                     </div>
                 </form>

@@ -52,7 +52,7 @@
                     </div>
                 </div>
             </div>
-            <a href="https://www.youtube.com/channel/UCtqcdSQsp73J--yP7eCFGLA" class="btn btn-primary"
+            <a href="https://www.youtube.com/channel/UCtqcdSQsp73J--yP7eCFGLA" class="btn btn-danger"
                 target="_blank">Go to Youtube</a>
         </div>
     </div><!-- /.container video-->
