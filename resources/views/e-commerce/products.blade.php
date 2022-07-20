@@ -147,8 +147,7 @@
 
 <section class="section products second-style">
     <div class="container">
-        
-<div class="card">
+        <div class="card">
             <div class="card-body">
                 <div class="row">
                     <div class="col-sm-12">
@@ -263,9 +262,9 @@
         $(`.cataegory-brand`).addClass('d-none');
     }
 </script>
-{{-- <script type='text/javascript'
+<script type='text/javascript'
     src='https://platform-api.sharethis.com/js/sharethis.js#property=62cad181a12f7c001a58e62a&product=sticky-share-buttons'
-    async='async'></script> --}}
+    async='async'></script>
 <script>
     function myFunction() {
           var x = document.getElementById("myTopnav");
