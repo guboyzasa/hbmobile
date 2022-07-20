@@ -74,28 +74,31 @@
                         </a>
 
                     </li>
-                    <li class="nav-item dropdown ">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="{{ route('products') }}" role="button" aria-haspopup="true"
+                            aria-expanded="false">
+                            สินค้าของเรา
+                        </a>
+                    </li>
+                    {{-- <li class="nav-item dropdown ">
+                        <a class="nav-link dropdown-toggle" href="{{ route('products') }}" role="button" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             สินค้าของเรา
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="nav-link" href="{{ route('products') }}">สินค้าทั้งหมด</a></li>
-                            {{-- <li><a class="nav-link" href="/products?product_filter_category=1">แบตเตอรี่เพิ่มความจุ</a>
-                            </li> --}}
                             <li><a class="nav-link" href="/products?product_filter_category=8">จอมือถือ</a></li>
                             <li><a class="nav-link" href="/products?product_filter_category=2">แบตเตอรี่มือถือ</a></li>
                             <li><a class="nav-link" href="/products?product_filter_category=3">สายชาร์จมือถือ</a></li>
-                            {{-- <li><a class="nav-link" href="#">อะไหล่มือถือ</a></li> --}}
                             <li><a class="nav-link" href="/products?product_filter_category=10">ปริ้นเตอร์</a></li>
                             <li><a class="nav-link" href="/products?product_filter_category=11">พาวเวอร์แบงค์</a></li>
                             <li><a class="nav-link" href="/products?product_filter_category=4">อุปกรณ์อื่นๆ</a></li>
                         </ul>
-                    </li>
+                    </li> --}}
                     <li class="nav-item dropdown">
                         <a class="nav-link" href="{{ route('manual') }}" role="button" aria-haspopup="true"
                             aria-expanded="false">
-                            ขั้นตอนต่างๆ
+                            แนะนำ
                         </a>
                     </li>
                     <li class="nav-item dropdown">

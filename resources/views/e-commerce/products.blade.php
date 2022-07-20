@@ -147,7 +147,8 @@
 
 <section class="section products second-style">
     <div class="container">
-        <div class="card">
+        
+<div class="card">
             <div class="card-body">
                 <div class="row">
                     <div class="col-sm-12">
@@ -171,6 +172,7 @@
                                     data-filter=".category-recommend">แนะนำ</a>
                             </li>
                             <br>
+                            
                             <hr style="border-block-color: #cc0000">
                             @foreach($product_categorys as $product_category)
                             @foreach ( $product_category['brands'] as $brand)

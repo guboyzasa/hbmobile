@@ -1034,11 +1034,12 @@
                                                                 name="shipping" />
                                                             <div class="text-center">
                                                                 <button type="submit"
-                                                                    class="btn badge badge-info waves-effect waves-light"><i
+                                                                    class="btn badge badge-warning waves-effect waves-light"><i
                                                                         class="bx bx-printer"></i>
                                                                     ชำระ</button>
                                                             </div>
                                                         </form>
+
                                                         <!--modal popup -->
                                                         {{-- <div class="container">
                                                             <div style="text-align: center">
@@ -1047,7 +1048,7 @@
                                                                 </button>
                                                             </div>
                                                             <!-- The Modal -->
-                                                            <div class="modal fade bd-example-modal-lg" tabindex="-1"
+                                                            <div class="modal fade bd-example-modal-lg"
                                                                 id="myModal-{{ $repair->id }}" role="dialog"
                                                                 aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                                                 <div class="modal-dialog modal-lg">
