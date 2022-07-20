@@ -22,25 +22,22 @@
                     <br>
                     
                     <br>
-                    <table id="simple_table" class="table table-bordered dt-responsive  nowrap w-100">
+                    <table id="simple_table" class="table table-bordered dt-responsive w-auto">
                         <thead>
                             <tr>
                                 <th>รูป</th>
                                 <th>ชื่อ</th>
-                                <th>รหัสสินค้า</th>
+                                <th>รหัส</th>
                                 <th>ราคา</th>
-                                <th>หมวดสินค้า</th>
+                                <th>หมวดหมู่</th>
                                 <th>แบรนด์</th>
-                                <th>เปิด-ปิด</th>
+                                <th></th>
                                 <th></th>
                             </tr>
                         </thead>
-
                         <tbody>
-
                         </tbody>
                     </table>
-
                 </div>
             </div>
         </div> <!-- end col -->
@@ -92,21 +89,16 @@
                                 @foreach ($brands as $brand)
                                     <option value="{{ $brand->id }}"> {{ $brand->name }} </option>
                                 @endforeach
-                
                             </select>
                         </div>
-
                         <div class="mb-3">
                             <label for="image" class="form-label">รูปปกสินค้า </label>
                             <input type="file" onchange="validateSize(this)" class="form-control formInput" accept="image/*" name="imageFile" id="imageFile" placeholder="กรุณาเลือกรูปภาพ"  >
                         </div>
-
                         <div class="mb-3" id="showImg">
                             <label for="image" class="form-label">รูปล่าสุด </label>
                             <img id="output" max-width="300" style="max-height: 300px;" class="img-responsive form-control" />
                         </div>
-
-
                         <div class="mt-3 d-grid">
                             <br>
                             <button class="btn btn-primary waves-effect waves-light" type="submit"> บันทึก </button>
@@ -116,8 +108,6 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
-
-
 
     <!--  Picture modal example -->
     <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
