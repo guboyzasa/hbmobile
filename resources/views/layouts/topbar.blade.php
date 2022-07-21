@@ -1,4 +1,4 @@
-<header id="page-topbar">
+<header id="page-topbar" style="background-color: #2a3042">
     <div class="navbar-header">
         <div class="d-flex">
             <!-- LOGO -->
@@ -23,7 +23,7 @@
             </div>
 
             <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn">
-                <i class="fa fa-fw fa-bars"></i>
+                <i class="fa fa-fw fa-bars" style="color: white"></i>
             </button>
     </div>
 
@@ -50,7 +50,7 @@
 
         <div class="dropdown d-none d-lg-inline-block ms-1">
             <button type="button" class="btn header-item noti-icon waves-effect" data-toggle="fullscreen">
-                <i class="bx bx-fullscreen"></i>
+                <i class="bx bx-fullscreen" style="color: white"></i>
             </button>
         </div>
 
@@ -58,7 +58,7 @@
         <div class="dropdown d-inline-block">
             <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img class="rounded-circle header-profile-user" src="{{ isset(Auth::user()->avatar) ? asset(Auth::user()->avatar) : asset('/assets/images/users/avatar.jpg') }}"
+                <img class="rounded-circle header-profile-user" src="{{ isset(Auth::user()->avatar) ? asset(Auth::user()->avatar) : asset('images/users/user.png') }}"
                     alt="Header Avatar">
                 <span class="d-none d-xl-inline-block ms-1" key="t-henry">{{ isset(Auth::user()->avatar) ? ucfirst(Auth::user()->name) : ''}}</span>
                 <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>

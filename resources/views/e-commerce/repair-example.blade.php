@@ -31,7 +31,7 @@
                         <strong> ตัวอย่างงานซ่อม </strong>
                         <i class='bx bx-cog bx-spin bx-flip-horizontal'></i>
                     </h2>
-
+<br>
                 </div>
             {{-- </div> --}}
             <div style="text-align: center" class="row row-cols">
@@ -94,18 +94,17 @@
                             5.Onsite
                         </h3>
                     </a>
-                    <a class="nav-item nav-link" id="nav-other-tab" data-toggle="tab" href="#nav-other" role="tab"
+                    {{-- <a class="nav-item nav-link" id="nav-other-tab" data-toggle="tab" href="#nav-other" role="tab"
                         aria-controls="nav-other" aria-selected="false">
                         <h3>
                             <i class='bx bx-add-to-queue'></i>
                             6.Other
                         </h3>
-                    </a>
+                    </a> --}}
                 </div>
             </nav>
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-ios" role="tabpanel" aria-labelledby="nav-ios-tab">
-                    <!DOCTYPE html>
                     <html>
                     <body>
                         <div class="photo-gallery">
@@ -628,7 +627,7 @@
                     </body>
                     </html>
                 </div>
-                <div class="tab-pane fade" id="nav-other" role="tabpanel" aria-labelledby="nav-other-tab">
+                {{-- <div class="tab-pane fade" id="nav-other" role="tabpanel" aria-labelledby="nav-other-tab">
                     <!DOCTYPE html>
                     <html>
                     <body>
@@ -679,7 +678,7 @@
                                             {{-- <a href="" data-fancybox="images">
                                                 <img src="" class="img-fluid shadow p-2"
                                                     alt="" width="250px">
-                                            </a> --}}
+                                            </a> 
                                         </figure>
                                     </div>
                                         <div class="col-sm-6 col-md-4 col-lg-3 item">
@@ -687,7 +686,7 @@
                                                 {{-- <a href="" data-fancybox="images">
                                                     <img src="" class="img-fluid shadow p-2"
                                                         alt="" width="250px">
-                                                </a> --}}
+                                                </a> 
                                             </figure>
                                     </div>
                                     <div class="col-sm-6 col-md-4 col-lg-3 item">
@@ -695,7 +694,7 @@
                                             {{-- <a href="" data-fancybox="images">
                                                 <img src="" class="img-fluid shadow p-2"
                                                     alt="" width="250px">
-                                            </a> --}}
+                                            </a> 
                                         </figure>
                                     </div>
                                     <div class="col-sm-6 col-md-4 col-lg-3 item">
@@ -703,7 +702,7 @@
                                             {{-- <a href="" data-fancybox="images">
                                                 <img src="" class="img-fluid shadow p-2"
                                                     alt="" width="250px">
-                                            </a> --}}
+                                            </a> 
                                         </figure>
                                     </div>
                                 </div>
@@ -712,7 +711,7 @@
                         </div>
                     </body>
                     </html>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

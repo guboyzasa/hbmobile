@@ -312,7 +312,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-md-7">
+                                        <div class="col-md-6">
                                             <div class="manual media">
                                                 <div class="media-left media-middle">
                                                     <i class='bx bx-phone'></i>
@@ -320,7 +320,6 @@
                                                 <div class="media-body">
                                                     <h3 class="media-heading">2. ยืนยันหมายเลขโทรศัพท์</h3>
                                                     <p>2.1 เบอร์ที่เคยสมัครสมาชิก</p>
-                                                    <p>2.2 กดยืนยัน</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -343,7 +342,8 @@
                                                     <i class='bx bx-check-double'></i>
                                                 </div>
                                                 <div class="media-body">
-                                                    <h3 class="media-heading">4. กดยืนยัน</h3>
+                                                    <h3 class="media-heading">4. เปลี่ยนรหัสผ่าน</h3>
+                                                    <p>4.1 กดยืนยัน</p>
                                                 </div>
                                             </div>
                                         </div>

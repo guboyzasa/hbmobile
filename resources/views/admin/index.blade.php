@@ -1,75 +1,73 @@
 @extends('layouts.master')
 
 @section('title')
-    @lang('translation.Dashboards')
+@lang('translation.Dashboards')
 @endsection
 
 @section('content')
+<div class="card" style="border-radius: 20px">
+    <div class="card-body">
+        <div class="col-12 p-4 bg-primary bg-soft shadow-md mb-1" style="border-radius: 20px">
+            <div style="text-align: right;color:black" id="clock" onload="currentTime()"></div>
+            <h2 class="text-primary">Welcome to admin !</h2>
+            <p>HB MOBILE SERVICES Dashboard</p>
+        </div>
+    </div>
+</div>
+
+{{-- <div class="row"> --}}
     <div class="col-xl-12">
-        <div class="card bg-danger bg-soft">
-            <div class="col-12">
-                <div class="text-danger p-4">
-                    <div style="text-align: right" id="clock" onload="currentTime()"></div>
-                    <h2 class="text-primary">Welcome to admin !</h2>
-                    <p>HB MOBILE SERVICES Dashboard</p>
-                </div>
-            </div>
-        </div>
-    </div>
+        {{-- <div class="row"> --}}
+            <div class="col-sm-3 text-center">
+                {{-- <div class="card-body"> --}}
+                    <html>
+                    <head>
+                        <link href="https://cdn.syncfusion.com/ej2/ej2-base/styles/material.css" rel="stylesheet"
+                            type="text/css" />
+                        <link href="https://cdn.syncfusion.com/ej2/ej2-buttons/styles/material.css" rel="stylesheet"
+                            type="text/css" />
+                        <link href="https://cdn.syncfusion.com/ej2/ej2-calendars/styles/material.css" rel="stylesheet"
+                            type="text/css" />
+                        <script src="https://cdn.syncfusion.com/ej2/ej2-base/dist/global/ej2-base.min.js"
+                            type="text/javascript"></script>
+                        <script src="https://cdn.syncfusion.com/ej2/ej2-inputs/dist/global/ej2-inputs.min.js"
+                            type="text/javascript"></script>
+                        <script src="https://cdn.syncfusion.com/ej2/ej2-buttons/dist/global/ej2-buttons.min.js"
+                            type="text/javascript"></script>
+                        <script src="https://cdn.syncfusion.com/ej2/ej2-lists/dist/global/ej2-lists.min.js"
+                            type="text/javascript"></script>
+                        <script src="https://cdn.syncfusion.com/ej2/ej2-popups/dist/global/ej2-popups.min.js"
+                            type="text/javascript"></script>
+                        <script src="https://cdn.syncfusion.com/ej2/ej2-calendars/dist/global/ej2-calendars.min.js"
+                            type="text/javascript">
+                        </script>
+                    </head>
 
-    <div class="row">
-        <div class="col-xl-12">
-            <div class="row">
-                <div class="col-sm-3">
-                    <div>
-                        <div class="card-body">
-                            <html xmlns="http://www.w3.org/1999/xhtml">
-                            <head>
-                                <link href="https://cdn.syncfusion.com/ej2/ej2-base/styles/material.css" rel="stylesheet"
-                                    type="text/css" />
-                                <link href="https://cdn.syncfusion.com/ej2/ej2-buttons/styles/material.css" rel="stylesheet"
-                                    type="text/css" />
-                                <link href="https://cdn.syncfusion.com/ej2/ej2-calendars/styles/material.css"
-                                    rel="stylesheet" type="text/css" />
-
-                                <script src="https://cdn.syncfusion.com/ej2/ej2-base/dist/global/ej2-base.min.js" type="text/javascript"></script>
-                                <script src="https://cdn.syncfusion.com/ej2/ej2-inputs/dist/global/ej2-inputs.min.js" type="text/javascript"></script>
-                                <script src="https://cdn.syncfusion.com/ej2/ej2-buttons/dist/global/ej2-buttons.min.js" type="text/javascript"></script>
-                                <script src="https://cdn.syncfusion.com/ej2/ej2-lists/dist/global/ej2-lists.min.js" type="text/javascript"></script>
-                                <script src="https://cdn.syncfusion.com/ej2/ej2-popups/dist/global/ej2-popups.min.js" type="text/javascript"></script>
-                                <script src="https://cdn.syncfusion.com/ej2/ej2-calendars/dist/global/ej2-calendars.min.js" type="text/javascript">
-                                </script>
-                            </head>
-                            <body>
-                                <div id="element"></div>
-                                <script>
-                                    var calendar = new ej.calendars.Calendar();
+                    <body>
+                        <div id="element"></div>
+                        <script>
+                            var calendar = new ej.calendars.Calendar();
                                     calendar.appendTo('#element')
-                                </script>
-                            </body>
-                            </html>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-2">
-                    <div>
-                        <div class="card-body">
-                        </div>
-                    </div>
-                </div>
+                        </script>
+                    </body>
+
+                    </html>
+                {{-- </div> --}}
             </div>
-        </div>
+            
+        {{-- </div> --}}
     </div>
+{{-- </div> --}}
 @endsection
 
 @section('script')
-    <!-- apexcharts -->
-    <script src="{{ URL::asset('/assets/libs/apexcharts/apexcharts.min.js') }}"></script>
+<!-- apexcharts -->
+<script src="{{ URL::asset('/assets/libs/apexcharts/apexcharts.min.js') }}"></script>
 
-    <!-- dashboard init -->
-    <script src="{{ URL::asset('/assets/js/pages/dashboard.init.js') }}"></script>
-    <script>
-        function currentTime() {
+<!-- dashboard init -->
+<script src="{{ URL::asset('/assets/js/pages/dashboard.init.js') }}"></script>
+<script>
+    function currentTime() {
             let date = new Date();
             let hh = date.getHours();
             let mm = date.getMinutes();
@@ -96,5 +94,5 @@
             }, 1000);
         }
         currentTime();
-    </script>
+</script>
 @endsection

@@ -172,7 +172,7 @@
                         <div class="col-sm-4 mt-4">
                             <address>
                                 <strong>วิธีการชำระเงิน :</strong><br>
-                                <span class="text-success">{{ @$order->paymentMethod->bank_name }}</span><br>
+                                <span style="color: purple">{{ @$order->paymentMethod->bank_name }}</span><br>
                                 {{ @$order->paymentMethod->bank_account_no }}<br>
                                 {{ @$order->paymentMethod->bank_account_name }}<br>
 

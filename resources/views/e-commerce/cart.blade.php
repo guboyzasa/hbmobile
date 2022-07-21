@@ -29,7 +29,7 @@
                             <table class="table cart-table" cellspacing="0">
                                 <thead>
                                     <tr>
-                                        <th class="product-remove"></th>
+                                        <th class="product-remove">#</th>
                                         <th class="product-thumbnail"></th>
                                         <th class="product-name">สินค้า</th>
                                         <th class="product-price">ราคา</th>
@@ -42,8 +42,9 @@
                                     @foreach($products as $product)
                                     <tr class="item">
                                         <td class="product-remove">
-                                            <a href="#!" class="remove" title="Remove this item"><i class="bx bx-x"></i></a>
-                                            <input type="hidden" name="product_id[]" value="{{ $product->id }}">
+                                            {{-- <a href="#!" class="remove" title="remove this item"><i class="bx bx-x"></i></a> --}}
+                                            <input type="hidden"  name="product_id[]" value="{{ $product->id }}">
+                                         
                                         </td>
                                         <td class="product-thumbnail">
                                             <a href="products/detail/{{ $product->id }}">

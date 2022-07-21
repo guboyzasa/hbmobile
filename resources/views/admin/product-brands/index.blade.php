@@ -189,7 +189,7 @@
                             var obj = JSON.stringify(full);
                             var button = `
 
-                            <button type="button" class="btn btn-sm btn-secondary" onclick='showInfo(${obj})'><i class="bx bx-pencil"></i> แก้ไข </button>
+                            <button type="button" class="btn btn-sm btn-warning" onclick='showInfo(${obj})'><i class="bx bx-pencil"></i> แก้ไข </button>
                             `;
                             return button;
 

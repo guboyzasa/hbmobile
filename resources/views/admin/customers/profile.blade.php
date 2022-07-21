@@ -87,13 +87,13 @@
                                 <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"aria-labelledby="v-pills-home-tab">
                                     <div class="card" >
                                         <div class="card-body">
-                                            <button type="button" class="btn btn-sm btn-secondary" onclick='showInfo({{ $customer }})'  style="float:right;"><i class="bx bx-pencil"></i> แก้ไข </button>
+                                            <button type="button" class="btn btn-sm btn-warning" onclick='showInfo({{ $customer }})'  style="float:right;"><i class="bx bx-pencil"></i> แก้ไข </button>
                                             <h4 class="card-title mb-4 text-primary"><i class="bx bx-user"></i>  ข้อมูลส่วนตัว</h4>
 
                                             @if($customer->user_id && $customer->user)
                                                 <span class="badge badge-pill badge-soft-success font-size-11"  style="float:right;"> <i class="bx bx-check"></i> เข้าสู่ระบบแล้ว </span>
                                             @else
-                                                <span class="badge badge-pill badge-soft-secondary font-size-11" style="float:right;"> ยังไม่เข้าสู่ระบบ </span><br>
+                                                <span class="badge badge-pill badge-soft-warning font-size-11" style="float:right;"> ยังไม่เข้าสู่ระบบ </span><br>
                                             @endif
                                     
                                             <div class="table-responsive">
@@ -129,14 +129,14 @@
                                 <div class="tab-pane fade" id="v-pills-address" role="tabpanel" aria-labelledby="v-pills-address-tab">
                                     <div class="card">
                                         <div class="card-body">
-                                            <button type="button" class="btn btn-sm btn-secondary" onclick='showInfoAddress({{ $customerAddress }})'  style="float:right;"><i class="bx bx-pencil"></i> แก้ไข </button>
+                                            <button type="button" class="btn btn-sm btn-warning" onclick='showInfoAddress({{ $customerAddress }})'  style="float:right;"><i class="bx bx-pencil"></i> แก้ไข </button>
                                             <h4 class="card-title mb-4 text-primary"><i class="bx bx-home"></i>  ข้อมูลที่อยู่สำหรับจัดส่ง </h4>
 
 
                                             @if($customerAddress->name && $customerAddress->phone)
                                                 <span class="badge badge-pill badge-soft-success font-size-11"  style="float:right;"> <i class="bx bx-check"></i> เพิ่มที่อยู่แล้ว </span>
                                             @else
-                                                <span class="badge badge-pill badge-soft-secondary font-size-11" style="float:right;"> ยังไม่ได้เพิ่มที่อยู่ </span>
+                                                <span class="badge badge-pill badge-soft-warning font-size-11" style="float:right;"> ยังไม่ได้เพิ่มที่อยู่ </span>
                                             @endif
                                             <br>
 
@@ -181,14 +181,14 @@
                                 <div class="tab-pane fade" id="v-pills-billaddress" role="tabpanel" aria-labelledby="v-pills-billaddress-tab">
                                     <div class="card">
                                         <div class="card-body">
-                                            <button type="button" class="btn btn-sm btn-secondary" onclick='showInfoBillAddress({{ $customerBillAddress }})'  style="float:right;"><i class="bx bx-pencil"></i> แก้ไข </button>
+                                            <button type="button" class="btn btn-sm btn-warning" onclick='showInfoBillAddress({{ $customerBillAddress }})'  style="float:right;"><i class="bx bx-pencil"></i> แก้ไข </button>
                                             <h4 class="card-title mb-4 text-primary"><i class="bx bx-home-alt"></i>  ข้อมูลที่อยู่สำหรับออกบิล </h4>
 
 
                                             @if($customerBillAddress->name && $customerBillAddress->phone)
                                                 <span class="badge badge-pill badge-soft-success font-size-11"  style="float:right;"> <i class="bx bx-check"></i> เพิ่มที่อยู่แล้ว </span>
                                             @else
-                                                <span class="badge badge-pill badge-soft-secondary font-size-11" style="float:right;"> ยังไม่ได้เพิ่มที่อยู่ </span>
+                                                <span class="badge badge-pill badge-soft-warning font-size-11" style="float:right;"> ยังไม่ได้เพิ่มที่อยู่ </span>
                                             @endif
                                             <br>
 
@@ -821,7 +821,7 @@
                             if(data != null){
                                 text = `<span class="badge badge-pill badge-soft-success font-size-11" > <i class="bx bx-check"></i> เข้าสู่ระบบแล้ว </span>`;
                             }else{
-                                 text = `<span class="badge badge-pill badge-soft-secondary font-size-11"> ยังไม่เข้าสู่ระบบ </span>`;
+                                 text = `<span class="badge badge-pill badge-soft-warning font-size-11"> ยังไม่เข้าสู่ระบบ </span>`;
                             }
                             return text;
 
@@ -1252,7 +1252,7 @@
             var addButton = $('.add_button'); //Add button selector
             var wrapper = $('.field_wrapper'); //Input field wrapper
             var fieldHTML = `<div class="input-group">
-                            <button class="btn btn-secondary" type="button" > ${x} </button>
+                            <button class="btn btn-warning" type="button" > ${x} </button>
                             <input type="text" class="form-control serials" name="serials[]" placeholder="กรอก Serial no" aria-describedby="add" aria-label="serial" />
                             <button class="btn btn-danger remove_button" type="button"><i class="bx bx-trash"></i> </button>
                             </div>`; //New input field html 

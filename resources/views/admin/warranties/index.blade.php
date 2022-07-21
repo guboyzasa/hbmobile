@@ -25,7 +25,7 @@
             <div class="card">
                 <div class="card-body">
                      <button type="button" style="float: right; margin: 2px;" class="btn btn-success customer_btn btn-sm" ><i class="bx bx-plus"></i> เพิ่มลูกค้า </button>
-                    <button type="button" style="float: right; margin: 2px;" class="btn btn-danger warranty_btn btn-sm" ><i class="bx bx-plus"></i> ลงทะเบียน </button>
+                    <button type="button" style="float: right; margin: 2px;" class="btn btn-primary warranty_btn btn-sm" ><i class="bx bx-plus"></i> ลงทะเบียน </button>
                 
                     <h4 class="card-title">ลงทะเบียนรับประกัน</h4>
                     <br>
@@ -183,7 +183,7 @@
                             <div class="field_wrapper">
             
                                     <div class="input-group" style="margin-bottom: 5px;">
-                                        <button class="btn btn-light" type="button" > <i class="bx bx-barcode text-danger"></i> </button>
+                                        <button class="btn btn-light" type="button" > <i class="bx bx-barcode text-primary"></i> </button>
                                         <input type="text" class="form-control serials formInputWarranty" id="" name="serials[]" placeholder="กรอก Serial no" aria-describedby="add" aria-label="serial">
                                         {{-- <button class="btn btn-danger check_button" type="button" id="check"><i class="bx bx-check-double"></i> </button> --}}
                                         <button class="btn btn-success add_button" type="button" id="add"> <i class="bx bxs-add-to-queue"></i> </button>
@@ -290,7 +290,7 @@
                             <div class="field_wrapper">
             
                                     <div class="input-group" style="margin-bottom: 5px;">
-                                        <button class="btn btn-light" type="button" > <i class="bx bx-barcode text-danger"></i> </button>
+                                        <button class="btn btn-light" type="button" > <i class="bx bx-barcode text-primary"></i> </button>
                                         <input type="text" class="form-control serials" id="serialEdit" name="serials[]" placeholder="กรอก Serial no" aria-describedby="add" aria-label="serial">
                                         {{-- <button class="btn btn-danger check_button" type="button" id="check"><i class="bx bx-check-double"></i> </button> --}}
                       

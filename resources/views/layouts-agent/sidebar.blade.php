@@ -4,7 +4,7 @@
     <div data-simplebar class="h-100">
 
         <!--- Sidemenu -->
-        <div id="sidebar-menu">
+        <div id="sidebar-menu" style="background-color: white">
             <!-- Left Menu Start -->
             <ul class="metismenu list-unstyled" id="side-menu">
                 <li class="menu-title " key="t-menu">@lang('translation.Menu')</li>

@@ -958,7 +958,7 @@
                                                     <td style="text-align:center">
                                                         @php
                                                             $dateNow = date_create(strval(date('Y-m-d')));
-                                                            $dateEnd = date_create($repair->repair_start_date);
+                                                            $dateEnd = date_create($repair->repair_end_date);
                                                             $diff = date_diff($dateNow, $dateEnd);
                                                         @endphp
                                                         @if ((int) $diff->format('%R%a') >= 0)
