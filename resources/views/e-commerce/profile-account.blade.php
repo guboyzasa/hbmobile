@@ -684,7 +684,62 @@
                                         รวมทั้งสิ้น: <strong>
                                             <span class="amount">{{ $repair->price + @$repair->shipping_price }}</span></strong>
                                     </li>
-
+                                    <li class="total" style="text-align:center">
+                                        ออกบิล: <strong>
+                                            <span class="amount">
+                                                <form action="{{ url('/create-invoice') }}" method="get"
+                                                        target="_blank">
+                                                        @csrf
+                                                        <input type="hidden" value="{{ $customer->name }}" name="name" />
+                                                        <input type="hidden" value="{{ $customer->phone }}" name="phone" />
+                                                        <input type="hidden" value=" @if (@$order->orderDeliveryAddress->address == null || @$customer->customerAddress->address != null)
+                                                                    {{ @$customer->customerAddress->address }} 
+                                                                @elseif (@$customer->customerAddress->address == null || @$order->orderDeliveryAddress->address !=NULL)
+                                                                    {{ @$order->orderDeliveryAddress->address }} 
+                                                                @endif
+    
+                                                                ต.
+                                                                @if (@$order->orderDeliveryAddress->sub_district == null||@$customer->customerAddress->sub_district != null)
+                                                                    {{ @$customer->customerAddress->sub_district }}
+                                                                    @elseif (@$customer->customerAddress->sub_district == null||@$order->orderDeliveryAddress->sub_district != null)
+                                                                    {{ @$order->orderDeliveryAddress->sub_district }}
+                                                                @endif
+    
+                                                                อ.
+                                                                @if (@$order->orderDeliveryAddress->district == null||@$customer->customerAddress->district != null)
+                                                                    {{ @$customer->customerAddress->district }}
+                                                                    @elseif (@$customer->customerAddress->district == null||@$order->orderDeliveryAddress->district != null)
+                                                                    {{ @$order->orderDeliveryAddress->district }}
+                                                                @endif
+    
+                                                                จ.
+                                                                @if (@$order->orderDeliveryAddress->province == null||@$customer->customerAddress->province != null)
+                                                                    {{ @$customer->customerAddress->province }}
+                                                                    @elseif (@$customer->customerAddress->province == null||@$order->orderDeliveryAddress->province != null)
+                                                                    {{ @$order->orderDeliveryAddress->province }}
+                                                                @endif
+                                                                @if (@$order->orderDeliveryAddress->zipcode == null||@$customer->customerAddress->zipcode != null)
+                                                                    {{ @$customer->customerAddress->zipcode }}
+                                                                    @elseif (@$customer->customerAddress->zipcode == null||@$order->orderDeliveryAddress->zipcode != null)
+                                                                    {{ @$order->orderDeliveryAddress->zipcode }}
+                                                                @endif
+    
+                                                                " name="address" />
+                                                        <input type="hidden" value="{{ $repair->model }}" name="model" />
+                                                        <input type="hidden" value="{{ $repair->detail }}"
+                                                            name="listRepair" />
+                                                        <input type="hidden" value="{{ $repair->price }}" name="price" />
+                                                        <input type="hidden" value="{{@$repair->shipping_price}}"
+                                                            name="shipping" />
+                                                        <div class="text-center">
+                                                            <button type="submit"
+                                                                class="btn badge badge-warning waves-effect waves-light"><i
+                                                                    class="bx bx-printer"></i>
+                                                                ชำระ</button>
+                                                        </div>
+                                                    </form>
+                                            </span></strong>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
