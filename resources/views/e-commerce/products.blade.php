@@ -147,7 +147,7 @@
 
 <section class="section products second-style">
     <div class="container">
-        <div class="card">
+        <div class="card shadow-lg" style="border-radius: 10px">
             <div class="card-body">
                 <div class="row">
                     <div class="col-sm-12">

@@ -25,8 +25,9 @@
     <div style="text-align: center" class="page-wrapper">
         <section class="section" id="page-about">
             <div class="container">
-                <div class="card card-default">
+                <div class="card card-default shadow-lg" style="border-radius: 10px">
                 <div class="col-sm-12 text-center">
+                    <br>
                     <h2></i>เฮียบอยโมบาย เซอร์วิส</i></h2>
                     <p>HB Mobile Services</p>
                 </div>

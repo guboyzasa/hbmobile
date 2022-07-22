@@ -5,9 +5,9 @@
 @endsection
 
 @section('content')
-<div class="card" style="border-radius: 20px">
+<div class="card" style="border-radius: 10px">
     <div class="card-body">
-        <div class="col-12 p-4 bg-primary bg-soft shadow-md mb-1" style="border-radius: 20px">
+        <div class="col-12 p-4 bg-primary bg-soft shadow-lg mb-1" style="border-radius: 10px">
             <div style="text-align: right;color:black" id="clock" onload="currentTime()"></div>
             <h2 class="text-primary">Welcome to admin !</h2>
             <p>HB MOBILE SERVICES Dashboard</p>
@@ -15,49 +15,42 @@
     </div>
 </div>
 
-{{-- <div class="row"> --}}
-    <div class="col-xl-12">
-        {{-- <div class="row"> --}}
-            <div class="col-sm-3 text-center">
-                {{-- <div class="card-body"> --}}
-                    <html>
-                    <head>
-                        <link href="https://cdn.syncfusion.com/ej2/ej2-base/styles/material.css" rel="stylesheet"
-                            type="text/css" />
-                        <link href="https://cdn.syncfusion.com/ej2/ej2-buttons/styles/material.css" rel="stylesheet"
-                            type="text/css" />
-                        <link href="https://cdn.syncfusion.com/ej2/ej2-calendars/styles/material.css" rel="stylesheet"
-                            type="text/css" />
-                        <script src="https://cdn.syncfusion.com/ej2/ej2-base/dist/global/ej2-base.min.js"
-                            type="text/javascript"></script>
-                        <script src="https://cdn.syncfusion.com/ej2/ej2-inputs/dist/global/ej2-inputs.min.js"
-                            type="text/javascript"></script>
-                        <script src="https://cdn.syncfusion.com/ej2/ej2-buttons/dist/global/ej2-buttons.min.js"
-                            type="text/javascript"></script>
-                        <script src="https://cdn.syncfusion.com/ej2/ej2-lists/dist/global/ej2-lists.min.js"
-                            type="text/javascript"></script>
-                        <script src="https://cdn.syncfusion.com/ej2/ej2-popups/dist/global/ej2-popups.min.js"
-                            type="text/javascript"></script>
-                        <script src="https://cdn.syncfusion.com/ej2/ej2-calendars/dist/global/ej2-calendars.min.js"
-                            type="text/javascript">
-                        </script>
-                    </head>
 
-                    <body>
-                        <div id="element"></div>
-                        <script>
-                            var calendar = new ej.calendars.Calendar();
-                                    calendar.appendTo('#element')
-                        </script>
-                    </body>
+        <div class="col-xl-12">
+            <div class="col-sm-3">
+                <div class="card shadow-md mb-1" style="border-radius: 10px">
+                    <div class="card-body">
+                        <html>
+                            <head>
+                                <link href="https://cdn.syncfusion.com/ej2/ej2-base/styles/material.css" rel="stylesheet"
+                                    type="text/css" />
+                                <link href="https://cdn.syncfusion.com/ej2/ej2-buttons/styles/material.css" rel="stylesheet"
+                                    type="text/css" />
+                                <link href="https://cdn.syncfusion.com/ej2/ej2-calendars/styles/material.css" rel="stylesheet"
+                                    type="text/css" />
+                                <script src="https://cdn.syncfusion.com/ej2/ej2-base/dist/global/ej2-base.min.js"
+                                    type="text/javascript"></script>
+                                <script src="https://cdn.syncfusion.com/ej2/ej2-inputs/dist/global/ej2-inputs.min.js"
+                                    type="text/javascript"></script>
+                                <script src="https://cdn.syncfusion.com/ej2/ej2-buttons/dist/global/ej2-buttons.min.js"
+                                    type="text/javascript"></script>
+                                <script src="https://cdn.syncfusion.com/ej2/ej2-lists/dist/global/ej2-lists.min.js"
+                                    type="text/javascript"></script>
+                                <script src="https://cdn.syncfusion.com/ej2/ej2-popups/dist/global/ej2-popups.min.js"
+                                    type="text/javascript"></script>
+                                <script src="https://cdn.syncfusion.com/ej2/ej2-calendars/dist/global/ej2-calendars.min.js"
+                                    type="text/javascript">
+                                </script>
+                            </head>
 
-                    </html>
-                {{-- </div> --}}
+                            <body>
+                                <div class="shadow-md mb-1" id="element"></div>
+                            </body>
+                        </html>
+                    </div>
+                </div>
             </div>
-            
-        {{-- </div> --}}
-    </div>
-{{-- </div> --}}
+        </div>
 @endsection
 
 @section('script')
@@ -66,6 +59,11 @@
 
 <!-- dashboard init -->
 <script src="{{ URL::asset('/assets/js/pages/dashboard.init.js') }}"></script>
+
+<script>
+    var calendar = new ej.calendars.Calendar();
+        calendar.appendTo('#element')
+</script>
 <script>
     function currentTime() {
             let date = new Date();

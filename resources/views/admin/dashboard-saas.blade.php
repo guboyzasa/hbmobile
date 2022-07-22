@@ -5,24 +5,24 @@ Dashboard | Admin - HB Mobile Services
 @endsection
 
 @section('content')
-<div class="card" style="border-radius: 20px" >
+<div class="card" style="border-radius: 10px" >
     <div class="card-body">
         {{-- <div class="col-xl-12"> --}}
-            <div class="col-12 p-4 bg-primary bg-soft shadow-lg mb-1" style="border-radius: 20px">
+            <div class="col-12 p-4 bg-primary bg-soft shadow-lg mb-1" style="border-radius: 10px">
                 <div style="text-align: right;color:black" id="clock" onload="currentTime()"></div>
                 <h2 class="text-primary">HB MOBILE SERVICES Dashboard !</h2>
             </div>
         {{-- </div> --}}
     </div>
 </div>
-<div class="card" style="border-radius: 20px">
+<div class="card" style="border-radius: 10px">
     <div class="card-body">
         <div class="row">
             <div class="col-xl-12">
                 <div class="row">
                     <div class="col-sm-4">
                         <a href="{{ route('admin.warranty.index') }}">
-                            <div class="card bg-white bg-soft shadow-lg mb-3" style="border-radius: 20px">
+                            <div class="card bg-white bg-soft shadow-lg mb-3" style="border-radius: 10px">
                                 <div class="card-body">
                                     <div class="d-flex align-items-center mb-3">
                                         <div class="avatar-xs me-3">
@@ -44,7 +44,7 @@ Dashboard | Admin - HB Mobile Services
                     </div>
                     <div class="col-sm-4">
                         <a href="{{ route('admin.order.index') }}">
-                            <div class="card bg-white bg-soft shadow-lg mb-3" style="border-radius: 20px">
+                            <div class="card bg-white bg-soft shadow-lg mb-3" style="border-radius: 10px">
                                 <div class="card-body">
                                     <div class="d-flex align-items-center mb-3">
                                         <div class="avatar-xs me-3">
@@ -67,7 +67,7 @@ Dashboard | Admin - HB Mobile Services
 
                     <div class="col-sm-4">
                         <a href="#">
-                            <div class="card bg-white bg-soft shadow-lg mb-3" style="border-radius: 20px">
+                            <div class="card bg-white bg-soft shadow-lg mb-3" style="border-radius: 10px">
                                 <div class="card-body">
                                     <div class="d-flex align-items-center mb-3">
                                         <div class="avatar-xs me-3">
@@ -101,7 +101,7 @@ Dashboard | Admin - HB Mobile Services
                     <div class="col-sm-4">
                         <a href="{{ route('admin.repair.index') }} ">
 
-                            <div class="card bg-white bg-soft shadow-lg mb-3" style="border-radius: 20px">
+                            <div class="card bg-white bg-soft shadow-lg mb-3" style="border-radius: 10px">
                                 <div class="card-body">
                                     <div class="d-flex align-items-center mb-3">
                                         <div class="avatar-xs me-3">
@@ -123,7 +123,7 @@ Dashboard | Admin - HB Mobile Services
                     </div>
                     <div class="col-sm-4">
                         <a href="{{ route('admin.customer.index') }}">
-                            <div class="card bg-white bg-soft shadow-lg mb-3" style="border-radius: 20px">
+                            <div class="card bg-white bg-soft shadow-lg mb-3" style="border-radius: 10px">
                                 <div class="card-body">
                                     <div class="d-flex align-items-center mb-3">
                                         <div class="avatar-xs me-3">
@@ -146,7 +146,7 @@ Dashboard | Admin - HB Mobile Services
                     <div class="col-sm-4">
                         <a href="#">
                             <!-- {{ route('admin.customer.index') }} -->
-                            <div class="card bg-white bg-soft shadow-lg mb-3" style="border-radius: 20px">
+                            <div class="card bg-white bg-soft shadow-lg mb-3" style="border-radius: 10px">
                                 <div class="card-body">
                                     <div class="d-flex align-items-center mb-3">
                                         <div class="avatar-xs me-3">

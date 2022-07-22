@@ -21,6 +21,8 @@
 <div class="page-wrapper">
     <section class="section" id="page-cart">
         <div class="container">
+            <div class="card shadow-lg" style="border-radius: 10px">
+                <div class="card-body">
             <div class="row">
                 <div class="col-sm-12">
                     <div class="table-responsive-sm">
@@ -141,7 +143,7 @@
 
                                                         <div class="form-group clearfix d-flex align-items-center justify-content-between">
                                                             <div class="ml-auto">
-                                                                <button type="submit" class="btn btn-danger">สั่งซื้อสินค้า</button>
+                                                                <button type="submit" class="btn btn-danger" style="border-radius: 10px">สั่งซื้อสินค้า</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -155,6 +157,8 @@
                     </div><!-- /.table-responsive -->
                 </div>
             </div><!-- /.row -->
+                </div>
+            </div>
         </div><!-- /.container -->
     </section><!-- #page-cart -->
 </div><!-- /.page-wrapper -->

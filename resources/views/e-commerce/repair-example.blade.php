@@ -1,10 +1,11 @@
 @extends('layouts-ecommerce.app')
 
 @section('css')
-<meta property="og:title" content="HB Mobile|เฮียบอยโมบาย - ตัวอย่างงานซ่อม"/>
-<meta property="og:image" content="{{ URL::asset('/assets/dist/images/img-link/example.png') }}"/>
-<meta property="og:description" content="ครบเครื่องเรื่องไอที : โทรศัพท์, โน้ตบุ๊ค, แม็คบุ๊ค, ปริ้นเตอร์, เครื่องใช้ไฟฟ้า, กล้องวงจรปิด, จานดาวเทียม, โซล่าเซล์, เน็ตเวิร์ก, กราฟิกดีไซน์"/>
-<meta property="og:site_name" content="https://hbmobilekk.me"/>
+<meta property="og:title" content="HB Mobile|เฮียบอยโมบาย - ตัวอย่างงานซ่อม" />
+<meta property="og:image" content="{{ URL::asset('/assets/dist/images/img-link/example.png') }}" />
+<meta property="og:description"
+    content="ครบเครื่องเรื่องไอที : โทรศัพท์, โน้ตบุ๊ค, แม็คบุ๊ค, ปริ้นเตอร์, เครื่องใช้ไฟฟ้า, กล้องวงจรปิด, จานดาวเทียม, โซล่าเซล์, เน็ตเวิร์ก, กราฟิกดีไซน์" />
+<meta property="og:site_name" content="https://hbmobilekk.me" />
 @endsection
 
 @section('content')
@@ -24,16 +25,17 @@
 
 <section class="section manuals">
     <div class="container">
-        {{-- <div class="card"> --}}
-            {{-- <div class="card-header "> --}}
+        <div class="card shadow-lg" style="border-radius: 10px">
+            <div class="card-body ">
                 <div style="text-align: center">
                     <h2 style="color:#CC0000"><i class='bx bx-cog bx-spin bx-flip-horizontal'></i>
                         <strong> ตัวอย่างงานซ่อม </strong>
                         <i class='bx bx-cog bx-spin bx-flip-horizontal'></i>
                     </h2>
-<br>
+                    <br>
                 </div>
-            {{-- </div> --}}
+                {{--
+            </div> --}}
             <div style="text-align: center" class="row row-cols">
                 <div class="col-xl">
                     <div class="card card-default">
@@ -52,668 +54,623 @@
                     </div>
                 </div>
             </div>
-        {{-- </div> --}}
+        </div>
+    </div>
     </div><!-- /.container video-->
     <br>
     <div class="container">
-        <div class="container">
-            <nav>
-                <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                    <a class="nav-item nav-link active" id="nav-ios-tab" data-toggle="tab" href="#nav-ios" role="tab"
-                        aria-controls="nav-ios" aria-selected="true">
-                        <h3>
-                            <i class='bx bxl-apple'></i>
-                            1.IOS
-                        </h3>
-                    </a>
-                    <a class="nav-item nav-link" id="nav-android-tab" data-toggle="tab" href="#nav-android" role="tab"
-                        aria-controls="nav-android" aria-selected="false">
-                        <h3>
-                            <i class='bx bxl-android'></i>
-                            2.Android
-                        </h3>
-                    </a>
-                    <a class="nav-item nav-link" id="nav-notebook-tab" data-toggle="tab" href="#nav-notebook" role="tab"
-                        aria-controls="nav-notebook" aria-selected="false">
-                        <h3>
-                            <i class='bx bxl-windows'></i>
-                            3.NoteBook
-                        </h3>
-                    </a>
-                    <a class="nav-item nav-link" id="nav-macbook-tab" data-toggle="tab" href="#nav-macbook" role="tab"
-                        aria-controls="nav-macbook" aria-selected="false">
-                        <h3>
-                            <i class='bx bx-desktop'></i>
-                            4.MacBook
-                        </h3>
-                    </a>
-                    <a class="nav-item nav-link" id="nav-onsite-tab" data-toggle="tab" href="#nav-onsite" role="tab"
-                        aria-controls="nav-onsite" aria-selected="false">
-                        <h3>
-                            <i class='bx bx-cog bx-spin bx-flip-horizontal'></i>
-                            5.Onsite
-                        </h3>
-                    </a>
-                    {{-- <a class="nav-item nav-link" id="nav-other-tab" data-toggle="tab" href="#nav-other" role="tab"
-                        aria-controls="nav-other" aria-selected="false">
-                        <h3>
-                            <i class='bx bx-add-to-queue'></i>
-                            6.Other
-                        </h3>
-                    </a> --}}
-                </div>
-            </nav>
-            <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="nav-ios" role="tabpanel" aria-labelledby="nav-ios-tab">
-                    <html>
-                    <body>
-                        <div class="photo-gallery">
-                            <div class="container">
-                                <div class="intro">
-                                    <h2 class="text-center">IOS Gallery</h2>
-                                    <p class="text-center">งานซ่อมเกี่ยวกับ IOS</p>
-                                </div>
-                                <div class="row photos">
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                            <figure class="product-thumbnail text-center">
-                                                <a href="#" data-fancybox="images">
-                                                    <img src="#" class="img-fluid shadow p-2"
-                                                        alt="" width="250px">
-                                                </a>
-                                            </figure>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                </div>
-                                <div class="row photos">
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                </div>
-                                </div>
-                                <div class="row photos">
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                            <figure class="product-thumbnail text-center">
-                                                <a href="#" data-fancybox="images">
-                                                    <img src="#" class="img-fluid shadow p-2"
-                                                        alt="" width="250px">
-                                                </a>
-                                            </figure>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                </div>
-                                
-                            </div>
+            <div class="card shadow-lg" style="border-radius: 10px">
+                <div class="card-body ">
+                    <nav>
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <a class="nav-item nav-link active" id="nav-ios-tab" data-toggle="tab" href="#nav-ios" role="tab"
+                                aria-controls="nav-ios" aria-selected="true">
+                                <h3>
+                                    <i class='bx bxl-apple'></i>
+                                    1.IOS
+                                </h3>
+                            </a>
+                            <a class="nav-item nav-link" id="nav-android-tab" data-toggle="tab" href="#nav-android" role="tab"
+                                aria-controls="nav-android" aria-selected="false">
+                                <h3>
+                                    <i class='bx bxl-android'></i>
+                                    2.Android
+                                </h3>
+                            </a>
+                            <a class="nav-item nav-link" id="nav-notebook-tab" data-toggle="tab" href="#nav-notebook" role="tab"
+                                aria-controls="nav-notebook" aria-selected="false">
+                                <h3>
+                                    <i class='bx bxl-windows'></i>
+                                    3.NoteBook
+                                </h3>
+                            </a>
+                            <a class="nav-item nav-link" id="nav-macbook-tab" data-toggle="tab" href="#nav-macbook" role="tab"
+                                aria-controls="nav-macbook" aria-selected="false">
+                                <h3>
+                                    <i class='bx bx-desktop'></i>
+                                    4.MacBook
+                                </h3>
+                            </a>
+                            <a class="nav-item nav-link" id="nav-onsite-tab" data-toggle="tab" href="#nav-onsite" role="tab"
+                                aria-controls="nav-onsite" aria-selected="false">
+                                <h3>
+                                    <i class='bx bx-cog bx-spin bx-flip-horizontal'></i>
+                                    5.Onsite
+                                </h3>
+                            </a>
+                            {{-- <a class="nav-item nav-link" id="nav-other-tab" data-toggle="tab" href="#nav-other" role="tab"
+                                aria-controls="nav-other" aria-selected="false">
+                                <h3>
+                                    <i class='bx bx-add-to-queue'></i>
+                                    6.Other
+                                </h3>
+                            </a> --}}
                         </div>
-                    </body>
-                    </html>
-                </div>
-                <div class="tab-pane fade" id="nav-android" role="tabpanel" aria-labelledby="nav-android-tab">
-                    <!DOCTYPE html>
-                    <html>
-                    <body>
-                        <div class="photo-gallery">
-                            <div class="container">
-                                <div class="intro">
-                                    <h2 class="text-center">Android Gallery</h2>
-                                    <p class="text-center">งานซ่อมเกี่ยวกับ Android</p>
-                                </div>
-                                <div class="row photos">
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                            <figure class="product-thumbnail text-center">
-                                                <a href="#" data-fancybox="images">
-                                                    <img src="#" class="img-fluid shadow p-2"
-                                                        alt="" width="250px">
-                                                </a>
-                                            </figure>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                </div>
-                                <div class="row photos">
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                            <figure class="product-thumbnail text-center">
-                                                <a href="#" data-fancybox="images">
-                                                    <img src="#" class="img-fluid shadow p-2"
-                                                        alt="" width="250px">
-                                                </a>
-                                            </figure>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                </div>
-                                <div class="row photos">
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                            <figure class="product-thumbnail text-center">
-                                                <a href="#" data-fancybox="images">
-                                                    <img src="#" class="img-fluid shadow p-2"
-                                                        alt="" width="250px">
-                                                </a>
-                                            </figure>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-ios" role="tabpanel" aria-labelledby="nav-ios-tab">
+                            <html>
+            
+                            <body>
+                                <div class="photo-gallery">
+                                    <div class="container">
+                                        <div class="intro">
+                                            <h2 class="text-center">IOS Gallery</h2>
+                                            <p class="text-center">งานซ่อมเกี่ยวกับ IOS</p>
+                                        </div>
+                                        <div class="row photos">
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                        <div class="row photos">
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                        <div class="row photos">
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                        </div>
+            
                                     </div>
                                 </div>
-                                
-                            </div>
+                            </body>
+            
+                            </html>
                         </div>
-                    </body>
-                    </html>
-                </div>
-                <div class="tab-pane fade" id="nav-notebook" role="tabpanel" aria-labelledby="nav-notebook-tab">
-                    <!DOCTYPE html>
-                    <html>
-                    <body>
-                        <div class="photo-gallery">
-                            <div class="container">
-                                <div class="intro">
-                                    <h2 class="text-center">NoteBook Gallery</h2>
-                                    <p class="text-center">งานซ่อมเกี่ยวกับ NoteBook</p>
-                                </div>
-                                <div class="row photos">
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                            <figure class="product-thumbnail text-center">
-                                                <a href="#" data-fancybox="images">
-                                                    <img src="#" class="img-fluid shadow p-2"
-                                                        alt="" width="250px">
-                                                </a>
-                                            </figure>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                </div>
-                                <div class="row photos">
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                            <figure class="product-thumbnail text-center">
-                                                <a href="#" data-fancybox="images">
-                                                    <img src="#" class="img-fluid shadow p-2"
-                                                        alt="" width="250px">
-                                                </a>
-                                            </figure>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                </div>
-                                <div class="row photos">
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                            <figure class="product-thumbnail text-center">
-                                                <a href="#" data-fancybox="images">
-                                                    <img src="#" class="img-fluid shadow p-2"
-                                                        alt="" width="250px">
-                                                </a>
-                                            </figure>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
+                        <div class="tab-pane fade" id="nav-android" role="tabpanel" aria-labelledby="nav-android-tab">
+                            <!DOCTYPE html>
+                            <html>
+            
+                            <body>
+                                <div class="photo-gallery">
+                                    <div class="container">
+                                        <div class="intro">
+                                            <h2 class="text-center">Android Gallery</h2>
+                                            <p class="text-center">งานซ่อมเกี่ยวกับ Android</p>
+                                        </div>
+                                        <div class="row photos">
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                        <div class="row photos">
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                        <div class="row photos">
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                        </div>
+            
                                     </div>
                                 </div>
-                                
-                            </div>
+                            </body>
+            
+                            </html>
                         </div>
-                    </body>
-                    </html>
-                    
-                </div>
-                <div class="tab-pane fade" id="nav-macbook" role="tabpanel" aria-labelledby="nav-macbook-tab">
-                    <!DOCTYPE html>
-                    <html>
-                    <body>
-                        <div class="photo-gallery">
-                            <div class="container">
-                                <div class="intro">
-                                    <h2 class="text-center">MacBook Gallery</h2>
-                                    <p class="text-center">งานซ่อมเกี่ยวกับ MacBook</p>
+                        <div class="tab-pane fade" id="nav-notebook" role="tabpanel" aria-labelledby="nav-notebook-tab">
+                            <!DOCTYPE html>
+                            <html>
+            
+                            <body>
+                                <div class="photo-gallery">
+                                    <div class="container">
+                                        <div class="intro">
+                                            <h2 class="text-center">NoteBook Gallery</h2>
+                                            <p class="text-center">งานซ่อมเกี่ยวกับ NoteBook</p>
+                                        </div>
+                                        <div class="row photos">
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                        <div class="row photos">
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                        <div class="row photos">
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                        </div>
+            
+                                    </div>
                                 </div>
-                                <div class="row photos">
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                            <figure class="product-thumbnail text-center">
-                                                <a href="#" data-fancybox="images">
-                                                    <img src="#" class="img-fluid shadow p-2"
-                                                        alt="" width="250px">
-                                                </a>
-                                            </figure>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                </div>
-                                <div class="row photos">
-                                    
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                            <figure class="product-thumbnail text-center">
-                                                <a href="#" data-fancybox="images">
-                                                    <img src="#" class="img-fluid shadow p-2"
-                                                        alt="" width="250px">
-                                                </a>
-                                            </figure>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                </div>
-                            </div>
+                            </body>
+            
+                            </html>
+            
                         </div>
-                    </body>
-                    </html>
-                </div>
-                <div class="tab-pane fade" id="nav-onsite" role="tabpanel" aria-labelledby="nav-onsite-tab">
-                    <!DOCTYPE html>
-                    <html>
-                    <body>
-                        <div class="photo-gallery">
-                            <div class="container">
-                                <div class="intro">
-                                    <h2 class="text-center">Onsite Gallery</h2>
-                                    <p class="text-center">งานติดตั้งกล้องวงจรปิด จานดาวเทียม โซล่าเซลล์ เน็ตเวิร์ก</p>
-                                </div>
-                                <div class="row photos">
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                            <figure class="product-thumbnail text-center">
-                                                <a href="#" data-fancybox="images">
-                                                    <img src="#" class="img-fluid shadow p-2"
-                                                        alt="" width="250px">
-                                                </a>
-                                            </figure>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                </div>
-                                <div class="row photos">
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                            <figure class="product-thumbnail text-center">
-                                                <a href="#" data-fancybox="images">
-                                                    <img src="#" class="img-fluid shadow p-2"
-                                                        alt="" width="250px">
-                                                </a>
-                                            </figure>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
+                        <div class="tab-pane fade" id="nav-macbook" role="tabpanel" aria-labelledby="nav-macbook-tab">
+                            <!DOCTYPE html>
+                            <html>
+            
+                            <body>
+                                <div class="photo-gallery">
+                                    <div class="container">
+                                        <div class="intro">
+                                            <h2 class="text-center">MacBook Gallery</h2>
+                                            <p class="text-center">งานซ่อมเกี่ยวกับ MacBook</p>
+                                        </div>
+                                        <div class="row photos">
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                        <div class="row photos">
+            
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                
-                                
-                            </div>
+                            </body>
+            
+                            </html>
                         </div>
-                    </body>
-                    </html>
-                </div>
-                {{-- <div class="tab-pane fade" id="nav-other" role="tabpanel" aria-labelledby="nav-other-tab">
-                    <!DOCTYPE html>
-                    <html>
-                    <body>
-                        <div class="photo-gallery">
-                            <div class="container">
-                                <div class="intro">
-                                    <h2 class="text-center">Other Gallery</h2>
-                                    <p class="text-center">งานซ่อมอื่นๆ</p>
-                                </div>
-                                <div class="row photos">
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                            <figure class="product-thumbnail text-center">
-                                                <a href="#" data-fancybox="images">
-                                                    <img src="#" class="img-fluid shadow p-2"
-                                                        alt="" width="250px">
-                                                </a>
-                                            </figure>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            <a href="#" data-fancybox="images">
-                                                <img src="#" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                </div>
-                                
-                                <div class="row photos">
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            {{-- <a href="" data-fancybox="images">
-                                                <img src="" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a> 
-                                        </figure>
-                                    </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                            <figure class="product-thumbnail text-center">
-                                                {{-- <a href="" data-fancybox="images">
-                                                    <img src="" class="img-fluid shadow p-2"
-                                                        alt="" width="250px">
-                                                </a> 
-                                            </figure>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            {{-- <a href="" data-fancybox="images">
-                                                <img src="" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a> 
-                                        </figure>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                                        <figure class="product-thumbnail text-center">
-                                            {{-- <a href="" data-fancybox="images">
-                                                <img src="" class="img-fluid shadow p-2"
-                                                    alt="" width="250px">
-                                            </a> 
-                                        </figure>
+                        <div class="tab-pane fade" id="nav-onsite" role="tabpanel" aria-labelledby="nav-onsite-tab">
+                            <!DOCTYPE html>
+                            <html>
+            
+                            <body>
+                                <div class="photo-gallery">
+                                    <div class="container">
+                                        <div class="intro">
+                                            <h2 class="text-center">Onsite Gallery</h2>
+                                            <p class="text-center">งานติดตั้งกล้องวงจรปิด จานดาวเทียม โซล่าเซลล์ เน็ตเวิร์ก</p>
+                                        </div>
+                                        <div class="row photos">
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                        <div class="row photos">
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                        </div>
+            
+            
                                     </div>
                                 </div>
-                                
-                            </div>
+                            </body>
+            
+                            </html>
                         </div>
-                    </body>
-                    </html>
-                </div> --}}
+                        {{-- <div class="tab-pane fade" id="nav-other" role="tabpanel" aria-labelledby="nav-other-tab">
+                            <!DOCTYPE html>
+                            <html>
+            
+                            <body>
+                                <div class="photo-gallery">
+                                    <div class="container">
+                                        <div class="intro">
+                                            <h2 class="text-center">Other Gallery</h2>
+                                            <p class="text-center">งานซ่อมอื่นๆ</p>
+                                        </div>
+                                        <div class="row photos">
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    <a href="#" data-fancybox="images">
+                                                        <img src="#" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                        </div>
+            
+                                        <div class="row photos">
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    {{-- <a href="" data-fancybox="images">
+                                                        <img src="" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    {{-- <a href="" data-fancybox="images">
+                                                        <img src="" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    {{-- <a href="" data-fancybox="images">
+                                                        <img src="" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                                <figure class="product-thumbnail text-center">
+                                                    {{-- <a href="" data-fancybox="images">
+                                                        <img src="" class="img-fluid shadow p-2" alt="" width="250px">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                        </div>
+            
+                                    </div>
+                                </div>
+                            </body>
+            
+                            </html>
+                        </div> --}}
+                    </div>
+                </div>
             </div>
-        </div>
     </div>
     {{-- <div class="container">
         <div class="custom-accordion flex-column" id="manual-detail" role="tablist" aria-multiselectable="true">
@@ -919,8 +876,8 @@
 
 @section('script')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-                        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
-                        <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
 <script type='text/javascript'
     src='https://platform-api.sharethis.com/js/sharethis.js#property=62cad181a12f7c001a58e62a&product=sticky-share-buttons'
     async='async'></script>

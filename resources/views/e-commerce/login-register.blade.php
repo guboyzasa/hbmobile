@@ -29,7 +29,7 @@
                     <div class="col-md-3">
                     </div>
                     <div class="col-md-6">
-                        <div class="box">
+                        <div class="box shadow-lg" style="border-radius: 10px">
                             <h2 class="mb-4">เข้าสู่ระบบ</h2>
                             <form action="{{ route('login') }}" method="POST" class="login-form inputs-border inputs-bg">
                                 @csrf
@@ -82,7 +82,7 @@
                                         ต้องการ<a href="{{ route('register-page') }}" class="effect ml-1 mr-1"><span
                                                 class="text-danger">สมัครสมาชิก</span></a>หรือไม่ ?
                                     </div>
-                                    <button type="submit" class="btn btn-danger rounded-pill">เข้าสู่ระบบ</button>
+                                    <button type="submit" class="btn btn-danger" style="border-radius: 10px">เข้าสู่ระบบ</button>
                                 </div>
                             </form>
                         </div>

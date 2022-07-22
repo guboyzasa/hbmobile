@@ -39,6 +39,8 @@
 
 <section class="section single-product-wrapper">
     <div class="container">
+        <div class="card shadow-lg" style="border-radius: 10px">
+            <div class="card-body ">
         <div class="row">
             <div class="col-lg-5">
                 <div class="product-images">
@@ -361,7 +363,10 @@
 				</div>
 			</div> -->
             </div><!-- /.row -->
-        </div><!-- /.container -->
+        </div>
+    </div>
+    
+    </div><!-- /.container -->
 </section><!-- /.products -->
 
 <!-- Related Products -->
