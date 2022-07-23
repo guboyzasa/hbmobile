@@ -22,7 +22,7 @@
 
     <div class="row">
         <div class="col-12">
-            <div class="card">
+            <div class="card shadow-lg" style="border-radius: 10px">
                 <div class="card-body">
                      <button type="button" style="float: right; margin: 2px;" class="btn btn-success customer_btn btn-sm" ><i class="bx bx-plus"></i> เพิ่มลูกค้า </button>
                     <button type="button" style="float: right; margin: 2px;" class="btn btn-primary warranty_btn btn-sm" ><i class="bx bx-plus"></i> ลงทะเบียน </button>
@@ -63,7 +63,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="myLargeModalLabel"> เพิ่มลูกค้าใหม่ </h5>
+                    <i class='bx bx-check-double' ></i><h5 class="modal-title" id="myLargeModalLabel"> เพิ่มลูกค้าใหม่ </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                         aria-label="Close"></button>
 
@@ -105,7 +105,7 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="myLargeModalLabel"><span id="warranty_title"></span></h5>
+                    <i class='bx bx-check-double' ></i><h5 class="modal-title" id="myLargeModalLabel"><span id="warranty_title"></span></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                         aria-label="Close"></button>
 
@@ -209,7 +209,7 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="myLargeModalLabel"><span id="warranty_title_edit"></span></h5>
+                    <i class='bx bx-edit'></i><h5 class="modal-title" id="myLargeModalLabel"><span id="warranty_title_edit"></span></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                         aria-label="Close"></button>
 
@@ -301,9 +301,10 @@
 
             
 
-                        <div class="mt-3 d-grid">
+                        <div style="text-align: right">
                             <br>
-                            <button class="btn btn-primary waves-effect waves-light" type="submit"> บันทึก </button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
+                            <button class="btn btn-warning waves-effect waves-light" type="submit"><i class='bx bx-edit' ></i> แก้ไข</button>
                         </div>
                     </form>
                 </div>
@@ -662,7 +663,7 @@
         });
 
         function showInfoWarranty(obj){
-            $('#warranty_title_edit').text('รายละเอียดการรับประกัน');
+            $('#warranty_title_edit').text('แก้ไขการรับประกัน');
             $('#warranty_id').val(obj.id);
             // $("#customerEdit").val(obj.customer_id);
             $("#customerEdit").val(obj.customer_id).trigger('change');

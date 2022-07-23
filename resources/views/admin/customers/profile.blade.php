@@ -45,7 +45,7 @@
     </div>
 
     <div class="row">
-            <div class="card">
+            <div class="card shadow-lg" style="border-radius: 10px">
                 <div class="card-body">
                     {{-- 
                     <h4 class="card-title">Vertical Nav Tabs</h4>
@@ -236,7 +236,7 @@
                                         <div class="card-body">
                                             <h4 class="card-title text-primary"><i class="bx bx-check-double"></i>  ลงทะเบียนรับประกันสินค้า</h4>
                                           
-                                            <button type="button" style="float: right; margin: 2px;" class="btn btn-danger warranty_btn btn-sm" ><i class="bx bx-plus"></i> ลงทะเบียน </button>
+                                            <button type="button" style="float: right; margin: 2px;" class="btn btn-primary warranty_btn btn-sm" ><i class="bx bx-plus"></i> ลงทะเบียน </button>
                                             <br>
                                             <br>
                                             <div class="row">
@@ -248,7 +248,7 @@
                                                             <th>รหัสสินค้า</th>
                                                             <th>ประกัน(เดือน)</th>
                                                             <th>วันสิ้นสุดประกัน</th>
-                                                            <th>สร้างโดย</th>
+                                                            {{-- <th>สร้างโดย</th> --}}
                                                             <th>สถานะ</th>
                                                             <th></th>
                                                         </tr>
@@ -565,7 +565,7 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="myLargeModalLabel"><span id="warranty_title"></span></h5>
+                    <i class='bx bx-check-double' ></i><h5 class="modal-title" id="myLargeModalLabel"><span id="warranty_title"></span></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                         aria-label="Close"></button>
 
@@ -667,7 +667,7 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="myLargeModalLabel"><span id="warranty_title_edit"></span></h5>
+                    <i class='bx bx-edit' ></i><h5 class="modal-title" id="myLargeModalLabel"><span id="warranty_title_edit"></span></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                         aria-label="Close"></button>
 
@@ -754,9 +754,10 @@
 
             
 
-                        <div class="mt-3 d-grid">
+                        <div style="text-align: right">
                             <br>
-                            <button class="btn btn-primary waves-effect waves-light" type="submit"> บันทึก </button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
+                            <button class="btn btn-warning waves-effect waves-light" type="submit"><i class='bx bx-edit' ></i> แก้ไข</button>
                         </div>
                     </form>
                 </div>
@@ -1079,13 +1080,13 @@
                         }
                     },
                 
-                    {
-                        "data": "agent_id",
-                        "render": function (data, type, full) {
-                            var text = full.agent ? full.agent.name : 'Admin';
-                            return text;
-                        }
-                    },
+                    // {
+                    //     "data": "agent_id",
+                    //     "render": function (data, type, full) {
+                    //         var text = full.agent ? full.agent.name : 'Admin';
+                    //         return text;
+                    //     }
+                    // },
 
 
                     {
@@ -1110,8 +1111,8 @@
                             var obj = JSON.stringify(full);
                             var button = `
 
-                                <button type="button" class="btn btn-sm btn-warning" onclick='showInfoWarranty(${obj})'><i class="bx bx-search-alt-2"></i>  </button>
-                                   <button type="button" class="btn btn-sm btn-danger" onclick='destroyWarranty(${data})'><i class="bx bx-trash"></i>  </button>
+                                   <button type="button" class="btn btn-sm btn-warning" onclick='showInfoWarranty(${obj})'><i class="bx bx-search-alt-2"></i></button>
+                                   <button type="button" class="btn btn-sm btn-danger" onclick='destroyWarranty(${data})'><i class="bx bx-trash"></i></button>
                             `;
                             return button;
 

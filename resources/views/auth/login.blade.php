@@ -15,13 +15,13 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-8 col-lg-6 col-xl-5">
-                        <div class="card overflow-hidden">
-                            <div class="bg-success bg-soft">
+                        <div class="card overflow-hidden shadow-lg" style="border-radius: 10px">
+                            <div class="bg-danger bg-soft">
                                 <div class="row">
                                     <div class="col-7">
-                                        <div class="text-danger p-4">
+                                        <div class="text-primary p-4">
                                             <h5 class="text-danger">Welcome Back !</h5>
-                                            <p>Sign in to continue to HB Mobile Services.</p>
+                                            <p>Sign in to HB Mobile Services.</p>
                                         </div>
                                     </div>
                                     <div class="col-5 align-self-end">
@@ -32,20 +32,20 @@
                             </div>
                             <div class="card-body pt-0">
                                 <div class="auth-logo">
-                                    <a href="index" class="auth-logo-light">
+                                    {{-- <a href="index" class="auth-logo-light">
                                         <div class="avatar-md profile-user-wid mb-4">
                                             <span class="avatar-title rounded-circle bg-light">
                                                 <img src="{{ URL::asset('/assets/images/logo-light.svg') }}" alt=""
                                                     class="rounded-circle" height="34">
                                             </span>
                                         </div>
-                                    </a>
+                                    </a> --}}
 
-                                    <a href="index" class="auth-logo-dark">
+                                    <a href="login" class="auth-logo-dark">
                                         <div class="avatar-md profile-user-wid mb-4">
-                                            <span class="avatar-title rounded-circle bg-light">
-                                                <img src="{{ URL::asset('/assets/images/logo.png') }}" alt=""
-                                                    class="rounded-circle" height="34">
+                                            <span class="avatar-title bg-light shadow-lg" style="border-radius: 50px"> <!--rounded-circle-->
+                                                <img src="{{ URL::asset('/assets/dist/images/logo-img.png') }}" alt=""
+                                                    class="" height="70" style="border-radius: 50px">
                                             </span>
                                         </div>
                                     </a>
@@ -72,8 +72,8 @@
                                                     class="form-control  @error('password') is-invalid @enderror"
                                                     placeholder="Enter password" aria-label="Password"
                                                     aria-describedby="password-addon">
-                                                <button class="btn btn-light " type="button" id="password-addon"><i
-                                                        class="mdi mdi-eye-outline"></i></button>
+                                                {{-- <button class="btn btn-light " type="button" id="password-addon"><i
+                                                        class="mdi mdi-eye-outline"></i></button> --}}
                                                 @error('password')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
@@ -90,12 +90,12 @@
                                         </div> --}}
 
                                         <div class="mt-3 d-grid">
-                                            <button class="btn btn-danger waves-effect waves-light" type="submit">Log
+                                            <button class="btn btn-danger waves-effect waves-light" type="submit" style="border-radius: 10px">Log
                                                 In</button>
                                         </div>
 
-                                        <div class="mt-4 text-center">
-                                            <!-- <h5 class="font-size-14 mb-3">Sign in with</h5>
+                                        {{-- <div class="mt-4 text-center">
+                                            <h5 class="font-size-14 mb-3">Sign in with</h5>
 
                                                 <ul class="list-inline">
                                                     <li class="list-inline-item">
@@ -116,13 +116,13 @@
                                                             <i class="mdi mdi-google"></i>
                                                         </a>
                                                     </li>
-                                                </ul> -->
-                                        </div>
-                                        <!--
+                                                </ul> 
+                                        </div> --}}
+                                        
                                             <div class="mt-4 text-center">
-                                                <a href="#" class="text-muted"><i
+                                                <a href="{{URL::asset('/verify-username')}}" class="text-muted"><i
                                                         class="mdi mdi-lock me-1"></i> Forgot your password?</a>
-                                            -->
+                                            
                                 </div>
                                 </form>
                             </div>
@@ -134,7 +134,7 @@
                         <div>
                             <!-- <p>Don't have an account ? <a href="auth-register" class="fw-medium text-danger">
                                             Signup now </a> </p> -->
-                            <script>
+                                            © <script>
                                 document.write(new Date().getFullYear())
                             </script> HB Mobile Services.
                             </p>

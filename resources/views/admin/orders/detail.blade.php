@@ -48,7 +48,7 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <div class="card">
+            <div class="card shadow-lg" style="border-radius: 10px">
                 <div class="card-body">
 
                     <div class="invoice-title">

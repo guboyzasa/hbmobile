@@ -15,7 +15,7 @@
 
     <div class="row">
         <div class="col-12">
-            <div class="card">
+            <div class="card shadow-lg" style="border-radius: 10px">
                 <div class="card-body"> 
                     <button type="button" style="float: right;" class="btn btn-success create_btn" ><i class="bx bx-plus"></i> เพิ่มหมวดหมู่สินค้า </button>
                     <h4 class="card-title">จัดการหมวดหมู่สินค้า</h4>

@@ -28,7 +28,7 @@
 
     <div class="row">
         <div class="col-12">
-            <div class="card">
+            <div class="card shadow-lg" style="border-radius: 10px">
                 <div class="card-body">
                     <button type="button" style="float: right; margin: 2px;" class="btn btn-success customer_btn btn-sm"><i
                             class="bx bx-plus"></i> เพิ่มลูกค้า </button>
@@ -50,7 +50,6 @@
                                 <th>สถานะประกัน</th>
                                 <th>สถานะซ่อม</th>
                                 <th></th>
-                                <th></th>
                             </tr>
                         </thead>
 
@@ -69,7 +68,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="myLargeModalLabel"> เพิ่มลูกค้าใหม่ </h5>
+                    <i class='bx bx-check-double' ></i><h5 class="modal-title" id="myLargeModalLabel"> เพิ่มลูกค้าใหม่ </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 
                 </div>
@@ -113,7 +112,7 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="myLargeModalLabel"><span id="warranty_title"></span></h5>
+                    <i class='bx bx-check-double' ></i><h5 class="modal-title" id="myLargeModalLabel"><span id="warranty_title"></span></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 
                 </div>
@@ -241,7 +240,7 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="myLargeModalLabel"><span id="warranty_title_edit"></span></h5>
+                    <i class='bx bx-edit'></i><h5 class="modal-title " id="myLargeModalLabel"><span id="warranty_title_edit"></span></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 
                 </div>
@@ -361,9 +360,10 @@
 
 
 
-                        <div class="mt-3 d-grid">
+                        <div style="text-align: right">
                             <br>
-                            <button class="btn btn-primary waves-effect waves-light" type="submit"> บันทึก </button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
+                            <button class="btn btn-warning waves-effect waves-light" type="submit"><i class='bx bx-edit' ></i> แก้ไข</button>
                         </div>
                     </form>
                 </div>
@@ -387,7 +387,7 @@
 
         $(".create_btn").click(function() {
 
-            $('#modal_title').text('ลงทะเบียนงานซ่อม');
+            $('#modal_title').text(' แก้ไขงานซ่อม');
             $('.formInput').val('');
             $('#simpleModal').modal("show");
         });
@@ -430,7 +430,7 @@
         });
 
         function showInfo(obj) {
-            $('#modal_title').text('รายละเอียดการซ่อม');
+            $('#modal_title').text('แก้ไขงานซ่อม');
             $('#id').val(obj.id);
             $("#customer").val(obj.customer_id).trigger('change'); //ลูกค้า
             $("#model").val(obj.model).trigger('change'); //รุ่น
@@ -631,24 +631,24 @@
                             return text;
                         }
                     },
-                    {
-                        "data": "customer_id",
-                        "render": function(data, type, full) {
-                            var obj = JSON.stringify(full);
-                            var button = ` 
-                                <a  href="/admin/create-invoice/${full.id}" class="btn btn-sm btn-info" target="_blank"><i class="bx bx-printer"></i></a>
+                    // {
+                    //     "data": "customer_id",
+                    //     "render": function(data, type, full) {
+                    //         var obj = JSON.stringify(full);
+                    //         var button = ` 
+                    //             <a  href="/admin/create-invoice/${full.id}" class="btn btn-sm btn-info" target="_blank"><i class="bx bx-printer"></i></a>
                                 
-                         `;
-                            return button;
-                        }
-                    },
+                    //      `;
+                    //         return button;
+                    //     }
+                    // },
 
                     {
                         "data": "id",
                         "render": function(data, type, full) {
                             var obj = JSON.stringify(full);
                             var button = `
-                            
+                            <a  href="/admin/create-invoice/${full.id}" class="btn btn-sm btn-info" target="_blank"><i class="bx bx-printer"></i></a>
                                 <button type="button" class="btn btn-sm btn-warning" onclick='showInfoWarranty(${obj})'><i class="bx bx-search-alt-2"></i> </button>
                                 <button type="button" class="btn btn-sm btn-danger" onclick='destroyWarranty(${data})'><i class="bx bx-trash"></i>  </button>
                             `;
@@ -743,7 +743,7 @@
         });
 
         function showInfoWarranty(obj) {
-            $('#warranty_title_edit').text('รายละเอียดการซ่อม');
+            $('#warranty_title_edit').text('แก้ไขงานซ่อม');
             $('#warranty_id').val(obj.id);
             // $("#customerEdit").val(obj.customer_id);
             $("#customerEdit").val(obj.customer_id).trigger('change');

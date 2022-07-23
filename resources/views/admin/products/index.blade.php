@@ -8,130 +8,134 @@
 
 @section('content')
 
-    @component('components.breadcrumb')
-        @slot('li_1') Dashboard @endslot
-        @slot('title') จัดการสินค้า @endslot
-    @endcomponent
+@component('components.breadcrumb')
+@slot('li_1') Dashboard @endslot
+@slot('title') จัดการสินค้า @endslot
+@endcomponent
 
-    <div class="row">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-body"> 
-                    <button type="button" style="float: right;" class="btn btn-success create_btn" ><i class="bx bx-plus"></i> เพิ่มสินค้า </button>
-                    <h4 class="card-title">จัดการสินค้า</h4>
-                    <br>
-                    
-                    <br>
-                    <table id="simple_table" class="table table-bordered dt-responsive w-auto">
-                        <thead>
-                            <tr>
-                                <th>รูป</th>
-                                <th>ชื่อ</th>
-                                <th>รหัส</th>
-                                <th>ราคา</th>
-                                <th>หมวดหมู่</th>
-                                <th>แบรนด์</th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
+<div class="row">
+    <div class="col-12">
+        <div class="card shadow-lg" style="border-radius: 10px">
+            <div class="card-body">
+                <button type="button" style="float: right;" class="btn btn-success create_btn"><i
+                        class="bx bx-plus"></i> เพิ่มสินค้า </button>
+                <h4 class="card-title">จัดการสินค้า</h4>
+                <br>
+                <br>
+                <table id="simple_table" class="table table-bordered dt-responsive w-100">
+                    <thead>
+                        <tr>
+                            <th>รูป</th>
+                            <th>ชื่อ</th>
+                            <th>รหัส</th>
+                            <th>ราคา</th>
+                            <th>หมวดหมู่</th>
+                            <th>แบรนด์</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div> <!-- end col -->
+</div> <!-- end row -->
+<div class="modal fade update-profile" id="simpleModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="myLargeModalLabel"><span id="modal_title"></span></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+            </div>
+            <div class="modal-body">
+
+                <form class="form-horizontal" method="POST" enctype="multipart/form-data" id="product-cat-form">
+                    @csrf
+                    <input type="hidden" class="formInput" name="id" value="" id="id">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">ชื่อสินค้า</label>
+                        <input type="text" class="formInput form-control" id="name" value="" name="name"
+                            placeholder="กรอกชื่อสินค้า" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="sku" class="form-label">รหัสสินค้า</label>
+                        <input type="text" class="formInput form-control" id="sku" value="" name="sku"
+                            placeholder="กรอกรหัสสินค้า" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="price" class="form-label">ราคาสินค้า </label>
+                        <input type="number" autocomplete="off" class="form-control formInput" name="price" step="0.01"
+                            min="0.01" id="price" placeholder="กรอกราคาสินค้า" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="cat" class="form-label">หมวดหมู่สินค้า </label>
+                        <select name="cat" id="cat" class="form-control" required>
+                            <option value=""> -- เลือกหมวดหมู่สินค้า -- </option>
+                            @foreach ($categories as $cat)
+                            <option value="{{ $cat->id }}"> {{ $cat->name }} </option>
+                            @endforeach
+
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="brand" class="form-label">แบรนด์สินค้า </label>
+                        <select name="brand" id="brand" class="form-control" required>
+                            <option value=""> -- เลือกแบรนด์สินค้า -- </option>
+                            @foreach ($brands as $brand)
+                            <option value="{{ $brand->id }}"> {{ $brand->name }} </option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="image" class="form-label">รูปปกสินค้า </label>
+                        <input type="file" onchange="validateSize(this)" class="form-control formInput" accept="image/*"
+                            name="imageFile" id="imageFile" placeholder="กรุณาเลือกรูปภาพ">
+                    </div>
+                    <div class="mb-3" id="showImg">
+                        <label for="image" class="form-label">รูปล่าสุด </label>
+                        <img id="output" max-width="300" style="max-height: 300px;"
+                            class="img-responsive form-control" />
+                    </div>
+                    <div class="mt-3 d-grid">
+                        <br>
+                        <button class="btn btn-primary waves-effect waves-light" type="submit"> บันทึก </button>
+                    </div>
+                </form>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!--  Picture modal example -->
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true" id="infoModal">
+    <div class="modal-dialog modal-md shadow-lg" style="border-radius: 10px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="myLargeModalLabel">รูปภาพ</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <img id="output1" max-width="300" style="max-height: 500px;" class="img-responsive form-control" />
                 </div>
             </div>
-        </div> <!-- end col -->
-    </div> <!-- end row -->
-  <div class="modal fade update-profile" id="simpleModal" tabindex="-1" role="dialog"
-        aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="myLargeModalLabel"><span id="modal_title"></span></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
-                </div>
-                <div class="modal-body">
-
-                    <form class="form-horizontal" method="POST" enctype="multipart/form-data" id="product-cat-form">
-                        @csrf
-                        <input type="hidden" class="formInput" name="id" value="" id="id">
-                        <div class="mb-3">
-                            <label for="name" class="form-label">ชื่อสินค้า</label>
-                            <input type="text" class="formInput form-control" id="name" value="" name="name" placeholder="กรอกชื่อสินค้า" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="sku" class="form-label">รหัสสินค้า</label>
-                            <input type="text" class="formInput form-control" id="sku" value="" name="sku" placeholder="กรอกรหัสสินค้า" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="price" class="form-label">ราคาสินค้า </label>
-                            <input type="number" autocomplete="off" class="form-control formInput" name="price" step="0.01" min="0.01" id="price" placeholder="กรอกราคาสินค้า"  required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="cat" class="form-label">หมวดหมู่สินค้า </label>
-                            <select name="cat" id="cat" class="form-control" required>
-                                <option value=""> -- เลือกหมวดหมู่สินค้า -- </option>
-                                @foreach ($categories as $cat)
-                                    <option value="{{ $cat->id }}"> {{ $cat->name }} </option>
-                                @endforeach
-                
-                            </select>
-                        </div>
-                              <div class="mb-3">
-                            <label for="brand" class="form-label">แบรนด์สินค้า </label>
-                            <select name="brand" id="brand" class="form-control" required>
-                                <option value=""> -- เลือกแบรนด์สินค้า -- </option>
-                                @foreach ($brands as $brand)
-                                    <option value="{{ $brand->id }}"> {{ $brand->name }} </option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="image" class="form-label">รูปปกสินค้า </label>
-                            <input type="file" onchange="validateSize(this)" class="form-control formInput" accept="image/*" name="imageFile" id="imageFile" placeholder="กรุณาเลือกรูปภาพ"  >
-                        </div>
-                        <div class="mb-3" id="showImg">
-                            <label for="image" class="form-label">รูปล่าสุด </label>
-                            <img id="output" max-width="300" style="max-height: 300px;" class="img-responsive form-control" />
-                        </div>
-                        <div class="mt-3 d-grid">
-                            <br>
-                            <button class="btn btn-primary waves-effect waves-light" type="submit"> บันทึก </button>
-                        </div>
-                    </form>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-    <!--  Picture modal example -->
-    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-        aria-hidden="true" id="infoModal">
-        <div class="modal-dialog modal-md">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="myLargeModalLabel">รูปภาพ</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <div class="row">
-                        <img id="output1" max-width="300" style="max-height: 500px;" class="img-responsive form-control" />
-                  </div>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-  
 @endsection
 @section('script')
 
 <script>
-        $(document).ready(function () {
+    $(document).ready(function () {
 
             var simple = '';
 
@@ -215,9 +219,8 @@
                         "render": function (data, type, full) {
                             var obj = JSON.stringify(full);
                             var button = `
-
-                            <a href="/admin/product/detail/${data}" class="btn btn-sm btn-warning"><i class="bx bx-search-alt-2"></i>  </a>
-                             <button type="button" class="btn btn-sm btn-danger" onclick='destroy(${data})'><i class="bx bx-trash"></i>  </button>
+                             <a href="/admin/product/detail/${data}" class="btn btn-sm btn-warning"><i class="bx bx-search-alt-2"></i></a>
+                             <button type="button" class="btn btn-sm btn-danger" onclick='destroy(${data})'><i class="bx bx-trash"></i></button>
                             `;
                             return button;
 
@@ -380,5 +383,4 @@
         }
     }
 </script>
-  
 @endsection

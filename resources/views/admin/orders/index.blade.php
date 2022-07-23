@@ -15,7 +15,7 @@
 
     <div class="row">
         <div class="col-12">
-            <div class="card">
+            <div class="card shadow-lg" style="border-radius: 10px">
                 <div class="card-body"> 
 
                     <h4 class="card-title">จัดการออเดอร์</h4>

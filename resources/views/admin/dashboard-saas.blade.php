@@ -5,14 +5,15 @@ Dashboard | Admin - HB Mobile Services
 @endsection
 
 @section('content')
-<div class="card" style="border-radius: 10px" >
+<div class="card" style="border-radius: 10px">
     <div class="card-body">
         {{-- <div class="col-xl-12"> --}}
             <div class="col-12 p-4 bg-primary bg-soft shadow-lg mb-1" style="border-radius: 10px">
                 <div style="text-align: right;color:black" id="clock" onload="currentTime()"></div>
                 <h2 class="text-primary">HB MOBILE SERVICES Dashboard !</h2>
             </div>
-        {{-- </div> --}}
+            {{--
+        </div> --}}
     </div>
 </div>
 <div class="card" style="border-radius: 10px">
@@ -189,7 +190,7 @@ Dashboard | Admin - HB Mobile Services
                             </div>
                         </a>
                     </div> --}}
-                    
+
                     {{-- <div class="col-sm-4">
                         <a href="#">
                             <!--{{ route('admin.agent.index') }} -->
@@ -792,6 +793,32 @@ Dashboard | Admin - HB Mobile Services
 
         </div>
         <!-- end row --> --}}
+    </div>
+</div>
+<div class="card" style="border-radius: 10px">
+    <div class="card-body">
+        <div class="text-dark">
+            <label><strong style="font-size: 15px">รายการซ่อม</strong></label>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>เบอร์โทร</th>
+                    <th>ชื่อลูกค้า</th>
+                    <th>รายการซ่อม</th>
+                    <th>ราคา</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0935287744</td>
+                    <td>รชต</td>
+                    <td>iPhone x - เปลี่ยนจอ</td>
+                    <td>3500.00</td>
+                </tr>
+
+            </tbody>
+        </table>
     </div>
 </div>
 @endsection
