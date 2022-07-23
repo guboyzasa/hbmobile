@@ -43,14 +43,12 @@
                         <button class="btn btn-danger rounded-pill"><a href="https://dbdregcom.dbd.go.th/regc-app/public/rcp010700.xhtml?qr=5d2f2a95-5666-49c0-8994-da931d609a69" target="_blank"><b style="color: white">dbdregcom</b></a></button>
                     </div>
                 </div>
-				<div class="col-md-12">
+				<div class="col-md-12"><br>
                     <img style="text-align: center" src='{{ URL::asset('/assets/dist/images/logo.png') }}'
                         class="img-fluid p-2" alt="" width="150px">
-                    {{-- <img style="text-align: center" src='{{ URL::asset('/assets/dist/images/tisi.png') }}'
-                        class="img-fluid p-2" alt="" width="270px"> --}}
                     <img style="text-align: center" src='{{ URL::asset('/assets/dist/images/logo-img.png') }}'
                         class="img-fluid p-2" alt="" width="127px">
-                </div>
+                </div><br>
                 </div>
             </div><!-- /.row -->
     </div><!-- /.container -->

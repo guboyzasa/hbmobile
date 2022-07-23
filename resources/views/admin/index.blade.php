@@ -5,6 +5,22 @@
 @endsection
 
 @section('content')
+<link href="https://cdn.syncfusion.com/ej2/ej2-base/styles/material.css" rel="stylesheet" type="text/css" />
+<link href="https://cdn.syncfusion.com/ej2/ej2-buttons/styles/material.css" rel="stylesheet" type="text/css" />
+<link href="https://cdn.syncfusion.com/ej2/ej2-calendars/styles/material.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.syncfusion.com/ej2/ej2-base/dist/global/ej2-base.min.js" type="text/javascript">
+</script>
+<script src="https://cdn.syncfusion.com/ej2/ej2-inputs/dist/global/ej2-inputs.min.js" type="text/javascript">
+</script>
+<script src="https://cdn.syncfusion.com/ej2/ej2-buttons/dist/global/ej2-buttons.min.js" type="text/javascript">
+</script>
+<script src="https://cdn.syncfusion.com/ej2/ej2-lists/dist/global/ej2-lists.min.js" type="text/javascript">
+</script>
+<script src="https://cdn.syncfusion.com/ej2/ej2-popups/dist/global/ej2-popups.min.js" type="text/javascript">
+</script>
+<script src="https://cdn.syncfusion.com/ej2/ej2-calendars/dist/global/ej2-calendars.min.js" type="text/javascript">
+</script>
+
 <div class="card" style="border-radius: 10px">
     <div class="card-body">
         <div class="col-12 p-4 bg-primary bg-soft shadow-lg mb-1" style="border-radius: 10px">
@@ -14,43 +30,18 @@
         </div>
     </div>
 </div>
-
-
-        <div class="col-xl-12">
-            <div class="col-sm-3">
-                <div class="card shadow-md mb-1" style="border-radius: 10px">
-                    <div class="card-body">
-                        <html>
-                            <head>
-                                <link href="https://cdn.syncfusion.com/ej2/ej2-base/styles/material.css" rel="stylesheet"
-                                    type="text/css" />
-                                <link href="https://cdn.syncfusion.com/ej2/ej2-buttons/styles/material.css" rel="stylesheet"
-                                    type="text/css" />
-                                <link href="https://cdn.syncfusion.com/ej2/ej2-calendars/styles/material.css" rel="stylesheet"
-                                    type="text/css" />
-                                <script src="https://cdn.syncfusion.com/ej2/ej2-base/dist/global/ej2-base.min.js"
-                                    type="text/javascript"></script>
-                                <script src="https://cdn.syncfusion.com/ej2/ej2-inputs/dist/global/ej2-inputs.min.js"
-                                    type="text/javascript"></script>
-                                <script src="https://cdn.syncfusion.com/ej2/ej2-buttons/dist/global/ej2-buttons.min.js"
-                                    type="text/javascript"></script>
-                                <script src="https://cdn.syncfusion.com/ej2/ej2-lists/dist/global/ej2-lists.min.js"
-                                    type="text/javascript"></script>
-                                <script src="https://cdn.syncfusion.com/ej2/ej2-popups/dist/global/ej2-popups.min.js"
-                                    type="text/javascript"></script>
-                                <script src="https://cdn.syncfusion.com/ej2/ej2-calendars/dist/global/ej2-calendars.min.js"
-                                    type="text/javascript">
-                                </script>
-                            </head>
-
-                            <body>
-                                <div class="shadow-md mb-1" id="element"></div>
-                            </body>
-                        </html>
-                    </div>
-                </div>
+<div class="col-xl-12">
+    <div class="col-sm-3">
+        <div class="card shadow-lg mb-1" style="border-radius: 10px">
+            <div class="card-body text-center">
+                <div id="element"></div>
             </div>
         </div>
+    </div>
+</div>
+
+
+
 @endsection
 
 @section('script')

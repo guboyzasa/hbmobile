@@ -343,6 +343,11 @@
                                                             </td>
                                                         </tr>
                                                         <tr>
+                                                            <th scope="row">ส่วนลด:</th>
+                                                            <td><span class="amount">0.00</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
                                                             <th scope="row">ค่าส่ง:</th>
                                                             <td><span class="amount">{{ $order->shipping_price }}</span>
                                                             </td>
@@ -574,6 +579,11 @@
                                                             <tr>
                                                                 <th scope="row">รวม:</th>
                                                                 <td><span class="amount">{{ $order->total }}</span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">ส่วนลด:</th>
+                                                                <td><span class="amount">0.00</span>
                                                                 </td>
                                                             </tr>
                                                             <tr>
@@ -927,6 +937,11 @@
                                                     <tr>
                                                         <th scope="row">รวม:</th>
                                                         <td><span class="amount">{{ $order->total }}</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">ส่วนลด:</th>
+                                                        <td><span class="amount">0.00</span>
                                                         </td>
                                                     </tr>
                                                     <tr>

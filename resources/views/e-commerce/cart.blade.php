@@ -95,6 +95,17 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <div class="row">
+                                                        <label class="col-sm-2">ส่วนลด</label>
+                                                        <div class="col-sm-8">
+                                                            <div class="form-group">
+                                                                <select class="form-control" id="" name="">
+                                                                    <option value="code">CODE
+                                                                    </option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
 
                                                 <div class="cart-collaterals col-lg-5 offset-lg-2">
@@ -127,6 +138,14 @@
                                                                     <td class="text-right">
                                                                         <span class="shipping" id="shipping"></span> บาท
                                                                         <input type="hidden" name="shipping" id="inputShipping">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="order-total">
+                                                                    <th>ส่วนลด</th>
+                                                                    <td class="text-right">
+                                                                        <strong>
+                                                                            <span class="summary" ></span> 0.00 บาท
+                                                                        </strong>
                                                                     </td>
                                                                 </tr>
                                                                 <tr class="order-total">

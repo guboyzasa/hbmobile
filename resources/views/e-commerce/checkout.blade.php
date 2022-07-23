@@ -267,11 +267,19 @@
                                         @endif
                                     </tbody>
                                     <tfoot>
+                                       
                                         <tr class="cart-subtotal">
                                             <th colspan="2">รวม</th>
                                             <td>
                                                 <span class="amount">{{ $bigDatas['subTotal'] }}</span> บาท
                                                 <input type="hidden" name="total" value="{{ $bigDatas['subTotal'] }}">
+                                            </td>
+                                        </tr>
+                                        <tr class="">
+                                            <th colspan="2">ส่วนลด</th>
+                                            <td>
+                                                <span class="amount">0.00</span> บาท
+                                                <input type="hidden" name="" value="">
                                             </td>
                                         </tr>
                                         <tr class="shipping">

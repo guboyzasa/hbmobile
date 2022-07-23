@@ -3,7 +3,7 @@
         <div class="d-flex">
             <!-- LOGO -->
             <div class="navbar-brand-box">
-                <a href="#" class="logo logo-dark">
+                <a href="{{URL::asset('/admin')}}" class="logo logo-dark">
                     <span class="logo-sm">
                         <img src="{{ URL::asset ('assets/images/logo.png') }}" alt=""  height="42">
                     </span>
@@ -12,7 +12,7 @@
                     </span>
                 </a>
 
-                <a href="#" class="logo logo-light">
+                <a href="{{URL::asset('/admin')}}" class="logo logo-light">
                     <span class="logo-sm">
                         <img src="{{ URL::asset ('assets/images/logo-white.png') }}" alt=""  height="42">
                     </span>
@@ -117,8 +117,8 @@ aria-labelledby="myLargeModalLabel" aria-hidden="true">
                     </div>
 
                     <div class="mt-3 d-grid">
-                        <button class="btn btn-danger waves-effect waves-light UpdatePassword" data-id="{{ Auth::user() ? Auth::user()->id : '' }}"
-                            type="submit">ยืนยันรหัสผ่าน</button>
+                        <button class="btn btn-primary waves-effect waves-light UpdatePassword" data-id="{{ Auth::user() ? Auth::user()->id : '' }}"
+                            type="submit" style="border-radius: 10px">ยืนยันรหัสผ่าน</button>
                     </div>
                 </form>
             </div>
