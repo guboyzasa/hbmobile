@@ -33,7 +33,7 @@
                         <div class="dropdown-menu dropdown-menu-right border-0 shadow">
                             <ul class="position-relative" data-slimscroll="true">
                                 <li class="d-flex align-middle">
-                                    <a href="{{ route('profile-account') }}">การซื้อของฉัน <i
+                                    <a href="{{ route('profile-account') }}">โปรไฟล์ <i
                                             class='bx bxs-user-circle align-middle text-primary'></i></a>
                                 </li>
                                 <li class="d-flex align-middle">

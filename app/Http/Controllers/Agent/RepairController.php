@@ -110,8 +110,8 @@ class RepairController extends Controller
         DB::commit();
 
         $data = [
-            'title' => 'ลงทะเบียนสำเร็จ!',
-            'msg' => 'ลงทะเบียนงานซ่อมสำเร็จ',
+            'title' => 'แก้ไขสำเร็จ!',
+            'msg' => 'แก้ไขลงทะเบียนงานซ่อมสำเร็จ',
             'status' => 'success',
         ];
         return $data;

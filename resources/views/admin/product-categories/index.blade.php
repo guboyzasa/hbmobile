@@ -22,9 +22,9 @@
                     <br>
                     
                     <br>
-                    <table id="simple_table" class="table table-bordered dt-responsive  nowrap w-100">
+                    <table id="simple_table" class="table table-bordered dt-responsive nowrap w-100">
                         <thead>
-                            <tr>
+                            <tr class="table-secondary">
                                 <th>รูป</th>
                                 <th>ชื่อ</th>
                                 <th>เปิด-ปิด</th>

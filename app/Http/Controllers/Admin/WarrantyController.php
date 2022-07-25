@@ -105,8 +105,8 @@ class WarrantyController extends Controller
         DB::commit();
 
         $data = [
-            'title' => 'ลงทะเบียนสำเร็จ!',
-            'msg' => 'ลงทะเบียนรับประกันสินค้าสำเร็จ',
+            'title' => 'แก้ไขสำเร็จ!',
+            'msg' => 'แก้ไขลงทะเบียนรับประกันสินค้าสำเร็จ',
             'status' => 'success',
         ];
         return $data;

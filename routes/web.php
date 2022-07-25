@@ -97,6 +97,7 @@ Route::middleware(['checkAdminMaintenance'])->group(function () {
                 Route::post('/product/show', [App\Http\Controllers\Admin\ProductController::class, 'show'])->name('product.show');
                 Route::get('/product/detail/{id}', [App\Http\Controllers\Admin\ProductController::class, 'detail'])->name('product.detail');
                 Route::post('/product/store', [App\Http\Controllers\Admin\ProductController::class, 'store'])->name('product.store');
+                Route::post('/product/store-edit', [App\Http\Controllers\Admin\ProductController::class, 'storeEdit'])->name('product.store-edit');
                 Route::post('/product/destroy', [App\Http\Controllers\Admin\ProductController::class, 'destroy'])->name('product.destroy');
                 Route::post('/product/change-status', [App\Http\Controllers\Admin\ProductController::class, 'changeStatus'])->name('product.change-status');
                 Route::post('/product/update', [App\Http\Controllers\Admin\ProductController::class, 'update'])->name('product.update');

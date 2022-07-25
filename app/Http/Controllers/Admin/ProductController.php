@@ -30,7 +30,7 @@ class ProductController extends Controller
     public function show()
     {
         return datatables()->of(
-            Product::query()->with('brand', 'category')->orderBy('id', 'desc')
+            Product::query()->with('brand', 'category','productImages')->orderBy('id', 'desc')
         )->toJson();
     }
 
@@ -167,6 +167,128 @@ class ProductController extends Controller
         return $data;
 
     }
+
+    public function storeEdit(Request $req)
+    {
+        // return $req->all();
+        $id = $req->id;
+        $name = $req->name;
+        $sku = $req->sku;
+        $cat = $req->cat;
+        $brand = $req->brand;
+        $price = $req->price;
+        $detail = $req->productdesc;
+
+        $is_active = $req->is_active;
+        $is_stock = $req->is_stock;
+        $is_new = $req->is_new;
+        $is_recommend = $req->is_recommend;
+
+        DB::beginTransaction();
+
+        $product = Product::find($id);
+
+        if ($product == null) {
+            if (Product::where('name', $name)->first()) {
+                $data = [
+                    'title' => 'ผิดพลาด!',
+                    'msg' => 'ชื่อสินค้านี้ถูกใช้แล้ว',
+                    'status' => 'warning',
+                ];
+                // return redirect()->back()->withError('ชื่อสินค้านี้ถูกใช้แล้ว!');
+                return $data;
+            }
+            if (Product::where('sku', $sku)->first()) {
+                $data = [
+                    'title' => 'ผิดพลาด!',
+                    'msg' => 'รหัสสินค้านี้ถูกใช้แล้ว',
+                    'status' => 'warning',
+                ];
+                // return redirect()->back()->withError('รหัสสินค้านี้ถูกใช้แล้ว!');
+                return $data;
+            }
+
+            $product = new Product;
+            $product->is_active = 1;
+            $product->save();
+            $product_id = $product->id;
+            $product = Product::find($product_id);
+
+            $path = 'hbImages/products/' . $product->id . '/';
+            if ($req->hasFile('imageFile')) {
+                $imageName = time() . '.' . $req->imageFile->extension();
+                Storage::disk('spaces')->putFileAs($path, $req->imageFile, $imageName);
+                // $req->imageFile->move(public_path('assets/hbImages/product-brand/'), $imageName);
+                $path = 'hbImages/products/' . $product->id . '/' . $imageName;
+                $product->img = $path;
+            }
+            $product->name = $name;
+            $product->sku = $sku;
+            $product->price = (string) $price;
+            $product->product_category_id = $cat;
+            $product->product_brand_id = $brand;
+            $product->save();
+
+            DB::commit();
+        }else{
+
+            $path = 'hbImages/products/' . $product->id . '/';
+            if ($req->hasFile('imageFile')) {
+
+                $imageName = time() . '.' . $req->imageFile->extension();
+                Storage::disk('spaces')->putFileAs($path, $req->imageFile, $imageName);
+                // $req->imageFile->move(public_path('assets/hbImages/product-brand/'), $imageName);
+                $path = 'hbImages/products/' . $product->id . '/' . $imageName;
+                $product->img = $path;
+            }
+
+            $product->name = $name;
+            $product->sku = $sku;
+            $product->price = (string) $price;
+            $product->product_category_id = $cat;
+            $product->product_brand_id = $brand;
+            $product->detail = $detail;
+
+            if($is_active == 'on'){
+                $product->is_active = 1;
+            }else{
+                $product->is_active = 0;
+            }
+
+            if ($is_stock == 'on') {
+                $product->is_stock = 1;
+            } else {
+                $product->is_stock = 0;
+            }
+
+            if ($is_new == 'on') {
+                $product->is_new = 1;
+            } else {
+                $product->is_new = 0;
+            }
+
+            if ($is_recommend == 'on') {
+                $product->is_recommend = 1;
+            } else {
+                $product->is_recommend = 0;
+            }   
+     
+            $product->save();
+
+            DB::commit();
+
+        }
+
+        // $data = [
+        //     'title' => 'บันทึกสำเร็จ!',
+        //     'msg' => 'บันทึกสินค้าสำเร็จ',
+        //     'status' => 'success',
+        // ];
+        return redirect()->back()->with('success', 'บันทึกสินค้าสำเร็จ!');
+        // return $data;
+
+    }
+
 
     public function update(Request $req)
     {

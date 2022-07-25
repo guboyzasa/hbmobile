@@ -5,56 +5,87 @@
 @endsection
 
 @section('content')
-<link href="https://cdn.syncfusion.com/ej2/ej2-base/styles/material.css" rel="stylesheet" type="text/css" />
-<link href="https://cdn.syncfusion.com/ej2/ej2-buttons/styles/material.css" rel="stylesheet" type="text/css" />
-<link href="https://cdn.syncfusion.com/ej2/ej2-calendars/styles/material.css" rel="stylesheet" type="text/css" />
-<script src="https://cdn.syncfusion.com/ej2/ej2-base/dist/global/ej2-base.min.js" type="text/javascript">
-</script>
-<script src="https://cdn.syncfusion.com/ej2/ej2-inputs/dist/global/ej2-inputs.min.js" type="text/javascript">
-</script>
-<script src="https://cdn.syncfusion.com/ej2/ej2-buttons/dist/global/ej2-buttons.min.js" type="text/javascript">
-</script>
-<script src="https://cdn.syncfusion.com/ej2/ej2-lists/dist/global/ej2-lists.min.js" type="text/javascript">
-</script>
-<script src="https://cdn.syncfusion.com/ej2/ej2-popups/dist/global/ej2-popups.min.js" type="text/javascript">
-</script>
-<script src="https://cdn.syncfusion.com/ej2/ej2-calendars/dist/global/ej2-calendars.min.js" type="text/javascript">
-</script>
-
 <div class="card" style="border-radius: 10px">
     <div class="card-body">
-        <div class="col-12 p-4 bg-primary bg-soft shadow-lg mb-1" style="border-radius: 10px">
+        <div class="col-xl-12 p-4 bg-primary bg-soft shadow-sm" style="border-radius: 10px">
             <div style="text-align: right;color:black" id="clock" onload="currentTime()"></div>
             <h2 class="text-primary">Welcome to admin !</h2>
-            <p>HB MOBILE SERVICES Dashboard</p>
         </div>
     </div>
 </div>
-<div class="col-xl-12">
-    <div class="col-sm-3">
-        <div class="card shadow-lg mb-1" style="border-radius: 10px">
-            <div class="card-body text-center">
-                <div id="element"></div>
+<div class="container">
+    <div class="col-xl-12">
+        <div class="row">
+            <div class="col-xl-4">
+                <div class="card mini-stats-wid shadow-lg" style="border-radius: 10px">
+                    <div class="card-body">
+                        <div class="media">
+                            <div class="media-body">
+                                <p class="text-muted fw-medium">จำนวนออเดอร์</p>
+                                <h4 class="mb-0">{{ number_format($countOrder) }} ออเดอร์<i
+                                        class="mdi mdi-chevron-up ms-1 text-success"></i></h4>
+                            </div>
+
+                            <div class="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
+                                <span class="avatar-title">
+                                    <i class="bx bx-package font-size-24"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4">
+                <div class="card mini-stats-wid shadow-lg" style="border-radius: 10px">
+                    <div class="card-body">
+                        <div class="media">
+                            <div class="media-body">
+                                <p class="text-muted fw-medium">ยอดขายรวมทั้งสิ้น</p>
+                                <h4 class="mb-0">฿ {{ number_format($sumOrder) }} บาท<i
+                                        class="mdi mdi-chevron-up ms-1 text-success"></i></h4>
+                            </div>
+
+                            <div class="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
+                                <span class="avatar-title">
+                                    <i class="bx bx-archive-in font-size-24"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4">
+                <div class="card mini-stats-wid shadow-lg" style="border-radius: 10px">
+                    <div class="card-body">
+                        <div class="media">
+                            <div class="media-body">
+                                <p class="text-muted fw-medium">ยอดซ่อมรวมทั้งสิ้น</p>
+                                <h4 class="mb-0">฿ {{ number_format($sumRepairPrice + $sumRepairShipping) }} บาท<i
+                                        class="mdi mdi-chevron-up ms-1 text-success"></i></h4>
+                            </div>
+                            <div class="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
+                                <span class="avatar-title">
+                                    <i class="bx bx-archive-in font-size-24"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
-
-
 @endsection
 
 @section('script')
+
 <!-- apexcharts -->
 <script src="{{ URL::asset('/assets/libs/apexcharts/apexcharts.min.js') }}"></script>
 
 <!-- dashboard init -->
 <script src="{{ URL::asset('/assets/js/pages/dashboard.init.js') }}"></script>
 
-<script>
-    var calendar = new ej.calendars.Calendar();
-        calendar.appendTo('#element')
-</script>
+<!-- time clock -->
 <script>
     function currentTime() {
             let date = new Date();

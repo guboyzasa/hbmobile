@@ -33,7 +33,7 @@
                     <br>
                     <table id="warranty_table" class="table table-bordered dt-responsive  nowrap w-100">
                         <thead>
-                            <tr>
+                            <tr class="table-secondary">
                                 <th>Serial No</th>
                                 <th>ชื่อลูกค้า</th>
                                 <th>รหัสสินค้า</th>

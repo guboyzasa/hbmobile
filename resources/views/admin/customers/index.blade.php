@@ -24,7 +24,7 @@
                     <br>
                     <table id="simple_table" class="table table-bordered dt-responsive  nowrap w-100">
                         <thead>
-                            <tr>
+                            <tr class="table-secondary">
                                 <th>เบอร์โทร</th>
                                 <th>ชื่อ</th>
                                 <th>email</th>

@@ -22,9 +22,7 @@ class RepairController extends Controller
     {
 
         $customers = Customer::orderBy('id', 'desc')->get();
-        // $products = Product::orderBy('id', 'desc')->get();
         $statusRe = DB::table('status_repair')->get();
-        // $shops = Shop::all();
         $countRepair = RepairRegistration::count('id');
 
         return view('admin.repair.index', compact('customers', 'countRepair','statusRe'));
@@ -95,8 +93,8 @@ class RepairController extends Controller
         DB::commit();
 
         $data = [
-            'title' => 'ลงทะเบียนสำเร็จ!',
-            'msg' => 'ลงทะเบียนงานซ่อมสำเร็จ',
+            'title' => 'แก้ไขสำเร็จ!',
+            'msg' => 'แก้ไขลงทะเบียนงานซ่อมสำเร็จ',
             'status' => 'success',
         ];
         return $data;

@@ -17,14 +17,17 @@ class DashboardController extends Controller
     {
         $countOrder = Order::where('status', '!=', 6)->count();
         $sumOrder = Order::whereIn('status', [2,3,4,5])->sum('total_amount');
+        $sumRepairPrice = RepairRegistration::whereIn('status', [1,2,3])->sum('price');
+        $sumRepairShipping = RepairRegistration::whereIn('status', [1,2,3])->sum('shipping_price');
         $countRegisterWarranty = WarrantyRegistration::count();
         $countRegisterRepair = RepairRegistration::count();
         $countCustomer = Customer::count();
         $countUserCustomer = Customer::where('user_id', '!=', null)->count();
         $countAgent = Agent::count();
-        // $sumRepair = RepairRegistration::whereIn('price','==',4)->sum('price');
+        $repairs = RepairRegistration::with('customer')->get();
+        $customers = Customer::all();
 
-        return view('admin.dashboard-saas', compact('countOrder', 'sumOrder', 'countRegisterWarranty','countRegisterRepair', 'countCustomer', 'countUserCustomer', 'countAgent'));
+        return view('admin.dashboard-saas', compact('sumRepairPrice','sumRepairShipping','countOrder', 'sumOrder', 'countRegisterWarranty','countRegisterRepair', 'countCustomer', 'countUserCustomer', 'countAgent','repairs','customers'));
     }
 
 }

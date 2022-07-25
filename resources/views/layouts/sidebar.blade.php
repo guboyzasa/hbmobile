@@ -69,9 +69,9 @@
             </ul>
             <br>
             <br>
-            <div class="" style="text-align: center">
+            {{-- <div class="" style="text-align: center">
                 <script style="color: black">document.write(new Date().getFullYear())</script> © HB Mobile Services.
-            </div>
+            </div> --}}
         </div>
         <!-- Sidebar -->
     </div>

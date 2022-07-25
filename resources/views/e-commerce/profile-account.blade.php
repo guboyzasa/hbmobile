@@ -100,7 +100,7 @@
                                     ค่าส่ง: <strong><span class="amount">{{ @$repair->shipping_price }}</span></strong>
                                 </li>
                                 <li class="total" style="text-align:center">
-                                    รวมทั้งสิ้น: <strong>
+                                    รวม: <strong>
                                         <span class="amount">{{ $repair->price + @$repair->shipping_price }}</span></strong>
                                 </li>
                                 <li class="total" style="text-align:center">
@@ -691,7 +691,7 @@
                                         ค่าส่ง: <strong><span class="amount">{{ @$repair->shipping_price }}</span></strong>
                                     </li>
                                     <li class="total" style="text-align:center">
-                                        รวมทั้งสิ้น: <strong>
+                                        รวม: <strong>
                                             <span class="amount">{{ $repair->price + @$repair->shipping_price }}</span></strong>
                                     </li>
                                     <li class="total" style="text-align:center">

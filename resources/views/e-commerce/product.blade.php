@@ -120,8 +120,9 @@
                     </div>
 
                     <div class="description">
+                        <label> <small>รายละเอียดสินค้า</small></label>
                         <p>
-                            {{ $product->detail }}
+                           - {{ $product->detail }}
                         </p>
                     </div>
 

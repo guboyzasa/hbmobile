@@ -21,9 +21,9 @@
                     <h4 class="card-title">จัดการออเดอร์</h4>
                     <br>
  
-                    <table id="simple_table" class="table table-bordered dt-responsive  nowrap w-100">
+                    <table id="simple_table" class="table table-bordered dt-responsive nowrap w-100">
                         <thead>
-                            <tr>
+                            <tr class="table-secondary">
                                 <th>เลขออเดอร์</th>
                                 <th>ชื่อลูกค้า</th>
                                 <th>วันที่</th>
@@ -200,7 +200,7 @@
                             var obj = JSON.stringify(full);
                             var button = `
 
-                            <a type="button" class="btn btn-sm btn-warning" href="/admin/order/${data}"><i class="bx bx-search-alt-2"></i> </a>
+                            <a href="/admin/order/${data}" class="btn btn-sm btn-warning"><i class="bx bx-search-alt-2"></i></a>
                              <button type="button" class="btn btn-sm btn-danger" onclick="destroy(${data})"><i class="bx bx-trash"></i> </button>
                             `;
                             return button;

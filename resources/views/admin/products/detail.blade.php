@@ -80,7 +80,7 @@
 
 @component('components.breadcrumb')
 @slot('li_1') Dashboard @endslot
-{{-- @slot('title') รายละเอียดสินค้า : {{ $product->name }} @endslot --}}
+@slot('title') รายละเอียดสินค้า : {{ $product->name }} @endslot
 @endcomponent
 
 {{-- <div class="row">
@@ -113,241 +113,6 @@
     </div>
 </div>
 
-
-
-<!-- Modal FullScreen -->
-{{-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-fullscreen">
-        <div class="modal-content">
-            <div class="modal-header shadow-lg" style="border-radius: 10px">
-                <h5 class="modal-title" id="staticBackdropLabel">
-                    <h4 class="card-title">รายละเอียดข้อมูลสินค้า : {{ $product->name }} | SKU : {{ $product->sku }}
-                    </h4>
-                </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card shadow-lg" style="border-radius: 10px">
-                            <div class="card-body">
-                                <form class="form-horizontal" action="{{ route('admin.product.store') }}" method="POST"
-                                    enctype="multipart/form-data" id="product-detail-form">
-                                    <div class="row">
-                                        <div class="mb-4" style="text-align: center;">
-                                            <label for="name">รูปหน้าปกสินค้า</label><br>
-                                            <a style="text-align:center;" href="#"
-                                                onclick='showImg("{{ $product->img }}")'>
-                                                <img src="{{ URL::asset('get-content/'.$product->img) }}" width="100%"
-                                                    class="css image img grid-item"
-                                                    style="margin-top:2.5rem; margin-bottom:2.5rem; max-width: 150px;">
-                                            </a>
-                                            <input type="file" onchange="validateSize(this)"
-                                                class="form-control formInput" accept="image/*" name="imageFile"
-                                                id="imageFile" placeholder="กรุณาเลือกรูปภาพ">
-                                        </div>
-                                    </div>
-                                    @csrf
-                                    <input type="hidden" name="id" value="{{ $product->id }}">
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <div class="mb-3">
-                                                <label for="name">ชื่อสินค้า</label>
-                                                <input id="name" name="name" type="text" class="form-control"
-                                                    value="{{ $product->name }}" required>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="sku">รหัสสินค้า</label>
-                                                <input id="sku" name="sku" type="text" class="form-control"
-                                                    value="{{ $product->sku }}" required>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="price">ราคา</label>
-                                                <input id="price" name="price" type="number" step="0.01" min="0.01"
-                                                    class="form-control" value="{{ $product->price }}" required>
-                                            </div>
-                                            <div class="mb-3">
-                                                <div class="row">
-
-                                                    <div class="col-6">
-                                                        <div class="form-check form-check-primary mb-3">
-                                                            @if ($product->is_active)
-                                                            <input class="form-check-input" type="checkbox"
-                                                                name="is_active" id="formCheckcolor1" checked>
-                                                            @else
-                                                            <input class="form-check-input" type="checkbox"
-                                                                name="is_active" id="formCheckcolor1">
-                                                            @endif
-                                                            <label class="form-check-label" for="formCheckcolor1">
-                                                                เปิดโชว์สินค้า </label>
-                                                        </div>
-
-                                                        <div class="form-check form-check-success mb-3">
-                                                            @if ($product->is_stock)
-                                                            <input class="form-check-input" type="checkbox"
-                                                                name="is_stock" id="formCheckcolor2" checked>
-                                                            @else
-                                                            <input class="form-check-input" type="checkbox"
-                                                                name="is_stock" id="formCheckcolor2">
-                                                            @endif
-                                                            <label class="form-check-label" for="formCheckcolor2">
-                                                                มีสินค้าใน Stock </label>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-6">
-                                                        <div class="form-check form-check-info mb-2">
-                                                            @if ($product->is_recommend)
-                                                            <input class="form-check-input" type="checkbox"
-                                                                name="is_recommend" id="formCheckcolor3" checked>
-                                                            @else
-                                                            <input class="form-check-input" type="checkbox"
-                                                                name="is_recommend" id="formCheckcolor3">
-                                                            @endif
-                                                            <label classz="form-check-label" for="formCheckcolor3">
-                                                                สินค้าแนะนำ </label>
-                                                        </div>
-
-                                                        <div class="form-check form-check-warning mb-3">
-                                                            @if ($product->is_new)
-                                                            <input class="form-check-input" type="checkbox"
-                                                                name="is_new" id="formCheckcolor4" checked>
-                                                            @else
-                                                            <input class="form-check-input" type="checkbox"
-                                                                name="is_new" id="formCheckcolor4">
-                                                            @endif
-                                                            <label class="form-check-label" for="formCheckcolor4">
-                                                                สินค้าใหม่ </label>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                        <div class="col-sm-6">
-                                            <div class="mb-3">
-                                                <label class="control-label">หมวดหมู่สินค้า</label>
-                                                <select class="form-control " id="cat" name="cat">
-                                                    <option value="{{ $product->product_category_id }}" selected> {{
-                                                        $product->category->name }}</option>
-                                                    @foreach ($categories as $cat)
-                                                    @if ($cat->id != $product->product_category_id)
-                                                    <option value="{{ $cat->id }}"> {{ $cat->name }}</option>
-                                                    @endif
-                                                    @endforeach
-                                                </select>
-                                            </div>
-
-                                            <div class="mb-3">
-                                                <label class="control-label">แบรนด์สินค้า</label>
-                                                <select class="form-control" id="brand" name="brand">
-                                                    <option value="{{ $product->product_brand_id }}" selected> {{
-                                                        $product->brand->name }}</option>
-                                                    @foreach ($brands as $brand)
-                                                    @if ( $brand->id != $product->product_brand_id)
-                                                    <option value="{{ $brand->id }}"> {{ $brand->name }}</option>
-                                                    @endif
-                                                    @endforeach
-                                                </select>
-                                            </div>
-
-                                            <div class="mb-3">
-                                                <label for="productdesc">รายละเอียดสินค้า</label>
-                                                <textarea class="form-control" id="productdesc" name="productdesc"
-                                                    rows="5"> {{ $product->detail }} </textarea>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="d-flex flex-wrap gap-2" style="float: right;">
-                                        <button type="submit" class="btn btn-warning waves-effect waves-light">
-                                            บันทึกการแก้ไข
-                                        </button>
-                                    </div>
-                                </form>
-
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="col-md-12">
-                                    @if (session('success'))
-                                    <div class="alert alert-success">
-                                        {{ session('success') }}
-                                        <i class="bx bx-check-double"></i>
-
-                                    </div>
-
-                                    @endif
-                                    @if ($errors->any())
-                                    <div class="alert alert-danger">
-                                        <ul>
-                                            @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                    @endif
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="card shadow-lg" style="border-radius: 10px">
-                            <div class="card-body">
-                                <h4 class="card-title mb-3">รูปตัวอย่างสินค้า (ขนาดไม่เกิน 2 mb และ ไม่เกิน 4 รูป)</h4>
-                                <form action="{{ route('admin.product.update') }}" method="POST"
-                                    enctype="multipart/form-data">
-                                    @csrf
-                                    <input type="hidden" name="id" value="{{ $product->id }}">
-                                    <div class="form-group image row" id="image-area">
-                                        @if(isset($product->productImages))
-                                        @foreach($product->productImages as $img)
-
-                                        <div class='col-md-3 col-xs-12 text-center' id='img-{{$img->id}}'
-                                            onclick="removeimage('{{$img->id}}')">
-
-                                            <img src="{{ URL::asset('get-content/'.$img->img) }}" width="100%"
-                                                class="css image img grid-item"
-                                                style="margin-top:2.5rem; margin-bottom:2.5rem;">
-                                            <div class="overlay">
-                                                <div class="icon-remove"><i class="fa fa-trash text-danger"
-                                                        aria-hidden="true"></i></div>
-                                            </div>
-                                        </div>
-                                        @endforeach
-                                        @endif
-
-                                        <div class="col-md-3 col-xs-12 text-center">
-
-                                            <i class="bx bx-plus text-success" id="inputImage"
-                                                style="cursor: pointer; font-size: 8rem;"></i>
-                                            <br>
-                                            <h5>เพิ่มรูปภาพ</h5>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex flex-wrap gap-2" style="float: right;">
-                                        <button type="submit" class="btn btn-success waves-effect waves-light">
-                                            อัพโหลรูปภาพ </button>
-                                    </div>
-                                </form>
-                            </div>
-
-                        </div> <!-- end card-->
-
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
-            </div>
-        </div>
-    </div>
-</div> --}}
-
 <div class="row">
     <div class="col-12">
         <div class="card shadow-lg" style="border-radius: 10px">
@@ -355,7 +120,6 @@
                 <h4 class="card-title">ข้อมูลสินค้า : {{ $product->name }} | SKU : {{ $product->sku }}</h4>
                 <form class="form-horizontal" action="{{ route('admin.product.store') }}" method="POST"
                     enctype="multipart/form-data" id="product-detail-form">
-
                     <div class="row">
                         <div class="mb-4"></div>
                         <div class="mb-4" style="text-align: center;">
@@ -368,10 +132,8 @@
                             <input type="file" onchange="validateSize(this)" class="form-control formInput"
                                 accept="image/*" name="imageFile" id="imageFile" placeholder="กรุณาเลือกรูปภาพ">
                         </div>
-
                         <div class="mb-4"></div>
                     </div>
-
                     <br>
                     @csrf
                     <input type="hidden" name="id" value="{{ $product->id }}">
@@ -485,30 +247,22 @@
 
                         </div>
                     </div>
-
                     <div class="d-flex flex-wrap gap-2" style="float: right;">
                         <button type="submit" class="btn btn-warning waves-effect waves-light"> บันทึกการแก้ไข </button>
-                        {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">แก้ไขเต็มจอ</button> --}}
                         <a href="{{ route('admin.product.index') }}" class="btn btn btn-success pull-right"><i
                                 class="fa fa-arrow-left" aria-hidden="true"></i> ย้อนกลับ </a>
                     </div>
-                    
                 </form>
-
             </div>
         </div>
-
         <div class="row">
-
             <div class="col-md-12">
                 <div class="col-md-12">
                     @if (session('success'))
                     <div class="alert alert-success">
                         {{ session('success') }}
                         <i class="bx bx-check-double"></i>
-
                     </div>
-
                     @endif
                     @if ($errors->any())
                     <div class="alert alert-danger">
@@ -521,7 +275,6 @@
                     @endif
                 </div>
             </div>
-
         </div>
         <div class="card shadow-lg" style="border-radius: 10px">
             <div class="card-body">
@@ -532,10 +285,8 @@
                     <div class="form-group image row" id="image-area">
                         @if(isset($product->productImages))
                         @foreach($product->productImages as $img)
-
                         <div class='col-md-3 col-xs-12 text-center' id='img-{{$img->id}}'
                             onclick="removeimage('{{$img->id}}')">
-
                             <img src="{{ URL::asset('get-content/'.$img->img) }}" width="100%"
                                 class="css image img grid-item" style="margin-top:2.5rem; margin-bottom:2.5rem;">
                             <div class="overlay">
@@ -545,9 +296,7 @@
                         </div>
                         @endforeach
                         @endif
-
                         <div class="col-md-3 col-xs-12 text-center">
-
                             <i class="bx bx-plus text-success" id="inputImage"
                                 style="cursor: pointer; font-size: 8rem;"></i>
                             <br>
@@ -559,9 +308,7 @@
                     </div>
                 </form>
             </div>
-
         </div> <!-- end card-->
-
     </div>
 </div>
 
@@ -786,22 +533,6 @@
                     }
                 });
         }
-
-        // function validateSize(input) {
-
-        //     const fileSize = input.files[0].size / 1024 / 1024; // in MiB
-        //     if (fileSize > 1) {
-        //         // alert('File size exceeds 2 MiB');
-        //         Swal.fire('แจ้งเตือน!', 'ขนาดไฟล์ต้องน้อยกว่าหรือเท่ากับ 1 MB', 'warning');
-        //         document.getElementById("imageFile").value = "";
-        //         // $(file).val(''); //for clearing with Jquery
-        //     } else {
-        //         // Proceed further
-        //     }
-        // }
-
-
-
 </script>
 
 @endsection

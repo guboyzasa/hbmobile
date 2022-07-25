@@ -41,7 +41,7 @@
                     <br>
                     <table id="warranty_table" class="table table-bordered dt-responsive  nowrap w-100">
                         <thead>
-                            <tr>
+                            <tr class="table-secondary">
                                 <th>วันที่รับเครื่อง</th>
                                 <th>ชื่อลูกค้า</th> 
                                 <th>รายการซ่อม</th>
@@ -152,7 +152,7 @@
                                         <input type="text" id="endDate" class="form-control form-inputs"
                                             placeholder="วัน-เดือน-ปี" data-date-format="dd-mm-yyyy"
                                             data-date-container='#datepicker2' data-date-end-date=""
-                                            value="{{ date('d-m-Y', strtotime(date('Y-m-d') . '+1 day')) }}"
+                                            value="{{ date('d-m-Y', strtotime(date('Y-m-d') . '+3 month')) }}"
                                             data-provide="datepicker" name="endDate" autocomplete="off" required>
                                         <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
 
@@ -370,6 +370,7 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
+    
 @endsection
 @section('script')
     <script src="{{ URL::asset('/assets/libs/select2/select2.min.js') }}"></script>
@@ -750,7 +751,7 @@
             $("#modelEdit").val(obj.model).trigger('change');
             $('#priceEdit').val(obj.price).trigger('change');
             $('#statusEdit').val(obj.status).trigger('change');
-            $('#shippingPriceEdit').val(obj.shippingPrice).trigger('change');
+            $('#shippingPriceEdit').val(obj.shipping_price).trigger('change');
             $('#startDateEdit').val(moment(obj.repair_start_date).format('DD-MM-YYYY'));
             $('#endDateEdit').val(moment(obj.repair_end_date).format('DD-MM-YYYY'));
             $('#detailEdit').val(obj.detail).trigger('change');
