@@ -6,7 +6,7 @@
 
 <section class="section pt-0 mt-3" id="profile-order">
     <div class="container">
-        <div class="row shadow-lg p-3 mb-5" style="border-radius: 10px">
+        <div class="row shadow-lg p-3 mb-5" style="border-radius: 5px">
             <div class="col-md-12 pt-5">
                 @if (session('success'))
                 <div class="alert alert-success">
@@ -59,52 +59,52 @@
 
                     @switch($repair->status)
                         @case(1)
-                        <div class="alert alert-danger shadow p-3 mb-1" style="border-radius: 10px">
+                        <div class="alert alert-danger shadow p-3 mb-1" style="border-radius: 5px">
                             <i class='bx bx-cog bx-spin bx-flip-horizontal'></i> กำลังดำเนินการ
                         </div>
                         @break
 
                         @case(2)
-                        <div class="alert alert-success shadow p-3 mb-1" style="border-radius: 10px">
+                        <div class="alert alert-success shadow p-3 mb-1" style="border-radius: 5px">
                             <i class="bx bx-check-double"></i> ซ่อมเสร็จแล้ว
                         </div>
                         @break
 
                         @case(3)
-                        <div class="alert alert-warning shadow p-3 mb-1" style="border-radius: 10px">
+                        <div class="alert alert-warning shadow p-3 mb-1" style="border-radius: 5px">
                             <i class="bx bx-error"></i> ซ่อมไม่ได้
                         </div>
                         @break
 
                         @default
                     @endswitch
-                    <div class="card shadow-lg mb-1" style="border-radius: 10px">
+                    <div class="card shadow-lg mb-1" style="border-radius: 5px">
                         <div class="card-body">
                             <ul class="order-details">
-                                <li class="date">
+                                <li class="date" style="font-size: 100%">
                                     วันที่รับเครื่อง:
-                                    <strong>{{ date('d/m/Y', strtotime($repair->repair_start_date)) }}</strong>
+                                    <strong style="font-size: 100%">{{ date('d/m/Y', strtotime($repair->repair_start_date)) }}</strong>
                                 </li>
                                 {{-- <li class="order">
                                     รุ่น:model: <strong>{{ $repair->model }}</strong>
                                 </li> --}}
-                                <li class="method" style="text-align:center">
-                                    รายการซ่อม: <strong>{{ $repair->model }} x {{ $repair->detail }}</strong>
+                                <li class="method" style="text-align:center;font-size:100%">
+                                    รายการซ่อม: <strong style="font-size: 100%">{{ $repair->model }} x {{ $repair->detail }}</strong>
                                 </li>
 
-                                <li class="total" style="text-align:center">
-                                    ราคา: <strong><span class="amount">{{ $repair->price }}</span></strong>
+                                <li class="total" style="text-align:center;font-size:100%">
+                                    ราคา: <strong style="font-size: 100%"><span class="amount">{{ $repair->price }}</span></strong>
                                 </li>
 
-                                <li class="total" style="text-align:center">
-                                    ค่าส่ง: <strong><span class="amount">{{ @$repair->shipping_price }}</span></strong>
+                                <li class="total" style="text-align:center;font-size:100%">
+                                    ค่าส่ง: <strong style="font-size: 100%"><span class="amount">{{ @$repair->shipping_price }}</span></strong>
                                 </li>
-                                <li class="total" style="text-align:center">
-                                    รวม: <strong>
+                                <li class="total" style="text-align:center;font-size:100%">
+                                    รวม: <strong style="font-size: 100%">
                                         <span class="amount">{{ $repair->price + @$repair->shipping_price }}</span></strong>
                                 </li>
-                                <li class="total" style="text-align:center">
-                                    ออกบิล: <strong>
+                                <li class="total" style="text-align:center;font-size:100%">
+                                    ออกบิล: <strong style="font-size: 100%">
                                         <span class="amount">
                                             <form action="{{ url('/create-invoice') }}" method="get"
                                                     target="_blank">
@@ -154,7 +154,7 @@
                                                         <button type="submit"
                                                             class="btn badge badge-warning waves-effect waves-light"><i
                                                                 class="bx bx-printer"></i>
-                                                            ชำระ</button>
+                                                        </button>
                                                     </div>
                                                 </form>
                                         </span></strong>
@@ -188,43 +188,43 @@
                 
                     @switch ($order->status)
                     @case(0)
-                    <div class="alert alert-warning shadow p-3 mb-1" style="border-radius: 10px">
+                    <div class="alert alert-warning shadow p-3 mb-1" style="border-radius: 5px">
                         <i class='bx bx-loader-circle bx-spin bx-flip-horizontal'></i> รออัพโหลดสลิป
                     </div>
                     @break
                 
                     @case(1)
-                    <div class="alert alert-dark shadow p-3 mb-1" style="border-radius: 10px">
+                    <div class="alert alert-dark shadow p-3 mb-1" style="border-radius: 5px">
                         <i class='bx bx-check-double'></i> อัพโหลดสลิปแล้ว
                     </div>
                     @break
                 
                     @case(2)
-                    <div class="alert alert-warning shadow p-3 mb-1" style="border-radius: 10px">
+                    <div class="alert alert-warning shadow p-3 mb-1" style="border-radius: 5px">
                         <i class="bx bx-save"></i> ยืนยันการชำระเงิน
                     </div>
                     @break
                 
                     @case(3)
-                    <div class="alert alert-dark shadow p-3 mb-1" style="border-radius: 10px">
+                    <div class="alert alert-dark shadow p-3 mb-1" style="border-radius: 5px">
                         <i class="bx bx-paper-plane"></i> กำลังเตรียมจัดส่ง
                     </div>
                     @break
                 
                     @case(4)
-                    <div class="alert alert-success shadow p-3 mb-1" style="border-radius: 10px">
+                    <div class="alert alert-success shadow p-3 mb-1" style="border-radius: 5px">
                         <i class="bx bx-check-double"></i> จัดส่งแล้ว
                     </div>
                     @break
                 
                     @case(5)
-                    <div class="alert alert-danger shadow p-3 mb-1" style="border-radius: 10px">
+                    <div class="alert alert-danger shadow p-3 mb-1" style="border-radius: 5px">
                         <i class="bx bx-error"></i> จัดส่งไม่สำเร็จ
                     </div>
                     @break
                 
                     @case(6)
-                    <div class="alert alert-danger shadow p-3 mb-1" style="border-radius: 10px">
+                    <div class="alert alert-danger shadow p-3 mb-1" style="border-radius: 5px">
                         <i class="bx bx-x-circle"></i> ยกเลิกรายการ
                     </div>
                     @break
@@ -232,34 +232,34 @@
                     @default
                     @break
                     @endswitch
-                    <div class="card shadow-lg mb-1" style="border-radius: 10px">
+                    <div class="card shadow-lg mb-1" style="border-radius: 5px">
                         <div class="card-body">
                             <ul class="order-details">
-                                <li class="order">
-                                    รหัสใบสั่งซื้อ: <strong>{{ $order->code }}</strong>
+                                <li class="order" style="font-size: 100%">
+                                    รหัสใบสั่งซื้อ: <strong style="font-size: 100%">{{ $order->code }}</strong>
                                 </li>
-                                <li class="date">
-                                    วันที่สั่ง: <strong>{{ date('d/m/Y', strtotime($order->created_at)) }}</strong>
+                                <li class="date" style="font-size: 100%">
+                                    วันที่สั่ง: <strong style="font-size: 100%">{{ date('d/m/Y', strtotime($order->created_at)) }}</strong>
                                 </li>
-                                <li class="total">
-                                    รวมทั้งสิ้น: <strong><span class="amount">{{ $order->total_amount }}</span></strong>
+                                <li class="total" style="font-size: 100%">
+                                    รวมทั้งสิ้น: <strong style="font-size: 100%"><span class="amount">{{ $order->total_amount }}</span></strong>
                                 </li>
-                                <li class="method">
-                                    ประเภท: <strong>โอนชำระ</strong>
+                                <li class="method" style="font-size: 100%">
+                                    ประเภท: <strong style="font-size: 100%">โอนชำระ</strong>
                                 </li>
                             </ul><!-- /.order-details -->
                 
                             <div class="custom-accordion flex-column" id="order-detail" role="tablist" aria-multiselectable="true">
-                                <div class="card card-default"  style="border-radius: 10px">
+                                <div class="card card-default"  style="border-radius: 5px">
                                     <div class="card-header cursor-pointer" data-toggle="collapse" data-target="#last-order"
-                                        aria-expanded="true"  style="border-radius: 10px">
-                                        <h4 class="h4 mb-0">
+                                        aria-expanded="true"  style="border-radius: 5px">
+                                        <h5 class="h5 mb-0">
                                             Order Details
-                                        </h4>
+                                        </h5>
                                     </div>
                                     <div id="last-order" class="card-collapse collapse" data-parent="#order-detail">
                                         <div class="card-body">
-                                            <div class="box table-responsive shadow-lg" style="border-radius: 10px">
+                                            <div class="box table-responsive shadow-lg" style="border-radius: 5px">
                                                 <table class="table cart-table order-details-table w-100">
                                                     <thead>
                                                         <tr>
@@ -385,7 +385,7 @@
                                                 </table>
                                             </div> <!-- /.box -->
                                             <div class="text-right">
-                                                <a href="/form-upload-slip/order/{{ $order->id }}" class="btn btn-danger" style="border-radius: 10px">
+                                                <a href="/form-upload-slip/order/{{ $order->id }}" class="btn btn-danger" style="border-radius: 5px">
                                                     อัพโหลดสลิป</a>
                                             </div>
                                         </div>
@@ -417,47 +417,47 @@
                             <h3><i class="line"></i>การสั่งซื้อล่าสุด<i class="line"></i></h3>
                             <p>รายละเอียดการสั่งซื้อล่าสุดของคุณ</p>
                         </div>
-                        {{-- <div class="card shadow-lg " style="border-radius: 10px">
+                        {{-- <div class="card shadow-lg " style="border-radius: 5px">
                             <div class="card-body"> --}}
                                 @switch ($order->status)
                                 @case(0)
-                                <div class="alert alert-warning shadow p-3 mb-1" style="border-radius: 10px">
+                                <div class="alert alert-warning shadow p-3 mb-1" style="border-radius: 5px">
                                     <i class='bx bx-loader-circle bx-spin bx-flip-horizontal'></i> รออัพโหลดสลิป
                                 </div>
                                 @break
 
                                 @case(1)
-                                <div class="alert alert-dark shadow p-3 mb-1" style="border-radius: 10px">
+                                <div class="alert alert-dark shadow p-3 mb-1" style="border-radius: 5px">
                                     <i class='bx bx-check-double'></i> อัพโหลดสลิปแล้ว
                                 </div>
                                 @break
 
                                 @case(2)
-                                <div class="alert alert-warning shadow p-3 mb-1" style="border-radius: 10px">
+                                <div class="alert alert-warning shadow p-3 mb-1" style="border-radius: 5px">
                                     <i class="bx bx-save"></i> ยืนยันการชำระเงิน
                                 </div>
                                 @break
 
                                 @case(3)
-                                <div class="alert alert-dark shadow p-3 mb-1" style="border-radius: 10px">
+                                <div class="alert alert-dark shadow p-3 mb-1" style="border-radius: 5px">
                                     <i class="bx bx-paper-plane"></i> กำลังเตรียมจัดส่ง
                                 </div>
                                 @break
 
                                 @case(4)
-                                <div class="alert alert-success shadow p-3 mb-1" style="border-radius: 10px">
+                                <div class="alert alert-success shadow p-3 mb-1" style="border-radius: 5px">
                                     <i class="bx bx-check-double"></i> จัดส่งแล้ว
                                 </div>
                                 @break
 
                                 @case(5)
-                                <div class="alert alert-danger shadow p-3 mb-1" style="border-radius: 10px">
+                                <div class="alert alert-danger shadow p-3 mb-1" style="border-radius: 5px">
                                     <i class="bx bx-error"></i> จัดส่งไม่สำเร็จ
                                 </div>
                                 @break
 
                                 @case(6)
-                                <div class="alert alert-danger shadow p-3 mb-1" style="border-radius: 10px">
+                                <div class="alert alert-danger shadow p-3 mb-1" style="border-radius: 5px">
                                     <i class="bx bx-x-circle"></i> ยกเลิกรายการ
                                 </div>
                                 @break
@@ -469,35 +469,35 @@
                             </div>
                         </div> --}}
 
-                        <div class="card shadow-lg mb-1" style="border-radius: 10px">
+                        <div class="card shadow-lg mb-1" style="border-radius: 5px">
                             <div class="card-body">
                                 <ul class="order-details">
-                                    <li class="order">
-                                        รหัสใบสั่งซื้อ: <strong>{{ $order->code }}</strong>
+                                    <li class="order" style="font-size: 100%">
+                                        รหัสใบสั่งซื้อ: <strong style="font-size: 100%">{{ $order->code }}</strong>
                                     </li>
-                                    <li class="date">
-                                        วันที่สั่ง: <strong>{{ date('d/m/Y', strtotime($order->created_at)) }}</strong>
+                                    <li class="date" style="font-size: 100%">
+                                        วันที่สั่ง: <strong style="font-size: 100%">{{ date('d/m/Y', strtotime($order->created_at)) }}</strong>
                                     </li>
-                                    <li class="total">
-                                        รวมทั้งสิ้น: <strong><span class="amount">{{ $order->total_amount }}</span></strong>
+                                    <li class="total" style="font-size: 100%">
+                                        รวมทั้งสิ้น: <strong style="font-size: 100%"><span class="amount">{{ $order->total_amount }}</span></strong>
                                     </li>
-                                    <li class="method">
-                                        ประเภท: <strong>โอนชำระ</strong>
+                                    <li class="method" style="font-size: 100%">
+                                        ประเภท: <strong style="font-size: 100%">โอนชำระ</strong>
                                     </li>
                                 </ul><!-- /.order-details -->
 
                                 <div class="custom-accordion flex-column" id="order-detail" role="tablist"
                                     aria-multiselectable="true">
-                                    <div class="card card-default" style="border-radius: 10px">
+                                    <div class="card card-default" style="border-radius: 5px">
                                         <div class="card-header cursor-pointer" data-toggle="collapse" data-target="#last-order"
-                                            aria-expanded="true" style="border-radius: 10px">
-                                            <h4 class="h4 mb-0">
+                                            aria-expanded="true" style="border-radius: 5px">
+                                            <h5 class="h5 mb-0">
                                                 Order Details
-                                            </h4>
+                                            </h5>
                                         </div>
                                         <div id="last-order" class="card-collapse collapse" data-parent="#order-detail">
                                             <div class="card-body">
-                                                <div class="box table-responsive shadow-lg" style="border-radius: 10px">
+                                                <div class="box table-responsive shadow-lg" style="border-radius: 5px">
                                                     <table class="table cart-table order-details-table w-100">
                                                         <thead>
                                                             <tr>
@@ -627,7 +627,7 @@
                                                 </div> <!-- /.box -->
                                                 <div class="text-right">
                                                     <a href="/form-upload-slip/order/{{ $order->id }}" class="btn btn-danger"
-                                                        style="border-radius: 10px">
+                                                        style="border-radius: 5px">
                                                         อัพโหลดสลิป</a>
                                                 </div>
                                             </div>
@@ -650,52 +650,52 @@
 
                         @switch($repair->status)
                         @case(1)
-                        <div class="alert alert-danger shadow p-3 mb-1" style="border-radius: 10px">
+                        <div class="alert alert-danger shadow p-3 mb-1" style="border-radius: 5px">
                             <i class='bx bx-cog bx-spin bx-flip-horizontal'></i> กำลังดำเนินการ
                         </div>
                         @break
 
                         @case(2)
-                        <div class="alert alert-success shadow p-3 mb-1" style="border-radius: 10px">
+                        <div class="alert alert-success shadow p-3 mb-1" style="border-radius: 5px">
                             <i class="bx bx-check-double"></i> ซ่อมเสร็จแล้ว
                         </div>
                         @break
 
                         @case(3)
-                        <div class="alert alert-warning shadow p-3 mb-1" style="border-radius: 10px">
+                        <div class="alert alert-warning shadow p-3 mb-1" style="border-radius: 5px">
                             <i class="bx bx-error"></i> ซ่อมไม่ได้
                         </div>
                         @break
 
                         @default
                         @endswitch
-                        <div class="card shadow-lg mb-1" style="border-radius: 10px">
+                        <div class="card shadow-lg mb-1" style="border-radius: 5px">
                             <div class="card-body">
                                 <ul class="order-details">
-                                    <li class="date">
+                                    <li class="date" style="font-size: 100%">
                                         วันที่รับเครื่อง:
-                                        <strong>{{ date('d/m/Y', strtotime($repair->repair_start_date)) }}</strong>
+                                        <strong style="font-size: 100%">{{ date('d/m/Y', strtotime($repair->repair_start_date)) }}</strong>
                                     </li>
                                     {{-- <li class="order">
                                         รุ่น:model: <strong>{{ $repair->model }}</strong>
                                     </li> --}}
-                                    <li class="method" style="text-align:center">
-                                        รายการซ่อม: <strong>{{ $repair->model }} x {{ $repair->detail }}</strong>
+                                    <li class="method" style="text-align:center;font-size:100%">
+                                        รายการซ่อม: <strong style="font-size: 100%">{{ $repair->model }} x {{ $repair->detail }}</strong>
                                     </li>
 
-                                    <li class="total" style="text-align:center">
-                                        ราคา: <strong><span class="amount">{{ $repair->price }}</span></strong>
+                                    <li class="total" style="text-align:center;font-size:100%">
+                                        ราคา: <strong style="font-size: 100%"><span class="amount">{{ $repair->price }}</span></strong>
                                     </li>
 
-                                    <li class="total" style="text-align:center">
-                                        ค่าส่ง: <strong><span class="amount">{{ @$repair->shipping_price }}</span></strong>
+                                    <li class="total" style="text-align:center;font-size:100%">
+                                        ค่าส่ง: <strong style="font-size: 100%"><span class="amount">{{ @$repair->shipping_price }}</span></strong>
                                     </li>
-                                    <li class="total" style="text-align:center">
-                                        รวม: <strong>
+                                    <li class="total" style="text-align:center;font-size:100%">
+                                        รวม: <strong style="font-size: 100%">
                                             <span class="amount">{{ $repair->price + @$repair->shipping_price }}</span></strong>
                                     </li>
-                                    <li class="total" style="text-align:center">
-                                        ออกบิล: <strong>
+                                    <li class="total" style="text-align:center;font-size:100%">
+                                        ออกบิล: <strong style="font-size: 100%">
                                             <span class="amount">
                                                 <form action="{{ url('/create-invoice') }}" method="get"
                                                         target="_blank">
@@ -745,7 +745,7 @@
                                                             <button type="submit"
                                                                 class="btn badge badge-warning waves-effect waves-light"><i
                                                                     class="bx bx-printer"></i>
-                                                                ชำระ</button>
+                                                            </button>
                                                         </div>
                                                     </form>
                                             </span></strong>
@@ -758,51 +758,51 @@
             @endif
         </div>
     </div>
-</section>
+{{-- </section>
 
-<section class="section pt-0">
+<section class="section pt-0"> --}}
     <div class="container">
-        <div class="row shadow-lg"  style="border-radius: 10px">
+        <div class="row shadow-lg"  style="border-radius: 5px">
             <div class="col-sm-12">
                 <div class="tabs-wrapper pt-3 pb-3">
                     <ul class="nav nav-tabs" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active text-violet" href="#tab-orders" aria-controls="tab-orders"
-                                data-toggle="tab" style="border-radius: 10px"><i class='bx bx-history'></i> ประวัติการสั่งซื้อ</a>
+                                data-toggle="tab"><i class='bx bx-history'></i> ประวัติการสั่งซื้อ</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-warning" href="#tab-information" aria-controls="tab-information"
-                                data-toggle="tab" style="border-radius: 10px"><i class='bx bx-calendar'></i>
+                                data-toggle="tab"><i class='bx bx-calendar'></i>
                                 ประกันสินค้า
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-info bg-soft" href="#tab-repair" aria-controls="tab-repair"
-                                data-toggle="tab" style="border-radius: 10px"><i class='bx bx-wrench'></i>
+                                data-toggle="tab"><i class='bx bx-wrench'></i>
                                 ประกันงานซ่อม
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-danger" href="#tab-profile" aria-controls="tab-profile"
-                                data-toggle="tab" style="border-radius: 10px">
+                                data-toggle="tab">
                                 <i class='bx bxs-user-circle'></i> แก้ไขที่อยู่จัดส่ง
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-danger" href="#tab-customer-bill" aria-controls="tab-customer-bill"
-                                data-toggle="tab" style="border-radius: 10px">
+                                data-toggle="tab">
                                 <i class='bx bx-receipt'></i> แก้ไขที่อยู่ออกบิล
                             </a>
                         </li>
                     </ul>
 
-                    <div class="tab-content shadow-lg" style="border-radius: 10px">
+                    <div class="tab-content shadow-lg">
                         <div class="tab-pane active" id="tab-orders">
                             @foreach ($orders as $key => $order)
-                            <div class="card mb-3"  style="border-radius: 10px">
+                            <div class="card mb-3"  style="border-radius: 5px">
                                 <div class="card-header cursor-pointer" data-toggle="collapse"
-                                    data-target="#order-{{ $key }}" aria-expanded="true"  style="border-radius: 10px">
-                                    <h4 class="h4 mb-0">
+                                    data-target="#order-{{ $key }}" aria-expanded="true"  style="border-radius: 5px">
+                                    <h5 class="h5 mb-0">
                                         @switch ($order->status)
                                         @case(0)
                                         <i class='bx bxs-hand-up bx-flashing'></i> รหัสใบสั่งซื้อ
@@ -853,11 +853,11 @@
                                         @break
                                         @endswitch
 
-                                    </h4>
+                                    </h5>
                                 </div>
                                 <div id="order-{{ $key }}" class="card-collapse collapse" data-parent="#order-detail">
-                                    <div class="card-body" style="border-radius: 10px">
-                                        <div class="box table-responsive shadow-lg" style="border-radius: 10px">
+                                    <div class="card-body" style="border-radius: 5px">
+                                        <div class="box table-responsive shadow-lg" style="border-radius: 5px">
                                             <table class="table cart-table order-details-table w-100">
                                                 <thead>
                                                     <tr>
@@ -984,7 +984,7 @@
                                             </table>
                                         </div> <!-- /.box -->
                                         <div class="text-right">
-                                            <a href="/form-upload-slip/order/{{ $order->id }}" class="btn btn-danger"  style="border-radius: 10px">
+                                            <a href="/form-upload-slip/order/{{ $order->id }}" class="btn btn-danger"  style="border-radius: 5px">
                                                 อัพโหลดสลิป</a>
                                         </div>
                                     </div>
@@ -994,8 +994,8 @@
                         </div><!-- ./tab-orders -->
 
                         <div class="tab-pane" id="tab-information">
-                            <div class="card shadow-lg" style="border-radius: 10px">
-                                <div class="card-body">
+                            {{-- <div class="card shadow-lg" style="border-radius: 5px">
+                                <div class="card-body"> --}}
                                     <div class="table-responsive">
                                         <table class="table shop_attributes" id="warranty_table">
                                             <thead>
@@ -1049,13 +1049,13 @@
                                             </tbody>
                                         </table>
                                     </div>
-                                </div>
-                            </div>
+                                {{-- </div>
+                            </div> --}}
                         </div><!-- ./tab-waranry-->
 
                         <div class="tab-pane" id="tab-repair">
-                            <div class="card shadow-lg" style="border-radius: 10px">
-                                <div class="card-body">
+                            {{-- <div class="card shadow-lg" style="border-radius: 5px">
+                                <div class="card-body"> --}}
                                     <div class="table-responsive">
                                         <table class="table shop_attributes" id="warranty_table">
                                             <thead>
@@ -1454,8 +1454,8 @@
                                             </tbody>
                                         </table>
                                     </div>
-                                </div>
-                            </div>
+                                {{-- </div>
+                            </div> --}}
                         </div><!-- ./tab-repair -->
 
                         <div class="tab-pane" id="tab-profile">
@@ -1534,7 +1534,7 @@
                                     <div class="form-group">
                                         <label for=""></label>
                                         <button type="button" id="store-btn"
-                                            class="btn btn-primary w-100" style="border-radius: 10px">บันทึก</button>
+                                            class="btn btn-primary w-100" style="border-radius: 5px">บันทึก</button>
                                         <button type="submit" id="store-btn-hidden" class="d-none">save</button>
                                     </div>
                                 </div>
@@ -1593,7 +1593,7 @@
                                 <div class="col-md-12">
                                     <label for=""></label>
                                     <button type="button" id="store-btn-bill"
-                                        class="btn btn-primary w-100" style="border-radius: 10px">บันทึก</button>
+                                        class="btn btn-primary w-100" style="border-radius: 5px">บันทึก</button>
                                     <button type="submit" id="store-btn-bill-hidden" class="d-none">save</button>
                                 </div>
                             </form>

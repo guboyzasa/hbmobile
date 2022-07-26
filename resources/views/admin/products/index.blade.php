@@ -140,6 +140,7 @@
         </div>
     </div> <!-- end col -->
 </div> <!-- end row -->
+
 <!-- Modal Add Product -->
 <div class="modal fade update-profile" id="simpleModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
     aria-hidden="true">
@@ -543,10 +544,11 @@
                             var obj = JSON.stringify(full);
                             var button = `
                              <button type="button" class="btn btn-sm btn-warning" onclick='showInfoProduct(${obj})'><i class="bx bx-edit"></i></button>
-                             <a href="/admin/product/detail/${data}" class="btn btn-sm btn-info"><i class="bx bx-search-alt-2"></i></a>
+                             
                              `;
                             return button; 
                             //<button type="button" class="btn btn-sm btn-danger" onclick='destroy(${data})'><i class="bx bx-trash"></i></button>
+                            //<a href="/admin/product/detail/${data}" class="btn btn-sm btn-info"><i class="bx bx-search-alt-2"></i></a>
                         }
                     },
                     
