@@ -796,7 +796,7 @@
                         </li>
                     </ul>
 
-                    <div class="tab-content shadow-lg">
+                    <div class="tab-content">
                         <div class="tab-pane active" id="tab-orders">
                             @foreach ($orders as $key => $order)
                             <div class="card mb-3"  style="border-radius: 5px">
@@ -994,8 +994,6 @@
                         </div><!-- ./tab-orders -->
 
                         <div class="tab-pane" id="tab-information">
-                            {{-- <div class="card shadow-lg" style="border-radius: 5px">
-                                <div class="card-body"> --}}
                                     <div class="table-responsive">
                                         <table class="table shop_attributes" id="warranty_table">
                                             <thead>
@@ -1049,13 +1047,9 @@
                                             </tbody>
                                         </table>
                                     </div>
-                                {{-- </div>
-                            </div> --}}
                         </div><!-- ./tab-waranry-->
 
                         <div class="tab-pane" id="tab-repair">
-                            {{-- <div class="card shadow-lg" style="border-radius: 5px">
-                                <div class="card-body"> --}}
                                     <div class="table-responsive">
                                         <table class="table shop_attributes" id="warranty_table">
                                             <thead>
@@ -1067,10 +1061,9 @@
                                                     <th style="text-align:center">สิ้นสุดประกัน</th>
                                                     <th style="text-align:center">สถานะประกัน</th>
                                                     <th style="text-align:center">สถานะซ่อม</th>
-                                                    <th style="text-align:center">ใบแจ้งชำระ</th>
+                                                    <th style="text-align:center">ออกบิล</th>
                                                 </tr>
                                             </thead>
-                            
                                             <tbody>
                                                 @if ($repairs)
                                                 @foreach ($repairs as $repair)
@@ -1163,7 +1156,7 @@
                                                             <div class="text-center">
                                                                 <button type="submit" class="btn badge badge-warning waves-effect waves-light"><i
                                                                         class="bx bx-printer"></i>
-                                                                    ชำระ</button>
+                                                                </button>
                                                             </div>
                                                         </form>
                             
@@ -1454,8 +1447,6 @@
                                             </tbody>
                                         </table>
                                     </div>
-                                {{-- </div>
-                            </div> --}}
                         </div><!-- ./tab-repair -->
 
                         <div class="tab-pane" id="tab-profile">
