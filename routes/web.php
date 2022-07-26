@@ -100,6 +100,8 @@ Route::middleware(['checkAdminMaintenance'])->group(function () {
                 Route::post('/product/store-edit', [App\Http\Controllers\Admin\ProductController::class, 'storeEdit'])->name('product.store-edit');
                 Route::post('/product/destroy', [App\Http\Controllers\Admin\ProductController::class, 'destroy'])->name('product.destroy');
                 Route::post('/product/change-status', [App\Http\Controllers\Admin\ProductController::class, 'changeStatus'])->name('product.change-status');
+                Route::post('/product/change-status2', [App\Http\Controllers\Admin\ProductController::class, 'changeStatusNew'])->name('product.change-status2');
+                Route::post('/product/change-status3', [App\Http\Controllers\Admin\ProductController::class, 'changeStatusRecommend'])->name('product.change-status3');
                 Route::post('/product/update', [App\Http\Controllers\Admin\ProductController::class, 'update'])->name('product.update');
                 Route::post('/product/destroy-img', [App\Http\Controllers\Admin\ProductController::class, 'destroyImage'])->name('product.destroy-img');
 

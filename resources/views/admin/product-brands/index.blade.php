@@ -17,7 +17,7 @@
         <div class="col-12">
             <div class="card shadow-lg" style="border-radius: 10px">
                 <div class="card-body"> 
-                    <button type="button" style="float: right;" class="btn btn-success create_btn" ><i class="bx bx-plus"></i> เพิ่มแบรนด์สินค้า </button>
+                    <button type="button" style="float: right;" class="btn btn-success btn-sm create_btn" ><i class="bx bx-plus"></i> เพิ่มแบรนด์สินค้า </button>
                     <h4 class="card-title">จัดการแบรนด์สินค้า</h4>
                     <br>
                     
@@ -42,12 +42,12 @@
             </div>
         </div> <!-- end col -->
     </div> <!-- end row -->
-  <div class="modal fade update-profile" id="simpleModal" tabindex="-1" role="dialog"
+    <div class="modal fade update-profile" id="simpleModal" tabindex="-1" role="dialog"
         aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="myLargeModalLabel"><span id="modal_title"></span></h5>
+                    <i class='bx bx-check-double' ></i><h5 class="modal-title" id="myLargeModalLabel"><span id="modal_title"></span></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                         aria-label="Close"></button>
 

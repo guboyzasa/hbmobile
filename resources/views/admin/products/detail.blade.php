@@ -113,6 +113,7 @@
     </div>
 </div>
 
+<!--  Picture Edit Product -->
 <div class="row">
     <div class="col-12">
         <div class="card shadow-lg" style="border-radius: 10px">
@@ -158,7 +159,7 @@
                                 <div class="row">
 
                                     <div class="col-6">
-                                        <div class="form-check form-check-primary mb-3">
+                                        {{-- <div class="form-check form-check-primary mb-3">
                                             @if ($product->is_active)
                                             <input class="form-check-input" type="checkbox" name="is_active"
                                                 id="formCheckcolor1" checked>
@@ -168,14 +169,23 @@
                                             @endif
                                             <label class="form-check-label" for="formCheckcolor1"> เปิดโชว์สินค้า
                                             </label>
+                                        </div> --}}
+
+                                        <div class="form-check-primary form-switch mb-3">
+                                            @if ($product->is_active)
+                                            <input class="form-check-input" type="checkbox" role="switch" name="is_active" id="formCheckcolor1" checked />
+                                            @else
+                                            <input class="form-check-input" type="checkbox" role="switch" name="is_active" id="formCheckcolor1"/>
+                                            @endif
+                                            <label class="form-check-label" for="formCheckcolor1">เปิดโชว์สินค้า</label>
                                         </div>
 
-                                        <div class="form-check form-check-success mb-3">
+                                        <div class="form-check-danger form-switch mb-3">
                                             @if ($product->is_stock)
-                                            <input class="form-check-input" type="checkbox" name="is_stock"
+                                            <input class="form-check-input" type="checkbox" role="switch" name="is_stock"
                                                 id="formCheckcolor2" checked>
                                             @else
-                                            <input class="form-check-input" type="checkbox" name="is_stock"
+                                            <input class="form-check-input" type="checkbox" role="switch" name="is_stock"
                                                 id="formCheckcolor2">
                                             @endif
                                             <label class="form-check-label" for="formCheckcolor2"> มีสินค้าใน Stock
@@ -184,23 +194,23 @@
                                     </div>
 
                                     <div class="col-6">
-                                        <div class="form-check form-check-info mb-2">
+                                        <div class="form-switch  form-check-success mb-2">
                                             @if ($product->is_recommend)
-                                            <input class="form-check-input" type="checkbox" name="is_recommend"
+                                            <input class="form-check-input" type="checkbox" role="switch" name="is_recommend"
                                                 id="formCheckcolor3" checked>
                                             @else
-                                            <input class="form-check-input" type="checkbox" name="is_recommend"
+                                            <input class="form-check-input" type="checkbox" role="switch" name="is_recommend"
                                                 id="formCheckcolor3">
                                             @endif
                                             <label classz="form-check-label" for="formCheckcolor3"> สินค้าแนะนำ </label>
                                         </div>
 
-                                        <div class="form-check form-check-warning mb-3">
+                                        <div class="form-switch  form-check-info mb-3">
                                             @if ($product->is_new)
-                                            <input class="form-check-input" type="checkbox" name="is_new"
+                                            <input class="form-check-input" type="checkbox" role="switch" name="is_new"
                                                 id="formCheckcolor4" checked>
                                             @else
-                                            <input class="form-check-input" type="checkbox" name="is_new"
+                                            <input class="form-check-input" type="checkbox" role="switch" name="is_new"
                                                 id="formCheckcolor4">
                                             @endif
                                             <label class="form-check-label" for="formCheckcolor4"> สินค้าใหม่ </label>

@@ -113,8 +113,11 @@
     <div class="col-12">
         <div class="card shadow-lg" style="border-radius: 10px">
             <div class="card-body">
-                <button type="button" style="float: right;" class="btn btn-success create_btn"><i
-                        class="bx bx-plus"></i> เพิ่มสินค้า </button>
+                <div style="float: right;">
+                <button type="button" class="btn btn-success btn-sm create_btn"><i class="bx bx-plus"></i> เพิ่มสินค้า </button>
+                <button type="button" class="btn btn-info btn-sm create_btn_category" ><i class="bx bx-plus"></i> เพิ่มหมวดหมู่ </button>
+                <button type="button" class="btn btn-warning btn-sm create_btn_brand" ><i class="bx bx-plus"></i> เพิ่มแบรนด์ </button>
+                </div>
                 <h4 class="card-title">จัดการสินค้า</h4>
                 <br>
                 <br>
@@ -122,13 +125,15 @@
                 <table id="simple_table" class="table table-bordered w-100">
                     <thead>
                         <tr class="table-secondary">
-                            <th>รูป</th>
-                            <th>ชื่อ</th>
-                            <th>รหัส</th>
-                            <th>ราคา</th>
-                            <th>หมวดหมู่</th>
-                            <th>แบรนด์</th>
-                            <th></th>
+                            <th>picture</th>
+                            <th>name</th>
+                            {{-- <th>sku</th> --}}
+                            <th>price</th>
+                            <th>category</th>
+                            <th>brand</th>
+                            <th>show</th>
+                            <th>new</th>
+                            <th>recom</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -147,7 +152,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="myLargeModalLabel"><span id="modal_title"></span></h5>
+                <i class='bx bx-check-double' ></i><h5 class="modal-title" id="myLargeModalLabel"><span id="modal_title"></span></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -211,6 +216,80 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
+<!-- Modal Category Product -->
+<div class="modal fade update-profile" id="categoryModal" tabindex="-1" role="dialog"
+        aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <i class='bx bx-check-double' ></i><h5 class="modal-title" id="myLargeModalLabel"><span id="modal_title_category"></span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+
+                </div>
+                <div class="modal-body">
+
+                    <form class="form-horizontal" method="POST" enctype="multipart/form-data" id="product-category-form">
+                        @csrf
+                        <input type="hidden" class="formInput" name="id" value="" id="id">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">ชื่อ</label>
+                            <input type="text" class="formInput form-control" id="nameCategory" value="" name="name"
+                                placeholder="กรอกชื่อ" required>
+                        </div>
+              
+
+                        <div class="mb-3">
+                            <label for="image" class="form-label">รูปหมวดหมู่สินค้า </label>
+                            <input type="file" onchange="validateSize(this)" class="form-control formInput" accept="image/*" name="imageFile" id="imageFile" placeholder="กรุณาเลือกรูปภาพ"  >
+
+                        </div>
+
+                        <div class="mt-3 d-grid">
+                            <br>
+                            <button class="btn btn-primary waves-effect waves-light" type="submit"> บันทึก </button>
+                        </div>
+                    </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Modal Brand Product -->
+<div class="modal fade update-profile" id="brandModal" tabindex="-1" role="dialog"
+        aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <i class='bx bx-check-double' ></i><h5 class="modal-title" id="myLargeModalLabel"><span id="modal_title_brand"></span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+
+                </div>
+                <div class="modal-body">
+
+                    <form class="form-horizontal" method="POST" enctype="multipart/form-data" id="product-brand-form">
+                        @csrf
+                        <input type="hidden" class="formInput" name="id" value="" id="id">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">ชื่อ</label>
+                            <input type="text" class="formInput form-control" id="nameBrand" value="" name="name"
+                                placeholder="กรอกชื่อ" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="image" class="form-label">รูปแบรนด์สินค้า </label>
+                            <input type="file" onchange="validateSize(this)" class="form-control formInput" accept="image/*" name="imageFile" id="imageFile" placeholder="กรุณาเลือกรูปภาพ"  >
+                        </div>
+                        <div class="mt-3 d-grid">
+                            <br>
+                            <button class="btn btn-primary waves-effect waves-light" type="submit"> บันทึก </button>
+                        </div>
+                    </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 <!-- Modal Edit Product -->
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
@@ -262,19 +341,19 @@
                                                 <div class="row">
 
                                                     <div class="col-6">
-                                                        <div class="form-check form-check-primary mb-3">
+                                                        <div class="form-switch form-check-primary mb-3">
                                                     
                                                             <input class="form-check-input" type="checkbox"
-                                                                name="is_active" id="formCheckcolor1">
+                                                            role="switch" name="is_active" id="formCheckcolor1">
                                                           
                                                             <label class="form-check-label" for="formCheckcolor1">
                                                                 เปิดโชว์สินค้า </label>
                                                         </div>
 
-                                                        <div class="form-check form-check-success mb-3">
+                                                        <div class="form-switch form-check-danger mb-3">
                                                          
                                                             <input class="form-check-input" type="checkbox"
-                                                                name="is_stock" id="formCheckcolor2">
+                                                            role="switch" name="is_stock" id="formCheckcolor2">
                                                          
                                                             <label class="form-check-label" for="formCheckcolor2">
                                                                 มีสินค้าใน Stock </label>
@@ -282,19 +361,19 @@
                                                     </div>
 
                                                     <div class="col-6">
-                                                        <div class="form-check form-check-info mb-2">
+                                                        <div class="form-switch form-check-success mb-2">
                                                             
                                                             <input class="form-check-input" type="checkbox"
-                                                                name="is_recommend" id="formCheckcolor3">
+                                                            role="switch" name="is_recommend" id="formCheckcolor3">
                                                         
                                                             <label classz="form-check-label" for="formCheckcolor3">
                                                                 สินค้าแนะนำ </label>
                                                         </div>
 
-                                                        <div class="form-check form-check-warning mb-3">
+                                                        <div class="form-switch form-check-info mb-3">
                                                            
                                                             <input class="form-check-input" type="checkbox"
-                                                                name="is_new" id="formCheckcolor4">
+                                                            role="switch" name="is_new" id="formCheckcolor4">
                                                    
                                                             <label class="form-check-label" for="formCheckcolor4">
                                                                 สินค้าใหม่ </label>
@@ -436,7 +515,6 @@
 
         });
        
-
         $('#product-detail-form').submit(function(e){
             var name = $('#nameEdit').val();
             if(name == '' || name == null){
@@ -487,7 +565,7 @@
                 },
                 'columnDefs': [
                     {
-                        "targets": [0,1,2,3,4,5,6,7],
+                        "targets": [0,1,2,3,4,5,6,7,8],
                         "className": "text-center",
                     },
                 ],
@@ -496,7 +574,7 @@
                         "data": "id",
                         "render": function (data, type, full) {
 
-                            var text = `<img src="" alt="" class="avatar-md h-auto d-block rounded center">`;
+                            var text = `<img src="" alt="" class="avatar-sm h-auto d-block rounded center">`;
                             if(full.img){
                                 text = `<a style="text-align:center;" href="#" onclick="showInfoImg('${full.img}')"><img src="{{ URL::asset('get-content/${full.img}') }}" alt="" class="rounded avatar-md"></a>`;
                             }
@@ -508,9 +586,9 @@
                     {
                         "data": "name",
                     },
-                    {
-                        "data": "sku",
-                    },
+                    // {
+                    //     "data": "sku",
+                    // },
                     {
                         "data": "price",
                     },
@@ -529,10 +607,38 @@
                             var text = ``;
                             if(data == 1){
                                 text = `<input type="checkbox" onclick="changeStatus(${full.id})" id="switch${full.id}" switch="primary" checked />
-                                    <label for="switch${full.id}" data-on-label="เปิด" data-off-label="ปิด"></label>`;
+                                    <label for="switch${full.id}" data-on-label="on" data-off-label="off"></label>`;
                             }else{
                                    text = `<input type="checkbox" onclick="changeStatus(${full.id})" id="switch${full.id}" switch="primary"  />
-                                    <label for="switch${full.id}" data-on-label="เปิด" data-off-label="ปิด"></label>`;
+                                    <label for="switch${full.id}" data-on-label="on" data-off-label="off"></label>`;
+                            }
+                            return text;
+                        }
+                    },
+                    {
+                        "data": "is_new",
+                        "render": function (data, type, full) {
+                            var text = ``;
+                            if(data == 1){
+                                text = `<input type="checkbox" onclick="changeStatusNew(${full.id})" id="switch2${full.id}" switch="info" checked />
+                                    <label for="switch2${full.id}" data-on-label="on" data-off-label="off"></label>`;
+                            }else{
+                                   text = `<input type="checkbox" onclick="changeStatusNew(${full.id})" id="switch2${full.id}" switch="info"  />
+                                    <label for="switch2${full.id}" data-on-label="on" data-off-label="off"></label>`;
+                            }
+                            return text;
+                        }
+                    },
+                    {
+                        "data": "is_recommend",
+                        "render": function (data, type, full) {
+                            var text = ``;
+                            if(data == 1){
+                                text = `<input type="checkbox" onclick="changeStatusRecommend(${full.id})" id="switch3${full.id}" switch="success" checked />
+                                    <label for="switch3${full.id}" data-on-label="on" data-off-label="off"></label>`;
+                            }else{
+                                   text = `<input type="checkbox" onclick="changeStatusRecommend(${full.id})" id="switch3${full.id}" switch="success"  />
+                                    <label for="switch3${full.id}" data-on-label="on" data-off-label="off"></label>`;
                             }
                             return text;
                         }
@@ -569,6 +675,29 @@
             $('#simpleModal').modal("show");
         });
 
+        $(".create_btn_category").click(function () {
+      
+            document.getElementById("imageFile").value = "";
+            $('#imgbase64').val('');
+            // document.getElementById("imgbase64").value = "";
+            $('#modal_title_category').text('เพิ่มหมวดหมู่ใหม่');
+            $('.formInput').val('');
+            $('#output').attr('src','');
+            $('#showImg').hide();
+            $('#categoryModal').modal("show");
+        });
+
+        $(".create_btn_brand").click(function () {
+            document.getElementById("imageFile").value = "";
+            $('#imgbase64').val('');
+            // document.getElementById("imgbase64").value = "";
+            $('#modal_title_brand').text('เพิ่มแบรนด์สินค้าใหม่');
+            $('.formInput').val('');
+            $('#output').attr('src','');
+            $('#showImg').hide();
+            $('#brandModal').modal("show");
+        });
+
         $('#product-cat-form').submit(function(e){
             var name = $('#name').val();
             if(name == '' || name == null){
@@ -597,8 +726,88 @@
           
         });
 
+        $('#product-category-form').submit(function(e){
+
+            var name = $('#nameCategory').val();
+            e.preventDefault();
+            if(name == '' || name == null){
+                Swal.fire('ผิดพลาด!', 'กรุณากรอกข้อมูลให้ครบถ้วน', 'warning');
+            }else{
+                openLoading();
+            
+                let formData = new FormData(this);
+                console.log('OK');
+                $.ajax({
+                    type: "method",
+                    method: "POST",
+                    url: "{{ route('admin.product-cat.store') }}",
+                    processData: false,
+                    contentType: false,
+                    data: formData,
+                    success: function (res) {
+                        console.log(res);
+                        simple.ajax.reload();
+                        Swal.fire(res.title, res.msg, res.status);
+                        $('#categoryModal').modal("hide");
+                        closeLoading();
+                    }
+                });
+            }
+        });
+
         function changeStatus(id){
                 $.post("{{  route('admin.product.change-status')  }}", data = {
+                    _token: '{{ csrf_token() }}',
+                    id: id,
+                },
+                function (res) {
+                    simple.ajax.reload();
+                },
+            );
+        }
+
+        $('#product-brand-form').submit(function(e){
+            var name = $('#nameBrand').val();
+              e.preventDefault();
+            if(name == '' || name == null){
+                Swal.fire('ผิดพลาด!', 'กรุณากรอกข้อมูลให้ครบถ้วน', 'warning');
+            }else{
+                openLoading();
+              
+                let formData = new FormData(this);
+                console.log('OK');
+                $.ajax({
+                    type: "method",
+                    method: "POST",
+                    url: "{{ route('admin.product-brand.store') }}",
+                    processData: false,
+                    contentType: false,
+                    data: formData,
+                    success: function (res) {
+                        console.log(res);
+                        simple.ajax.reload();
+                        Swal.fire(res.title, res.msg, res.status);
+                        $('#brandModal').modal("hide");
+                        closeLoading();
+                    }
+                });
+            }
+          
+        });
+
+        function changeStatusNew(id){
+                $.post("{{  route('admin.product.change-status2')  }}", data = {
+                    _token: '{{ csrf_token() }}',
+                    id: id,
+                },
+                function (res) {
+                    simple.ajax.reload();
+                },
+            );
+        }
+
+        function changeStatusRecommend(id){
+                $.post("{{  route('admin.product.change-status3')  }}", data = {
                     _token: '{{ csrf_token() }}',
                     id: id,
                 },

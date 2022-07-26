@@ -7,9 +7,9 @@
 @section('content')
 <div class="card" style="border-radius: 5px">
     <div class="card-body">
-        <div class="col-xl-12 p-4 bg-primary bg-soft shadow-sm" style="border-radius: 5px">
+        <div class="col-xl-12 p-4 bg-primary bg-gradient shadow-sm" style="border-radius: 5px">
             <div style="text-align: right;color:black" id="clock" onload="currentTime()"></div>
-            <h2 class="text-primary">Welcome to admin !</h2>
+            <h2 class="text-white">Welcome to admin !</h2>
         </div>
     </div>
 </div>

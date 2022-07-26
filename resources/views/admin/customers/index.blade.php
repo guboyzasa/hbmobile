@@ -17,7 +17,7 @@
         <div class="col-12">
             <div class="card shadow-lg" style="border-radius: 10px">
                 <div class="card-body"> 
-                    <button type="button" style="float: right;" class="btn btn-success create_btn" ><i class="bx bx-plus"></i> เพิ่มลูกค้า </button>
+                    <button type="button" style="float: right;" class="btn btn-success btn-sm create_btn" ><i class="bx bx-plus"></i> เพิ่มลูกค้า </button>
                     <h4 class="card-title">จัดการลูกค้า</h4>
                     <br>
                     
@@ -49,7 +49,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="myLargeModalLabel"><span id="modal_title"></span></h5>
+                    <i class='bx bx-check-double' ></i><h5 class="modal-title" id="myLargeModalLabel"><span id="modal_title"></span></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                         aria-label="Close"></button>
 
@@ -70,11 +70,11 @@
                                 placeholder="กรอกชื่อ - นามสกุล" required>
                         </div>
 
-                        <div class="mb-3">
+                        {{-- <div class="mb-3">
                             <label for="name" class="form-label">Email</label>
                             <input type="email" class="formInput form-control" id="email" value="" name="email"
                                 placeholder="Email" required>
-                        </div>
+                        </div> --}}
            
                         <div class="mt-3 d-grid">
                             <br>
@@ -85,8 +85,6 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
-
-
 
     <!--  Picture modal example -->
     <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"

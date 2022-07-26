@@ -374,6 +374,9 @@ class ProductController extends Controller
         DB::beginTransaction();
 
         $status = 0;
+        $status2 = 0;
+        $status3 = 0;
+
         $product = Product::find($id);
         if($product == null){
             $data = [
@@ -385,13 +388,109 @@ class ProductController extends Controller
             return $data;
         }
         $oldStatus = $product->is_active;
+        $new = $product->is_new;
+        $recommend = $product->is_recommend;
 
         if ($oldStatus == 1) {
             $status = 0;
-        } else {
+        } else{
             $status = 1;
         }
+        if ($new == 1) {
+            $status2 = 0;
+        } else{
+            $status2 = 1;
+        }
+        if ($recommend == 1) {
+            $status3 = 0;
+        } else{
+            $status3 = 1;
+        }
         $product->is_active = $status;
+        $product->is_new = $status2;
+        $product->is_recommend = $status3;
+        $product->save();
+
+        DB::commit();
+
+        $data = [
+            'title' => 'สำเร็จ!',
+            'msg' => 'แก้ไขสำเร็จ',
+            'status' => 'success',
+        ];
+
+        return $data;
+    }
+
+    public function changeStatusNew(Request $req)
+    {
+
+        $id = $req->id;
+
+        DB::beginTransaction();
+
+        $status2 = 0;
+
+        $product = Product::find($id);
+        if($product == null){
+            $data = [
+                'title' => 'ผิดพลาด!',
+                'msg' => 'แก้ไขไม่สำเร็จกรุณาติดต่อผู้พัฒนา',
+                'status' => 'error',
+            ];
+
+            return $data;
+        }
+        
+        $new = $product->is_new;
+
+        if ($new == 1) {
+            $status2 = 0;
+        } else{
+            $status2 = 1;
+        }
+        $product->is_new = $status2;
+        $product->save();
+
+        DB::commit();
+
+        $data = [
+            'title' => 'สำเร็จ!',
+            'msg' => 'แก้ไขสำเร็จ',
+            'status' => 'success',
+        ];
+
+        return $data;
+    }
+
+    public function changeStatusRecommend(Request $req)
+    {
+
+        $id = $req->id;
+
+        DB::beginTransaction();
+
+        $status3 = 0;
+
+        $product = Product::find($id);
+        if($product == null){
+            $data = [
+                'title' => 'ผิดพลาด!',
+                'msg' => 'แก้ไขไม่สำเร็จกรุณาติดต่อผู้พัฒนา',
+                'status' => 'error',
+            ];
+
+            return $data;
+        }
+
+        $recommend = $product->is_recommend;
+
+        if ($recommend == 1) {
+            $status3 = 0;
+        } else{
+            $status3 = 1;
+        }
+        $product->is_recommend = $status3;
         $product->save();
 
         DB::commit();
