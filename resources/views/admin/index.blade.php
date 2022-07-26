@@ -5,9 +5,9 @@
 @endsection
 
 @section('content')
-<div class="card" style="border-radius: 10px">
+<div class="card" style="border-radius: 5px">
     <div class="card-body">
-        <div class="col-xl-12 p-4 bg-primary bg-soft shadow-sm" style="border-radius: 10px">
+        <div class="col-xl-12 p-4 bg-primary bg-soft shadow-sm" style="border-radius: 5px">
             <div style="text-align: right;color:black" id="clock" onload="currentTime()"></div>
             <h2 class="text-primary">Welcome to admin !</h2>
         </div>
@@ -17,7 +17,7 @@
     <div class="col-xl-12">
         <div class="row">
             <div class="col-xl-4">
-                <div class="card mini-stats-wid shadow-lg" style="border-radius: 10px">
+                <div class="card mini-stats-wid shadow-lg" style="border-radius: 5px">
                     <div class="card-body">
                         <div class="media">
                             <div class="media-body">
@@ -36,7 +36,7 @@
                 </div>
             </div>
             <div class="col-xl-4">
-                <div class="card mini-stats-wid shadow-lg" style="border-radius: 10px">
+                <div class="card mini-stats-wid shadow-lg" style="border-radius: 5px">
                     <div class="card-body">
                         <div class="media">
                             <div class="media-body">
@@ -47,7 +47,7 @@
 
                             <div class="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
                                 <span class="avatar-title">
-                                    <i class="bx bx-archive-in font-size-24"></i>
+                                    <i class="bx bx-store font-size-24"></i>
                                 </span>
                             </div>
                         </div>
@@ -55,7 +55,7 @@
                 </div>
             </div>
             <div class="col-xl-4">
-                <div class="card mini-stats-wid shadow-lg" style="border-radius: 10px">
+                <div class="card mini-stats-wid shadow-lg" style="border-radius: 5px">
                     <div class="card-body">
                         <div class="media">
                             <div class="media-body">
@@ -65,7 +65,7 @@
                             </div>
                             <div class="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
                                 <span class="avatar-title">
-                                    <i class="bx bx-archive-in font-size-24"></i>
+                                    <i class="bx bx-dollar font-size-24"></i>
                                 </span>
                             </div>
                         </div>

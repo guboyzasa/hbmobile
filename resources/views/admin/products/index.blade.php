@@ -83,7 +83,6 @@
 @slot('li_1') Dashboard @endslot
 @slot('title') จัดการสินค้า @endslot
 @endcomponent
-
 <div class="row">
 
     <div class="col-md-12">
@@ -212,27 +211,27 @@
 </div><!-- /.modal -->
 
 <!-- Modal Edit Product -->
-<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="editModalLabel"><span id="edit_modal_title"></span></h5>
+                <h5 class="modal-title" id="myLargeModalLabel"><span id="edit_modal_title"></span></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div class="row">
                     <div class="col-12">
-                        <div class="card shadow-lg" style="border-radius: 10px">
+                        <div class="card">
                             <div class="card-body">
-                                <form class="form-horizontal" action="{{ route('admin.product.store-edit') }}"  method="POST" enctype="multipart/form-data" id="product-detail-form">
+                                <form class="form-horizontal" action="" method="POST" enctype="multipart/form-data" id="product-detail-form">
                                     @csrf
                                     <div class="row">
-                                        <div class="mb-4" style="text-align: center;">
+                                        <div class="mb-2" style="text-align: center;">
                                             <label for="name">รูปหน้าปกสินค้า</label><br>
-                                            <a style="text-align:center;" href="#" onclick='showInfoImg(img)'>
-                                                <img src="" width="100%"
+                                            <a style="text-align:center;" href="#" onclick="showInfoImg(img)">
+                                                <img src="" 
                                                     class="css image img grid-item"
-                                                    style="margin-top:1rem; margin-bottom:1rem; max-width: 100px;" id="outputProduct">
+                                                    style="margin-bottom:1.5rem; max-width: 100px;" id="outputProduct">
                                             </a>
                                             <input type="file" onchange="validateSize(this)"
                                                 class="form-control formInput" accept="image/*" name="imageFile"
@@ -303,7 +302,6 @@
 
                                                 </div>
                                             </div>
-
                                         </div>
 
                                         <div class="col-sm-6">
@@ -334,21 +332,24 @@
                                             <div class="mb-3">
                                                 <label for="productdesc">รายละเอียดสินค้า</label>
                                                 <textarea class="form-control" id="productdescEdit" name="productdesc"
-                                                    rows="5"> {{ @$product->detail }} </textarea>
+                                                    rows="5"></textarea>
                                             </div>
 
                                         </div>
                                     </div>
 
                                     <div class="d-flex flex-wrap gap-2" style="float: right;">
-                                        <button type="submit" class="btn btn-warning waves-effect waves-light" form="product-detail-form">
+                                        <button type="submit" class="btn btn-warning waves-effect waves-light" >
                                             บันทึกการแก้ไข
                                         </button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
                                     </div>
                                 </form>
+                                <br>
+                                <br>
                             </div>
                         </div>
-                        <div class="row">
+                        {{-- <div class="row">
                             <div class="col-md-12">
                                 <div class="col-md-12">
                                     @if (session('success'))
@@ -371,8 +372,8 @@
                                 </div>
                             </div>
 
-                        </div>
-                        {{-- <div class="card shadow-lg" style="border-radius: 10px">
+                        </div> --}}
+                       <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title mb-3">รูปตัวอย่างสินค้า (ขนาดไม่เกิน 2 mb และ ไม่เกิน 4 รูป)</h4>
                                 <form action="{{ route('admin.product.update') }}" method="POST"
@@ -380,33 +381,28 @@
                                     @csrf
                                     <input type="hidden" name="id" id="id_product_img">
                                     <div class="form-group image row" id="image-area">
-                                        <div class="form-group image row" id="show-image-area">
-
-                                        </div>
-                                        <div class="col-md-3 col-xs-12 text-center">
-
-                                            <i class="bx bx-plus text-success" id="inputImage"
-                                                style="cursor: pointer; font-size: 8rem;"></i>
-                                            <br>
-                                            <h5>เพิ่มรูปภาพ</h5>
-                                        </div>
+                                        <div class="form-group image row" id="show-image-area"></div>
+                                            <div class="col-md-3 col-xs-12 text-center">
+                                                <i class="bx bx-plus text-success" id="inputImage"
+                                                    style="cursor: pointer; font-size: 4rem;"></i>
+                                                <br>
+                                                <h5>เพิ่มรูปภาพ</h5>
+                                            </div>
                                     </div>
                                     <div class="d-flex flex-wrap gap-2" style="float: right;">
                                         <button type="submit" class="btn btn-success waves-effect waves-light">
-                                            อัพโหลรูปภาพ </button>
+                                            อัพโหลรูปภาพตัวอย่าง </button>
                                     </div>
                                 </form>
                             </div>
-
-                        </div>  --}}
-                        <!-- end card-->
+                        </div><!-- end card-->
 
                     </div>
                 </div>
             </div>
-            <div class="modal-footer">
+            {{-- <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
-            </div>
+            </div> --}}
         </div>
     </div>
 </div><!-- /.modal Edit -->
@@ -438,34 +434,35 @@
             var simple = '';
 
         });
+       
 
-        // $('#product-detail-form').submit(function(e){
-        //     var name = $('#name').val();
-        //     if(name == '' || name == null){
-        //         Swal.fire('ผิดพลาด!', 'กรุณากรอกข้อมูลให้ครบถ้วน', 'warning');
-        //     }else{
-        //         openLoading();
-        //         e.preventDefault();
-        //         let formData = new FormData(this);
-        //         console.log('OK');
-        //         $.ajax({
-        //             type: "method",
-        //             method: "POST",
-        //             url: "{{ route('admin.product.store-edit') }}",
-        //             processData: false,
-        //             contentType: false,
-        //             data: formData,
-        //             success: function (res) {
-        //                 console.log(res);
-                       
-        //                 Swal.fire(res.title, res.msg, res.status);
-
-        //                 closeLoading();
-        //             }
-        //         });
-        //     }
+        $('#product-detail-form').submit(function(e){
+            var name = $('#nameEdit').val();
+            if(name == '' || name == null){
+                Swal.fire('ผิดพลาด!', 'กรุณากรอกข้อมูลให้ครบถ้วน', 'warning');
+            }else{
+                openLoading();
+                e.preventDefault();
+                let formData = new FormData(this);
+                console.log('OK');
+                $.ajax({
+                    type: "method",
+                    method: "POST",
+                    url: "{{ route('admin.product.store-edit') }}",
+                    processData: false,
+                    contentType: false,
+                    data: formData,
+                    success: function (res) {
+                        console.log(res);
+                        simple.ajax.reload();
+                        Swal.fire(res.title, res.msg, res.status);
+                        // $('#editModal').modal("hide");
+                        closeLoading();
+                    }
+                });
+            }
           
-        // });
+        });
 
 
         $('#simple_table').ready(function () {
@@ -664,9 +661,7 @@
             $('#showImgEdit').show();
             $('#id_product').val(obj.id);
             $('#id_product_img').val(obj.id);
-            
             $('#nameEdit').val(obj.name).trigger('change');
-            $('#catEdit').val(obj.cat);
             $('#brandEdit').val(obj.product_brand_id).trigger('change');
             $('#catEdit').val(obj.product_category_id).trigger('change');
             $('#outputProduct').attr('src', `{{ URL::asset('get-content/${obj.img}') }}`);
@@ -674,7 +669,6 @@
             $('#priceEdit').val(obj.price).trigger('change');
             $('#skuEdit').val(obj.sku).trigger('change');
             $('#productdescEdit').val(obj.detail);
-            $('#formCheckcolor4Edit').val(obj.is_new).trigger('change');
 
             if(obj.is_active){
                 $('#formCheckcolor1').prop('checked', true);
@@ -713,8 +707,8 @@
                     <div class='col-md-3 col-xs-12 text-center' id='img-${element.id}'
                             onclick="removeimage('${element.id}')">
 
-                            <img src="${textImg}" width="100%"
-                                class="css image img grid-item" style="margin-top:2.5rem; margin-bottom:2.5rem;">
+                            <img src="${textImg}" width="50%"
+                                class="css image img grid-item" style="margin-top:2rem; margin-bottom:2rem;">
                             <div class="overlay">
                                 <div class="icon-remove"><i class="fa fa-trash text-danger" aria-hidden="true"></i>
                                 </div>

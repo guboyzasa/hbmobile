@@ -227,6 +227,7 @@ class ProductController extends Controller
             $product->price = (string) $price;
             $product->product_category_id = $cat;
             $product->product_brand_id = $brand;
+            // $product->detail = $detail;
             $product->save();
 
             DB::commit();
@@ -279,13 +280,13 @@ class ProductController extends Controller
 
         }
 
-        // $data = [
-        //     'title' => 'บันทึกสำเร็จ!',
-        //     'msg' => 'บันทึกสินค้าสำเร็จ',
-        //     'status' => 'success',
-        // ];
-        return redirect()->back()->with('success', 'บันทึกสินค้าสำเร็จ!');
-        // return $data;
+        $data = [
+            'title' => 'บันทึกสำเร็จ!',
+            'msg' => 'บันทึกสินค้าสำเร็จ',
+            'status' => 'success',
+        ];
+        // return redirect()->back()->with('success', 'บันทึกสินค้าสำเร็จ!');
+        return $data;
 
     }
 

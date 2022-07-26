@@ -14,9 +14,9 @@ Dashboard | Admin - HB Mobile Services
         </ol>
     </div> --}}
 </div>
-<div class="card" style="border-radius: 10px">
+<div class="card" style="border-radius: 5px">
     <div class="card-body">
-        <div class="col-12 p-4 bg-primary bg-soft shadow-sm" style="border-radius: 10px">
+        <div class="col-12 p-4 bg-primary bg-soft shadow-sm" style="border-radius: 5px">
             <div style=" text-align: right;color:black" id="clock" onload="currentTime()"></div>
             <h2 class="text-primary">HB MOBILE Dashboard !</h2>
         </div>
@@ -27,7 +27,7 @@ Dashboard | Admin - HB Mobile Services
         <div class="row">
             <div class="col-xl-4">
                 <a href="{{ route('admin.warranty.index') }}">
-                    <div class="card mini-stats-wid shadow-lg" style="border-radius: 10px">
+                    <div class="card mini-stats-wid shadow-lg" style="border-radius: 5px">
                         <div class="card-body">
                             <div class="media">
                                 <div class="media-body">
@@ -47,7 +47,7 @@ Dashboard | Admin - HB Mobile Services
             </div>
             <div class="col-xl-4">
                 <a href="{{ route('admin.order.index') }}">
-                    <div class="card mini-stats-wid shadow-lg" style="border-radius: 10px">
+                    <div class="card mini-stats-wid shadow-lg" style="border-radius: 5px">
                         <div class="card-body">
                             <div class="media">
                                 <div class="media-body">
@@ -67,7 +67,7 @@ Dashboard | Admin - HB Mobile Services
                 </a>
             </div>
             <div class="col-xl-4">
-                <div class="card mini-stats-wid shadow-lg" style="border-radius: 10px">
+                <div class="card mini-stats-wid shadow-lg" style="border-radius: 5px">
                     <div class="card-body">
                         <div class="media">
                             <div class="media-body">
@@ -78,7 +78,7 @@ Dashboard | Admin - HB Mobile Services
 
                             <div class="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
                                 <span class="avatar-title">
-                                    <i class="bx bx-archive-in font-size-24"></i>
+                                    <i class="bx bx-store font-size-24"></i>
                                 </span>
                             </div>
                         </div>
@@ -93,7 +93,7 @@ Dashboard | Admin - HB Mobile Services
         <div class="row">
             <div class="col-xl-4">
                 <a href="{{ route('admin.repair.index') }}">
-                    <div class="card mini-stats-wid shadow-lg" style="border-radius: 10px">
+                    <div class="card mini-stats-wid shadow-lg" style="border-radius: 5px">
                         <div class="card-body">
                             <div class="media">
                                 <div class="media-body">
@@ -114,7 +114,7 @@ Dashboard | Admin - HB Mobile Services
             </div>
             <div class="col-xl-4">
                 <a href="{{ route('admin.customer.index') }}">
-                    <div class="card mini-stats-wid shadow-lg" style="border-radius: 10px">
+                    <div class="card mini-stats-wid shadow-lg" style="border-radius: 5px">
                         <div class="card-body">
                             <div class="media">
                                 <div class="media-body">
@@ -135,18 +135,17 @@ Dashboard | Admin - HB Mobile Services
             </div>
             <div class="col-xl-4">
                 <a href="#">
-                    <div class="card mini-stats-wid shadow-lg" style="border-radius: 10px">
+                    <div class="card mini-stats-wid shadow-lg" style="border-radius: 5px">
                         <div class="card-body">
                             <div class="media">
                                 <div class="media-body">
-                                    <p class="text-muted fw-medium">ลูกค้าที่เข้าสู่ระบบแล้ว</p>
-                                    <h4 class="mb-0">{{ number_format($countUserCustomer) }} คน<i
-                                            class="mdi mdi-chevron-up ms-1 text-success"></i></h4>
+                                    <p class="text-muted fw-medium">ยอดซ่อมรวมทั้งสิ้น</p>
+                                    <h4 class="mb-0">฿ {{ number_format($sumRepairPrice + $sumRepairShipping) }}
+                                        บาท<i class="mdi mdi-chevron-up ms-1 text-success"></i></h4>
                                 </div>
-
                                 <div class="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
                                     <span class="avatar-title">
-                                        <i class="bx bx-user-check font-size-24"></i>
+                                        <i class="bx bx-dollar font-size-24"></i>
                                     </span>
                                 </div>
                             </div>
@@ -163,7 +162,7 @@ Dashboard | Admin - HB Mobile Services
         <div class="row">
             <div class="col-xl-4">
                 <a href="#">
-                    <div class="card mini-stats-wid shadow-lg" style="border-radius: 10px">
+                    <div class="card mini-stats-wid shadow-lg" style="border-radius: 5px">
                         <div class="card-body">
                             <div class="media">
                                 <div class="media-body">
@@ -182,7 +181,7 @@ Dashboard | Admin - HB Mobile Services
                 </a>
             </div>
             <div class="col-xl-4">
-                <div class="card mini-stats-wid shadow-lg" style="border-radius: 10px">
+                <div class="card mini-stats-wid shadow-lg" style="border-radius: 5px">
                     <div class="card-body">
                         <div class="media">
                             <div class="media-body">
@@ -201,7 +200,7 @@ Dashboard | Admin - HB Mobile Services
                 </div>
             </div>
             <div class="col-xl-4">
-                <div class="card mini-stats-wid shadow-lg" style="border-radius: 10px">
+                <div class="card mini-stats-wid shadow-lg" style="border-radius: 5px">
                     <div class="card-body">
                         <div class="media">
                             <div class="media-body">
@@ -775,11 +774,10 @@ Dashboard | Admin - HB Mobile Services
 
 </div><!-- end row --> --}}
 <div class="container">
-    <div class="col-12 p-4 card" style="border-radius: 10px">
-        <br>
+    <div class="col-12 p-4 card" style="border-radius: 5px">
         <div class="row">
-            <div class="col-xl-3">
-                <div class="card mini-stats-wid shadow-lg" style="border-radius: 10px">
+            {{-- <div class="col-xl-3">
+                <div class="card mini-stats-wid shadow-lg" style="border-radius: 5px">
                     <div class="card-body">
                         <div class="media">
                             <div class="media-body">
@@ -795,14 +793,14 @@ Dashboard | Admin - HB Mobile Services
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xl-9">
-                <div class="card shadow-lg" style="border-radius: 10px">
-                    <div class="card-body">
+            </div> --}}
+            <div class="col-xl-12">
+                {{-- <div class="card"> --}}
+                    {{-- <div class="card-body"> --}}
                         <div class="text-dark">
                             <label><strong style="font-size: 15px">รายการซ่อมล่าสุด</strong></label>
                         </div>
-                        <table class="table table-bordered dt-responsive nowrap w-100" id="simple_table">
+                        <table class="table  dt-responsive nowrap w-100" id="simple_table">
                             <thead>
                                 <tr class="table-secondary">
                                     <th>เบอร์โทร</th>
@@ -824,8 +822,8 @@ Dashboard | Admin - HB Mobile Services
                                 @endforeach
                             </tbody>
                         </table>
-                    </div>
-                </div>
+                    {{-- </div> --}}
+                {{-- </div> --}}
             </div>
         </div><!-- end row -->
     </div>
