@@ -654,7 +654,7 @@
                             var obj = JSON.stringify(full);
                             var button = `
 
-                                <button type="button" class="btn btn-sm btn-warning" onclick='showInfoWarranty(${obj})'><i class="bx bx-search-alt-2"></i> </button>
+                                <button type="button" class="btn btn-sm btn-warning" onclick='showInfoWarranty(${obj})'><i class='bx bxs-edit'></i> </button>
                                    <button type="button" class="btn btn-sm btn-danger" onclick='destroyWarranty(${data})'><i class="bx bx-trash"></i>  </button>
                             `;
                             return button;

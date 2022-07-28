@@ -25,14 +25,14 @@
 
 <section class="section manuals pb-0">
     <div class="container">
-        <div class="card shadow-lg" style="border-radius: 10px">
+        <div class="card shadow-lg" style="border-radius: 5px">
             <div class="card-body ">
                 <div class="container">
                     <div class="custom-accordion flex-column" id="manual-detail" role="tablist"
                         aria-multiselectable="true">
-                        <div class="card card-default shadow-lg" style="border-radius: 10px">
+                        <div class="card card-default shadow-lg" style="border-radius: 5px">
                             <div class="card-header cursor-pointer" data-toggle="collapse" data-target="#last-manual"
-                                aria-expanded="true" style="border-radius: 10px">
+                                aria-expanded="true" style="border-radius: 5px">
                                 <div class="media-left media-middle">
                                     <h3 class="media-heading"><i class='bx bx-cart' style='font-size:33px'></i>
                                         <box-icon type='logo' name='apple'></box-icon>
@@ -42,10 +42,10 @@
                             </div>
                             <div id="last-manual" class="card-collapse collapse" data-parent="#manual-detail">
                                 <div class="card-body">
-                                    <div class="box table-responsive" style="border-radius: 10px">
+                                    <div class="box table-responsive" style="border-radius: 5px">
                                         <div class="row">
                                             <div class="col-md-5">
-                                                <div class="manual media shadow-lg" style="border-radius: 10px">
+                                                <div class="manual media shadow-lg" style="border-radius: 5px">
                                                     <div class="media-left media-middle">
                                                         <i class='bx bxs-user-check'></i>
                                                     </div>
@@ -57,7 +57,7 @@
                                             </div>
 
                                             <div class="col-md-6">
-                                                <div class="manual media shadow-lg" style="border-radius: 10px">
+                                                <div class="manual media shadow-lg" style="border-radius: 5px">
                                                     <div class="media-left media-middle">
                                                         <i class='bx bxs-cart-add'></i>
                                                     </div>
@@ -70,7 +70,7 @@
                                             </div>
 
                                             <div class="col-md-5">
-                                                <div class="manual media shadow-lg" style="border-radius: 10px">
+                                                <div class="manual media shadow-lg" style="border-radius: 5px">
                                                     <div class="media-left media-middle">
                                                         <i class='bx bx-edit-alt'></i>
                                                     </div>
@@ -82,7 +82,7 @@
                                             </div>
 
                                             <div class="col-md-5">
-                                                <div class="manual media shadow-lg" style="border-radius: 10px">
+                                                <div class="manual media shadow-lg" style="border-radius: 5px">
                                                     <div class="media-left media-middle">
                                                         <i class='bx bx-image'></i>
                                                     </div>
@@ -94,7 +94,7 @@
                                             </div>
 
                                             <div class="col-md-5">
-                                                <div class="manual media shadow-lg" style="border-radius: 10px">
+                                                <div class="manual media shadow-lg" style="border-radius: 5px">
                                                     <div class="media-left media-middle">
                                                         <i class='bx bxs-truck'></i>
                                                     </div>
@@ -118,9 +118,9 @@
                     {{-- <div class="row"> --}}
                         <div class="custom-accordion flex-column" id="manuals-detail" role="tablist"
                             aria-multiselectable="true">
-                            <div class="card card-default shadow-lg" style="border-radius: 10px">
+                            <div class="card card-default shadow-lg" style="border-radius: 5px">
                                 <div class="card-header cursor-pointer" data-toggle="collapse"
-                                    data-target="#last-manuals" aria-expanded="true" style="border-radius: 10px">
+                                    data-target="#last-manuals" aria-expanded="true" style="border-radius: 5px">
                                     <div class="media-left media-middle">
                                         <h3 class="media-heading"><i class='bx bx-wrench' style='font-size:33px'></i>
                                             2.การส่งเครื่องซ่อม</h3>
@@ -128,10 +128,10 @@
                                 </div>
                                 <div id="last-manuals" class="card-collapse collapse" data-parent="#manuals-detail">
                                     <div class="card-body">
-                                        <div class="box table-responsive" style="border-radius: 10px">
+                                        <div class="box table-responsive" style="border-radius: 5px">
                                             <div class="row">
                                                 <div class="col-md-5">
-                                                    <div class="manual media shadow-lg" style="border-radius: 10px">
+                                                    <div class="manual media shadow-lg" style="border-radius: 5px">
                                                         <div class="media-left media-middle">
                                                             <i class='bx bx-message-edit'></i>
                                                         </div>
@@ -146,7 +146,7 @@
                                                 </div>
 
                                                 <div class="col-md-7">
-                                                    <div class="manual media shadow-lg" style="border-radius: 10px">
+                                                    <div class="manual media shadow-lg" style="border-radius: 5px">
                                                         <div class="media-left media-middle">
                                                             <i class='bx bx bxs-truck'></i>
                                                         </div>
@@ -161,7 +161,7 @@
                                                 </div>
 
                                                 <div class="col-md-5">
-                                                    <div class="manual media shadow-lg" style="border-radius: 10px">
+                                                    <div class="manual media shadow-lg" style="border-radius: 5px">
                                                         <div class="media-left media-middle">
                                                             <i class='bx bx-file'></i>
                                                         </div>
@@ -173,7 +173,7 @@
                                                 </div>
 
                                                 <div class="col-md-6">
-                                                    <div class="manual media shadow-lg" style="border-radius: 10px">
+                                                    <div class="manual media shadow-lg" style="border-radius: 5px">
                                                         <div class="media-left media-middle">
                                                             <i class='bx bx-check-double'></i>
                                                         </div>
@@ -185,7 +185,7 @@
                                                 </div>
 
                                                 <div class="col-md-5">
-                                                    <div class="manual media shadow-lg" style="border-radius: 10px">
+                                                    <div class="manual media shadow-lg" style="border-radius: 5px">
                                                         <div class="media-left media-middle">
                                                             <i class='bx bxs-user-check'></i>
                                                         </div>
@@ -199,7 +199,7 @@
                                                 </div>
 
                                                 <div class="col-md-6">
-                                                    <div class="manual media shadow-lg" style="border-radius: 10px">
+                                                    <div class="manual media shadow-lg" style="border-radius: 5px">
                                                         <div class="media-left media-middle">
                                                             <i class='bx bx-check-circle'></i>
                                                         </div>
@@ -224,10 +224,10 @@
                         {{-- <div class="row"> --}}
                             <div class="custom-accordion flex-column" id="manual-register-detail" role="tablist"
                                 aria-multiselectable="true">
-                                <div class="card card-default shadow-lg" style="border-radius: 10px">
+                                <div class="card card-default shadow-lg" style="border-radius: 5px">
                                     <div class="card-header cursor-pointer" data-toggle="collapse"
                                         data-target="#last-manual-register" aria-expanded="true"
-                                        style="border-radius: 10px">
+                                        style="border-radius: 5px">
                                         <div class="media-left media-middle">
                                             <h3 class="media-heading"><i class='bx bx-group' style='font-size:33px'></i>
                                                 3.การสมัครสมาชิก</h3>
@@ -236,10 +236,10 @@
                                     <div id="last-manual-register" class="card-collapse collapse"
                                         data-parent="#manual-register-detail">
                                         <div class="card-body">
-                                            <div class="box table-responsive" style="border-radius: 10px">
+                                            <div class="box table-responsive" style="border-radius: 5px">
                                                 <div class="row">
                                                     <div class="col-md-4">
-                                                        <div class="manual media shadow-lg" style="border-radius: 10px">
+                                                        <div class="manual media shadow-lg" style="border-radius: 5px">
                                                             <div class="media-left media-middle">
                                                                 <i class='bx bx-link'></i>
                                                             </div>
@@ -253,7 +253,7 @@
                                                     </div>
 
                                                     <div class="col-md-4">
-                                                        <div class="manual media shadow-lg" style="border-radius: 10px">
+                                                        <div class="manual media shadow-lg" style="border-radius: 5px">
                                                             <div class="media-left media-middle">
                                                                 <i class='bx bx-edit-alt'></i>
                                                             </div>
@@ -270,7 +270,7 @@
                                                     </div>
 
                                                     <div class="col-md-4">
-                                                        <div class="manual media shadow-lg" style="border-radius: 10px">
+                                                        <div class="manual media shadow-lg" style="border-radius: 5px">
                                                             <div class="media-left media-middle">
                                                                 <i class='bx bx-check-double'></i>
                                                             </div>
@@ -302,10 +302,10 @@
                         {{-- <div class="row"> --}}
                             <div class="custom-accordion flex-column" id="manual-password-detail" role="tablist"
                                 aria-multiselectable="true">
-                                <div class="card card-default shadow-lg" style="border-radius: 10px">
+                                <div class="card card-default shadow-lg" style="border-radius: 5px">
                                     <div class="card-header cursor-pointer" data-toggle="collapse"
                                         data-target="#last-manual-password" aria-expanded="true"
-                                        style="border-radius: 10px">
+                                        style="border-radius: 5px">
                                         <div class="media-left media-middle">
                                             <h3 class="media-heading"><i class='bx bx-key' style='font-size:33px'></i>
                                                 4.การเปลี่ยนรหัสผ่าน</h3>
@@ -314,10 +314,10 @@
                                     <div id="last-manual-password" class="card-collapse collapse"
                                         data-parent="#manual-password-detail">
                                         <div class="card-body">
-                                            <div class="box table-responsive" style="border-radius: 10px">
+                                            <div class="box table-responsive" style="border-radius: 5px">
                                                 <div class="row">
                                                     <div class="col-md-5">
-                                                        <div class="manual media shadow-lg" style="border-radius: 10px">
+                                                        <div class="manual media shadow-lg" style="border-radius: 5px">
                                                             <div class="media-left media-middle">
                                                                 <i class='bx bx-link'></i>
                                                             </div>
@@ -331,7 +331,7 @@
                                                     </div>
 
                                                     <div class="col-md-6">
-                                                        <div class="manual media shadow-lg" style="border-radius: 10px">
+                                                        <div class="manual media shadow-lg" style="border-radius: 5px">
                                                             <div class="media-left media-middle">
                                                                 <i class='bx bx-phone'></i>
                                                             </div>
@@ -343,7 +343,7 @@
                                                     </div>
 
                                                     <div class="col-md-5">
-                                                        <div class="manual media shadow-lg" style="border-radius: 10px">
+                                                        <div class="manual media shadow-lg" style="border-radius: 5px">
                                                             <div class="media-left media-middle">
                                                                 <i class='bx bx-key'></i>
                                                             </div>
@@ -355,7 +355,7 @@
                                                     </div>
 
                                                     <div class="col-md-6">
-                                                        <div class="manual media shadow-lg" style="border-radius: 10px">
+                                                        <div class="manual media shadow-lg" style="border-radius: 5px">
                                                             <div class="media-left media-middle">
                                                                 <i class='bx bx-check-double'></i>
                                                             </div>

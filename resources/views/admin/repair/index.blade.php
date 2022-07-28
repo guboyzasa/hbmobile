@@ -28,7 +28,7 @@
 
     <div class="row">
         <div class="col-12">
-            <div class="card shadow-lg" style="border-radius: 10px">
+            <div class="card shadow-lg" style="border-radius: 5px">
                 <div class="card-body">
                     <button type="button" style="float: right; margin: 2px;" class="btn btn-success customer_btn btn-sm"><i
                             class="bx bx-plus"></i> เพิ่มลูกค้า </button>
@@ -39,9 +39,9 @@
                     <br>
 
                     <br>
-                    <table id="warranty_table" class="table table-bordered dt-responsive  nowrap w-100">
+                    <table id="warranty_table" class="table dt-responsive  nowrap w-100">
                         <thead>
-                            <tr class="table-secondary">
+                            <tr>
                                 <th>วันที่รับเครื่อง</th>
                                 <th>ชื่อลูกค้า</th> 
                                 <th>รายการซ่อม</th>
@@ -284,7 +284,7 @@
                                         <input type="text" id="endDateEdit" class="form-control form-inputs"
                                             placeholder="วัน-เดือน-ปี" data-date-format="dd-mm-yyyy"
                                             data-date-container='#datepicker4' data-date-end-date=""
-                                            value="{{ date('d-m-Y', strtotime(date('Y-m-d') . '+1 day')) }}"
+                                            value="{{ date('d-m-Y', strtotime(date('Y-m-d') . '+3 month')) }}"
                                             data-provide="datepicker" name="endDate" autocomplete="off" required>
                                         <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
 
@@ -363,7 +363,7 @@
                         <div style="text-align: right">
                             <br>
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
-                            <button class="btn btn-warning waves-effect waves-light" type="submit"><i class='bx bx-edit' ></i> แก้ไข</button>
+                            <button class="btn btn-warning waves-effect waves-light" type="submit"><i class='bx bxs-edit'></i> แก้ไข</button>
                         </div>
                     </form>
                 </div>
@@ -650,8 +650,10 @@
                             var obj = JSON.stringify(full);
                             var button = `
                             <a  href="/admin/create-invoice/${full.id}" class="btn btn-sm btn-info" target="_blank"><i class="bx bx-printer"></i></a>
-                                <button type="button" class="btn btn-sm btn-warning" onclick='showInfoWarranty(${obj})'><i class="bx bx-search-alt-2"></i> </button>
+                                <button type="button" class="btn btn-sm btn-warning" onclick='showInfoWarranty(${obj})'><i class='bx bxs-edit'></i></button>
+                                @if (Auth::user()->is_super_admin == 1)
                                 <button type="button" class="btn btn-sm btn-danger" onclick='destroyWarranty(${data})'><i class="bx bx-trash"></i>  </button>
+                                @endif
                             `;
                             return button;
 

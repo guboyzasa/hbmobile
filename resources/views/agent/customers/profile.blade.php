@@ -807,15 +807,15 @@
                             var obj = JSON.stringify(full);
              
                             var button = `
-                                    <a  href="/agent-member/customer/profile/${data}" class="btn btn-sm btn-warning" ><i class="bx bx-search-alt-2"></i>  </a>`;
+                                    <a  href="/agent-member/customer/profile/${data}" class="btn btn-sm btn-warning" ><i class='bx bxs-edit'></i>  </a>`;
                             if(agentId == full.agent_id){
                                 button = `
-                                    <a  href="/agent-member/customer/profile/${data}" class="btn btn-sm btn-warning" ><i class="bx bx-search-alt-2"></i>  </a>
+                                    <a  href="/agent-member/customer/profile/${data}" class="btn btn-sm btn-warning" ><i class='bx bxs-edit'></i>  </a>
                                     <button type="button" class="btn btn-sm btn-danger" onclick='destroy(${data})'><i class="bx bx-trash"></i>  </button>
                                     `;
                             }
                             if(full.user_id != null){
-                                button = `<a  href="/agent-member/customer/profile/${data}" class="btn btn-sm btn-warning" ><i class="bx bx-search-alt-2"></i>  </a>`;
+                                button = `<a  href="/agent-member/customer/profile/${data}" class="btn btn-sm btn-warning" ><i class='bx bxs-edit'></i>  </a>`;
                             }
                             return button;
 
@@ -1090,12 +1090,12 @@
                         "render": function (data, type, full) {
                             var obj = JSON.stringify(full);
                             var button = `
-                                <button type="button" class="btn btn-sm btn-warning" onclick='showInfoWarranty(${obj})'><i class="bx bx-search-alt-2"></i>  </button>
+                                <button type="button" class="btn btn-sm btn-warning" onclick='showInfoWarranty(${obj})'><i class='bx bxs-edit'></i>  </button>
                             `;
 
                             if(agentId == full.agent_id){
                                 button = `
-                                    <button type="button" class="btn btn-sm btn-warning" onclick='showInfoWarranty(${obj})'><i class="bx bx-search-alt-2"></i>  </button>
+                                    <button type="button" class="btn btn-sm btn-warning" onclick='showInfoWarranty(${obj})'><i class='bx bxs-edit'></i>  </button>
                                     <button type="button" class="btn btn-sm btn-danger" onclick='destroyWarranty(${data})'><i class="bx bx-trash"></i>  </button>
                                 `;
                             }

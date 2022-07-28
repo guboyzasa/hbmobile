@@ -15,16 +15,16 @@
 
     <div class="row">
         <div class="col-12">
-            <div class="card shadow-lg" style="border-radius: 10px">
+            <div class="card shadow-lg" style="border-radius: 5px">
                 <div class="card-body"> 
                     <button type="button" style="float: right;" class="btn btn-success btn-sm create_btn" ><i class="bx bx-plus"></i> เพิ่มหมวดหมู่สินค้า </button>
                     <h4 class="card-title">จัดการหมวดหมู่สินค้า</h4>
                     <br>
                     
                     <br>
-                    <table id="simple_table" class="table table-bordered dt-responsive nowrap w-100">
+                    <table id="simple_table" class="table dt-responsive nowrap w-100">
                         <thead>
-                            <tr class="table-secondary">
+                            <tr>
                                 <th>รูป</th>
                                 <th>ชื่อ</th>
                                 <th>เปิด-ปิด</th>
@@ -189,7 +189,7 @@
                             var obj = JSON.stringify(full);
                             var button = `
 
-                            <button type="button" class="btn btn-sm btn-warning" onclick='showInfo(${obj})'><i class="bx bx-pencil"></i> แก้ไข </button>
+                            <button type="button" class="btn btn-sm btn-warning" onclick='showInfo(${obj})'><i class='bx bxs-edit'></i> แก้ไข </button>
                             `;
                             return button;
 

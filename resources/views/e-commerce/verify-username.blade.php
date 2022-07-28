@@ -29,7 +29,7 @@
                     <div class="col-md-3">
                     </div>
                     <div class="col-md-6">
-                        <div class="box shadow-lg" style="border-radius: 10px">
+                        <div class="box shadow-lg" style="border-radius: 5px">
                             <h2 class="mb-4">ยืนยันหมายเลขโทรศัพท์</h2>
                             <form action="{{ route('change-password.verify-username') }}" method="POST"
                                 class="login-form inputs-border inputs-bg">
@@ -64,7 +64,7 @@
                                         กลับไปยังหน้า<a href="{{ route('login-register') }}"
                                             class="effect ml-1 mr-1"><span class="text-danger">เข้าสู่ระบบ</span></a>
                                     </div>
-                                    <button type="submit" class="btn btn-danger" style="border-radius: 10px">ยืนยัน</button>
+                                    <button type="submit" class="btn btn-danger" style="border-radius: 5px">ยืนยัน</button>
                                 </div>
                             </form>
                         </div>

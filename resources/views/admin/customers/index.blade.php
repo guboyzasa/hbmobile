@@ -15,16 +15,16 @@
 
     <div class="row">
         <div class="col-12">
-            <div class="card shadow-lg" style="border-radius: 10px">
+            <div class="card shadow-lg" style="border-radius: 5px">
                 <div class="card-body"> 
                     <button type="button" style="float: right;" class="btn btn-success btn-sm create_btn" ><i class="bx bx-plus"></i> เพิ่มลูกค้า </button>
                     <h4 class="card-title">จัดการลูกค้า</h4>
                     <br>
                     
                     <br>
-                    <table id="simple_table" class="table table-bordered dt-responsive  nowrap w-100">
+                    <table id="simple_table" class="table dt-responsive  nowrap w-100">
                         <thead>
-                            <tr class="table-secondary">
+                            <tr>
                                 <th>เบอร์โทร</th>
                                 <th>ชื่อ</th>
                                 <th>email</th>
@@ -176,12 +176,17 @@
                         "render": function (data, type, full) {
                             var obj = JSON.stringify(full);
                             var button = `
-
-                            <a  href="/admin/customer/profile/${data}" class="btn btn-sm btn-warning" ><i class="bx bx-search-alt-2"></i>  </a>
-                             <button type="button" class="btn btn-sm btn-danger" onclick='destroy(${data})'><i class="bx bx-trash"></i>  </button>
+                            @if (Auth::user()->is_super_admin == 1)
+                            <a  href="/admin/customer/profile/${data}" class="btn btn-sm btn-warning" ><i class='bx bxs-edit'></i></a>
+                            <button type="button" class="btn btn-sm btn-danger" onclick='destroy(${data})'><i class="bx bx-trash"></i>  </button>
+                            @endif
                             `;
                             if(full.user_id != null){
-                                button = `<a  href="/admin/customer/profile/${data}" class="btn btn-sm btn-warning" ><i class="bx bx-search-alt-2"></i>  </a>`;
+                                button = `
+                                @if (Auth::user()->is_super_admin == 1)
+                                <a  href="/admin/customer/profile/${data}" class="btn btn-sm btn-warning" ><i class='bx bxs-edit'></i></a>
+                                @endif
+                                `;
                             }
                             return button;
 

@@ -45,7 +45,7 @@
     </div>
 
     <div class="row">
-            <div class="card shadow-lg" style="border-radius: 10px">
+            <div class="card shadow-lg" style="border-radius: 5px">
                 <div class="card-body">
                     {{-- 
                     <h4 class="card-title">Vertical Nav Tabs</h4>
@@ -757,7 +757,7 @@
                         <div style="text-align: right">
                             <br>
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
-                            <button class="btn btn-warning waves-effect waves-light" type="submit"><i class='bx bx-edit' ></i> แก้ไข</button>
+                            <button class="btn btn-warning waves-effect waves-light" type="submit"><i class='bx bxs-edit'></i> แก้ไข</button>
                         </div>
                     </form>
                 </div>
@@ -1111,7 +1111,7 @@
                             var obj = JSON.stringify(full);
                             var button = `
 
-                                   <button type="button" class="btn btn-sm btn-warning" onclick='showInfoWarranty(${obj})'><i class="bx bx-search-alt-2"></i></button>
+                                   <button type="button" class="btn btn-sm btn-warning" onclick='showInfoWarranty(${obj})'><i class='bx bxs-edit'></i></button>
                                    <button type="button" class="btn btn-sm btn-danger" onclick='destroyWarranty(${data})'><i class="bx bx-trash"></i></button>
                             `;
                             return button;
@@ -1417,7 +1417,7 @@
                             var obj = JSON.stringify(full);
                             var button = `
 
-                            <a type="button" class="btn btn-sm btn-warning" href="/admin/order/${data}"><i class="bx bx-search-alt-2"></i> </a>
+                            <a type="button" class="btn btn-sm btn-warning" href="/admin/order/${data}"><i class='bx bxs-edit'></i></a>
                              <button type="button" class="btn btn-sm btn-danger" onclick="destroyOrder(${data})"><i class="bx bx-trash"></i> </button>
                             `;
                             return button;

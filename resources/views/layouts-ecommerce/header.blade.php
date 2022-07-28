@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://unpkg.com/@tabler/icons@latest/iconfont/tabler-icons.min.css">
 <div class="nav-container fixed-top nav-sticky">
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
@@ -34,7 +35,7 @@
                             <ul class="position-relative" data-slimscroll="true">
                                 <li class="d-flex align-middle">
                                     <a href="{{ route('profile-account') }}">โปรไฟล์ <i
-                                            class='bx bxs-user-circle align-middle text-primary'></i></a>
+                                            class='ti ti-user-circle align-middle text-primary'></i></a>
                                 </li>
                                 <li class="d-flex align-middle">
                                     <a href="{{ route('ecom.change-password') }}">แก้ไขรหัสผ่าน <i

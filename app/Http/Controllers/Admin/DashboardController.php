@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Agent;
 use App\Models\Customer;
+use App\Models\OnsiteRegistration;
 use App\Models\Order;
 use App\Models\WarrantyRegistration;
 use App\Models\RepairRegistration;
@@ -25,8 +26,9 @@ class DashboardController extends Controller
         $countUserCustomer = Customer::where('user_id', '!=', null)->count();
         $countAgent = Agent::count();
         $repairs = RepairRegistration::with('customer')->orderBy('id', 'desc')->get();
+        $onsite = OnsiteRegistration::with('customer')->orderBy('id', 'desc')->get();
 
-        return view('admin.dashboard-saas', compact('sumRepairPrice','sumRepairShipping','countOrder', 'sumOrder', 'countRegisterWarranty','countRegisterRepair', 'countCustomer', 'countUserCustomer', 'countAgent','repairs'));
+        return view('admin.dashboard-saas', compact('onsite','sumRepairPrice','sumRepairShipping','countOrder', 'sumOrder', 'countRegisterWarranty','countRegisterRepair', 'countCustomer', 'countUserCustomer', 'countAgent','repairs'));
     }
 
 }

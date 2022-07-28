@@ -15,15 +15,15 @@
 
     <div class="row">
         <div class="col-12">
-            <div class="card shadow-lg" style="border-radius: 10px">
+            <div class="card shadow-lg" style="border-radius: 5px">
                 <div class="card-body"> 
 
                     <h4 class="card-title">จัดการออเดอร์</h4>
                     <br>
  
-                    <table id="simple_table" class="table table-bordered dt-responsive nowrap w-100">
+                    <table id="simple_table" class="table dt-responsive nowrap w-100">
                         <thead>
-                            <tr class="table-secondary">
+                            <tr>
                                 <th>เลขออเดอร์</th>
                                 <th>ชื่อลูกค้า</th>
                                 <th>วันที่</th>
@@ -200,8 +200,10 @@
                             var obj = JSON.stringify(full);
                             var button = `
 
-                            <a href="/admin/order/${data}" class="btn btn-sm btn-warning"><i class="bx bx-search-alt-2"></i></a>
-                             <button type="button" class="btn btn-sm btn-danger" onclick="destroy(${data})"><i class="bx bx-trash"></i> </button>
+                            <a href="/admin/order/${data}" class="btn btn-sm btn-warning"><i class='bx bxs-edit'></i></a>
+                            @if (Auth::user()->is_super_admin == 1)
+                            <button type="button" class="btn btn-sm btn-danger" onclick="destroy(${data})"><i class="bx bx-trash"></i> </button>
+                            @endif
                             `;
                             return button;
 

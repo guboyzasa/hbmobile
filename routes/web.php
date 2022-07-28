@@ -157,8 +157,23 @@ Route::middleware(['checkAdminMaintenance'])->group(function () {
                 Route::post('/repair/destroy', [App\Http\Controllers\Admin\RepairController::class, 'destroy'])->name('repair.destroy');
                 Route::post('/repair/check-code', [App\Http\Controllers\Admin\RepairController::class, 'checkCode'])->name('repair.check-code');
                 Route::post('/repair/repair-customer/{id}', [App\Http\Controllers\Admin\RepairController::class, 'repairCustomer'])->name('repair.repair-customer');
-
                 Route::get('/create-invoice/{id}',[App\Http\Controllers\PdfController::class, 'createPdfAdmin']); 
+
+                ##Onsite
+                Route::get('/onsite', [App\Http\Controllers\Admin\OnsiteController::class, 'index'])->name('onsite.index');
+                Route::post('/onsite/show', [App\Http\Controllers\Admin\OnsiteController::class, 'show'])->name('onsite.show');
+                Route::post('/onsite/store', [App\Http\Controllers\Admin\OnsiteController::class, 'store'])->name('onsite.store');
+                Route::post('/onsite/update', [App\Http\Controllers\Admin\OnsiteController::class, 'update'])->name('onsite.update');
+                Route::post('/onsite/destroy', [App\Http\Controllers\Admin\OnsiteController::class, 'destroy'])->name('onsite.destroy');
+                Route::post('/onsite/check-code', [App\Http\Controllers\Admin\OnsiteController::class, 'checkCode'])->name('onsite.check-code');
+                Route::post('/onsite/onsite-customer/{id}', [App\Http\Controllers\Admin\OnsiteController::class, 'onsiteCustomer'])->name('onsite.onsite-customer');
+                // Route::get('/create-invoice/{id}',[App\Http\Controllers\PdfController::class, 'createPdfOnsite']); 
+
+                ##Payment
+                Route::get('/payment', [App\Http\Controllers\Admin\PaymentController::class, 'index'])->name('payment.index');
+
+                ##Report
+                Route::get('/report', [App\Http\Controllers\Admin\ReportController::class, 'index'])->name('report.index');
 
 
         });

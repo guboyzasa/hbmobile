@@ -111,7 +111,7 @@
 
 <div class="row">
     <div class="col-12">
-        <div class="card shadow-lg" style="border-radius: 10px">
+        <div class="card shadow-lg" style="border-radius: 5px">
             <div class="card-body">
                 <div style="float: right;">
                 <button type="button" class="btn btn-success btn-sm create_btn"><i class="bx bx-plus"></i> เพิ่มสินค้า </button>
@@ -122,9 +122,9 @@
                 <br>
                 <br>
                 <div class="table">
-                <table id="simple_table" class="table table-bordered w-100">
+                <table id="simple_table" class="table w-100">
                     <thead>
-                        <tr class="table-secondary">
+                        <tr>
                             <th>picture</th>
                             <th>name</th>
                             {{-- <th>sku</th> --}}
@@ -490,7 +490,7 @@
 <!--  Picture modal example -->
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
     aria-hidden="true" id="infoModal">
-    <div class="modal-dialog modal-md shadow-lg" style="border-radius: 10px">
+    <div class="modal-dialog modal-md shadow-lg" style="border-radius: 5px">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="myLargeModalLabel">รูปภาพ</h5>
@@ -649,7 +649,7 @@
                         "render": function (data, type, full) {
                             var obj = JSON.stringify(full);
                             var button = `
-                             <button type="button" class="btn btn-sm btn-warning" onclick='showInfoProduct(${obj})'><i class="bx bx-edit"></i></button>
+                             <button type="button" class="btn btn-sm btn-warning" onclick='showInfoProduct(${obj})'><i class='bx bxs-edit'></i></button>
                              
                              `;
                             return button; 

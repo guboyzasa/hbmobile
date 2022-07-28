@@ -118,8 +118,8 @@ Dashboard | Admin - HB Mobile Services
                         <div class="card-body">
                             <div class="media">
                                 <div class="media-body">
-                                    <p class="text-muted fw-medium">จำนวนลูกค้า</p>
-                                    <h4 class="mb-0">{{ number_format($countCustomer) }} คน<i
+                                    <p class="text-muted fw-medium">จำนวนลูกค้าเข้าสู่ระบบแล้ว</p>
+                                    <h4 class="mb-0">{{ number_format($countUserCustomer) }} คน<i
                                             class="mdi mdi-chevron-up ms-1 text-success"></i></h4>
                                 </div>
 
@@ -134,7 +134,7 @@ Dashboard | Admin - HB Mobile Services
                 </a>
             </div>
             <div class="col-xl-4">
-                <a href="#">
+                {{-- <a href="#"> --}}
                     <div class="card mini-stats-wid shadow-lg" style="border-radius: 5px">
                         <div class="card-body">
                             <div class="media">
@@ -151,7 +151,7 @@ Dashboard | Admin - HB Mobile Services
                             </div>
                         </div>
                     </div>
-                </a>
+                {{-- </a> --}}
             </div>
         </div>
     </div>
@@ -160,54 +160,67 @@ Dashboard | Admin - HB Mobile Services
 <div class="container">
     <div class="col-12 p-4 card" style="border-radius: 5px">
         <div class="row">
-            {{-- <div class="col-xl-3">
-                <div class="card mini-stats-wid shadow-lg" style="border-radius: 5px">
-                    <div class="card-body">
-                        <div class="media">
-                            <div class="media-body">
-                                <p class="text-muted fw-medium">ยอดซ่อมรวมทั้งสิ้น</p>
-                                <h4 class="mb-0">฿ {{ number_format($sumRepairPrice + $sumRepairShipping) }}
-                                    บาท<i class="mdi mdi-chevron-up ms-1 text-success"></i></h4>
-                            </div>
-                            <div class="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
-                                <span class="avatar-title">
-                                    <i class="bx bx-archive-in font-size-24"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
             <div class="col-xl-12">
                 <div class="text-dark">
                     <label><strong style="font-size: 15px">รายการซ่อมล่าสุด</strong></label>
-                        </div>
-                        <table class="table dt-responsive nowrap w-100" id="repair_table">
-                            <thead>
-                                <tr class="table-secondary">
-                                    <th>เบอร์โทร</th>
-                                    <th>ชื่อลูกค้า</th>
-                                    <th>รายการซ่อม</th>
-                                    <th>ราคา</th>
-                                    <th>ค่าส่ง</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    @foreach ($repairs as $row)
-                                    <td>{{$row->customer->phone}}</td>
-                                    <td>{{$row->customer->name}}</td>
-                                    <td>{{$row->model}} x {{$row->detail}}</td>
-                                    <td>{{$row->price}}</td>
-                                    <td>{{$row->shipping_price}}</td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
+                </div>
+                <table class="table dt-responsive nowrap w-100" id="repair_table">
+                    <thead>
+                        <tr>
+                            <th>เบอร์โทร</th>
+                            <th>ชื่อลูกค้า</th>
+                            <th>รายการซ่อม</th>
+                            <th>ราคารวม</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            @foreach ($repairs as $row)
+                            <td>{{$row->customer->phone}}</td>
+                            <td>{{$row->customer->name}}</td>
+                            <td>{{$row->model}} x {{$row->detail}}</td>
+                            <td>{{$row->price + $row->shipping_price}}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
         </div><!-- end row -->
     </div>
 </div>
+
+<div class="container">
+    <div class="col-12 p-4 card" style="border-radius: 5px">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="text-dark">
+                    <label><strong style="font-size: 15px">รายการติดตั้งล่าสุด</strong></label>
+                </div>
+                <table class="table dt-responsive nowrap w-100" id="onsite_table">
+                    <thead>
+                        <tr>
+                            <th>เบอร์โทร</th>
+                            <th>ชื่อลูกค้า</th>
+                            <th>รายการติดตั้ง</th>
+                            <th>ราคาติดตั้ง</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            @foreach ($onsite as $row)
+                            <td>{{$row->customer->phone}}</td>
+                            <td>{{$row->customer->name}}</td>
+                            <td>{{$row->model}} x {{$row->detail}}</td>
+                            <td>{{$row->price}}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div><!-- end row -->
+    </div>
+</div>
+
 @endsection
 @section('script')
 
@@ -248,7 +261,14 @@ Dashboard | Admin - HB Mobile Services
         currentTime();
 
         $(document).ready(function () {
-            var simple = $('#repair_table').DataTable();
+            var simple = $('#repair_table').DataTable({
+                "iDisplayLength": 5,
             });
+        });
+        $(document).ready(function () {
+            var simple = $('#onsite_table').DataTable({
+                "iDisplayLength": 5,
+            });
+        });
 </script>
 @endsection

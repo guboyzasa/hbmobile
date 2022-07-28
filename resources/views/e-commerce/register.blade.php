@@ -30,7 +30,7 @@
 
                     </div>
                     <div class="col-md-6">
-                        <div class="box shadow-lg" style="border-radius: 10px">
+                        <div class="box shadow-lg" style="border-radius: 5px">
                             <h2 class="mb-4">สมัครสมาชิก</h2>
                             <form action="{{ route('register.create') }}" method="POST"
                                 class="register-form inputs-border inputs-bg">
@@ -109,7 +109,7 @@
                                         ต้องการ<a href="{{ route('login-register') }}" class="effect ml-1 mr-1"><span
                                                 class="text-danger">เข้าสู่ระบบ</span></a>หรือไม่ ?
                                     </div>
-                                    <button type="submit" class="btn btn-danger" style="border-radius: 10px">สมัครสมาชิก</button>
+                                    <button type="submit" class="btn btn-danger" style="border-radius: 5px">สมัครสมาชิก</button>
                                 </div>
 
                             </form>

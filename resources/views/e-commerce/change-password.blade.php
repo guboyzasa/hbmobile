@@ -29,7 +29,7 @@
                 <div class="col-md-3">
                 </div>
                 <div class="col-md-6">
-                    <div class="box shadow-lg" style="border-radius: 10px">
+                    <div class="box shadow-lg" style="border-radius: 5px">
                         <h2 class="mb-4">เปลี่ยนรหัสผ่าน</h2>
                         <form action="#!" id="change-password" method="POST" class="login-form inputs-border inputs-bg">
                             @csrf
@@ -52,7 +52,7 @@
                             <br>
                             <div class="form-group d-flex align-items-center justify-content-between">
                                 <button type="submit" class="btn btn-danger w-100"
-                                    data-id="{{ Auth::user() ? Auth::user()->id : '' }}" style="border-radius: 10px">บันทึก</button>
+                                    data-id="{{ Auth::user() ? Auth::user()->id : '' }}" style="border-radius: 5px">บันทึก</button>
                             </div>
                         </form>
                     </div>

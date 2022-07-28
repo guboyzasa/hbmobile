@@ -116,7 +116,7 @@
 <!--  Picture Edit Product -->
 <div class="row">
     <div class="col-12">
-        <div class="card shadow-lg" style="border-radius: 10px">
+        <div class="card shadow-lg" style="border-radius: 5px">
             <div class="card-body">
                 <h4 class="card-title">ข้อมูลสินค้า : {{ $product->name }} | SKU : {{ $product->sku }}</h4>
                 <form class="form-horizontal" action="{{ route('admin.product.store') }}" method="POST"
@@ -258,7 +258,7 @@
                         </div>
                     </div>
                     <div class="d-flex flex-wrap gap-2" style="float: right;">
-                        <button type="submit" class="btn btn-warning waves-effect waves-light"> บันทึกการแก้ไข </button>
+                        <button type="submit" class="btn btn-warning waves-effect waves-light"><i class='bx bxs-edit'></i> บันทึกการแก้ไข </button>
                         <a href="{{ route('admin.product.index') }}" class="btn btn btn-success pull-right"><i
                                 class="fa fa-arrow-left" aria-hidden="true"></i> ย้อนกลับ </a>
                     </div>
@@ -286,7 +286,7 @@
                 </div>
             </div>
         </div>
-        <div class="card shadow-lg" style="border-radius: 10px">
+        <div class="card shadow-lg" style="border-radius: 5px">
             <div class="card-body">
                 <h4 class="card-title mb-3">รูปตัวอย่างสินค้า (ขนาดไม่เกิน 2 mb และ ไม่เกิน 4 รูป)</h4>
                 <form action="{{ route('admin.product.update') }}" method="POST" enctype="multipart/form-data">
@@ -325,7 +325,7 @@
 <!--  Picture modal example -->
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
     aria-hidden="true" id="infoModal">
-    <div class="modal-dialog modal-md shadow-lg" style="border-radius: 10px">
+    <div class="modal-dialog modal-md shadow-lg" style="border-radius: 5px">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="myLargeModalLabel">รูปภาพ</h5>

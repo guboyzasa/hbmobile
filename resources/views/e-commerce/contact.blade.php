@@ -24,7 +24,7 @@
 {{-- <div class="sharethis-sticky-share-buttons"></div> --}}
 <section class="section" id="contact-info">
     <div class="container">
-        <div class="card shadow-lg" style="border-radius: 10px">
+        <div class="card shadow-lg" style="border-radius: 5px">
             <div class="card-body">
         <div class="container-md">
             <div class="row">
@@ -53,29 +53,29 @@
                         <!-- <p><strong>มีปัญหาการใช้งานเว็บไซต์:</strong> <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=188yanuk" target="_blank">Click Here!!</a></p> -->
                     </div>
                 </div>
-                <div class="col-lg-3 text-center bg-primary p-4 shadow-lg" style="border-radius: 10px">
+                <div class="col-lg-3 text-center bg-primary p-4 shadow-lg" style="border-radius: 5px">
                     <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=188yanuk" target="_blank">
                         <p>
                             <h4 class="text-white">มีปัญหาการใช้งานเว็บไซต์ Click!</h4>
                         </p>
                     </a>
-                    <img src='{{ URL::asset('assets/dist/images/qrhb.png') }}' alt="img-fluid" style="width:100%;border-radius: 10px">
+                    <img src='{{ URL::asset('assets/dist/images/qrhb.png') }}' alt="img-fluid" style="width:100%;border-radius: 5px">
                 </div>
             </div><!-- /.row -->
         </div>
         <br>
         {{-- <div class="container"> --}}
-            <div class="card shadow-lg" style="border-radius: 10px">
+            <div class="card shadow-lg" style="border-radius: 5px">
                 <div class="card-body">
             <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                     <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
-                        aria-controls="nav-home" aria-selected="true" style="border-radius: 10px">สาขา อ.เมืองขอนแก่น</a>
+                        aria-controls="nav-home" aria-selected="true" style="border-radius: 5px">สาขา อ.เมืองขอนแก่น</a>
                     <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
-                        aria-controls="nav-profile" aria-selected="false" style="border-radius: 10px">สาขา บ้านบ่อทอง อ.พระยืน</a>
+                        aria-controls="nav-profile" aria-selected="false" style="border-radius: 5px">สาขา บ้านบ่อทอง อ.พระยืน</a>
                 </div>
             </nav>
-            <div class="tab-content" id="nav-tabContent" style="border-radius: 10px">
+            <div class="tab-content" id="nav-tabContent" style="border-radius: 5px">
                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                     <div class="card card-default">
                     <iframe

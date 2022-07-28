@@ -25,7 +25,7 @@
 
 <section class="section manuals">
     <div class="container">
-        <div class="card shadow-lg" style="border-radius: 10px">
+        <div class="card shadow-lg" style="border-radius: 5px">
             <div class="card-body ">
                 <div style="text-align: center">
                     <br>
@@ -60,40 +60,40 @@
     </div><!-- /.container video-->
     <br>
     <div class="container">
-            <div class="card shadow-lg" style="border-radius: 10px">
+            <div class="card shadow-lg" style="border-radius: 5px">
                 <div class="card-body ">
                     <nav>
                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
                             <a class="nav-item nav-link active" id="nav-ios-tab" data-toggle="tab" href="#nav-ios" role="tab"
-                                aria-controls="nav-ios" aria-selected="true" style="border-radius: 10px">
+                                aria-controls="nav-ios" aria-selected="true" style="border-radius: 5px">
                                 <h3>
                                     <i class='bx bxl-apple'></i>
                                     1.IOS
                                 </h3>
                             </a>
                             <a class="nav-item nav-link" id="nav-android-tab" data-toggle="tab" href="#nav-android" role="tab"
-                                aria-controls="nav-android" aria-selected="false" style="border-radius: 10px">
+                                aria-controls="nav-android" aria-selected="false" style="border-radius: 5px">
                                 <h3>
                                     <i class='bx bxl-android'></i>
                                     2.Android
                                 </h3>
                             </a>
                             <a class="nav-item nav-link" id="nav-notebook-tab" data-toggle="tab" href="#nav-notebook" role="tab"
-                                aria-controls="nav-notebook" aria-selected="false" style="border-radius: 10px">
+                                aria-controls="nav-notebook" aria-selected="false" style="border-radius: 5px">
                                 <h3>
                                     <i class='bx bxl-windows'></i>
                                     3.NoteBook
                                 </h3>
                             </a>
                             {{-- <a class="nav-item nav-link" id="nav-macbook-tab" data-toggle="tab" href="#nav-macbook" role="tab"
-                                aria-controls="nav-macbook" aria-selected="false" style="border-radius: 10px">
+                                aria-controls="nav-macbook" aria-selected="false" style="border-radius: 5px">
                                 <h3>
                                     <i class='bx bx-desktop'></i>
                                     4.MacBook
                                 </h3>
                             </a> --}}
                             <a class="nav-item nav-link" id="nav-onsite-tab" data-toggle="tab" href="#nav-onsite" role="tab"
-                                aria-controls="nav-onsite" aria-selected="false" style="border-radius: 10px">
+                                aria-controls="nav-onsite" aria-selected="false" style="border-radius: 5px">
                                 <h3>
                                     <i class='bx bx-cog bx-spin bx-flip-horizontal'></i>
                                     4.Onsite
@@ -108,7 +108,7 @@
                             </a> --}}
                         </div>
                     </nav>
-                    <div class="tab-content" id="nav-tabContent" style="border-radius: 10px">
+                    <div class="tab-content" id="nav-tabContent" style="border-radius: 5px">
                         <div class="tab-pane fade show active" id="nav-ios" role="tabpanel" aria-labelledby="nav-ios-tab">
                             <html>
                             <body>
@@ -122,28 +122,28 @@
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/ios/ios-38.JPG') }}" data-fancybox="images">
-                                                        <img src='{{ URL::asset('get-content/hbImages/product-repair/ios/ios-38.JPG') }}' class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src='{{ URL::asset('get-content/hbImages/product-repair/ios/ios-38.JPG') }}' class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/ios/ios-32.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/ios/ios-32.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/ios/ios-32.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/ios/ios-29.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/ios/ios-29.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/ios/ios-29.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/ios/ios-21.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/ios/ios-21.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/ios/ios-21.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
@@ -152,28 +152,28 @@
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/ios/ios-28.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/ios/ios-28.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/ios/ios-28.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/ios/ios-19.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/ios/ios-19.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/ios/ios-19.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/ios/ios-6.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/ios/ios-6.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/ios/ios-6.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/ios/ios-16.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/ios/ios-16.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/ios/ios-16.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
@@ -182,28 +182,28 @@
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/ios/ios-7.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/ios/ios-7.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/ios/ios-7.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/ios/ios-2.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/ios/ios-2.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/ios/ios-2.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/ios/ios-18.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/ios/ios-18.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/ios/ios-18.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/ios/ios-9.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/ios/ios-9.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/ios/ios-9.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
@@ -230,28 +230,28 @@
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/android/android-16.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/android/android-16.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/android/android-16.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/android/android-18.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/android/android-18.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/android/android-18.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/android/android-3.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/android/android-3.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/android/android-3.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/android/android-2.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/android/android-2.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/android/android-2.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
@@ -260,28 +260,28 @@
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/android/android-13.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/android/android-13.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/android/android-13.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/android/android-17.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/android/android-17.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/android/android-17.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/android/android-22.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/android/android-22.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/android/android-22.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/android/android-20.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/android/android-20.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/android/android-20.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
@@ -290,28 +290,28 @@
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/android/android-33.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/android/android-33.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/android/android-33.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/android/android-36.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/android/android-36.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/android/android-36.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/android/android-28.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/android/android-28.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/android/android-28.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/android/android-27.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/android/android-27.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/android/android-27.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
@@ -338,28 +338,28 @@
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/notebook/nb-15.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/notebook/nb-15.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/notebook/nb-15.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/notebook/nb-13.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/notebook/nb-13.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/notebook/nb-13.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/notebook/nb-2.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/notebook/nb-2.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/notebook/nb-2.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/notebook/nb-3.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/notebook/nb-3.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/notebook/nb-3.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
@@ -368,28 +368,28 @@
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/notebook/nb-7.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/notebook/nb-7.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/notebook/nb-7.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/notebook/nb-5.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/notebook/nb-5.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/notebook/nb-5.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/notebook/nb-6.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/notebook/nb-6.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/notebook/nb-6.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/notebook/nb-4.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/notebook/nb-4.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/notebook/nb-4.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
@@ -398,28 +398,28 @@
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/notebook/nb-10.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/notebook/nb-10.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/notebook/nb-10.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/notebook/nb-11.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/notebook/nb-11.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/notebook/nb-11.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/notebook/nb-1.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/notebook/nb-1.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/notebook/nb-1.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/notebook/nb-14.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/notebook/nb-14.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/notebook/nb-14.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
@@ -525,28 +525,28 @@
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/onsite/onsite-1.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/onsite/onsite-1.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/onsite/onsite-1.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/onsite/onsite-2.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/onsite/onsite-2.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/onsite/onsite-2.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/onsite/onsite-17.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/onsite/onsite-17.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/onsite/onsite-17.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/onsite/onsite-12.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/onsite/onsite-12.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/onsite/onsite-12.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
@@ -555,28 +555,28 @@
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/onsite/onsite-9.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/onsite/onsite-9.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/onsite/onsite-9.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/onsite/onsite-13.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/onsite/onsite-13.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/onsite/onsite-13.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/onsite/onsite-16.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/onsite/onsite-16.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/onsite/onsite-16.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>
                                             <div class="col-sm-6 col-md-4 col-lg-3 item">
                                                 <figure class="product-thumbnail text-center">
                                                     <a href="{{ URL::asset('get-content/hbImages/product-repair/onsite/onsite-11.JPG') }}" data-fancybox="images">
-                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/onsite/onsite-11.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 10px">
+                                                        <img src="{{ URL::asset('get-content/hbImages/product-repair/onsite/onsite-11.JPG') }}" class="img-fluid shadow p-2" alt="" width="250px" style="border-radius: 5px">
                                                     </a>
                                                 </figure>
                                             </div>

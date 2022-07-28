@@ -22,7 +22,7 @@
 
     <div class="row">
         <div class="col-12">
-            <div class="card shadow-lg" style="border-radius: 10px">
+            <div class="card shadow-lg" style="border-radius: 5px">
                 <div class="card-body">
                      <button type="button" style="float: right; margin: 2px;" class="btn btn-success customer_btn btn-sm" ><i class="bx bx-plus"></i> เพิ่มลูกค้า </button>
                     <button type="button" style="float: right; margin: 2px;" class="btn btn-primary warranty_btn btn-sm" ><i class="bx bx-plus"></i> ลงทะเบียน </button>
@@ -31,16 +31,16 @@
                     <br>
 
                     <br>
-                    <table id="warranty_table" class="table table-bordered dt-responsive  nowrap w-100">
+                    <table id="warranty_table" class="table dt-responsive  nowrap w-100">
                         <thead>
-                            <tr class="table-secondary">
+                            <tr>
                                 <th>Serial No</th>
                                 <th>ชื่อลูกค้า</th>
                                 <th>รหัสสินค้า</th>
                                 <th>ประกัน(เดือน)</th>
                                 {{-- <th>วันเริ่มประกัน</th> --}}
                                 <th>วันสิ้นสุดประกัน</th>
-                                <th>ลงทะเบียนจาก</th>
+                                {{-- <th>ลงทะเบียนจาก</th> --}}
                                 <th>สถานะ</th>
                                 <th></th>
                             </tr>
@@ -304,7 +304,7 @@
                         <div style="text-align: right">
                             <br>
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
-                            <button class="btn btn-warning waves-effect waves-light" type="submit"><i class='bx bx-edit' ></i> แก้ไข</button>
+                            <button class="btn btn-warning waves-effect waves-light" type="submit"><i class='bx bxs-edit'></i> แก้ไข</button>
                         </div>
                     </form>
                 </div>
@@ -499,7 +499,7 @@
                 },
                 'columnDefs': [
                     {
-                        "targets": [0,1,2,3,4,5,6,7],
+                        "targets": [0,1,2,3,4,5,6],
                         "className": "text-center",
                     },
                 ],
@@ -540,13 +540,13 @@
                             return moment(data).format('DD-MM-YYYY');
                         }
                     },
-                    {
-                        "data": "agent_id",
-                         "render": function (data, type, full) {
-                            var text = full.agent ? full.agent.name : 'Admin';
-                            return text;
-                        }
-                    },
+                    // {
+                    //     "data": "agent_id",
+                    //      "render": function (data, type, full) {
+                    //         var text = full.agent ? full.agent.name : 'Admin';
+                    //         return text;
+                    //     }
+                    // },
 
                     {
                         "data": "warranty_end_date",
@@ -570,8 +570,10 @@
                             var obj = JSON.stringify(full);
                             var button = `
 
-                                <button type="button" class="btn btn-sm btn-warning" onclick='showInfoWarranty(${obj})'><i class="bx bx-search-alt-2"></i> </button>
-                                   <button type="button" class="btn btn-sm btn-danger" onclick='destroyWarranty(${data})'><i class="bx bx-trash"></i>  </button>
+                                <button type="button" class="btn btn-sm btn-warning" onclick='showInfoWarranty(${obj})'><i class='bx bxs-edit'></i> </button>
+                                @if (Auth::user()->is_super_admin == 1)
+                                <button type="button" class="btn btn-sm btn-danger" onclick='destroyWarranty(${data})'><i class="bx bx-trash"></i>  </button>
+                                @endif
                             `;
                             return button;
 

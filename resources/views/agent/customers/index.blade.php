@@ -185,15 +185,15 @@
                             // console.log('agentId : ' + agentId);
                             // console.log('full.agent_id : ' + full.agent_id);
                             var button = `
-                                    <a  href="/agent-member/customer/profile/${data}" class="btn btn-sm btn-warning" ><i class="bx bx-search-alt-2"></i>  </a>`;
+                                    <a  href="/agent-member/customer/profile/${data}" class="btn btn-sm btn-warning" ><i class='bx bxs-edit'></i>  </a>`;
                             if(agentId == full.agent_id){
                                 button = `
-                                    <a  href="/agent-member/customer/profile/${data}" class="btn btn-sm btn-warning" ><i class="bx bx-search-alt-2"></i>  </a>
+                                    <a  href="/agent-member/customer/profile/${data}" class="btn btn-sm btn-warning" ><i class='bx bxs-edit'></i>  </a>
                                     <button type="button" class="btn btn-sm btn-danger" onclick='destroy(${data})'><i class="bx bx-trash"></i>  </button>
                                     `;
                             }
                             if(full.user_id != null){
-                                button = `<a  href="/agent-member/customer/profile/${data}" class="btn btn-sm btn-warning" ><i class="bx bx-search-alt-2"></i>  </a>`;
+                                button = `<a  href="/agent-member/customer/profile/${data}" class="btn btn-sm btn-warning" ><i class='bx bxs-edit'></i>  </a>`;
                             }
                             return button;
 

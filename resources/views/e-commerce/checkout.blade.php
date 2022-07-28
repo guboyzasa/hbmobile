@@ -22,7 +22,7 @@
 <div class="page-wrapper">
     <section class="section" id="page-checkout">
         <div class="container">
-            <div class="card shadow-lg" style="border-radius: 10px">
+            <div class="card shadow-lg" style="border-radius: 5px">
                 <div class="card-body">
             <form action="{{ route('order-received') }}" id="form-checkout" method="POST"
                 class="row checkout-form inputs-border inputs-bg">
@@ -233,7 +233,7 @@
 
                 <div class="col-md-6">
                     <div class="review-order">
-                        <div class="box shadow-lg" style="border-radius: 10px">
+                        <div class="box shadow-lg" style="border-radius: 5px">
                             <h3 class="title">ออเดอร์ของคุณ</h3>
                             <div class="table-responsive">
                                 <table class="table cart-table review-order-table">
@@ -364,7 +364,7 @@
                                     </li> -->
                                 </ul>
                                 <div class="text-right">
-                                    <button type="button" id="store-btn" class="btn btn-danger" style="border-radius: 10px">สั่งซื้อสินค้า</button>
+                                    <button type="button" id="store-btn" class="btn btn-danger" style="border-radius: 5px">สั่งซื้อสินค้า</button>
                                     <button type="submit" id="store-hidden-btn" class="d-none">save</button>
                                 </div>
                             </div>

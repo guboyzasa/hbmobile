@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://unpkg.com/@tabler/icons@latest/iconfont/tabler-icons.min.css">
 <header id="page-topbar" style="background-color: #2a3042">
     <div class="navbar-header">
         <div class="d-flex">
@@ -65,9 +66,9 @@
             </button>
             <div class="dropdown-menu dropdown-menu-end">
                 <!-- item-->
-                <a class="dropdown-item d-block" href="#" data-bs-toggle="modal" data-bs-target=".change-password"><i class="bx bx-wrench font-size-16 align-middle me-1"></i> <span key="t-settings">เปลี่ยนรหัสผ่าน</span></a>
+                <a class="dropdown-item d-block" href="#" data-bs-toggle="modal" data-bs-target=".change-password"><i class="ti ti-adjustments-alt font-size-16 align-middle me-1"></i> <span key="t-settings">เปลี่ยนรหัสผ่าน</span></a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item text-danger" href="javascript:void();" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span key="t-logout">ออกจากระบบ</span></a>
+                <a class="dropdown-item text-danger" href="javascript:void();" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="ti ti-logout font-size-16 align-middle me-1 text-danger"></i> <span key="t-logout">ออกจากระบบ</span></a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
                 </form>
@@ -80,7 +81,7 @@
 
 <!--  Change-Password example -->
 <div class="modal fade change-password" tabindex="-1" role="dialog"
-aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
