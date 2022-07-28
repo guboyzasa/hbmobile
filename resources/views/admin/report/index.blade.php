@@ -200,18 +200,13 @@ Report
 <script>
     $(document).ready(function () {
         var simple = $('#repair_table').DataTable({
-        "iDisplayLength": 5,  //กำหนด default row per page เป็น 50
-        // "bLengthChange": true,  //ปิด select box ที่ให้เลือก row per page
+        "iDisplayLength": 5,
         });
         } );
-        // $(document).ready(function () {
-        //     var simple = $('#onsite_table').DataTable();
-        // });
 
         $(document).ready(function() {
         var simple = $('#onsite_table').DataTable({
-            "iDisplayLength": 5,  //กำหนด default row per page เป็น 50
-            // "bLengthChange": true,  //ปิด select box ที่ให้เลือก row per page
+            "iDisplayLength": 5,
         });
         } );
 </script>

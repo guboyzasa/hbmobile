@@ -268,6 +268,7 @@ Dashboard | Admin - HB Mobile Services
         $(document).ready(function () {
             var simple = $('#onsite_table').DataTable({
                 "iDisplayLength": 5,
+                
             });
         });
 </script>
