@@ -19,6 +19,7 @@ Dashboard | Admin - HB Mobile Services
         <div class="col-12 p-4 bg-primary bg-gradient shadow-sm" style="border-radius: 5px">
             <div style=" text-align: right;color:black" id="clock" onload="currentTime()"></div>
             <h2 class="text-white">HB MOBILE Dashboard !</h2>
+            <div style=" text-align: right;color:white;font-size:100%">รวมทั้งสิ้น: {{number_format($sumRepairPrice + $sumRepairShipping + $sumOrder + $sumOnsites)}} บาท</div>
         </div>
     </div>
 </div>
@@ -125,7 +126,7 @@ Dashboard | Admin - HB Mobile Services
 
                                 <div class="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
                                     <span class="avatar-title">
-                                        <i class="bx bx-user font-size-24"></i>
+                                        <i class="bx bx-user-check font-size-24"></i>
                                     </span>
                                 </div>
                             </div>
@@ -151,11 +152,81 @@ Dashboard | Admin - HB Mobile Services
                             </div>
                         </div>
                     </div>
-                {{-- </a> --}}
+                    {{--
+                </a> --}}
             </div>
         </div>
     </div>
 </div><!-- col 2 -->
+<div class="col-xl-12">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-4">
+                <a href="{{ route('admin.repair.index') }}">
+                    <div class="card mini-stats-wid shadow-lg" style="border-radius: 5px">
+                        <div class="card-body">
+                            <div class="media">
+                                <div class="media-body">
+                                    <p class="text-muted fw-medium">ลงทะเบียนงานติดตั้ง</p>
+                                    <h4 class="mb-0">{{ number_format($countOnsite) }} คน<i
+                                            class="mdi mdi-chevron-up ms-1 text-success"></i></h4>
+                                </div>
+
+                                <div class="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
+                                    <span class="avatar-title">
+                                        <i class="ti ti-axe font-size-24"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-4">
+                <a href="{{ route('admin.customer.index') }}">
+                    <div class="card mini-stats-wid shadow-lg" style="border-radius: 5px">
+                        <div class="card-body">
+                            <div class="media">
+                                <div class="media-body">
+                                    <p class="text-muted fw-medium">จำนวนลูกค้าที่ยังไม่เข้าระบบ</p>
+                                    <h4 class="mb-0">{{ number_format($countUserCus) }} คน<i
+                                            class="mdi mdi-chevron-up ms-1 text-success"></i></h4>
+                                </div>
+
+                                <div class="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
+                                    <span class="avatar-title">
+                                        <i class="bx bx-user-x font-size-24"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-4">
+                {{-- <a href="#"> --}}
+                    <div class="card mini-stats-wid shadow-lg" style="border-radius: 5px">
+                        <div class="card-body">
+                            <div class="media">
+                                <div class="media-body">
+                                    <p class="text-muted fw-medium">ยอดติดตั้งรวมทั้งสิ้น</p>
+                                    <h4 class="mb-0">฿ {{ number_format($sumOnsites) }}
+                                        บาท<i class="mdi mdi-chevron-up ms-1 text-success"></i></h4>
+                                </div>
+                                <div class="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
+                                    <span class="avatar-title">
+                                        <i class="bx bx-credit-card font-size-24"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{--
+                </a> --}}
+            </div>
+        </div>
+    </div>
+</div><!-- col 3 -->
 
 <div class="container">
     <div class="col-12 p-4 card" style="border-radius: 5px">
@@ -167,6 +238,7 @@ Dashboard | Admin - HB Mobile Services
                 <table class="table dt-responsive nowrap w-100" id="repair_table">
                     <thead>
                         <tr>
+                            <th>#</th>
                             <th>เบอร์โทร</th>
                             <th>ชื่อลูกค้า</th>
                             <th>รายการซ่อม</th>
@@ -174,14 +246,7 @@ Dashboard | Admin - HB Mobile Services
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            @foreach ($repairs as $row)
-                            <td>{{$row->customer->phone}}</td>
-                            <td>{{$row->customer->name}}</td>
-                            <td>{{$row->model}} x {{$row->detail}}</td>
-                            <td>{{$row->price + $row->shipping_price}}</td>
-                        </tr>
-                        @endforeach
+
                     </tbody>
                 </table>
             </div>
@@ -199,6 +264,7 @@ Dashboard | Admin - HB Mobile Services
                 <table class="table dt-responsive nowrap w-100" id="onsite_table">
                     <thead>
                         <tr>
+                            <th>#</th>
                             <th>เบอร์โทร</th>
                             <th>ชื่อลูกค้า</th>
                             <th>รายการติดตั้ง</th>
@@ -206,14 +272,7 @@ Dashboard | Admin - HB Mobile Services
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            @foreach ($onsite as $row)
-                            <td>{{$row->customer->phone}}</td>
-                            <td>{{$row->customer->name}}</td>
-                            <td>{{$row->model}} x {{$row->detail}}</td>
-                            <td>{{$row->price}}</td>
-                        </tr>
-                        @endforeach
+
                     </tbody>
                 </table>
             </div>
@@ -260,15 +319,147 @@ Dashboard | Admin - HB Mobile Services
         }
         currentTime();
 
-        $(document).ready(function () {
-            var simple = $('#repair_table').DataTable({
+        // $(document).ready(function () {
+        //     var simple = $('#repair_table').DataTable({
+        //         "iDisplayLength": 5,
+        //     });
+        // });
+        // $(document).ready(function () {
+        //     var simple = $('#onsite_table').DataTable({
+        //         "iDisplayLength": 5,
+                
+        //     });
+        // });
+</script>
+<script>
+    $(document).ready(function () {
+        var repair = '';
+        var onsite = '';
+        } );
+        
+        $('#onsite_table').ready(function() {
+
+            onsite = $('#onsite_table').DataTable({
                 "iDisplayLength": 5,
+                "processing": false,
+                "serverSide": false,
+                "info": false,
+                "searching": true,
+                "responsive": true,
+                "bFilter": false,
+                "destroy": true,
+                "order": [
+                    [0, "desc"]
+                ],
+                "ajax": {
+                    "url": `{{ route('admin.onsite.show') }}`,
+                    "method": "POST",
+                    "data": {
+                        "_token": "{{ csrf_token() }}",
+                    },
+                },
+                'columnDefs': [{
+                    "targets": [0, 1, 2, 3, 4],
+                }, ],
+                "columns": [
+                    {
+                        "data": "onsite_start_date",
+                        "render": function(data, type, full) {
+                            return moment(data).format('DD-MM-YY');
+                        }
+                    },
+                    {
+                        "data": "customer",
+                        "render": function(data, type, full) {
+                            return data ? data.phone :
+                                '<span class="badge badge-pill badge-soft-danger font-size-11"> เบอร์โทรถูกลบ </span>';
+
+                        }
+                    },
+                    {
+                        "data": "customer",
+                        "render": function(data, type, full) {
+                            return data ? data.name :
+                                '<span class="badge badge-pill badge-soft-danger font-size-11"> ลูกค้าถูกลบ </span>';
+
+                        }
+                    },
+
+                    {
+                        "data": "model",
+                        "render": function(data, type, full) {
+                            return full.model + " x " + full.detail;
+                        }
+                    },
+
+                    {
+                        "data": "price",
+                    },
+                ],
             });
         });
-        $(document).ready(function () {
-            var simple = $('#onsite_table').DataTable({
+
+        $('#repair_table').ready(function() {
+
+            repair = $('#repair_table').DataTable({
                 "iDisplayLength": 5,
-                
+                "processing": false,
+                "serverSide": false,
+                "info": false,
+                "searching": true,
+                "responsive": true,
+                "bFilter": false,
+                "destroy": true,
+                "order": [
+                    [0, "desc"]
+                ],
+                "ajax": {
+                    "url": `{{ route('admin.repair.show') }}`,
+                    "method": "POST",
+                    "data": {
+                        "_token": "{{ csrf_token() }}",
+                    },
+                },
+                'columnDefs': [{
+                    "targets": [0, 1, 2, 3, 4],
+                }, ],
+                "columns": [
+                    {
+                        "data": "repair_start_date",
+                        "render": function(data, type, full) {
+                            return moment(data).format('DD-MM-YY');
+                        }
+                    },
+                    {
+                        "data": "customer",
+                        "render": function(data, type, full) {
+                            return data ? data.phone :
+                                '<span class="badge badge-pill badge-soft-danger font-size-11"> เบอร์โทรถูกลบ </span>';
+
+                        }
+                    },
+                    {
+                        "data": "customer",
+                        "render": function(data, type, full) {
+                            return data ? data.name :
+                                '<span class="badge badge-pill badge-soft-danger font-size-11"> ลูกค้าถูกลบ </span>';
+
+                        }
+                    },
+                    {
+                        "data": "model",
+                        "render": function(data, type, full) {
+                            return full.model + " x " + full.detail;
+                        }
+                    },
+
+                    {
+                        "data": "price",
+                        "render": function(data, type, full) {
+                            return full.price + full.shipping_price;
+                        }
+                    },
+                ],
             });
         });
 </script>

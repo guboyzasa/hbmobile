@@ -206,7 +206,7 @@
                     </div>
                 </div>
                 <div class="col-xl-2">
-                    <div class="card mini-stats-wid shadow-lg" style="border-radius: 5px">
+                    <div class="card mini-stats-wid bg-warning bg-soft shadow-lg" style="border-radius: 5px">
                         <div class="card-body">
                             <div class="media">
                                 <div class="media-body">
@@ -224,7 +224,7 @@
                     </div>
                 </div>
                 <div class="col-xl-2">
-                    <div class="card mini-stats-wid shadow-lg" style="border-radius: 5px">
+                    <div class="card mini-stats-wid bg-success bg-soft shadow-lg" style="border-radius: 5px">
                         <div class="card-body">
                             <div class="media">
                                 <div class="media-body">
@@ -242,7 +242,7 @@
                     </div>
                 </div>
                 <div class="col-xl-2">
-                    <div class="card mini-stats-wid shadow-lg" style="border-radius: 5px">
+                    <div class="card mini-stats-wid bg-danger bg-soft shadow-lg" style="border-radius: 5px">
                         <div class="card-body">
                             <div class="media">
                                 <div class="media-body">

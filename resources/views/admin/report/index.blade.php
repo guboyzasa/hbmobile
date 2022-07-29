@@ -35,7 +35,27 @@ Report
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">สถานะงานซ่อม</h4>
-                                <canvas id="chartPies"></canvas>
+                                <canvas id="chartPieRepair"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">สถานะสมาชิก</h4>
+                                <canvas id="chartPieCustomer"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Ecommerce</h4>
+                                <canvas id="chartPieEcommerce"></canvas>
                             </div>
                         </div>
                     </div>
@@ -52,17 +72,13 @@ Report
                                 <table class="table dt-responsive nowrap w-100" id="repair_table">
                                     <thead>
                                         <tr>
+                                            <th>#</th>
                                             <th>รายการซ่อม</th>
                                             <th>ราคา</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            @foreach ($repairs as $row)
-                                            <td>{{$row->model}} x {{$row->detail}}</td>
-                                            <td>{{$row->price}}</td>
-                                        </tr>
-                                        @endforeach
+
                                     </tbody>
                                 </table>
                             </div>
@@ -77,17 +93,13 @@ Report
                                 <table class="table dt-responsive nowrap w-100" id="onsite_table">
                                     <thead>
                                         <tr>
+                                            <th>#</th>
                                             <th>รายการติดตั้ง</th>
                                             <th>ราคา</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            @foreach ($onsite as $row)
-                                            <td>{{$row->model}} x {{$row->detail}}</td>
-                                            <td>{{$row->price}}</td>
-                                        </tr>
-                                        @endforeach
+
                                     </tbody>
                                 </table>
                             </div>
@@ -130,11 +142,11 @@ Report
 <script>
     // Pie Data
     var chartPie_Data = {
-    labels: ['สินค้า','หมวดหมู่','แบรนด์','ลูกค้ายังไม่เข้าระบบ','ลูกค้าเข้าระบบแล้ว','ออเดอร์', 'ลงทะเบียนประกันสินค้า', 'ลงทะเบียนงานซ่อม', 'ลงทะเบียนงานติดตั้ง'],
+    labels: ['สินค้า','หมวดหมู่','แบรนด์','ลูกค้าทั้งหมด', 'ออเดอร์', 'ประกันสินค้า', 'งานซ่อม', 'งานติดตั้ง'],
     datasets: [{
         //label: 'Report Chart',
-        data: [{{$countProduct}},{{$countProductCat}},{{$countProductBrand}},{{$countUserCus}},{{$countUserCustomer}},{{$countOrder}}, {{$countRegisterWarranty}}, {{$countRepair}}, {{$countOnsite}}],
-        backgroundColor: [ '#f44336','#f1c232','#8fce00','#16537e','#3d85c6','#674ea7','#f13391','#fff2cc','#665151']
+        data: [{{$countProduct}}, {{$countProductCat}}, {{$countProductBrand}}, {{$countCustomer}}, {{$countOrder}}, {{$countRegisterWarranty}}, {{$countRepair}}, {{$countOnsite}}],
+        backgroundColor: [ '#f44336','#f1c232','#3d85c6','#8fce00','#674ea7','#f13391','#fff2cc','#665151']
     }]
     }
     // Pie Chart
@@ -166,11 +178,75 @@ Report
     datasets: [{
         //label: 'Report Chart',
         data: [{{$countRepair1}}, {{$countRepair2}}, {{$countRepair3}}],
-        backgroundColor: [ '#cc0000','#6aa84f','#f1c232']
+        backgroundColor: [ '#f44336','#8fce00','#f1c232']
     }]
     }
     // Pie Chart
-    var chartPie = document.getElementById('chartPies').getContext('2d');
+    var chartPie = document.getElementById('chartPieRepair').getContext('2d');
+    var chartPie_options = {
+    cutoutPercentage: 0,
+    cutoutPercentage: 50,
+    legend: {position:'left',
+        labels:{
+        pointStyle:'circle',
+        usePointStyle:true
+        }
+    }
+    };
+    if (chartPie) {
+    new Chart(chartPie, {
+    type: 'pie',
+    data: chartPie_Data,
+    options: chartPie_options
+    });
+    }
+</script>
+
+{{-- Pie Customer --}}
+<script>
+    // Pie Data
+    var chartPie_Data = {
+    labels: ['ลูกค้าที่เข้าระบบแล้ว', 'ลูกค้าที่ยังไม่เข้าระบบ'],
+    datasets: [{
+        //label: 'Report Chart',
+        data: [{{$countUserCustomer}}, {{$countUserCus}}],
+        backgroundColor: ['#8fce00','#16537e']
+    }]
+    }
+    // Pie Chart
+    var chartPie = document.getElementById('chartPieCustomer').getContext('2d');
+    var chartPie_options = {
+    cutoutPercentage: 0,
+    cutoutPercentage: 50,
+    legend: {position:'left',
+        labels:{
+        pointStyle:'circle',
+        usePointStyle:true
+        }
+    }
+    };
+    if (chartPie) {
+    new Chart(chartPie, {
+    type: 'pie',
+    data: chartPie_Data,
+    options: chartPie_options
+    });
+    }
+</script>
+
+{{-- Pie Ecommerce --}}
+<script>
+    // Pie Data
+    var chartPie_Data = {
+    labels: ['สินค้าทั้งหมด', 'สินค้าใหม่','สินค้าแนะนำ','สินค้าที่มีในสต๊อก','สินค้าที่ไม่มีในสต๊อก'],
+    datasets: [{
+        //label: 'Report Chart',
+        data: [{{$countProduct}}, {{$countProductNew}}, {{$countProductRecom}}, {{$countProductStock}}, {{$countProductStocks}}],
+        backgroundColor: [ '#f44336','#3d85c6','#8fce00','#f1c232','#16537e']
+    }]
+    }
+    // Pie Chart
+    var chartPie = document.getElementById('chartPieEcommerce').getContext('2d');
     var chartPie_options = {
     cutoutPercentage: 0,
     cutoutPercentage: 50,
@@ -199,18 +275,103 @@ Report
 {{-- DataTable --}}
 <script>
     $(document).ready(function () {
-        var simple = $('#repair_table').DataTable({
-        "iDisplayLength": 5,
-        });
+        var repair = '';
+        var onsite = '';
         } );
 
-        $(document).ready(function() {
-        var simple = $('#onsite_table').DataTable({
-            "iDisplayLength": 5,
+        $('#onsite_table').ready(function() {
+
+            onsite = $('#onsite_table').DataTable({
+                "iDisplayLength": 5,
+                "processing": false,
+                "serverSide": false,
+                "info": false,
+                "searching": true,
+                "responsive": true,
+                "bFilter": false,
+                "destroy": true,
+                "order": [
+                    [0, "desc"]
+                ],
+                "ajax": {
+                    "url": `{{ route('admin.onsite.show') }}`,
+                    "method": "POST",
+                    "data": {
+                        "_token": "{{ csrf_token() }}",
+                    },
+                },
+                'columnDefs': [{
+                    "targets": [0, 1, 2],
+                }, ],
+                "columns": [
+                    {
+                        "data": "onsite_start_date",
+                        "render": function(data, type, full) {
+                            return moment(data).format('DD-MM-YY');
+                        }
+                    },
+                    
+                    {
+                        "data": "model",
+                        "render": function(data, type, full) {
+                            return full.model + " x " + full.detail;
+                        }
+                    },
+
+                    {
+                        "data": "price",
+                    },
+                ],
+            });
         });
-        } );
+
+        $('#repair_table').ready(function() {
+
+            repair = $('#repair_table').DataTable({
+                "iDisplayLength": 5,
+                "processing": false,
+                "serverSide": false,
+                "info": false,
+                "searching": true,
+                "responsive": true,
+                "bFilter": false,
+                "destroy": true,
+                "order": [
+                    [0, "desc"]
+                ],
+                "ajax": {
+                    "url": `{{ route('admin.repair.show') }}`,
+                    "method": "POST",
+                    "data": {
+                        "_token": "{{ csrf_token() }}",
+                    },
+                },
+                'columnDefs': [{
+                    "targets": [0, 1, 2],
+                }, ],
+                "columns": [
+                    {
+                        "data": "repair_start_date",
+                        "render": function(data, type, full) {
+                            return moment(data).format('DD-MM-YY');
+                        }
+                    },
+
+                    {
+                        "data": "model",
+                        "render": function(data, type, full) {
+                            return full.model + " x " + full.detail;
+                        }
+                    },
+
+                    {
+                        "data": "price",
+                        "render": function(data, type, full) {
+                            return full.price + full.shipping_price;
+                        }
+                    },
+                ],
+            });
+        });
 </script>
-
-
-
 @endsection

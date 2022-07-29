@@ -24,11 +24,14 @@ class DashboardController extends Controller
         $countRegisterRepair = RepairRegistration::count();
         $countCustomer = Customer::count();
         $countUserCustomer = Customer::where('user_id', '!=', null)->count();
+        $countUserCus = Customer::where('user_id', '=', null)->count();
         $countAgent = Agent::count();
-        $repairs = RepairRegistration::with('customer')->orderBy('id', 'desc')->get();
-        $onsite = OnsiteRegistration::with('customer')->orderBy('id', 'desc')->get();
+        $repairs = RepairRegistration::orderBy('id', 'desc')->get();
+        $onsite = OnsiteRegistration::orderBy('id', 'desc')->get();
+        $countOnsite = OnsiteRegistration::count();
+        $sumOnsites = OnsiteRegistration::where('id','!=',null)->sum('price');
 
-        return view('admin.dashboard-saas', compact('onsite','sumRepairPrice','sumRepairShipping','countOrder', 'sumOrder', 'countRegisterWarranty','countRegisterRepair', 'countCustomer', 'countUserCustomer', 'countAgent','repairs'));
+        return view('admin.dashboard-saas', compact('sumOnsites','countOnsite','countUserCus','onsite','sumRepairPrice','sumRepairShipping','countOrder', 'sumOrder', 'countRegisterWarranty','countRegisterRepair', 'countCustomer', 'countUserCustomer', 'countAgent','repairs'));
     }
 
 }

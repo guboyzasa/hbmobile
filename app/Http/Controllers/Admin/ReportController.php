@@ -17,8 +17,8 @@ class ReportController extends Controller
 {
     public function index()
     {
-        $repairs = RepairRegistration::with('customer')->orderBy('id', 'desc')->get();
-        $onsite = OnsiteRegistration::with('customer')->orderBy('id', 'desc')->get();
+        $repairs = RepairRegistration::orderBy('id', 'desc')->get();
+        $onsite = OnsiteRegistration::orderBy('id', 'desc')->get();
         $countRegisterWarranty = WarrantyRegistration::count();
         $countOrder = Order::count();
         $countOnsite = OnsiteRegistration::count();
@@ -29,13 +29,19 @@ class ReportController extends Controller
 
         $countUserCus = Customer::where('user_id', '=', null)->count();
         $countUserCustomer = Customer::where('user_id', '!=', null)->count();
+        $countCustomer = Customer::count();
 
         
         $countRepair1 = RepairRegistration::where('status', '=', 1)->count();
         $countRepair2 = RepairRegistration::where('status', '=', 2)->count();
         $countRepair3 = RepairRegistration::where('status', '=', 3)->count();
 
-        return view('admin.report.index',compact('repairs','onsite','countRegisterWarranty','countOrder','countOnsite','countRepair','countRepair1','countRepair2','countRepair3','countProduct','countProductCat','countProductBrand','countUserCus','countUserCustomer'));
+        $countProductNew = Product::where('is_new', '=', 1)->count();
+        $countProductRecom = Product::where('is_recommend', '=', 1)->count();
+        $countProductStock = Product::where('is_stock', '=', 1)->count();
+        $countProductStocks = Product::where('is_stock', '=', 0)->count();
+
+        return view('admin.report.index',compact('repairs','onsite','countRegisterWarranty','countOrder','countOnsite','countRepair','countRepair1','countRepair2','countRepair3','countProduct','countProductCat','countProductBrand','countUserCus','countUserCustomer','countProductNew','countProductRecom','countProductStock','countProductStocks','countCustomer'));
     }
 
 }

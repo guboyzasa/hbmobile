@@ -31,7 +31,7 @@ class RepairController extends Controller
     public function show()
     {
         return datatables()->of(
-            RepairRegistration::query()->with('customer', 'agent')->orderBy('id', 'asc')
+            RepairRegistration::query()->with('customer', 'agent')->orderBy('id', 'desc')
         )->toJson();
     }
 

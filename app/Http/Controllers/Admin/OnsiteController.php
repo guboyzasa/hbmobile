@@ -23,7 +23,7 @@ class OnsiteController extends Controller
     public function show()
     {
         return datatables()->of(
-            OnsiteRegistration::query()->with('customer', 'agent')->orderBy('id', 'asc')
+            OnsiteRegistration::query()->with('customer', 'agent')->orderBy('id', 'desc')
         )->toJson();
     }
     public function update(Request $req)
