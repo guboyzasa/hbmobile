@@ -157,6 +157,7 @@ Route::middleware(['checkAdminMaintenance'])->group(function () {
                 Route::post('/repair/destroy', [App\Http\Controllers\Admin\RepairController::class, 'destroy'])->name('repair.destroy');
                 Route::post('/repair/check-code', [App\Http\Controllers\Admin\RepairController::class, 'checkCode'])->name('repair.check-code');
                 Route::post('/repair/repair-customer/{id}', [App\Http\Controllers\Admin\RepairController::class, 'repairCustomer'])->name('repair.repair-customer');
+                Route::post('/repair/get-count-repair', [App\Http\Controllers\Admin\RepairController::class, 'getCountRepair'])->name('repair.get-repair-count');
                 Route::get('/create-invoice/{id}',[App\Http\Controllers\PdfController::class, 'createPdfAdmin']); 
 
                 ##Onsite

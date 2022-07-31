@@ -63,6 +63,7 @@
 
             var simple = '';
             getOrderCount();
+            getRepairCount();
 
     });
 
@@ -76,7 +77,57 @@
             },
         );
     }
+    function getRepairCount() {
+        $.post("{{  route('admin.repair.get-repair-count')  }}", data = {
+                _token: '{{ csrf_token() }}',
+            },
+            function (res) {
+                console.log(res)
+                $('#count_repair').text(res);
+            },
+        );
+    }
 
+</script>
+
+<!-- icon -->
+<script src="https://kit.fontawesome.com/04cb91f376.js" crossorigin="anonymous"></script>
+<script>
+    function toThaiDateString(date) {
+    let monthNames = [
+        "มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน",
+        "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม.",
+        "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"
+    ];
+
+    let year = date.getFullYear() + 543;
+    let month = monthNames[date.getMonth()];
+    let numOfDay = date.getDate();
+
+    return `${numOfDay} ${month} ${year}, `
+    }
+    let date1 = new Date();
+    document.getElementById("date").innerHTML= toThaiDateString(date1);
+</script>
+<script>
+    function currentTime() {
+            let date = new Date();
+            let hh = date.getHours();
+            let mm = date.getMinutes();
+            let ss = date.getSeconds();
+
+            hh = (hh < 10) ? "0" + hh : hh;
+            mm = (mm < 10) ? "0" + mm : mm;
+            ss = (ss < 10) ? "0" + ss : ss;
+
+            let time = hh + ":" + mm + ":" + ss;
+
+            document.getElementById("clock").innerText = time;
+            let t = setTimeout(function() {
+                currentTime()
+            }, 1000);
+        }
+        currentTime();
 </script>
 
 @yield('script-bottom')

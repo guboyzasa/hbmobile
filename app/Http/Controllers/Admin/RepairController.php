@@ -212,6 +212,11 @@ class RepairController extends Controller
             RepairRegistration::query()->with('customer', 'agent')->where('customer_id', $id)->orderBy('id', 'asc')
         )->toJson();
     }
+    public function getCountRepair()
+    {
+        $count = RepairRegistration::whereIn('status', [1,3])->count();
 
+        return $count;
+    }
 
 }

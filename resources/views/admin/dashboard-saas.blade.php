@@ -7,23 +7,127 @@ Dashboard | Admin - HB Mobile Services
 @section('content')
 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
     <h4 class="mb-sm-0 font-size-18">Dashboard</h4>
-    {{-- <div class="page-title-right">
-        <ol class="breadcrumb m-0">
-            <li class="breadcrumb-item"></li>
-            <li class="breadcrumb-item active">Dashboard</li>
-        </ol>
-    </div> --}}
 </div>
-<div class="card" style="border-radius: 5px">
-    <div class="card-body">
-        <div class="col-12 p-4 bg-primary bg-gradient shadow-sm" style="border-radius: 5px">
-            <div style=" text-align: right;color:black" id="clock" onload="currentTime()"></div>
-            <h2 class="text-white">HB MOBILE Dashboard !</h2>
-            <div style=" text-align: right;color:white;font-size:100%">รวมทั้งสิ้น: {{number_format($sumRepairPrice + $sumRepairShipping + $sumOrder + $sumOnsites)}} บาท</div>
+
+<div class="container pb-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body"><span>ลงทะเบียนประกัน</span>
+                    <div class="d-flex justify-content-between">
+                        <div class="text-info"><i class="fas fa-2x fa fa-shield-halved"></i></div>
+                        <h3 class="mb-0 text-success">{{ number_format($countRegisterWarranty) }}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body"><span>จำนวนออเดอร์ทั้งหมด</span>
+                    <div class="d-flex justify-content-between">
+                        <div class="text-info"><i class="fas fa-2x fa fa-shopping-cart"></i>
+                        </div>
+                        <h3 class="mb-0 text-info">{{ number_format($sumOrderAll) }}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body"><span>ยอดขายรวมทั้งสิ้น</span>
+                    <div class="d-flex justify-content-between">
+                        <div class="text-info"><i class="fas fa-2x fa-baht-sign"></i></div>
+                        <h3 class="mb-0">{{ number_format($sumOrder) }}</h3>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-<div class="col-xl-12">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body"><span>ลงทะเบียนงานซ่อม</span>
+                    <div class="d-flex justify-content-between">
+                        <div class="text-info"><i class="fas fa-2x fa fa-wrench"></i></div>
+                        <h3 class="mb-0 text-success">{{ number_format($countRegisterRepair) }}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body"><span>จำนวนลูกค้าเข้าสู่ระบบแล้ว</span>
+                    <div class="d-flex justify-content-between">
+                        <div class="text-info"><i class="fas fa-2x fa fa-user-check"></i>
+                        </div>
+                        <h3 class="mb-0 text-info">{{ number_format($countUserCustomer) }}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body"><span>ยอดซ่อมรวมทั้งสิ้น</span>
+                    <div class="d-flex justify-content-between">
+                        <div class="text-info"><i class="fas fa-2x fa-baht-sign"></i></div>
+                        <h3 class="mb-0">{{ number_format($sumRepairPrice + $sumRepairShipping) }}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body"><span>ลงทะเบียนงานติดตั้ง</span>
+                    <div class="d-flex justify-content-between">
+                        <div class="text-info"><i class="fas fa-2x fa fa-gavel"></i></div>
+                        <h3 class="mb-0 text-success">{{ number_format($countOnsite) }}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body"><span>จำนวนลูกค้าที่ยังไม่เข้าระบบ</span>
+                    <div class="d-flex justify-content-between">
+                        <div class="text-info"><i class="fas fa-2x fa fa-user"></i>
+                        </div>
+                        <h3 class="mb-0 text-info">{{ number_format($countUserCus) }}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body"><span>ยอดติดตั้งรวมทั้งสิ้น</span>
+                    <div class="d-flex justify-content-between">
+                        <div class="text-info"><i class="fas fa-2x fa-baht-sign"></i></div>
+                        <h3 class="mb-0">{{ number_format($sumOnsites) }}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- <div class="text-dark">
+        <label><strong style="font-size: 15px">รายการซ่อมล่าสุด</strong></label>
+    </div>
+    <table class="table table-info table-bordered table-hover" id="repair_table">
+        <thead>
+            <tr>
+                <th>วันที่รับเครื่อง</th>
+                <th>เบอร์โทร</th>
+                <th>ชื่อลูกค้า</th>
+                <th>รายการซ่อม</th>
+                <th>ราคารวม</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table> --}}
+
+
+{{-- <div class="col-xl-12">
     <div class="container">
         <div class="row">
             <div class="col-xl-4">
@@ -135,7 +239,6 @@ Dashboard | Admin - HB Mobile Services
                 </a>
             </div>
             <div class="col-xl-4">
-                {{-- <a href="#"> --}}
                     <div class="card mini-stats-wid shadow-lg" style="border-radius: 5px">
                         <div class="card-body">
                             <div class="media">
@@ -152,8 +255,6 @@ Dashboard | Admin - HB Mobile Services
                             </div>
                         </div>
                     </div>
-                    {{--
-                </a> --}}
             </div>
         </div>
     </div>
@@ -204,7 +305,6 @@ Dashboard | Admin - HB Mobile Services
                 </a>
             </div>
             <div class="col-xl-4">
-                {{-- <a href="#"> --}}
                     <div class="card mini-stats-wid shadow-lg" style="border-radius: 5px">
                         <div class="card-body">
                             <div class="media">
@@ -221,12 +321,10 @@ Dashboard | Admin - HB Mobile Services
                             </div>
                         </div>
                     </div>
-                    {{--
-                </a> --}}
             </div>
         </div>
     </div>
-</div><!-- col 3 -->
+</div><!-- col 3 --> --}}
 
 <div class="container">
     <div class="col-12 p-4 card" style="border-radius: 5px">
@@ -279,7 +377,7 @@ Dashboard | Admin - HB Mobile Services
         </div><!-- end row -->
     </div>
 </div>
-
+</div>
 @endsection
 @section('script')
 
@@ -289,48 +387,6 @@ Dashboard | Admin - HB Mobile Services
 <!-- Saas dashboard init -->
 <script src="{{ URL::asset('/assets/js/pages/saas-dashboard.init.js') }}"></script>
 
-<!-- Saas dashboard time -->
-<script>
-    function currentTime() {
-            let date = new Date();
-            let hh = date.getHours();
-            let mm = date.getMinutes();
-            let ss = date.getSeconds();
-            let session = "AM";
-
-            if (hh == 0) {
-                hh = 12;
-            }
-            if (hh > 12) {
-                hh = hh - 12;
-                session = "PM";
-            }
-
-            hh = (hh < 10) ? "0" + hh : hh;
-            mm = (mm < 10) ? "0" + mm : mm;
-            ss = (ss < 10) ? "0" + ss : ss;
-
-            let time = hh + ":" + mm + ":" + ss + " " + session;
-
-            document.getElementById("clock").innerText = time;
-            let t = setTimeout(function() {
-                currentTime()
-            }, 1000);
-        }
-        currentTime();
-
-        // $(document).ready(function () {
-        //     var simple = $('#repair_table').DataTable({
-        //         "iDisplayLength": 5,
-        //     });
-        // });
-        // $(document).ready(function () {
-        //     var simple = $('#onsite_table').DataTable({
-        //         "iDisplayLength": 5,
-                
-        //     });
-        // });
-</script>
 <script>
     $(document).ready(function () {
         var repair = '';
@@ -340,7 +396,7 @@ Dashboard | Admin - HB Mobile Services
         $('#onsite_table').ready(function() {
 
             onsite = $('#onsite_table').DataTable({
-                "iDisplayLength": 5,
+                "iDisplayLength": 3,
                 "processing": false,
                 "serverSide": false,
                 "info": false,
@@ -402,7 +458,7 @@ Dashboard | Admin - HB Mobile Services
         $('#repair_table').ready(function() {
 
             repair = $('#repair_table').DataTable({
-                "iDisplayLength": 5,
+                "iDisplayLength": 3,
                 "processing": false,
                 "serverSide": false,
                 "info": false,

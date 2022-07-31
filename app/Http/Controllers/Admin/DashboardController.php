@@ -18,6 +18,7 @@ class DashboardController extends Controller
     {
         $countOrder = Order::where('status', '!=', 6)->count();
         $sumOrder = Order::whereIn('status', [2,3,4,5])->sum('total_amount');
+        $sumOrderAll = Order::whereIn('status', [0,1,2,3,4,5,6])->count();
         $sumRepairPrice = RepairRegistration::whereIn('status', [1,2,3])->sum('price');
         $sumRepairShipping = RepairRegistration::whereIn('status', [1,2,3])->sum('shipping_price');
         $countRegisterWarranty = WarrantyRegistration::count();
@@ -31,7 +32,7 @@ class DashboardController extends Controller
         $countOnsite = OnsiteRegistration::count();
         $sumOnsites = OnsiteRegistration::where('id','!=',null)->sum('price');
 
-        return view('admin.dashboard-saas', compact('sumOnsites','countOnsite','countUserCus','onsite','sumRepairPrice','sumRepairShipping','countOrder', 'sumOrder', 'countRegisterWarranty','countRegisterRepair', 'countCustomer', 'countUserCustomer', 'countAgent','repairs'));
+        return view('admin.dashboard-saas', compact('sumOrderAll','sumOnsites','countOnsite','countUserCus','onsite','sumRepairPrice','sumRepairShipping','countOrder', 'sumOrder', 'countRegisterWarranty','countRegisterRepair', 'countCustomer', 'countUserCustomer', 'countAgent','repairs'));
     }
 
 }
