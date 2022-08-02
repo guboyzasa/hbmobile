@@ -510,7 +510,6 @@
 
 <script>
     $(document).ready(function () {
-
             var simple = '';
 
         });
@@ -543,7 +542,6 @@
           
         });
 
-
         $('#simple_table').ready(function () {
             simple = $('#simple_table').DataTable({
                 "processing": false,
@@ -553,6 +551,17 @@
                 "responsive": true,
                 "bFilter": false,
                 "destroy": true,
+                "oLanguage": {
+                    // "sSearch": "ค้นหา :",
+                    // "sLengthMenu": "แสดง _MENU_ เร็คคอร์ด ต่อหน้า",
+                    "sZeroRecords": "ไม่เจอข้อมูลที่ค้นหา",
+                    // "sInfo": "แสดง _START_ ถึง _END_ ของ _TOTAL_ เร็คคอร์ด",
+                    "aaSorting" :[[0,'desc']],
+                "oPaginate": {
+                "sPrevious":"<<",
+                "sNext":">>",
+                }
+            },
                 "order": [
                     [0, "desc"]
                 ],

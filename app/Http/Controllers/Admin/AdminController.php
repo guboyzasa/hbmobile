@@ -14,12 +14,15 @@ class AdminController extends Controller
 {
     public function index()
     {
+        $start = date("Y-m-1 00:00");
+        $end = date("Y-m-d H:i");
+
         $countOrder = Order::where('status', '!=', 6)->count();
-        $sumOrder = Order::whereIn('status', [0,1])->count();
+        $sumOrder = Order::where('created_at','>=',$start)->where('created_at', '<=' , $end)->whereIn('status', [0,1])->count();
         $sumOrderAll = Order::whereIn('status', [0,1,2,3,4,5,6])->count();
-        $sumRepairPrice = RepairRegistration::whereIn('status', [1,2,3])->sum('price');
-        $sumRepairShipping = RepairRegistration::whereIn('status', [1,2,3])->sum('shipping_price');
-        $sumOnsites = OnsiteRegistration::where('id','!=',null)->sum('price');
+        $sumRepairPrice = RepairRegistration::where('created_at','>=',$start)->where('created_at', '<=' , $end)->whereIn('status', [1,2,3])->sum('price');
+        $sumRepairShipping = RepairRegistration::where('created_at','>=',$start)->where('created_at', '<=' , $end)->whereIn('status', [1,2,3])->sum('shipping_price');
+        $sumOnsites = OnsiteRegistration::where('created_at','>=',$start)->where('created_at', '<=' , $end)->sum('price');
 
         $countOnsite = OnsiteRegistration::count();
         $countRepair = RepairRegistration::count();

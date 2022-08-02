@@ -41,7 +41,12 @@ class ReportController extends Controller
         $countProductStock = Product::where('is_stock', '=', 1)->count();
         $countProductStocks = Product::where('is_stock', '=', 0)->count();
 
-        return view('admin.report.index',compact('repairs','onsite','countRegisterWarranty','countOrder','countOnsite','countRepair','countRepair1','countRepair2','countRepair3','countProduct','countProductCat','countProductBrand','countUserCus','countUserCustomer','countProductNew','countProductRecom','countProductStock','countProductStocks','countCustomer'));
+        $sumOrder = Order::whereIn('status', [0,1])->count();
+        $sumRepairPrice = RepairRegistration::whereIn('status', [1,2,3])->sum('price');
+        $sumRepairShipping = RepairRegistration::whereIn('status', [1,2,3])->sum('shipping_price');
+        $sumOnsites = OnsiteRegistration::where('id','!=',null)->sum('price');
+
+        return view('admin.report.index',compact('sumOrder','sumRepairPrice','sumRepairShipping','sumOnsites','repairs','onsite','countRegisterWarranty','countOrder','countOnsite','countRepair','countRepair1','countRepair2','countRepair3','countProduct','countProductCat','countProductBrand','countUserCus','countUserCustomer','countProductNew','countProductRecom','countProductStock','countProductStocks','countCustomer'));
     }
 
 }

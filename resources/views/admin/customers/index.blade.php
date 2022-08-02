@@ -25,6 +25,7 @@
                     <table id="simple_table" class="table dt-responsive  nowrap w-100">
                         <thead>
                             <tr>
+                                <th>วันที่เพิ่ม</th>
                                 <th>เบอร์โทร</th>
                                 <th>ชื่อ</th>
                                 <th>email</th>
@@ -121,6 +122,17 @@
                 "responsive": true,
                 "bFilter": false,
                 "destroy": true,
+                "oLanguage": {
+                    // "sSearch": "ค้นหา :",
+                    // "sLengthMenu": "แสดง _MENU_ เร็คคอร์ด ต่อหน้า",
+                    "sZeroRecords": "ไม่เจอข้อมูลที่ค้นหา",
+                    // "sInfo": "แสดง _START_ ถึง _END_ ของ _TOTAL_ เร็คคอร์ด",
+                    "aaSorting" :[[0,'desc']],
+                "oPaginate": {
+                "sPrevious":"<<",
+                "sNext":">>",
+                }
+            },
                 "order": [
                     [0, "desc"]
                 ],
@@ -138,6 +150,12 @@
                     },
                 ],
                 "columns": [
+                    {
+                        "data": "created_at",
+                        "render": function(data, type, full) {
+                            return moment(data).format('MM-DD-YYYY');
+                        }
+                    },
                     {
                         "data": "phone",
                     },

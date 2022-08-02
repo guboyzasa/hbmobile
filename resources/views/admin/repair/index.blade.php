@@ -540,6 +540,17 @@
                 "responsive": true,
                 "bFilter": false,
                 "destroy": true,
+                "oLanguage": {
+                    // "sSearch": "ค้นหา :",
+                    // "sLengthMenu": "แสดง _MENU_ เร็คคอร์ด ต่อหน้า",
+                    "sZeroRecords": "ไม่เจอข้อมูลที่ค้นหา",
+                    // "sInfo": "แสดง _START_ ถึง _END_ ของ _TOTAL_ เร็คคอร์ด",
+                    "aaSorting" :[[0,'desc']],
+                "oPaginate": {
+                "sPrevious":"<<",
+                "sNext":">>",
+                }
+            },
                 "order": [
                     [0, "desc"]
                 ],
@@ -557,7 +568,7 @@
                 "columns": [{
                         "data": "repair_start_date",
                         "render": function(data, type, full) {
-                            return moment(data).format('DD-MM-YYYY');
+                            return moment(data).format('MM-DD-YYYY');
                         }
                     },
                     {
@@ -578,10 +589,17 @@
 
                     {
                         "data": "price",
+                        "render": function(data, type, full) {
+                            let sum = full.price;
+                            return (sum.toLocaleString('en-US'));
+                        }
                     },
-
                     {
                         "data": "shipping_price",
+                        "render": function(data, type, full) {
+                            let sum = full.shipping_price;
+                            return (sum.toLocaleString('en-US'));
+                        }
                     },
 
                     // {

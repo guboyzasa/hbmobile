@@ -13,16 +13,6 @@ Dashboard | Admin - HB Mobile Services
     <div class="row">
         <div class="col-md-4">
             <div class="card">
-                <div class="card-body"><span>ลงทะเบียนประกัน</span>
-                    <div class="d-flex justify-content-between">
-                        <div class="text-info"><i class="fas fa-2x fa fa-shield-halved"></i></div>
-                        <h3 class="mb-0 text-success">{{ number_format($countRegisterWarranty) }}</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
                 <div class="card-body"><span>จำนวนออเดอร์ทั้งหมด</span>
                     <div class="d-flex justify-content-between">
                         <div class="text-info"><i class="fas fa-2x fa fa-shopping-cart"></i>
@@ -34,22 +24,11 @@ Dashboard | Admin - HB Mobile Services
         </div>
         <div class="col-md-4">
             <div class="card">
-                <div class="card-body"><span>ยอดขายรวมทั้งสิ้น</span>
+                <div class="card-body"><span>จำนวนลูกค้าที่ยังไม่เข้าระบบ</span>
                     <div class="d-flex justify-content-between">
-                        <div class="text-info"><i class="fas fa-2x fa-baht-sign"></i></div>
-                        <h3 class="mb-0">{{ number_format($sumOrder) }}</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body"><span>ลงทะเบียนงานซ่อม</span>
-                    <div class="d-flex justify-content-between">
-                        <div class="text-info"><i class="fas fa-2x fa fa-wrench"></i></div>
-                        <h3 class="mb-0 text-success">{{ number_format($countRegisterRepair) }}</h3>
+                        <div class="text-info"><i class="fas fa-2x fa fa-user"></i>
+                        </div>
+                        <h3 class="mb-0 text-info">{{ number_format($countUserCus) }}</h3>
                     </div>
                 </div>
             </div>
@@ -65,18 +44,18 @@ Dashboard | Admin - HB Mobile Services
                 </div>
             </div>
         </div>
+    </div>
+    <div class="row">
         <div class="col-md-4">
             <div class="card">
-                <div class="card-body"><span>ยอดซ่อมรวมทั้งสิ้น</span>
+                <div class="card-body"><span>ลงทะเบียนประกัน</span>
                     <div class="d-flex justify-content-between">
-                        <div class="text-info"><i class="fas fa-2x fa-baht-sign"></i></div>
-                        <h3 class="mb-0">{{ number_format($sumRepairPrice + $sumRepairShipping) }}</h3>
+                        <div class="text-info"><i class="fas fa-2x fa fa-shield-halved"></i></div>
+                        <h3 class="mb-0 text-success">{{ number_format($countRegisterWarranty) }}</h3>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
         <div class="col-md-4">
             <div class="card">
                 <div class="card-body"><span>ลงทะเบียนงานติดตั้ง</span>
@@ -89,11 +68,32 @@ Dashboard | Admin - HB Mobile Services
         </div>
         <div class="col-md-4">
             <div class="card">
-                <div class="card-body"><span>จำนวนลูกค้าที่ยังไม่เข้าระบบ</span>
+                <div class="card-body"><span>ลงทะเบียนงานซ่อม</span>
                     <div class="d-flex justify-content-between">
-                        <div class="text-info"><i class="fas fa-2x fa fa-user"></i>
-                        </div>
-                        <h3 class="mb-0 text-info">{{ number_format($countUserCus) }}</h3>
+                        <div class="text-info"><i class="fas fa-2x fa fa-wrench"></i></div>
+                        <h3 class="mb-0 text-success">{{ number_format($countRegisterRepair) }}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body"><span>ยอดขายรวมทั้งสิ้น</span>
+                    <div class="d-flex justify-content-between">
+                        <div class="text-info"><i class="fas fa-2x fa-baht-sign"></i></div>
+                        <h3 class="mb-0">{{ number_format($sumOrder) }}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body"><span>ยอดซ่อมรวมทั้งสิ้น</span>
+                    <div class="d-flex justify-content-between">
+                        <div class="text-info"><i class="fas fa-2x fa-baht-sign"></i></div>
+                        <h3 class="mb-0">{{ number_format($sumRepairPrice + $sumRepairShipping) }}</h3>
                     </div>
                 </div>
             </div>
@@ -393,68 +393,6 @@ Dashboard | Admin - HB Mobile Services
         var onsite = '';
         } );
         
-        $('#onsite_table').ready(function() {
-
-            onsite = $('#onsite_table').DataTable({
-                "iDisplayLength": 3,
-                "processing": false,
-                "serverSide": false,
-                "info": false,
-                "searching": true,
-                "responsive": true,
-                "bFilter": false,
-                "destroy": true,
-                "order": [
-                    [0, "desc"]
-                ],
-                "ajax": {
-                    "url": `{{ route('admin.onsite.show') }}`,
-                    "method": "POST",
-                    "data": {
-                        "_token": "{{ csrf_token() }}",
-                    },
-                },
-                'columnDefs': [{
-                    "targets": [0, 1, 2, 3, 4],
-                }, ],
-                "columns": [
-                    {
-                        "data": "onsite_start_date",
-                        "render": function(data, type, full) {
-                            return moment(data).format('DD-MM-YY');
-                        }
-                    },
-                    {
-                        "data": "customer",
-                        "render": function(data, type, full) {
-                            return data ? data.phone :
-                                '<span class="badge badge-pill badge-soft-danger font-size-11"> เบอร์โทรถูกลบ </span>';
-
-                        }
-                    },
-                    {
-                        "data": "customer",
-                        "render": function(data, type, full) {
-                            return data ? data.name :
-                                '<span class="badge badge-pill badge-soft-danger font-size-11"> ลูกค้าถูกลบ </span>';
-
-                        }
-                    },
-
-                    {
-                        "data": "model",
-                        "render": function(data, type, full) {
-                            return full.model + " x " + full.detail;
-                        }
-                    },
-
-                    {
-                        "data": "price",
-                    },
-                ],
-            });
-        });
-
         $('#repair_table').ready(function() {
 
             repair = $('#repair_table').DataTable({
@@ -466,6 +404,17 @@ Dashboard | Admin - HB Mobile Services
                 "responsive": true,
                 "bFilter": false,
                 "destroy": true,
+                "oLanguage": {
+                    // "sSearch": "ค้นหา :",
+                    // "sLengthMenu": "แสดง _MENU_ เร็คคอร์ด ต่อหน้า",
+                    "sZeroRecords": "ไม่เจอข้อมูลที่ค้นหา",
+                    // "sInfo": "แสดง _START_ ถึง _END_ ของ _TOTAL_ เร็คคอร์ด",
+                    "aaSorting" :[[0,'desc']],
+                "oPaginate": {
+                "sPrevious":"<<",
+                "sNext":">>",
+                }
+            },
                 "order": [
                     [0, "desc"]
                 ],
@@ -483,7 +432,7 @@ Dashboard | Admin - HB Mobile Services
                     {
                         "data": "repair_start_date",
                         "render": function(data, type, full) {
-                            return moment(data).format('DD-MM-YY');
+                            return moment(data).format('MM-DD-YYYY');
                         }
                     },
                     {
@@ -512,11 +461,93 @@ Dashboard | Admin - HB Mobile Services
                     {
                         "data": "price",
                         "render": function(data, type, full) {
-                            return full.price + full.shipping_price;
+                            let sum = full.price + full.shipping_price;
+                            return (sum.toLocaleString('en-US'));
                         }
                     },
                 ],
             });
         });
+
+        $('#onsite_table').ready(function() {
+
+            onsite = $('#onsite_table').DataTable({
+                "iDisplayLength": 3,
+                "processing": false,
+                "serverSide": false,
+                "info": false,
+                "searching": true,
+                "responsive": true,
+                "bFilter": false,
+                "destroy": true,
+                "oLanguage": {
+                    // "sSearch": "ค้นหา :",
+                    // "sLengthMenu": "แสดง _MENU_ เร็คคอร์ด ต่อหน้า",
+                    "sZeroRecords": "ไม่เจอข้อมูลที่ค้นหา",
+                    // "sInfo": "แสดง _START_ ถึง _END_ ของ _TOTAL_ เร็คคอร์ด",
+                    "aaSorting" :[[0,'desc']],
+                "oPaginate": {
+                "sPrevious":"<<",
+                "sNext":">>",
+                }
+            },
+                "order": [
+                    [0, "desc"]
+                ],
+                "ajax": {
+                    "url": `{{ route('admin.onsite.show') }}`,
+                    "method": "POST",
+                    "data": {
+                        "_token": "{{ csrf_token() }}",
+                    },
+                },
+                'columnDefs': [{
+                    "targets": [0, 1, 2, 3, 4],
+                }, ],
+                "columns": [
+                    {
+                        "data": "onsite_start_date",
+                        "render": function(data, type, full) {
+                            return moment(data).format('MM-DD-YYYY');
+                        }
+                    },
+                    {
+                        "data": "customer",
+                        "render": function(data, type, full) {
+                            return data ? data.phone :
+                                '<span class="badge badge-pill badge-soft-danger font-size-11"> เบอร์โทรถูกลบ </span>';
+
+                        }
+                    },
+                    {
+                        "data": "customer",
+                        "render": function(data, type, full) {
+                            return data ? data.name :
+                                '<span class="badge badge-pill badge-soft-danger font-size-11"> ลูกค้าถูกลบ </span>';
+
+                        }
+                    },
+
+                    {
+                        "data": "model",
+                        "render": function(data, type, full) {
+                            return full.model + " x " + full.detail;
+                        }
+                    },
+
+                    // {
+                    //     "data": "price",
+                    // },
+                    {
+                        "data": "price",
+                        "render": function(data, type, full) {
+                            let sum = full.price;
+                            return (sum.toLocaleString('en-US'));
+                        }
+                    },
+                ],
+            });
+        });
+
 </script>
 @endsection

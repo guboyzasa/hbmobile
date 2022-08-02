@@ -16,11 +16,14 @@ class DashboardController extends Controller
 {
     public function index()
     {
+        $start = date("Y-m-1 00:00");
+        $end = date("Y-m-d H:i");
+
         $countOrder = Order::where('status', '!=', 6)->count();
-        $sumOrder = Order::whereIn('status', [2,3,4,5])->sum('total_amount');
+        $sumOrder = Order::where('created_at','>=',$start)->where('created_at', '<=' , $end)->whereIn('status', [2,3,4,5])->sum('total_amount');
         $sumOrderAll = Order::whereIn('status', [0,1,2,3,4,5,6])->count();
-        $sumRepairPrice = RepairRegistration::whereIn('status', [1,2,3])->sum('price');
-        $sumRepairShipping = RepairRegistration::whereIn('status', [1,2,3])->sum('shipping_price');
+        $sumRepairPrice = RepairRegistration::where('created_at','>=',$start)->where('created_at', '<=' , $end)->whereIn('status', [1,2,3])->sum('price');
+        $sumRepairShipping = RepairRegistration::where('created_at','>=',$start)->where('created_at', '<=' , $end)->whereIn('status', [1,2,3])->sum('shipping_price');
         $countRegisterWarranty = WarrantyRegistration::count();
         $countRegisterRepair = RepairRegistration::count();
         $countCustomer = Customer::count();
@@ -30,7 +33,7 @@ class DashboardController extends Controller
         $repairs = RepairRegistration::orderBy('id', 'desc')->get();
         $onsite = OnsiteRegistration::orderBy('id', 'desc')->get();
         $countOnsite = OnsiteRegistration::count();
-        $sumOnsites = OnsiteRegistration::where('id','!=',null)->sum('price');
+        $sumOnsites = OnsiteRegistration::where('created_at','>=',$start)->where('created_at', '<=' , $end)->where('id','!=',null)->sum('price');
 
         return view('admin.dashboard-saas', compact('sumOrderAll','sumOnsites','countOnsite','countUserCus','onsite','sumRepairPrice','sumRepairShipping','countOrder', 'sumOrder', 'countRegisterWarranty','countRegisterRepair', 'countCustomer', 'countUserCustomer', 'countAgent','repairs'));
     }

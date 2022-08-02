@@ -8,14 +8,14 @@
 
 <div class="container pb-5">
     <div class="alert alert-warning border-warning">
-        <h5><strong>ประกาศสำคัญ!</strong></h5><strong> 1.อย่าปล่อยงานซ่อมให้ตกค้าง</strong><p class="text-danger font-weight-bold"><strong>2.และอย่าปล่อยออเดอร์ให้ตกค้าง</strong></p>
+        <h5><strong class="text-primary">ประกาศสำคัญ!</strong></h5><b> 1.อย่าปล่อยงานซ่อมให้ตกค้าง</b><p class="text-danger font-weight-bold"><strong>2.และอย่าปล่อยออเดอร์ให้ตกค้าง</strong></p>
         <div style="text-align: right"> 
-            <button type="button" class="btn btn-warning">
-                ออเดอร์ยังไม่ดำเนินการ <span class="badge badge-light">{{ number_format($sumOrder) }}</span>
-              </button>
-            <button type="button" class="btn btn-danger">
+            <div class="btn bg-success bg-soft">
+                ออเดอร์ที่ต้องจัดการ <span class="badge badge-light">{{ number_format($sumOrder) }}</span>
+            </div>
+            <div class="btn bg-danger bg-soft">
                 กำลังดำเนินการซ่อม <span class="badge badge-light">{{ number_format($countRepair1+$countRepair3) }}</span>
-              </button>
+            </div>
         </div>
     </div>
     <h4>ยินดีต้อนรับ! <span class="text-primary">
@@ -75,6 +75,7 @@
         </tbody>
     </table> --}}
 </div>
+
 
 {{-- <div class="card" style="border-radius: 5px">
     <div class="card-body">
@@ -329,7 +330,6 @@
 @endsection
 
 @section('script')
-
 
 <!-- apexcharts -->
 <script src="{{ URL::asset('/assets/libs/apexcharts/apexcharts.min.js') }}"></script>
