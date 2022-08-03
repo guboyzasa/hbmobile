@@ -11,10 +11,10 @@
         <h5><strong class="text-primary">ประกาศสำคัญ!</strong></h5><b> 1.อย่าปล่อยงานซ่อมให้ตกค้าง</b><p class="text-danger font-weight-bold"><strong>2.และอย่าปล่อยออเดอร์ให้ตกค้าง</strong></p>
         <div style="text-align: right"> 
             <div class="btn bg-success bg-soft">
-                ออเดอร์ที่ต้องจัดการ <span class="badge badge-light">{{ number_format($sumOrder) }}</span>
+                ออเดอร์ที่ต้องจัดการ <span class="badge bg-light">{{ number_format($sumOrder) }}</span>
             </div>
             <div class="btn bg-danger bg-soft">
-                กำลังดำเนินการซ่อม <span class="badge badge-light">{{ number_format($countRepair1+$countRepair3) }}</span>
+                กำลังดำเนินการซ่อม <span class="badge bg-light">{{ number_format($countRepair1+$countRepair3) }}</span>
             </div>
         </div>
     </div>

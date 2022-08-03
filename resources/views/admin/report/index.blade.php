@@ -223,11 +223,11 @@ Report
 <script>
     // Pie Data
     var chartPie_Data = {
-    labels: ['หมวดหมู่','แบรนด์','ลูกค้าทั้งหมด', 'ออเดอร์', 'ประกันสินค้า', 'งานซ่อม', 'งานติดตั้ง'],
+    labels: ['หมวดหมู่','แบรนด์', 'ออเดอร์', 'ประกันสินค้า', 'งานซ่อม', 'งานติดตั้ง'],
     datasets: [{
         //label: 'Report Chart',
-        data: [{{$countProductCat}}, {{$countProductBrand}}, {{$countCustomer}}, {{$countOrder}}, {{$countRegisterWarranty}}, {{$countRepair}}, {{$countOnsite}}],
-        backgroundColor: ['#f1c232','#3d85c6','#8fce00','#674ea7','#f13391','#fff2cc','#665151']
+        data: [{{$countProductCat}}, {{$countProductBrand}}, {{$countOrder}}, {{$countRegisterWarranty}}, {{$countRepair}}, {{$countOnsite}}],
+        backgroundColor: ['#f1c232','#3d85c6','#674ea7','#f13391','#fff2cc','#665151']
     }]
     }
     // Pie Chart
@@ -255,7 +255,7 @@ Report
 <script>
     // Pie Data
     var chartPie_Data = {
-    labels: ['กำลังดำเนินการซ่อม', 'ซ่อมเสร็จแล้ว','ซ่อมไม่สำเร็จ'],
+    labels: ['กำลังดำเนินการ', 'ซ่อมเสร็จแล้ว','ซ่อมไม่สำเร็จ'],
     datasets: [{
         //label: 'Report Chart',
         data: [{{$countRepair1}}, {{$countRepair2}}, {{$countRepair3}}],
@@ -287,11 +287,11 @@ Report
 <script>
     // Pie Data
     var chartPie_Data = {
-    labels: ['ลูกค้าที่เข้าระบบแล้ว', 'ลูกค้าที่ยังไม่เข้าระบบ'],
+    labels: ['ลูกค้าทั้งหมด','ลูกค้าที่เข้าระบบแล้ว', 'ลูกค้าที่ยังไม่เข้าระบบ'],
     datasets: [{
         //label: 'Report Chart',
-        data: [{{$countUserCustomer}}, {{$countUserCus}}],
-        backgroundColor: ['#8fce00','#16537e']
+        data: [{{$countCustomer}}, {{$countUserCustomer}}, {{$countUserCus}}],
+        backgroundColor: ['#f44336','#8fce00','#16537e']
     }]
     }
     // Pie Chart
