@@ -199,7 +199,7 @@
                     <div class="mb-3">
                         <label for="image" class="form-label">รูปปกสินค้า </label>
                         <input type="file" onchange="validateSize(this)" class="form-control formInput" accept="image/*"
-                            name="imageFile2" id="imageFile2" placeholder="กรุณาเลือกรูปภาพ">
+                            name="imageFile" id="imageFile" placeholder="กรุณาเลือกรูปภาพ">
                     </div>
                     <div class="mb-3" id="showImg">
                         <label for="image" class="form-label">รูปล่าสุด </label>
@@ -292,10 +292,10 @@
 
 <!-- Modal Edit Product -->
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="myLargeModalLabel"><span id="edit_modal_title"></span></h5>
+                <i class="bx bx-edit"></i><h5 class="modal-title" id="myLargeModalLabel"><span id="edit_modal_title"></span></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -493,7 +493,7 @@
     <div class="modal-dialog modal-md shadow-lg" style="border-radius: 5px">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="myLargeModalLabel">รูปภาพ</h5>
+                <h5 class="modal-title" id="myLargeModalLabel">รูปภาพตัวอย่าง</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -659,7 +659,7 @@
                             var obj = JSON.stringify(full);
                             var button = `
                              <button type="button" class="btn btn-sm btn-warning" onclick='showInfoProduct(${obj})'><i class='bx bxs-edit'></i></button>
-                             
+                             <button type="button" class="btn btn-sm btn-danger" onclick='destroy(${data})'><i class="bx bx-trash"></i></button>
                              `;
                             return button; 
                             //<button type="button" class="btn btn-sm btn-danger" onclick='destroy(${data})'><i class="bx bx-trash"></i></button>
@@ -985,11 +985,11 @@
 
         const fileSize = input.files[0].size / 1024 / 1024; // in MiB
         if (fileSize > 1) {
-            // alert('File size exceeds 2 MiB');
-            Swal.fire('แจ้งเตือน!', 'ขนาดไฟล์ต้องน้อยกว่าหรือเท่ากับ 1 MB', 'warning');
-            document.getElementById("imageFile").value = "";
-            // $(file).val(''); //for clearing with Jquery
-        } else {
+                // alert('File size exceeds 2 MiB');
+                Swal.fire('แจ้งเตือน!', 'ขนาดไฟล์ต้องน้อยกว่าหรือเท่ากับ 1 MB', 'warning');
+                document.getElementById("imageFile").value = "";
+                // $(file).val(''); //for clearing with Jquery
+            } else {
             // Proceed further
         }
     }
